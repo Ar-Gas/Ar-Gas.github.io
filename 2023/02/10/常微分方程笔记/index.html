@@ -20,21 +20,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="最近面临期末，之前还剩了个微分方程没有学，发现要记的还挺多的，就做些笔记，以下笔记较为精简，部分条件未给出（例如导数存在）  研究微分方程的目的在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个导数和函数的关系式来解得，在力学，天文学，物理学及技术科学等中应用广泛">
+    <meta name="description" content="最近面临期末，之前还剩了个微分方程没有学，发现要记的还挺多的，就做些笔记，以下笔记较为精简，部分条件未给出（例如导数存在） ## 研究微分方程的目的 在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个导数和函数的关系式来解得，在力学，天文学，物理学及技术科学等中应用广泛">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常微分方程笔记">
 <meta property="og:url" content="https://ar-gas.github.io/2023/02/10/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;s Blog">
-<meta property="og:description" content="最近面临期末，之前还剩了个微分方程没有学，发现要记的还挺多的，就做些笔记，以下笔记较为精简，部分条件未给出（例如导数存在）  研究微分方程的目的在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个导数和函数的关系式来解得，在力学，天文学，物理学及技术科学等中应用广泛">
+<meta property="og:description" content="最近面临期末，之前还剩了个微分方程没有学，发现要记的还挺多的，就做些笔记，以下笔记较为精简，部分条件未给出（例如导数存在） ## 研究微分方程的目的 在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个导数和函数的关系式来解得，在力学，天文学，物理学及技术科学等中应用广泛">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30adfff79b45465f8d7834fc46f8b0b9~tplv-k3u1fbpfcp-watermark.image">
-<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1b8f597000eb49e782fe4aefe854e429~tplv-k3u1fbpfcp-watermark.image">
 <meta property="article:published_time" content="2023-02-09T21:41:00.000Z">
 <meta property="article:modified_time" content="2023-02-10T09:38:53.439Z">
 <meta property="article:author" content="Ar Gas">
 <meta property="article:tag" content="math&#x2F;数学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30adfff79b45465f8d7834fc46f8b0b9~tplv-k3u1fbpfcp-watermark.image">
 
 
 <link rel="canonical" href="https://ar-gas.github.io/2023/02/10/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%AC%94%E8%AE%B0/">
@@ -131,7 +128,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -144,7 +141,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text">研究微分方程的目的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number"></span> <span class="nav-text">微分方程基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">常微分方程的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">线性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B6"><span class="nav-number">1.3.</span> <span class="nav-text">阶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3"><span class="nav-number">1.4.</span> <span class="nav-text">解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E8%A7%A3"><span class="nav-number">1.4.1.</span> <span class="nav-text">通解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E8%A7%A3%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.4.2.</span> <span class="nav-text">定解条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E8%A7%A3%E9%97%AE%E9%A2%98%E5%92%8C%E7%89%B9%E8%A7%A3"><span class="nav-number">1.4.3.</span> <span class="nav-text">定解问题和特解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%80%BC%E6%9D%A1%E4%BB%B6%E5%92%8C%E5%88%9D%E5%80%BC%E9%97%AE%E9%A2%98"><span class="nav-number">1.4.4.</span> <span class="nav-text">初值条件和初值问题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E9%98%B6%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E5%88%9D%E7%AD%89%E8%A7%A3%E6%B3%95"><span class="nav-number"></span> <span class="nav-text">一阶常微分方程的初等解法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F"><span class="nav-number">1.</span> <span class="nav-text">分离变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%BB%A3%E6%8D%A2-%E5%8F%AF%E5%8C%96%E4%B8%BA%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">变量代换-可化为分离变量的微分方程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number"></span> <span class="nav-text">线性微分方程解的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#n%E9%98%B6%E9%BD%90%E6%AC%A1%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">n阶齐次微分方程解的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#n%E9%98%B6%E9%9D%9E%E9%BD%90%E6%AC%A1%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">n阶非齐次微分方程解的结构</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -277,23 +273,41 @@
     
     <div class="post-body" itemprop="articleBody">
         <blockquote>
-<p>最近面临期末，之前还剩了个微分方程没有学，发现要记的还挺多的，就做些笔记，以下笔记较为精简，部分条件未给出（例如导数存在）</p>
+<p>最近面临期末，之前还剩了个微分方程没有学，发现要记的还挺多的，就做些笔记，以下笔记较为精简，部分条件未给出（例如导数存在）
+## 研究微分方程的目的
+在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个<strong>导数和函数的关系式</strong>来解得，在力学，天文学，物理学及技术科学等中应用广泛
+<span id="more"></span> # 微分方程基本概念 ## 定义
+含有<strong>未知函数</strong>与<strong>未知函数的导数</strong>（即微分）的方程称为微分方程
+<img
+src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30adfff79b45465f8d7834fc46f8b0b9~tplv-k3u1fbpfcp-watermark.image?"
+alt="image.png" /> 或
+<strong>F(x,y,y',y''...y<sup>(n)</sup>)=0</strong><br />
+### 常微分方程的定义
+未知函数都是<strong>一元</strong>的函数称为常微分方程 ### 线性
+定义中y',y''等都是未知函数的<strong>一次式</strong>，满足这一特征的为线性微分方程
+### 阶
+微分方程中出现的未知函数的<strong>最高阶导数的阶数</strong>，称为微分方程的阶
+### 解
+若y=y(x)代入到方程中，能使其为恒等式，则y=y(x)为区间<em>I</em>上的<strong>一个解</strong>。
+#### 通解 n阶微分方程有n个任意常数，通解可表达为：
+<strong>y=y(x,C<sub>1</sub>,C<sub>2</sub>,C<sub>3</sub>,...，C<sub>n</sub>)</strong>
+#### 定解条件
+若结合实际情况，微分方程还需满足其他条件，这些条件称为<strong>定解条件</strong>
+#### 定解问题和特解
+带有<strong>定解条件</strong>的微分方程的求解问题称为<strong>定解问题</strong>，所求解为<strong>特解</strong>
+#### 初值条件和初值问题
+从n阶微分方程的通解中确定一个定解，需要n个定解条件，这种形式的条件为<strong>初值条件</strong>，求解的问题为<strong>初值问题</strong>
+# 一阶常微分方程的初等解法 ## 分离变量
+对于形如<strong>y'=f(x)g(y)</strong>
+的函数，可以通过将x,y分到等式两边，通过求积分消除dx,dy ##
+变量代换-可化为分离变量的微分方程
+一些微分方程本身不可变量分离，但是可以通过合适的变换来转化 例如形如<img
+src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1b8f597000eb49e782fe4aefe854e429~tplv-k3u1fbpfcp-watermark.image?"
+alt="image.png" />的微分方程，可以通过令z=y/x来转化。 #
+线性微分方程解的结构 ## n阶齐次微分方程解的结构
+n阶齐次微分方程的解由n个线性无关的解构成 ## n阶非齐次微分方程解的结构
+由上述对应齐次方程的解再加上一个特解</p>
 </blockquote>
-<h2 id="研究微分方程的目的"><a href="#研究微分方程的目的" class="headerlink" title="研究微分方程的目的"></a>研究微分方程的目的</h2><p>在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个<strong>导数和函数的关系式</strong>来解得，在力学，天文学，物理学及技术科学等中应用广泛</p>
-<span id="more"></span>
-<h1 id="微分方程基本概念"><a href="#微分方程基本概念" class="headerlink" title="微分方程基本概念"></a>微分方程基本概念</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>含有<strong>未知函数</strong>与<strong>未知函数的导数</strong>（即微分）的方程称为微分方程<br><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30adfff79b45465f8d7834fc46f8b0b9~tplv-k3u1fbpfcp-watermark.image" alt="image.png"><br>或<br><strong>F(x,y,y’,y’’…y^(n)^)&#x3D;0</strong>    </p>
-<h3 id="常微分方程的定义"><a href="#常微分方程的定义" class="headerlink" title="常微分方程的定义"></a>常微分方程的定义</h3><p>未知函数都是<strong>一元</strong>的函数称为常微分方程</p>
-<h3 id="线性"><a href="#线性" class="headerlink" title="线性"></a>线性</h3><p>定义中y’,y’’等都是未知函数的<strong>一次式</strong>，满足这一特征的为线性微分方程</p>
-<h3 id="阶"><a href="#阶" class="headerlink" title="阶"></a>阶</h3><p>微分方程中出现的未知函数的<strong>最高阶导数的阶数</strong>，称为微分方程的阶</p>
-<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><p>若y&#x3D;y(x)代入到方程中，能使其为恒等式，则y&#x3D;y(x)为区间<em>I</em>上的<strong>一个解</strong>。</p>
-<h4 id="通解"><a href="#通解" class="headerlink" title="通解"></a>通解</h4><p>n阶微分方程有n个任意常数，通解可表达为：<br><strong>y&#x3D;y(x,C<del>1</del>,C<del>2</del>,C<del>3</del>,…，C<del>n</del>)</strong></p>
-<h4 id="定解条件"><a href="#定解条件" class="headerlink" title="定解条件"></a>定解条件</h4><p>若结合实际情况，微分方程还需满足其他条件，这些条件称为<strong>定解条件</strong></p>
-<h4 id="定解问题和特解"><a href="#定解问题和特解" class="headerlink" title="定解问题和特解"></a>定解问题和特解</h4><p>带有<strong>定解条件</strong>的微分方程的求解问题称为<strong>定解问题</strong>，所求解为<strong>特解</strong></p>
-<h4 id="初值条件和初值问题"><a href="#初值条件和初值问题" class="headerlink" title="初值条件和初值问题"></a>初值条件和初值问题</h4><p>从n阶微分方程的通解中确定一个定解，需要n个定解条件，这种形式的条件为<strong>初值条件</strong>，求解的问题为<strong>初值问题</strong></p>
-<h1 id="一阶常微分方程的初等解法"><a href="#一阶常微分方程的初等解法" class="headerlink" title="一阶常微分方程的初等解法"></a>一阶常微分方程的初等解法</h1><h2 id="分离变量"><a href="#分离变量" class="headerlink" title="分离变量"></a>分离变量</h2><p>对于形如<strong>y’&#x3D;f(x)g(y)</strong> 的函数，可以通过将x,y分到等式两边，通过求积分消除dx,dy</p>
-<h2 id="变量代换-可化为分离变量的微分方程"><a href="#变量代换-可化为分离变量的微分方程" class="headerlink" title="变量代换-可化为分离变量的微分方程"></a>变量代换-可化为分离变量的微分方程</h2><p>一些微分方程本身不可变量分离，但是可以通过合适的变换来转化<br>例如形如<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1b8f597000eb49e782fe4aefe854e429~tplv-k3u1fbpfcp-watermark.image" alt="image.png">的微分方程，可以通过令z&#x3D;y&#x2F;x来转化。</p>
-<h1 id="线性微分方程解的结构"><a href="#线性微分方程解的结构" class="headerlink" title="线性微分方程解的结构"></a>线性微分方程解的结构</h1><h2 id="n阶齐次微分方程解的结构"><a href="#n阶齐次微分方程解的结构" class="headerlink" title="n阶齐次微分方程解的结构"></a>n阶齐次微分方程解的结构</h2><p>n阶齐次微分方程的解由n个线性无关的解构成</p>
-<h2 id="n阶非齐次微分方程解的结构"><a href="#n阶非齐次微分方程解的结构" class="headerlink" title="n阶非齐次微分方程解的结构"></a>n阶非齐次微分方程解的结构</h2><p>由上述对应齐次方程的解再加上一个特解</p>
 
     </div>
 
