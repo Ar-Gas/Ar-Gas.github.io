@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="期末自用，包含unit1-6-A的单词">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++程序笔记">
+<meta property="og:url" content="https://ar-gas.github.io/2023/02/10/%E6%96%B0%E8%A7%86%E9%87%8E%E8%8B%B1%E8%AF%AD3%E5%8D%95%E8%AF%8D/index.html">
+<meta property="og:site_name" content="Ar Gas&#39;s Blog">
+<meta property="og:description" content="期末自用，包含unit1-6-A的单词">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-10T09:30:00.000Z">
+<meta property="article:modified_time" content="2023-02-24T10:21:43.198Z">
+<meta property="article:author" content="Ar Gas">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ar-gas.github.io/2023/02/10/%E6%96%B0%E8%A7%86%E9%87%8E%E8%8B%B1%E8%AF%AD3%E5%8D%95%E8%AF%8D/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/2023/02/10/%E6%96%B0%E8%A7%86%E9%87%8E%E8%8B%B1%E8%AF%AD3%E5%8D%95%E8%AF%8D/","path":"2023/02/10/新视野英语3单词/","title":"C++程序笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>C++程序笔记 | Ar Gas's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Ar Gas's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">比昨天多做一点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#unit-1-texta"><span class="nav-number">1.</span> <span class="nav-text">UNIT 1-textA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unit-2-texta"><span class="nav-number">2.</span> <span class="nav-text">UNIT 2-textA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unit3-texta"><span class="nav-number">3.</span> <span class="nav-text">UNIT3-textA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC4%E5%8D%95%E5%85%83-texta"><span class="nav-number">4.</span> <span class="nav-text">第4单元-TextA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unit-5-a"><span class="nav-number">5.</span> <span class="nav-text">Unit 5-A</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unit-6-a"><span class="nav-number">6.</span> <span class="nav-text">Unit 6-A</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ar Gas"
+      src="/images/head.jpeg">
+  <p class="site-author-name" itemprop="name">Ar Gas</p>
+  <div class="site-description" itemprop="description">我是这个博客的作者，QQ：2934060590，微信zyq2934060590</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Ar-Gas" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Ar-Gas" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/2934060590@qq.com" title="E-Mail → 2934060590@qq.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/2023/02/10/%E6%96%B0%E8%A7%86%E9%87%8E%E8%8B%B1%E8%AF%AD3%E5%8D%95%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpeg">
+      <meta itemprop="name" content="Ar Gas">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ar Gas's Blog">
+      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="C++程序笔记 | Ar Gas's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++程序笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-02-10 17:30:00" itemprop="dateCreated datePublished" datetime="2023-02-10T17:30:00+08:00">2023-02-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-02-24 18:21:43" itemprop="dateModified" datetime="2023-02-24T18:21:43+08:00">2023-02-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>13 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>期末自用，包含unit1-6-A的单词</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="unit-1-texta">UNIT 1-textA</h1>
+<p>deviate vi.背离， 偏离</p>
+<p>preclude vt.妨碍 阻碍，阻止</p>
+<p>premier a.最好的，最大的，最重要的 n.首相，总理</p>
+<p>whereby ad.凭那个，借以</p>
+<p>civic a.公民的，市民的，城镇的，城市的</p>
+<p>patriotic a.爱国的，有爱国心的</p>
+<p>clear-cut a.明确的，清楚的</p>
+<p>inhibit vt.阻碍，妨碍，抑制</p>
+<p>scholarly a.博学的，学问精深的，学者的，学术的</p>
+<p>idiot n.笨蛋，傻子</p>
+<p>bypass vt.（做某事时）避开，越过（某人），绕过，绕……走</p>
+<p>persecution n.（尤指因种族、宗教或政治信仰而进行的）迫害，残害</p>
+<p>misfortune n.不幸的是事，灾难，厄运，不幸</p>
+<p>glamour n.魅力，吸引力</p>
+<p>glamorous a.极富魅力的，非常吸引人的</p>
+<p>tragic a.悲惨的，不幸的，悲剧性的，可悲的</p>
+<p>spur n.刺激，激励，鞭策，鼓舞 vt.刺激，激励，鞭策，鼓舞，使发生</p>
+<p>optimism n.乐观，乐观主义</p>
+<p>dedication n.奉献，献身</p>
+<p>commend vt.（正式或公开）表扬，称赞，表彰，推荐</p>
+<p>uphold vt.支持，拥护，维护</p>
+<p>endeavor n. 尽力，努力vi.努力做（某事），尽力做（某事）</p>
+<p>statesman n.政治家</p>
+<p>diligent a.勤奋的，用功的</p>
+<p>diligently ad.勤奋地</p>
+<p>pursuit n.追求，寻求</p>
+<p>ranch n.美国或加拿大西部的大牧场</p>
+<p>prestige n.声望，名望，威望</p>
+<p>circuit
+n.（与某种活动相关的人）定期前往一系列场所，电路，回路，线路，环形路线</p>
+<p>unprecedented
+a.前所未有的，史无前例的，（大小、数量、程度等）的前所未知的，空前的</p>
+<p>nominate vt.提名，推荐</p>
+<p>appoint vt.认命，委派，指派，确定，指定，约定（时间或地点）</p>
+<p>abortion n.人工流产，堕胎</p>
+<p>expend vt.花费，消耗，支出</p>
+<p>threat n.危害，威胁，恐吓</p>
+<p>inward a.内心的，精神的，内向的，向中心的</p>
+<p>robust a.坚定的，强硬的人，强壮的，强健的</p>
+<p>maintain vt.保持，维持</p>
+<p>slack vi.
+a.偷懒，逃避工作，松弛的，不紧的，松懈的，懈怠的，疏忽的</p>
+<p>transcend vt.超越摆脱（消极的态度、思想或情绪）</p>
+<p>handicap
+n.障碍，不利条件，身体或智力的缺陷，残疾（该词现在被认为具有冒犯意）</p>
+<p>feat n.技艺，业绩，功绩</p>
+<h1 id="unit-2-texta">UNIT 2-textA</h1>
+<p>waterproof a. 防水的，不透水的n.防水衣物，雨衣</p>
+<p>jetty n.栈桥，突堤，登岸码头</p>
+<p>notorious a.臭名昭著的，声名狼藉的</p>
+<p>hop vi.快速行走，弹跳</p>
+<p>oust vt.（尤指取而代之而）不是某人放弃职位，把……撵走</p>
+<p>feeble a.非常虚弱的，无力的｜蹩脚的，无效的，站不住脚的</p>
+<p>recede vi.减弱，减小（可能性）</p>
+<p>deem vt.认为</p>
+<p>pathetic a.招人怜悯的，可怜的｜没用的，无效的</p>
+<p>mob n.同类的一群人</p>
+<p>gasp
+vi.（因惊讶、惊吓或痛苦而）倒抽气，喘气，喘息｜急促地喘气，猛的吸气</p>
+<p>catastrophe n.麻烦，困境，不利的局面｜灾难，大祸，严重的不幸</p>
+<p>tide n.潮，潮汐</p>
+<p>bleak a.没有希望的，令人沮丧的｜阴冷的，阴郁的</p>
+<p>tow n.（车辆的）拖拉，牵引（车辆或船只）</p>
+<p>intervene vi. 干预，介入，插手v.大岔，插话</p>
+<p>appraise vt.评定，鉴定，估价</p>
+<p>symptom n.症状｜（严重的问题存在的）征兆，征候</p>
+<p>underestimate v.（对……）估计不足 vt.低估，看轻</p>
+<p>midst n.当某事发生的时候</p>
+<p>paralyze
+vt.（尤指通过恐吓）使丧失思考能力，使丧失正常行为能力，使呆若木鸡｜使瘫痪，使麻痹</p>
+<p>impromptu a.未计划的，即兴的，即席的，无准备的</p>
+<p>ridge n.脊，垄，棱纹｜山脊</p>
+<p>whirl v.使急转，使迅速旋转</p>
+<p>athletic a.强壮的，擅长运动的｜运动的</p>
+<p>dismay n. 忧虑，失望，沮丧vt.使担心，使失望，使忧虑</p>
+<p>batter v.殴打，连续猛击，撞击</p>
+<p>vicious a.凶险的，会造成伤害的｜剧烈的，恶劣的</p>
+<p>clarity n.清晰度｜清晰，清楚，明确</p>
+<p>paw v. 用爪子抓（挠）n.动物的爪子</p>
+<p>derail vt.使离开正常进程，扰乱 v.使火车出轨</p>
+<p>perish vi.死亡（尤指惨死或猝死）</p>
+<p>forcibly ad.用强力，用武力｜清楚有力地</p>
+<p>escort vt.护送，护卫｜陪同（某人）游览，给（某人）当导游</p>
+<p>practicable a.可行的，能实行的</p>
+<p>brink n.某事物的边缘（一般指即将面临坏情况）</p>
+<p>ascend v.上升，升高，登高</p>
+<p>salvation n.基督教中对灵魂的拯救，救赎｜解救物，救星，救助者</p>
+<p>hug vt.拥抱 n.拥抱，紧抱</p>
+<p>weary
+a.尤指因长期做某事而精疲力尽，非常废劳的，厌烦的，厌倦的｜令人疲倦的</p>
+<h1 id="unit3-texta">UNIT3-textA</h1>
+<p>noteworthy a.值得注意的，显著的</p>
+<p>domain n.活动兴趣或知识的领域，范围，范畴</p>
+<p>portray vt.扮演角色，把某人/某物描写成某种样子</p>
+<p>exemplary a.模范的，可作楷模的</p>
+<p>ambassador n.大使</p>
+<p>brutality n.野蛮行为，野蛮事件</p>
+<p>captive a.被关押的，遭监禁的</p>
+<p>dart vi.猛冲，突进</p>
+<p>huddle v.（因生病寒冷或烦恼）蜷缩着身体</p>
+<p>foul a.肮脏的，难闻的，难吃的</p>
+<p>anonymous a.无名的，不署名的</p>
+<p>refugee n.难民，避难者</p>
+<p>fragile a.脆弱的，易碎的，易损坏的</p>
+<p>fragility n.脆弱</p>
+<p>afflict vt.使受痛苦，折磨</p>
+<p>immigrant n.（外来）移民</p>
+<p>rigorous a.严酷的，严厉的，严格的，缜密的，精确的</p>
+<p>compliment vt.赞美，称赞 n.赞美的话，夸奖，称赞</p>
+<p>humanitarian a.博爱的，人道主义的</p>
+<p>divorce n. 离婚 v.与…离婚</p>
+<p>jeopardize vt.危急，危害，损害</p>
+<p>paradise n.乐土，完美的境界 天堂</p>
+<p>conscientious a.勤勉认真的，细心负责的</p>
+<p>diplomat n.外交官，外交家</p>
+<p>cozy a.温暖舒适的，温馨的</p>
+<p>embark v.使上船/飞机，使装船/飞机</p>
+<p>outreach n.对社区居民的主动提供服务</p>
+<p>drought n.旱灾，干旱</p>
+<p>beneficiary n.受益者，受惠者</p>
+<p>wicked a.邪恶的，缺德的</p>
+<p>deprive vt.剥夺</p>
+<p>misery n.痛苦，难受，苦难</p>
+<p>ideology
+n.（政治或经济上的）思想体系，（对人们行为有强烈影响的）观念</p>
+<p>integral a.（构成整体所）必须的，不可缺少的</p>
+<p>sacred a.很重要的，神圣的，深受尊重的|上帝的，神的，宗教性的</p>
+<p>cherish vt.钟爱，珍爱｜珍爱，珍视</p>
+<p>serene a.宁静的，安宁的，平静的</p>
+<p>graciously a.有礼貌的仁慈地，和蔼的，亲切的（尤指对较低层的人们
+）</p>
+<p>perpetual a.连续不断的，无休止的</p>
+<p>perpetually ad.连续不断地，无休止地</p>
+<p>signify vt.表示，代表，象征，意味着</p>
+<p>majesty n.雄伟，壮丽，庄严，崇高｜陛下（对国王或女王的称呼）</p>
+<p>poise n.镇定自信，泰然自若，沉着</p>
+<h1 id="第4单元-texta">第4单元-TextA</h1>
+<p>groan vi.因痛苦或烦恼等呻吟，发出哼哼声 v.抱怨
+n.（尤指疼痛或苦烦恼时的）呻吟,哼哼声</p>
+<p>console vt.安慰</p>
+<p>consolation n.安慰，慰藉</p>
+<p>burdensome a.令人烦恼的，成为负担的</p>
+<p>airborne a.在空中的，飞行中的，空气传播的</p>
+<p>dense a.物质密度大的，茂密的，烟雾或气体浓密的</p>
+<p>mall n.购物商场，购物中心</p>
+<p>cluster n.群，组，束，串，簇 v.群集，聚集</p>
+<p>globalize vt.使全球化，使企业全球化</p>
+<p>globallized a.全球性的</p>
+<p>luncheon n.（指许多人吃的正式的）午餐</p>
+<p>anniversary n.纪念日，周年纪念</p>
+<p>decidedly ad.确实无疑地，显然坚决地，果断地</p>
+<p>corporate a.大公司的，全体的，集体的</p>
+<p>compulsory a.必须做的，义务的，强制的</p>
+<p>offset vt.抵消，补偿 n.抵消物，补偿</p>
+<p>tropical a.热带的，来自热带的</p>
+<p>aviation n.航空，飞行术</p>
+<p>hemisphere n.地球的半球，大脑半球</p>
+<p>irony
+n.具有讽刺意味的事，出乎意料的事，啼笑皆非的事，反语，反话，讥讽</p>
+<p>stubborn a.难以改变的，难以击败的，顽强的｜人
+固执的，执拗的，倔强的</p>
+<p>contemplate v.思忖，思量，仔细考虑 vt.盘算，打算</p>
+<p>saturate vt.使充满，使湿透</p>
+<p>saturated a.充满的，充斥的，湿透的，浸透的</p>
+<p>finite a.有限的，有限制的</p>
+<p>literal a.缺乏想象力的，刻板的，字面意思的，原义的</p>
+<p>prose n.散文（相对诗歌而言 ）</p>
+<p>verse n.尤指遵循一定的诗律的诗歌，诗节，诗词的节</p>
+<p>cognitive a.认识的，认知过程的</p>
+<p>imprison vt.限制，束缚，关押，监禁</p>
+<p>mundane a.普通的，平凡的，平淡无奇的，世俗的，尘世的</p>
+<p>exotic a.外国产的，外国来的，奇异的，别致的，异乎寻常的</p>
+<p>endow vt.赋予，认为具有某种品质</p>
+<p>trivial a.没意思的，不严重的，没价值的，琐碎的</p>
+<p>multicultural a.多元文化的，多种文化融合的</p>
+<p>ambiguity n.模棱两可，不明确</p>
+<p>circumference n.圆周，周长，周边</p>
+<p>latitude n.纬度</p>
+<p>longitude n.地球的经度</p>
+<p>renaissance
+n.复兴，重新流行，欧洲十四世纪至十六世纪的文艺复兴时期</p>
+<p>facet n.（情形或某人性格的）某一方面</p>
+<p>insular a.与世隔绝的，思想狭义的，固步自封的</p>
+<p>drawback n.不足，欠缺</p>
+<p>jet lag飞行时差综合症，时差反应</p>
+<p>cornerstone n.基础，根本，基石，奠基石</p>
+<h1 id="unit-5-a">Unit 5-A</h1>
+<p>degrade vt. 贬低（某人）；羞辱（某人）</p>
+<p>adverse a. 不利的；反对的；反面的</p>
+<p>conform vi. 遵照；遵守；服从</p>
+<p>revenue n.（公司、机构的）收益，收入</p>
+<p>polar a. 1 完全相反；正好相反；2 地极的；近地极的；极地的</p>
+<p>pastime n. 消遣；娱乐</p>
+<p>coincide vi. 1 （想法、意见等）相同，相符，极为类似；2
+（两件或更多的事情）同时发生</p>
+<p>voluntary a. 自愿的；自动的</p>
+<p>designate vt. 1 把…定名为；授予…称号；把…描述为；2
+任命；选定；选派</p>
+<p>correlate v.（使）相互关联</p>
+<p>esteem n. 尊敬；敬重 vt. 尊敬；敬重</p>
+<p>greenhouse n. 温室；暖房</p>
+<p>mayor n. 市长</p>
+<p>prone a.
+易于发生某事（尤指不好或有害的事）的；很可能…的；有…倾向的</p>
+<p>dedicate vt. 1（为某一目的而）使用；2 致力于；献身于</p>
+<p>autonomy n. 1 自主能力；自主；2 自治；自治权</p>
+<p>precision n. 精确（性）；准确（性）</p>
+<p>foster vt. 促进；培养；助长</p>
+<p>incentive n. 刺激；动力；鼓励</p>
+<p>livelihood n. 生计</p>
+<p>gauge vt.（根据所掌握的信息）估计，判断 n. 测量仪器；计量器；量规</p>
+<p>commonplace a. 平常的；平凡的；不足为奇的</p>
+<p>innovation n. 1 革新；创新；2 新观念；新方法</p>
+<p>automate vt. 使自动化</p>
+<p>automated a. 自动化的</p>
+<p>upcoming a. 即将来临的；即将发生的</p>
+<p>medieval a. 中世纪的；中古时期的</p>
+<p>aristocrat n. 贵族（成员）</p>
+<p>aristocracy n. 贵族</p>
+<p>refrain vi. 克制；抑制；忍住</p>
+<p>addictive a. 1 使人入迷的；使人沉溺的；2 使人成瘾的</p>
+<p>gossip n. 流言蜚语；闲言碎语；传闻</p>
+<p>extravagant a. 奢侈的；挥霍的</p>
+<p>toxic a. 有毒的；由有毒物质引起的</p>
+<p>array n. 大群；大堆；大量</p>
+<p>diversion n. 1 消遣；娱乐；2 转向；转移</p>
+<p>hurl vt. 猛投；用力掷</p>
+<p>suffice vi. 足够；满足要求</p>
+<p>apt a. 适当的；恰当的</p>
+<p>aptly ad. 恰当地命名 / 描述 / 称呼等</p>
+<p>monetary a. 货币的；金融的</p>
+<p>optimum a. 最优的；最适宜的</p>
+<p>simultaneous a. 同时的；同时发生的</p>
+<p>contend vi. 竞争；争夺 vt. 声称；断言；主张</p>
+<p>to name only / but a few 略举几例</p>
+<p>sink one’s teeth into sth. 精力充沛地开始处理某事；专注于做某事</p>
+<p>slave away 拼命干；苦干</p>
+<p>count down 倒数；倒计时</p>
+<p>at hand 手头的；需要马上处理的</p>
+<p>contend with sth. 必须处理；不得不应付</p>
+<h1 id="unit-6-a">Unit 6-A</h1>
+<p>hum n. 机器的嗡嗡声；（很多人）嗡嗡的说话声 v. 哼（曲子） vi.
+发出连续低沉的声音</p>
+<p>meadow n. 草地</p>
+<p>standpoint n. 立足点；立场；观点</p>
+<p>gigantic a. 巨大的；庞大的</p>
+<p>radiate vi. 从中心向四周散开；从中心辐射状发出 v. 1 辐射；发射 ；2
+流露，显示（感情或态度）</p>
+<p>claw vi.（用手）抓住 v.（用指甲）抓，掐 n.（猫等动物的）爪，脚爪</p>
+<p>tug v. 猛拉；使劲拉；用力拖 n. 猛拉；拖；拽</p>
+<p>evacuate v. 撤离，撤出（某危险建筑物或地方）</p>
+<p>convict n. 已决犯；（服刑中的）囚犯 vt.
+（在法庭上）证明…有罪，宣判…有罪</p>
+<p>tangle n. 1 纠结的一团；乱糟糟的一堆 ；2 混乱
+v.（使）缠结在一起；（使）乱成一团</p>
+<p>innumerable a. 数不清的；无数的</p>
+<p>clasp vt. 紧握；抓 n. 紧抱；拥抱；握紧</p>
+<p>permeate v. 1（思想、影响、感情等）感染，传播，扩散
+；2（液体、气体等) 渗透，弥漫，扩散</p>
+<p>casualty n. 1 受害者 ；2（事故、战争中的）死伤者，伤亡人员</p>
+<p>landmine n. 地雷</p>
+<p>ammunition n. 弹药</p>
+<p>flush vi.（生气或尴尬时）脸红 vt. 冲刷；冲洗 n. 脸红；潮红；红晕</p>
+<p>flushed a. 脸红的；发红的；潮红的</p>
+<p>appalling a. 令人震惊的；骇人的</p>
+<p>blaze n. 1 熊熊大火；烈火 ；2 强烈的光；光辉；闪耀 vi. 1 熊熊燃烧 ；2
+发强光；闪耀</p>
+<p>overturn vt. 1 使翻转；打翻 ；2
+推翻，废除（决定、法律等）；使无效</p>
+<p>massacre n. 大屠杀 vt. 大屠杀</p>
+<p>corpse n.（尤指人的）死尸，尸体</p>
+<p>pervasive a. 贯穿始终的；显而易见的；四处弥漫的</p>
+<p>slum n. 贫民区</p>
+<p>minimal a. 极小的；极低的；最低限度的</p>
+<p>coverage n. 1 覆盖范围；覆盖程度 ；2 新闻报道</p>
+<p>furnace n. 火炉；暖气炉；熔炉</p>
+<p>robbery n. 抢劫罪</p>
+<p>brood vi. 沉思；忧伤；担忧 n. 同窝幼鸟</p>
+<p>resident n. 居民；定居者；住客</p>
+<p>stray a. 迷路的；走失的；无家可归的 vi. 走离；偏离；走失；迷路</p>
+<p>scrap n.（纸、布等的）碎片，小块，零屑 vt. 放弃；抛弃</p>
+<p>edible a. 适宜食用的</p>
+<p>warehouse n. 货仓；仓库</p>
+<p>summon vt. 1 鼓起（勇气）；振作（精神）；2
+召见，召唤，传唤（某人到庭）</p>
+<p>jealous a. 1 小心守护的；唯恐失去的 ；2 妒忌的；妒羡的</p>
+<p>jealously ad. 1 小心守护地；唯恐失去地 ；2 妒羡地；妒忌地</p>
+<p>residue n. 残余；剩余</p>
+<p>dilute a. 稀释了的；冲淡了的 vt. 1 稀释；冲淡 ；2 削弱；降低</p>
+<p>nutrition n. 营养；滋养</p>
+<p>naive a. 1 天真的；率直的 ；2 毫无经验的；幼稚的；无知的；轻信的</p>
+<p>inflict vt. 使（某人）遭受（不愉快的事）；使承受</p>
+<p>radiate from 自…发出</p>
+<p>conceive of 想象，设想，构想（某一具体情况）</p>
+<p>in the direction of 朝…方向</p>
+<p>stay down 卧倒；蹲伏</p>
+<p>press … to … 使…紧靠…</p>
+<p>line … with … 铺，垫（某物内部）</p>
+<p>dive into 跳入；钻进</p>
+<p>fly at 扑向；猛烈攻击</p>
+<p>next to nothing 几乎没有；极少</p>
+<p>weave one's way around / through / to sth. 迂回穿行</p>
+<p>huddle together （使）挤作一团；（使）聚在一起</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Ar Gas
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://ar-gas.github.io/2023/02/10/%E6%96%B0%E8%A7%86%E9%87%8E%E8%8B%B1%E8%AF%AD3%E5%8D%95%E8%AF%8D/" title="C++程序笔记">https://ar-gas.github.io/2023/02/10/新视野英语3单词/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/CC%20BY-NC-SA%204.0/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C++</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/02/10/%E4%BA%BA%E6%80%BB%E6%98%AF%E5%AF%B9%E7%86%9F%E6%82%89%E7%9A%84%E4%B8%96%E7%95%8C%E5%85%85%E6%BB%A1%E5%8E%8C%E5%80%A6%EF%BC%8C%E5%AF%B9%E6%9C%AA%E7%9F%A5%E7%9A%84%E4%B8%96%E7%95%8C%E5%85%85%E6%BB%A1%E5%B9%BB%E6%83%B3/" rel="prev" title="人总是对熟悉的世界充满厌倦，对未知的世界充满幻想">
+                  <i class="fa fa-chevron-left"></i> 人总是对熟悉的世界充满厌倦，对未知的世界充满幻想
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/02/10/%E5%85%B3%E4%BA%8E%E7%AB%9E%E4%BA%89/" rel="next" title="关于竞争">
+                  关于竞争 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ar Gas</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">16k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">56 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/Ar-Gas" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"ba4e8ca65335672ce8240e86ca8eed74"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
