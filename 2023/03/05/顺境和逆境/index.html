@@ -22,28 +22,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="最近面临期末，之前还剩了个微分方程没有学，发现要记的还挺多的，就做些笔记，以下笔记较为精简，部分条件未给出（例如导数存在）  研究微分方程的目的 在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个导数和函数的关系式来解得，在力学，天文学，物理学及技术科学等中应用广泛">
+    <meta name="description" content="摘要：顺境和逆境是在人的历程中不可能避开的两种不同的境遇，人不可能一直逆下去，也不可能一直顺下去，如何解决顺和逆的问题，取决于我们如何去看待它；实现理想需要我们正确认识理想与现实的关系。————思修随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常微分方程笔记">
-<meta property="og:url" content="https://ar-gas.github.io/2023/02/10/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="顺境和逆境">
+<meta property="og:url" content="https://ar-gas.github.io/2023/03/05/%E9%A1%BA%E5%A2%83%E5%92%8C%E9%80%86%E5%A2%83/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="最近面临期末，之前还剩了个微分方程没有学，发现要记的还挺多的，就做些笔记，以下笔记较为精简，部分条件未给出（例如导数存在）  研究微分方程的目的 在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个导数和函数的关系式来解得，在力学，天文学，物理学及技术科学等中应用广泛">
+<meta property="og:description" content="摘要：顺境和逆境是在人的历程中不可能避开的两种不同的境遇，人不可能一直逆下去，也不可能一直顺下去，如何解决顺和逆的问题，取决于我们如何去看待它；实现理想需要我们正确认识理想与现实的关系。————思修随笔">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-09T21:41:00.000Z">
-<meta property="article:modified_time" content="2023-02-25T11:38:45.035Z">
+<meta property="article:published_time" content="2023-03-05T12:15:00.000Z">
+<meta property="article:modified_time" content="2023-03-05T12:20:43.212Z">
 <meta property="article:author" content="Ar Gas">
-<meta property="article:tag" content="math&#x2F;数学">
+<meta property="article:tag" content="essay&#x2F;随笔">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ar-gas.github.io/2023/02/10/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="https://ar-gas.github.io/2023/03/05/%E9%A1%BA%E5%A2%83%E5%92%8C%E9%80%86%E5%A2%83/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/2023/02/10/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%AC%94%E8%AE%B0/","path":"2023/02/10/常微分方程笔记/","title":"常微分方程笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/2023/03/05/%E9%A1%BA%E5%A2%83%E5%92%8C%E9%80%86%E5%A2%83/","path":"2023/03/05/顺境和逆境/","title":"顺境和逆境"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>常微分方程笔记 | Ar Gas'Blog</title>
+<title>顺境和逆境 | Ar Gas'Blog</title>
   
 
 
@@ -130,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -143,7 +143,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text">研究微分方程的目的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number"></span> <span class="nav-text">微分方程基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">常微分方程的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">线性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B6"><span class="nav-number">1.3.</span> <span class="nav-text">阶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3"><span class="nav-number">1.4.</span> <span class="nav-text">解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E8%A7%A3"><span class="nav-number">1.4.1.</span> <span class="nav-text">通解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E8%A7%A3%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.4.2.</span> <span class="nav-text">定解条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E8%A7%A3%E9%97%AE%E9%A2%98%E5%92%8C%E7%89%B9%E8%A7%A3"><span class="nav-number">1.4.3.</span> <span class="nav-text">定解问题和特解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%80%BC%E6%9D%A1%E4%BB%B6%E5%92%8C%E5%88%9D%E5%80%BC%E9%97%AE%E9%A2%98"><span class="nav-number">1.4.4.</span> <span class="nav-text">初值条件和初值问题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E9%98%B6%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E5%88%9D%E7%AD%89%E8%A7%A3%E6%B3%95"><span class="nav-number"></span> <span class="nav-text">一阶常微分方程的初等解法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F"><span class="nav-number">1.</span> <span class="nav-text">分离变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%BB%A3%E6%8D%A2-%E5%8F%AF%E5%8C%96%E4%B8%BA%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">变量代换-可化为分离变量的微分方程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number"></span> <span class="nav-text">线性微分方程解的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#n%E9%98%B6%E9%BD%90%E6%AC%A1%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">n阶齐次微分方程解的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#n%E9%98%B6%E9%9D%9E%E9%BD%90%E6%AC%A1%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">n阶非齐次微分方程解的结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%85%E5%AE%9A%E7%B3%BB%E6%95%B0%E6%B3%95"><span class="nav-number"></span> <span class="nav-text">待定系数法</span></a></div>
         </div>
         <!--/noindex-->
 
@@ -208,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/2023/02/10/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/2023/03/05/%E9%A1%BA%E5%A2%83%E5%92%8C%E9%80%86%E5%A2%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpeg">
@@ -221,12 +220,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="常微分方程笔记 | Ar Gas'Blog">
+      <meta itemprop="name" content="顺境和逆境 | Ar Gas'Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          常微分方程笔记
+          顺境和逆境
         </h1>
 
         <div class="post-meta-container">
@@ -236,15 +235,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-02-10 05:41:00" itemprop="dateCreated datePublished" datetime="2023-02-10T05:41:00+08:00">2023-02-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-25 19:38:45" itemprop="dateModified" datetime="2023-02-25T19:38:45+08:00">2023-02-25</time>
+      <time title="创建时间：2023-03-05 20:15:00 / 修改时间：20:20:43" itemprop="dateCreated datePublished" datetime="2023-03-05T20:15:00+08:00">2023-03-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -252,7 +245,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
         </span>
     </span>
 
@@ -263,7 +256,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>690</span>
+      <span>854</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -281,59 +274,38 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <blockquote>
-<p>最近面临期末，之前还剩了个微分方程没有学，发现要记的还挺多的，就做些笔记，以下笔记较为精简，部分条件未给出（例如导数存在）</p>
-</blockquote>
-<h2 id="研究微分方程的目的">研究微分方程的目的</h2>
-<p>在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个<strong>导数和函数的关系式</strong>来解得，在力学，天文学，物理学及技术科学等中应用广泛</p>
+        <p><em>摘要</em>：顺境和逆境是在人的历程中不可能避开的两种不同的境遇，人不可能一直逆下去，也不可能一直顺下去，如何解决顺和逆的问题，取决于我们如何去看待它；实现理想需要我们正确认识理想与现实的关系。————思修随笔</p>
 <span id="more"></span>
-<h1 id="微分方程基本概念">微分方程基本概念</h1>
-<h2 id="定义">定义</h2>
-<p>含有<strong>未知函数</strong>与<strong>未知函数的导数</strong>（即微分）的方程称为微分方程
-<img
-src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30adfff79b45465f8d7834fc46f8b0b9~tplv-k3u1fbpfcp-watermark.image?"
-alt="image.png" /> 或
-<strong>F(x,y,y',y''...y<sup>(n)</sup>)=0</strong></p>
-<h3 id="常微分方程的定义">常微分方程的定义</h3>
-<p>未知函数都是<strong>一元</strong>的函数称为常微分方程</p>
-<h3 id="线性">线性</h3>
-<p>定义中y',y''等都是未知函数的<strong>一次式</strong>，满足这一特征的为线性微分方程</p>
-<h3 id="阶">阶</h3>
-<p>微分方程中出现的未知函数的<strong>最高阶导数的阶数</strong>，称为微分方程的阶</p>
-<h3 id="解">解</h3>
-<p>若y=y(x)代入到方程中，能使其为恒等式，则y=y(x)为区间<em>I</em>上的<strong>一个解</strong>。</p>
-<h4 id="通解">通解</h4>
-<p>n阶微分方程有n个任意常数，通解可表达为：
-<strong>y=y(x,C<sub>1</sub>,C<sub>2</sub>,C<sub>3</sub>,...，C<sub>n</sub>)</strong></p>
-<h4 id="定解条件">定解条件</h4>
-<p>若结合实际情况，微分方程还需满足其他条件，这些条件称为<strong>定解条件</strong></p>
-<h4 id="定解问题和特解">定解问题和特解</h4>
-<p>带有<strong>定解条件</strong>的微分方程的求解问题称为<strong>定解问题</strong>，所求解为<strong>特解</strong></p>
-<h4 id="初值条件和初值问题">初值条件和初值问题</h4>
-<p>从n阶微分方程的通解中确定一个定解，需要n个定解条件，这种形式的条件为<strong>初值条件</strong>，求解的问题为<strong>初值问题</strong></p>
-<h1 id="一阶常微分方程的初等解法">一阶常微分方程的初等解法</h1>
-<h2 id="分离变量">分离变量</h2>
-<p>对于形如<strong>y'=f(x)g(y)</strong>
-的函数，可以通过将x,y分到等式两边，通过求积分消除dx,dy</p>
-<h2
-id="变量代换-可化为分离变量的微分方程">变量代换-可化为分离变量的微分方程</h2>
-<p>一些微分方程本身不可变量分离，但是可以通过合适的变换来转化
-例如形如<img
-src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1b8f597000eb49e782fe4aefe854e429~tplv-k3u1fbpfcp-watermark.image?"
-alt="image.png" />的微分方程，可以通过令z=y/x来转化。</p>
-<h1 id="线性微分方程解的结构">线性微分方程解的结构</h1>
-<h2 id="n阶齐次微分方程解的结构">n阶齐次微分方程解的结构</h2>
-<p>n阶齐次微分方程的解由n个线性无关的解构成</p>
-<h2 id="n阶非齐次微分方程解的结构">n阶非齐次微分方程解的结构</h2>
-<p>由上述对应齐次方程的解再加上一个特解</p>
-<h1 id="待定系数法">待定系数法</h1>
-<p>用于常系数非齐次微分方程求解：先通过特征方程求得特征根，再进行适当的“猜测”</p>
-<figure>
-<img
-src="https://user-images.githubusercontent.com/111374823/221354823-e0538800-64de-40c3-bc08-8c04206ed01c.png"
-alt="常见的猜根" />
-<figcaption aria-hidden="true">常见的猜根</figcaption>
-</figure>
+<p>本文的顺和逆的主体来自于大学思修课本，这本书主要是介绍前辈的一些经验，虽然时代久远，有我们这代人比较难理解的东西，但是我对其中的一部分还是比较感兴趣的。</p>
+<blockquote>
+<p><strong><em>顺境</em></strong>
+是对人的发展有利的时期，天时地利人和，很多外部因素都会促使我们成功；与此同时，顺境也是娇娇之气的温床，会导致人自满自足，意志衰退。</p>
+</blockquote>
+<blockquote>
+<p><strong><em>逆境</em></strong>
+是人的奋斗比较艰难的时期，需要付出<strong>更多</strong>的努力和艰辛才有可能成功；但也会有在顺境中难以得到的获得感和成就感，也能更好地磨练挑战者的意志。</p>
+</blockquote>
+<blockquote>
+<p><strong>顺势而快上，乘风而勇进</strong>，这是身处顺境的学问，是善于抓住时机不断丰富与完善自己的途径</p>
+</blockquote>
+<blockquote>
+<p><strong>处低谷而力争，受磨难而奋进</strong>，这是身处逆境的学问，要以顽强的意志去战胜艰难险阻。</p>
+</blockquote>
+<blockquote>
+<p>如何利用顺境和逆境，摆脱两种境遇的“陷阱”，关键在于如何面对它。</p>
+</blockquote>
+<p>当初在读到这里的时候很有感触，成长到大学这一步，想必很多人都已经经历过这两种境遇了吧。前辈的推测在很多时候确确实实发生了，顺境的骄傲，逆境的艰难，很多时候是不可避免的，这一点和书中关于实现理想的内容很相似：</p>
+<blockquote>
+<p>理想与现实是对立统一的。很多人在处理理想和现实的关系的时候，往往只看到对立的一面，一种是用理想否定现实，发现现实不符合合理预期的时候，就对现实大失所望，<em>甚至全盘否定现实</em>；另一种使是用现实否定理想，在追求的过程中一遇到困难就产生畏难情绪，觉得理想遥不可及，逐渐放弃追求理想的信心和勇气，<em>最终放弃理想</em>。</p>
+</blockquote>
+<blockquote>
+<p>想解决上面的两个问题，就必须正确认识理想和现实。一方面，理想是基于现实而存在的，理想从现实中孕育出来，受到客观现实的制约；另一方面，理想中包含着现实发展的因素和转化为理想的条件，这一转化的过程是艰难的，曲折的，经常是长期的。</p>
+</blockquote>
+<blockquote>
+<p><strong>艰苦奋斗</strong>是实现理想的重要条件。</p>
+</blockquote>
+<p>逆境是很多原因造成的，不只有外部原因，有时候也可能是个人目标设定得不科学，很多情况下是没有“既要又要”的，但无论如何，在外力上不能改变的时候，想要摆脱逆境，只能以实干解决。</p>
+<p>记录这些不是为了什么，我的想法是，既然我们不能改变时代、改变处境，那么我们可以让自己变得冷静一些。</p>
 
     </div>
 
@@ -351,7 +323,7 @@ alt="常见的猜根" />
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://ar-gas.github.io/2023/02/10/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="常微分方程笔记">https://ar-gas.github.io/2023/02/10/常微分方程笔记/</a>
+      <a href="https://ar-gas.github.io/2023/03/05/%E9%A1%BA%E5%A2%83%E5%92%8C%E9%80%86%E5%A2%83/" title="顺境和逆境">https://ar-gas.github.io/2023/03/05/顺境和逆境/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/CC%20BY-NC-SA%204.0/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
@@ -360,21 +332,18 @@ alt="常见的猜根" />
 </div>
 
           <div class="post-tags">
-              <a href="/tags/math-%E6%95%B0%E5%AD%A6/" rel="tag"># math/数学</a>
+              <a href="/tags/essay-%E9%9A%8F%E7%AC%94/" rel="tag"># essay/随笔</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/02/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90/" rel="prev" title="个人搭建博客·教程推荐">
-                  <i class="fa fa-chevron-left"></i> 个人搭建博客·教程推荐
+                <a href="/2023/03/05/202303%E9%9A%8F%E6%89%8B%E8%AE%B0/" rel="prev" title="202303随手记">
+                  <i class="fa fa-chevron-left"></i> 202303随手记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/02/10/%E4%BA%BA%E6%80%BB%E6%98%AF%E5%AF%B9%E7%86%9F%E6%82%89%E7%9A%84%E4%B8%96%E7%95%8C%E5%85%85%E6%BB%A1%E5%8E%8C%E5%80%A6%EF%BC%8C%E5%AF%B9%E6%9C%AA%E7%9F%A5%E7%9A%84%E4%B8%96%E7%95%8C%E5%85%85%E6%BB%A1%E5%B9%BB%E6%83%B3/" rel="next" title="人总是对熟悉的世界充满厌倦，对未知的世界充满幻想">
-                  人总是对熟悉的世界充满厌倦，对未知的世界充满幻想 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -457,7 +426,7 @@ alt="常见的猜根" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"75b8bc57fd1a924425dbd0380ba376eb"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"59851cba3ddbbbe071757060d9bca1e1"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
