@@ -92,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">11</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">21</span></a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">11</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">12</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">21</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +143,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-1%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-x2F-0-1-knapsack-problem"><span class="nav-number">1.</span> <span class="nav-text">0-1背包问题&#x2F;0-1 knapsack problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">2.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%980-1-knapsack-problem"><span class="nav-number">1.</span> <span class="nav-text">0-1背包问题&#x2F;0-1 knapsack
+problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">2.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -277,15 +278,19 @@
     <div class="post-body" itemprop="articleBody">
         <p>背包问题题解</p>
 <span id="more"></span>
-
-<h1 id="0-1背包问题-x2F-0-1-knapsack-problem"><a href="#0-1背包问题-x2F-0-1-knapsack-problem" class="headerlink" title="0-1背包问题&#x2F;0-1 knapsack problem"></a>0-1背包问题&#x2F;0-1 knapsack problem</h1><p>感觉像是个制表方案</p>
-<p>Time：$\omicron(nW)$</p>
-<p>Space:$\omicron(nW)$</p>
+<h1 id="背包问题0-1-knapsack-problem">0-1背包问题/0-1 knapsack
+problem</h1>
+<p>感觉像是个制表方案</p>
+<p>Time：<span class="math inline">\(\omicron(nW)\)</span></p>
+<p>Space:<span class="math inline">\(\omicron(nW)\)</span></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 100</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> max(a,b) (a)&gt;(b)?(a):(b)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,w[N],v[N],W,dp[N];<span class="comment">//item_limt,each_weight,each_value,weight_limt,max_value_graph</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">3</span>,w[N]=&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">3</span>&#125;,v[N]=&#123;<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,W=<span class="number">5</span>,dp[N][N]=&#123;<span class="number">0</span>&#125;;<span class="comment">//input</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>( <span class="type">int</span> i=<span class="number">0</span> ; i&lt;=n<span class="number">-1</span> ; i++ )</span><br><span class="line">       <span class="keyword">for</span>( <span class="type">int</span> j=<span class="number">1</span> ; j&lt;=W ; j++ )</span><br><span class="line">          <span class="keyword">if</span>(w[i]&gt;j)dp[i][j]=dp[i<span class="number">-1</span>][j];</span><br><span class="line">          <span class="keyword">else</span> dp[i][j]=<span class="built_in">max</span>(dp[i<span class="number">-1</span>][j-w[i]]+v[i],dp[i<span class="number">-1</span>][j]);</span><br><span class="line"></span><br><span class="line">    cout&lt;&lt;dp[n<span class="number">-1</span>][W]&lt;&lt;endl;<span class="comment">//output</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6966628401914314789#heading-7">【DP】0-1 背包问题</a></p>
+<h1 id="参考链接">参考链接</h1>
+<p><a
+target="_blank" rel="noopener" href="https://juejin.cn/post/6966628401914314789#heading-7">【DP】0-1
+背包问题</a></p>
 <p><a target="_blank" rel="noopener" href="https://oi-wiki.org//dp/knapsack/">oi-wiki-背包DP</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ocZMDMZwhCY">MIT video about DP and knapsack</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ocZMDMZwhCY">MIT video about
+DP and knapsack</a></p>
 
     </div>
 
