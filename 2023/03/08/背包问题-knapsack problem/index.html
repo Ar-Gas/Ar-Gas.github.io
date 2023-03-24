@@ -22,18 +22,20 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="0-1背包问题 最长公共字符串（LCS） 完全背包问题（UKP）">
+    <meta name="description" content="0-1背包问题 最长公共字符串（LCS） 完全背包问题（UKP）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="背包问题-knapsack problem">
 <meta property="og:url" content="https://ar-gas.github.io/2023/03/08/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-knapsack%20problem/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="0-1背包问题 最长公共字符串（LCS） 完全背包问题（UKP）">
+<meta property="og:description" content="0-1背包问题 最长公共字符串（LCS） 完全背包问题（UKP）">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Knapsack_problem_dynamic_programming.gif/330px-Knapsack_problem_dynamic_programming.gif">
 <meta property="article:published_time" content="2023-03-08T03:36:55.802Z">
 <meta property="article:modified_time" content="2023-03-10T09:33:42.738Z">
 <meta property="article:author" content="Ar Gas">
 <meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Knapsack_problem_dynamic_programming.gif/330px-Knapsack_problem_dynamic_programming.gif">
 
 
 <link rel="canonical" href="https://ar-gas.github.io/2023/03/08/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-knapsack%20problem/">
@@ -143,10 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%980-1-knapsack-problem"><span class="nav-text">0-1背包问题&#x2F;0-1 knapsack
-problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%97%E7%AC%A6%E4%B8%B2longest-common-subsequencelcs"><span class="nav-text">最长公共字符串&#x2F;Longest
-Common Subsequence(LCS)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98unbounded-knapsack-problem-ukp"><span class="nav-text">完全背包问题&#x2F;unbounded
-knapsack problem (UKP)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-text">参考链接</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-1%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-x2F-0-1-knapsack-problem"><span class="nav-text">0-1背包问题&#x2F;0-1 knapsack problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%97%E7%AC%A6%E4%B8%B2-x2F-Longest-Common-Subsequence-LCS"><span class="nav-text">最长公共字符串&#x2F;Longest Common Subsequence(LCS)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-x2F-unbounded-knapsack-problem-UKP"><span class="nav-text">完全背包问题&#x2F;unbounded knapsack problem (UKP)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-text">参考链接</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -288,40 +287,27 @@ knapsack problem (UKP)</span></a></li><li class="nav-item nav-level-1"><a class=
 <p>最长公共字符串（LCS）</p>
 <p>完全背包问题（UKP）</p>
 <span id="more"></span>
-<h1 id="背包问题0-1-knapsack-problem">0-1背包问题/0-1 knapsack
-problem</h1>
-<p>感觉像是个制表方案</p>
-<p>Time：<span class="math inline">\(\omicron(nW)\)</span></p>
-<p>Space:<span class="math inline">\(\omicron(nW)\)</span></p>
+
+<h1 id="0-1背包问题-x2F-0-1-knapsack-problem"><a href="#0-1背包问题-x2F-0-1-knapsack-problem" class="headerlink" title="0-1背包问题&#x2F;0-1 knapsack problem"></a>0-1背包问题&#x2F;0-1 knapsack problem</h1><p>感觉像是个制表方案</p>
+<p>Time：$\omicron(nW)$</p>
+<p>Space:$\omicron(nW)$</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 100</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> max(a,b) (a)&gt;(b)?(a):(b)</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,w[N],v[N],W,dp[N][N];<span class="comment">//item_limt,each_weight,each_value,weight_limt,max_value_graph</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n=<span class="number">3</span>,w[N]=&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">3</span>&#125;,v[N]=&#123;<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,W=<span class="number">5</span>,dp[N][N]=&#123;<span class="number">0</span>&#125;;<span class="comment">//input</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>( <span class="type">int</span> i=<span class="number">0</span> ; i&lt;=n<span class="number">-1</span> ; i++ )</span><br><span class="line">       <span class="keyword">for</span>( <span class="type">int</span> j=<span class="number">1</span> ; j&lt;=W ; j++ )</span><br><span class="line">          <span class="keyword">if</span>(w[i]&gt;j)dp[i][j]=dp[i<span class="number">-1</span>][j];</span><br><span class="line">          <span class="keyword">else</span> dp[i][j]=<span class="built_in">max</span>(dp[i<span class="number">-1</span>][j-w[i]]+v[i],dp[i<span class="number">-1</span>][j]);</span><br><span class="line"></span><br><span class="line">    cout&lt;&lt;dp[n<span class="number">-1</span>][W]&lt;&lt;endl;<span class="comment">//output</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>动图：</p>
-<figure>
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Knapsack_problem_dynamic_programming.gif/330px-Knapsack_problem_dynamic_programming.gif"
-alt="0-1 knapsack problem" />
-<figcaption aria-hidden="true">0-1 knapsack problem</figcaption>
-</figure>
-<h1
-id="最长公共字符串longest-common-subsequencelcs">最长公共字符串/Longest
-Common Subsequence(LCS)</h1>
-<p>和0-1背包问题相似</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Knapsack_problem_dynamic_programming.gif/330px-Knapsack_problem_dynamic_programming.gif" alt="0-1 knapsack problem"></p>
+<h1 id="最长公共字符串-x2F-Longest-Common-Subsequence-LCS"><a href="#最长公共字符串-x2F-Longest-Common-Subsequence-LCS" class="headerlink" title="最长公共字符串&#x2F;Longest Common Subsequence(LCS)"></a>最长公共字符串&#x2F;Longest Common Subsequence(LCS)</h1><p>和0-1背包问题相似</p>
 <p>It is similar with 0-1 knapsack problem.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 100</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> max(a,b) (a)&gt;(b)?(a):(b)</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> dp[N][N]=&#123;<span class="number">0</span>&#125;;<span class="comment">//dp value</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">char</span> t[N]=<span class="string">&quot;abcdefg&quot;</span>,s[N]=<span class="string">&quot;abcdgaaabcdef&quot;</span>;<span class="comment">//input</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">strlen</span>(s);i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;<span class="built_in">strlen</span>(t);j++)</span><br><span class="line">          <span class="keyword">if</span>(s[i]==t[j])dp[i+<span class="number">1</span>][j+<span class="number">1</span>]=dp[i][j]+<span class="number">1</span>;<span class="comment">//decrease-and-conquer</span></span><br><span class="line">          <span class="keyword">else</span> dp[i+<span class="number">1</span>][j+<span class="number">1</span>]=<span class="built_in">max</span>(dp[i][j+<span class="number">1</span>],dp[i+<span class="number">1</span>][j]);<span class="comment">//divide-and-conquer</span></span><br><span class="line"></span><br><span class="line">    cout&lt;&lt;dp[<span class="built_in">strlen</span>(s)][<span class="built_in">strlen</span>(t)];<span class="comment">//output</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1
-id="完全背包问题unbounded-knapsack-problem-ukp">完全背包问题/unbounded
-knapsack problem (UKP)</h1>
-<p>最初的思路是每格多加k个，求最值</p>
+
+<h1 id="完全背包问题-x2F-unbounded-knapsack-problem-UKP"><a href="#完全背包问题-x2F-unbounded-knapsack-problem-UKP" class="headerlink" title="完全背包问题&#x2F;unbounded knapsack problem (UKP)"></a>完全背包问题&#x2F;unbounded knapsack problem (UKP)</h1><p>最初的思路是每格多加k个，求最值</p>
 <p>优化后只需要和少加一个的格子比较</p>
-<p>Time：<span class="math inline">\(\omicron(nW)\)</span></p>
-<p>Space:<span class="math inline">\(\omicron(nW)\)</span></p>
+<p>Time：$\omicron(nW)$</p>
+<p>Space:$\omicron(nW)$</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 100</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> max(a,b) (a)&gt;(b)?(a):(b)</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> dp[N][N]=&#123;<span class="number">0</span>&#125;,W,n;<span class="comment">//dp value max_weight limit_number</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   n=<span class="number">3</span>;W=<span class="number">5</span>;</span><br><span class="line">   <span class="type">int</span> w[N]=&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>&#125;,v[N]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;<span class="comment">//input:each_weight each_value</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">       <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;=W;j++)</span><br><span class="line">            <span class="keyword">if</span>(w[i]&gt;j)&#123;</span><br><span class="line">               dp[i+<span class="number">1</span>][j]=dp[i][j];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               dp[i+<span class="number">1</span>][j]=<span class="built_in">max</span>(dp[i][j],dp[i+<span class="number">1</span>][j-w[i]]+v[i]);<span class="comment">//rule</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">   cout&lt;&lt;dp[n][W];<span class="comment">//output</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="参考链接">参考链接</h1>
-<p><a
-target="_blank" rel="noopener" href="https://juejin.cn/post/6966628401914314789#heading-7">【DP】0-1
-背包问题</a></p>
+
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6966628401914314789#heading-7">【DP】0-1 背包问题</a></p>
 <p><a target="_blank" rel="noopener" href="https://oi-wiki.org//dp/knapsack/">oi-wiki-背包DP</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ocZMDMZwhCY">MIT video about
-DP and knapsack</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ocZMDMZwhCY">MIT video about DP and knapsack</a></p>
 
     </div>
 
@@ -395,13 +381,13 @@ DP and knapsack</a></p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">30k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:44</span>
+    <span title="站点阅读时长">1:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
