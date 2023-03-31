@@ -1675,6 +1675,15 @@ pre code {
 .use-motion .pagination,
 .use-motion .comments {
   visibility: hidden;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px #cacbcb;
+  -moz-box-shadow: 0 0 5px #cacbcc;
+}
+.use-motion .pagination,
+.use-motion .comments {
+  visibility: hidden;
 }
 .use-motion .post-header {
   visibility: hidden;
@@ -2771,7 +2780,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffa6ff;
+  background: #c687ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
