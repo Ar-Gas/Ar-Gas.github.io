@@ -2771,7 +2771,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #2078dd;
+  background: #3813d4;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2820,4 +2820,7 @@ hr {
 }
 .sub-menu .menu-item {
   display: inline-block;
+}
+:root {
+  --content-bg-color: rgba(255,255,255,0.902);
 }
