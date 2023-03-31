@@ -2771,7 +2771,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #6f393b;
+  background: #3752f9;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2820,13 +2820,6 @@ hr {
 }
 .sub-menu .menu-item {
   display: inline-block;
-}
-body {
-  background: url("https://hui-shao.cn/images/bg3_min_4E72828C.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
 }
 .main-inner {
   opacity: 0.8;
