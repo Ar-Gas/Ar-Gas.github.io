@@ -1678,6 +1678,7 @@ pre code {
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 25px;
+  background: rgba(255,255,255,0.9) none repeat scroll !important;
   -webkit-box-shadow: 0 0 5px #cacbcb;
   -moz-box-shadow: 0 0 5px #cacbcc;
 }
@@ -2780,7 +2781,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #c687ff;
+  background: #c77179;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
