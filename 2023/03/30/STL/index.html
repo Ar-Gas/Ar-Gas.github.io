@@ -14,14 +14,14 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+Simplified+Chinese:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="常用的STL库接口">
 <meta property="og:type" content="article">
@@ -284,49 +284,46 @@
 <p>常用的STL库接口</p>
 </blockquote>
 <span id="more"></span>
-
-<h1 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h1><ol>
+<h1 id="vector">vector</h1>
+<ol type="1">
 <li>元素访问</li>
 </ol>
 <ul>
 <li><code>vector&lt;T&gt; name(size)</code> establish</li>
-<li><code>v.front()</code> 首  </li>
-<li><code>v.at(pos)</code>&#x3D;<code>v[pos]</code>返回下标值 </li>
+<li><code>v.front()</code> 首<br />
+</li>
+<li><code>v.at(pos)</code>=<code>v[pos]</code>返回下标值</li>
 <li><code>v.back()</code> 末</li>
 <li><code>v.date()</code>返回指向第一个元素指针</li>
 </ul>
-<ol start="2">
+<ol start="2" type="1">
 <li>迭代器</li>
 </ol>
 <ul>
 <li><code>v.begin()</code> 返回首元素迭代器</li>
 <li><code>v.end()</code> 末</li>
 </ul>
-<ol start="3">
+<ol start="3" type="1">
 <li>长度、容量</li>
 </ol>
 <ul>
-<li><p><code>v.empty()</code> 返回<code>true</code>或<code>false</code></p>
-</li>
-<li><p><code>v.size()</code> 元素数量</p>
-</li>
-<li><p><code>v.resize(new_size,(new_ele_value))</code>修改大小</p>
-</li>
-<li><p><code>v.max_size()</code>最大长度</p>
-</li>
-<li><p><code>v.reserve(size)</code>预留空间</p>
-</li>
-<li><p><code>v.capacity()</code>容器当前容量</p>
-</li>
+<li><p><code>v.empty()</code>
+返回<code>true</code>或<code>false</code></p></li>
+<li><p><code>v.size()</code> 元素数量</p></li>
+<li><p><code>v.resize(new_size,(new_ele_value))</code>修改大小</p></li>
+<li><p><code>v.max_size()</code>最大长度</p></li>
+<li><p><code>v.reserve(size)</code>预留空间</p></li>
+<li><p><code>v.capacity()</code>容器当前容量</p></li>
 </ul>
-<ol start="4">
+<ol start="4" type="1">
 <li>元素修改</li>
 </ol>
 <ul>
 <li><code>v.clear()</code>清除</li>
 <li><code>v.insert(pos,val)</code>or<code>v.insert(pos,size,val)</code></li>
 </ul>
-<h1 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h1><p><code>stack&lt;T&gt;</code></p>
+<h1 id="stack">stack</h1>
+<p><code>stack&lt;T&gt;</code></p>
 
     </div>
 
@@ -406,7 +403,7 @@
     <span title="站点阅读时长">1:55</span>
   </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
     </div>
