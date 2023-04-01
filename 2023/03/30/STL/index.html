@@ -11,6 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="voHlKjw9ogaqJPKhkki4lYDnQ9ZyvmdsRJ912_DMcdk">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -297,46 +298,41 @@
 <p>常用的STL库接口</p>
 </blockquote>
 <span id="more"></span>
-
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">container::iterator name <span class="comment">//迭代器名称</span></span><br><span class="line"><span class="keyword">typedef</span> container::iterator itname <span class="comment">//简写</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h1><ul>
+<h1 id="vector">vector</h1>
+<ul>
 <li><code>vector&lt;T&gt; name(size)</code> establish</li>
 </ul>
-<ol>
+<ol type="1">
 <li>元素访问</li>
 </ol>
 <ul>
-<li><code>v.front()</code> 首  </li>
-<li><code>v.at(pos)</code>&#x3D;<code>v[pos]</code>返回下标值 </li>
+<li><code>v.front()</code> 首<br />
+</li>
+<li><code>v.at(pos)</code>=<code>v[pos]</code>返回下标值</li>
 <li><code>v.back()</code> 末</li>
 <li><code>v.date()</code>返回指向第一个元素指针</li>
 </ul>
-<ol start="2">
+<ol start="2" type="1">
 <li>迭代器</li>
 </ol>
 <ul>
 <li><code>v.begin()</code> 返回首元素迭代器</li>
 <li><code>v.end()</code> 末</li>
 </ul>
-<ol start="3">
+<ol start="3" type="1">
 <li>长度、容量</li>
 </ol>
 <ul>
-<li><p><code>v.empty()</code> 返回<code>true</code>或<code>false</code></p>
-</li>
-<li><p><code>v.size()</code> 元素数量</p>
-</li>
-<li><p><code>v.resize(new_size,(new_ele_value))</code>修改大小</p>
-</li>
-<li><p><code>v.max_size()</code>最大长度</p>
-</li>
-<li><p><code>v.reserve(size)</code>预留空间</p>
-</li>
-<li><p><code>v.capacity()</code>容器当前容量</p>
-</li>
+<li><p><code>v.empty()</code>
+返回<code>true</code>或<code>false</code></p></li>
+<li><p><code>v.size()</code> 元素数量</p></li>
+<li><p><code>v.resize(new_size,(new_ele_value))</code>修改大小</p></li>
+<li><p><code>v.max_size()</code>最大长度</p></li>
+<li><p><code>v.reserve(size)</code>预留空间</p></li>
+<li><p><code>v.capacity()</code>容器当前容量</p></li>
 </ul>
-<ol start="4">
+<ol start="4" type="1">
 <li>元素修改</li>
 </ol>
 <ul>
@@ -347,22 +343,22 @@
 <li><code>pop_back()</code> 尾端删除</li>
 <li><code>swap()</code> 交换</li>
 </ul>
-<h1 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h1><ul>
+<h1 id="deque">deque</h1>
+<ul>
 <li><code>deque&lt;T&gt; name(size)</code> establish</li>
 </ul>
-<ol>
+<ol type="1">
 <li>元素访问</li>
 </ol>
 <ul>
-<li><code>at(pos)</code>&#x3D;<code>dq[pos]</code>返回值 </li>
-<li><code>front()</code> 首  </li>
+<li><code>at(pos)</code>=<code>dq[pos]</code>返回值</li>
+<li><code>front()</code> 首<br />
+</li>
 <li><code>back()</code> 末</li>
 </ul>
-<ol start="2">
-<li><p>迭代器、长度与<code>vector</code>相同</p>
-</li>
-<li><p>修改</p>
-</li>
+<ol start="2" type="1">
+<li><p>迭代器、长度与<code>vector</code>相同</p></li>
+<li><p>修改</p></li>
 </ol>
 <ul>
 <li><code>clear()</code>清除</li>
@@ -374,48 +370,53 @@
 <li><code>pop_back()</code> 尾端删除</li>
 <li><code>swap()</code> 交换</li>
 </ul>
-<h1 id="list"><a href="#list" class="headerlink" title="list"></a>list</h1><p><code>list</code>与<code>deque</code>基本相同</p>
-<h1 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h1><ul>
-<li><code>stack&lt;T&gt; name</code> establish </li>
+<h1 id="list">list</h1>
+<p><code>list</code>与<code>deque</code>基本相同</p>
+<h1 id="stack">stack</h1>
+<ul>
+<li><code>stack&lt;T&gt; name</code> establish</li>
 <li><code>stack&lt;T&gt; copy(initial)</code>copy</li>
 </ul>
-<ol>
+<ol type="1">
 <li><code>top()</code>栈顶元素</li>
 <li><code>push(ele)</code> 插入</li>
 <li><code>pop()</code>弹出栈顶元素</li>
 <li><code>size()</code> 大小</li>
 <li><code>empty()</code></li>
 </ol>
-<h1 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h1><ul>
-<li><code>queue&lt;T&gt; name</code> establish </li>
+<h1 id="queue">queue</h1>
+<ul>
+<li><code>queue&lt;T&gt; name</code> establish</li>
 <li><code>queue&lt;T&gt; copy(initial)</code>copy</li>
 </ul>
-<ol>
+<ol type="1">
 <li><code>front()</code>首元素</li>
 <li><code>push(ele)</code> 插入</li>
 <li><code>pop()</code>弹出队首元素</li>
 <li><code>size()</code> 大小</li>
 <li><code>empty()</code></li>
 </ol>
-<h1 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority queue"></a>priority queue</h1><ul>
+<h1 id="priority-queue">priority queue</h1>
+<ul>
 <li><code>priority_queue&lt;T&gt; name</code></li>
 </ul>
 <p>常数复杂度：</p>
-<ol>
+<ol type="1">
 <li><code>top()</code>堆顶元素</li>
 <li><code>size()</code> 数量</li>
 <li><code>empty()</code></li>
 </ol>
 <p>对数复杂度：</p>
-<ol>
+<ol type="1">
 <li><code>push(ele)</code>插入</li>
 <li><code>pop()</code>删除</li>
 </ol>
-<h1 id="set"><a href="#set" class="headerlink" title="set"></a>set</h1><ul>
+<h1 id="set">set</h1>
+<ul>
 <li><code>set&lt;T&gt; name</code></li>
 <li><code>multiset&lt;T&gt; name</code> repeatable</li>
 </ul>
-<ol>
+<ol type="1">
 <li>插入删除</li>
 </ol>
 <ul>
@@ -423,7 +424,7 @@
 <li><code>erase(val)</code>、<code>erase(iterator_pos)</code>、<code>erase(iterator_first,last)</code>删除</li>
 <li><code>clear()</code>清空</li>
 </ul>
-<ol start="2">
+<ol start="2" type="1">
 <li>迭代器</li>
 </ol>
 <ul>
@@ -435,7 +436,7 @@
 <li><code>cbegin()</code></li>
 <li><code>cend()</code></li>
 </ul>
-<ol start="3">
+<ol start="3" type="1">
 <li>查找</li>
 </ol>
 <ul>
@@ -446,19 +447,21 @@
 <li><code>empty()</code></li>
 <li><code>size()</code></li>
 </ul>
-<h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><ul>
+<h1 id="map">map</h1>
+<ul>
 <li><code>map&lt;Key, T&gt; name</code> establish</li>
 <li><code>mp[Key]=T</code>查询删改</li>
 </ul>
-<ol>
+<ol type="1">
 <li>插入删除</li>
 </ol>
 <ul>
 <li><code>mp.insert(pair&lt;Key, T&gt;(Key,T))</code>插入</li>
-<li><code>erase(val)</code>、<code>erase(iterator_pos)</code>、  <code>erase(iterator_first,last)</code>删除</li>
+<li><code>erase(val)</code>、<code>erase(iterator_pos)</code>、
+<code>erase(iterator_first,last)</code>删除</li>
 <li><code>clear()</code></li>
 </ul>
-<ol start="2">
+<ol start="2" type="1">
 <li>查询</li>
 </ol>
 <ul>
