@@ -962,7 +962,7 @@ pre code {
 .pagination {
   border-top: 1px solid #eee;
   margin: 120px 0 0;
-  text-align: left;
+  text-align: center;
 }
 .pagination .prev,
 .pagination .next,
@@ -1505,7 +1505,7 @@ pre code {
 }
 .footer-inner {
   box-sizing: border-box;
-  text-align: left;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1669,7 +1669,7 @@ pre code {
 }
 .post-button {
   margin-top: 40px;
-  text-align: left;
+  text-align: center;
 }
 .use-motion .post-block,
 .use-motion .pagination,
@@ -2086,7 +2086,7 @@ pre code {
 }
 .post-tags {
   margin-top: 40px;
-  text-align: left;
+  text-align: center;
 }
 .post-tags a {
   display: inline-block;
@@ -2636,7 +2636,7 @@ hr {
   text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
 }
 .posts-expand.index .post-header {
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .posts-expand.index .post-header {
@@ -2676,6 +2676,7 @@ hr {
 }
 .post-button {
   margin-top: 20px;
+  text-align: center;
 }
 .post-button .btn {
   background: none;
@@ -2781,7 +2782,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #0525ff;
+  background: #37ff9d;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
