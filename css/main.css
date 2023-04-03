@@ -1510,7 +1510,7 @@ pre code {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  width: 50%;
+  width: 700px;
 }
 @media (max-width: 767px) {
   .footer-inner {
@@ -1519,12 +1519,12 @@ pre code {
 }
 @media (min-width: 1200px) {
   .footer-inner {
-    width: 50%;
+    width: 800px;
   }
 }
 @media (min-width: 1600px) {
   .footer-inner {
-    width: 50%;
+    width: 900px;
   }
 }
 .use-motion .footer {
@@ -2648,6 +2648,7 @@ hr {
 }
 .posts-expand.index .post-meta {
   justify-content: flex-start;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .posts-expand.index .post-meta {
@@ -2690,7 +2691,7 @@ hr {
 }
 .header {
   margin: 0 auto;
-  width: 50%;
+  width: 700px;
 }
 @media (max-width: 767px) {
   .header {
@@ -2699,17 +2700,17 @@ hr {
 }
 @media (min-width: 1200px) {
   .header {
-    width: 50%;
+    width: 800px;
   }
 }
 @media (min-width: 1600px) {
   .header {
-    width: 50%;
+    width: 900px;
   }
 }
 .main-inner {
   margin: 0 auto;
-  width: 50%;
+  width: 700px;
   padding-bottom: 80px;
 }
 @media (max-width: 767px) {
@@ -2719,12 +2720,12 @@ hr {
 }
 @media (min-width: 1200px) {
   .main-inner {
-    width: 50%;
+    width: 800px;
   }
 }
 @media (min-width: 1600px) {
   .main-inner {
-    width: 50%;
+    width: 900px;
   }
 }
 @media (max-width: 767px) {
@@ -2782,7 +2783,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffe849;
+  background: #aa5cff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
