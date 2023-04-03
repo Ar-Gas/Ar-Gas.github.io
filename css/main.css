@@ -2648,7 +2648,7 @@ hr {
   text-align: center;
 }
 .posts-expand.index .post-meta {
-  justify-content: flex-start;
+  justify-content: center;
   text-align: center;
 }
 @media (max-width: 767px) {
@@ -2790,7 +2790,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #9cff6c;
+  background: #c739da;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
