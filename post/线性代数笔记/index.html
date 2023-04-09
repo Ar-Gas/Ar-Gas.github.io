@@ -26,22 +26,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"fault"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="目录：  行列式 向量 矩阵">
+    <meta name="description" content="目录：  行列式 向量 矩阵">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性代数笔记">
 <meta property="og:url" content="https://ar-gas.github.io/post/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="目录：  行列式 向量 矩阵">
+<meta property="og:description" content="目录：  行列式 向量 矩阵">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-d953f1bd546a3fcd5943c2d6531540f7_720w.png">
-<meta property="og:image" content="https://user-images.githubusercontent.com/111374823/225307284-a33d7d72-ac2b-43a0-ad3d-6b7a02408be3.png">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Matrix_multiplication_diagram.svg/282px-Matrix_multiplication_diagram.svg.png">
 <meta property="article:published_time" content="2023-02-21T13:30:00.000Z">
-<meta property="article:modified_time" content="2023-03-26T02:21:41.920Z">
+<meta property="article:modified_time" content="2023-04-09T05:04:10.817Z">
 <meta property="article:author" content="Ar Gas">
 <meta property="article:tag" content="math&#x2F;数学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pic1.zhimg.com/80/v2-d953f1bd546a3fcd5943c2d6531540f7_720w.png">
 
 
 <link rel="canonical" href="https://ar-gas.github.io/post/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0/">
@@ -151,7 +147,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9E%84%E6%88%90"><span class="nav-text">基本构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E9%98%B6%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E4%BA%8C%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">二阶线性方程组与二阶行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="nav-text">二阶行列式的几何意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%B8%89%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="nav-text">二、三阶行列式计算方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E6%8E%92%E5%88%97%E5%92%8C%E5%AF%B9%E6%8D%A2"><span class="nav-text">全排列和对换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E5%88%97"><span class="nav-text">排列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%86%E5%BA%8F"><span class="nav-text">逆序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%86%E5%BA%8F%E6%95%B0"><span class="nav-text">逆序数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%8D%A2"><span class="nav-text">对换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E6%80%A7%E8%B4%A8"><span class="nav-text">行列式性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2"><span class="nav-text">初等变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-text">行列式的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="nav-text">行列式计算公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%8D%E9%98%B6"><span class="nav-text">降阶</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%99%E5%AD%90%E5%BC%8F"><span class="nav-text">余子式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E5%B1%95%E5%BC%80%E5%AE%9A%E7%90%86"><span class="nav-text">行列式展开定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B8%E4%BE%8B%EF%BC%9A%E8%8C%83%E5%BE%B7%E8%92%99%EF%BC%88Vandermonde-%EF%BC%89%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">典例：范德蒙（Vandermonde ）行列式</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%91%E9%87%8F"><span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#n%E7%BB%B4%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E7%82%B9"><span class="nav-text">n维空间中的点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E7%9A%84%E7%9B%B8%E7%AD%89"><span class="nav-text">点的相等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E7%9A%84%E5%92%8C"><span class="nav-text">点的和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E4%B9%98"><span class="nav-text">数乘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">向量的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E5%8A%A0%E6%B3%95%EF%BC%88%E5%87%8F%E6%B3%95%EF%BC%89"><span class="nav-text">向量的加法（减法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E6%95%B0%E4%B9%98"><span class="nav-text">向量的数乘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E7%BA%BF%E6%80%A7%E7%BB%84%E5%90%88"><span class="nav-text">向量的线性组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E7%82%B9%E7%A7%AF"><span class="nav-text">向量的点积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E8%86%9C"><span class="nav-text">向量的膜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E5%A4%B9%E8%A7%92"><span class="nav-text">向量的夹角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-text">两个不等式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5-matrix"><span class="nav-text">矩阵(matrix)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9B%B8%E7%AD%89"><span class="nav-text">矩阵相等</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E7%9F%A9%E9%98%B5"><span class="nav-text">零矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E4%B8%8E%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="nav-text">矩阵与线性方程组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E7%9F%A9%E9%98%B5%E4%B8%8E%E5%90%91%E9%87%8F%E4%B9%98%E7%A7%AF%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-text">对矩阵与向量乘积的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-text">对线性方程组的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-text">可逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A1%8C%E5%9B%BE%E5%92%8C%E5%88%97%E5%9B%BE"><span class="nav-text">线性方程组的行图和列图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss%E6%B6%88%E5%85%83%E6%B3%95"><span class="nav-text">Gauss消元法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-text">结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA"><span class="nav-text">矩阵表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E8%A1%8C%E5%8F%98%E6%8D%A2%E5%92%8C%E5%88%9D%E7%AD%89%E7%9F%A9%E9%98%B5"><span class="nav-text">初等行变换和初等矩阵</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BF%90%E7%AE%97"><span class="nav-text">矩阵的运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95"><span class="nav-text">加法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E4%B9%98-1"><span class="nav-text">数乘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%98%E6%B3%95"><span class="nav-text">乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A6%E4%B9%98"><span class="nav-text">左乘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%B3%E4%B9%98"><span class="nav-text">右乘</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E5%B9%82"><span class="nav-text">方幂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E7%9F%A9%E9%98%B5"><span class="nav-text">分块矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E7%BD%AE"><span class="nav-text">转置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E7%BD%AE%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">转置的应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%80%86%E7%9F%A9%E9%98%B5-1"><span class="nav-text">可逆矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86"><span class="nav-text">初等矩阵的逆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gauss-Jordan%E6%B6%88%E5%85%83%E6%B3%95"><span class="nav-text">Gauss-Jordan消元法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E8%A7%92%E9%98%B5%E7%9A%84%E9%80%86"><span class="nav-text">三角阵的逆</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9E%84%E6%88%90"><span class="nav-text">基本构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E9%98%B6%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E4%BA%8C%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">二阶线性方程组与二阶行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="nav-text">二阶行列式的几何意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E4%B8%89%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="nav-text">二、三阶行列式计算方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E6%8E%92%E5%88%97%E5%92%8C%E5%AF%B9%E6%8D%A2"><span class="nav-text">全排列和对换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E5%88%97"><span class="nav-text">排列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%86%E5%BA%8F"><span class="nav-text">逆序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%86%E5%BA%8F%E6%95%B0"><span class="nav-text">逆序数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%8D%A2"><span class="nav-text">对换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E6%80%A7%E8%B4%A8"><span class="nav-text">行列式性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2"><span class="nav-text">初等变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-text">行列式的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="nav-text">行列式计算公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%8D%E9%98%B6"><span class="nav-text">降阶</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%99%E5%AD%90%E5%BC%8F"><span class="nav-text">余子式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E5%B1%95%E5%BC%80%E5%AE%9A%E7%90%86"><span class="nav-text">行列式展开定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B8%E4%BE%8B%E8%8C%83%E5%BE%B7%E8%92%99vandermonde-%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">典例：范德蒙（Vandermonde
+）行列式</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%91%E9%87%8F"><span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#n%E7%BB%B4%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E7%82%B9"><span class="nav-text">n维空间中的点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E7%9A%84%E7%9B%B8%E7%AD%89"><span class="nav-text">点的相等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E7%9A%84%E5%92%8C"><span class="nav-text">点的和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E4%B9%98"><span class="nav-text">数乘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">向量的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E5%8A%A0%E6%B3%95%E5%87%8F%E6%B3%95"><span class="nav-text">向量的加法（减法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E6%95%B0%E4%B9%98"><span class="nav-text">向量的数乘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E7%BA%BF%E6%80%A7%E7%BB%84%E5%90%88"><span class="nav-text">向量的线性组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E7%82%B9%E7%A7%AF"><span class="nav-text">向量的点积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E8%86%9C"><span class="nav-text">向量的膜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E5%A4%B9%E8%A7%92"><span class="nav-text">向量的夹角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-text">两个不等式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5matrix"><span class="nav-text">矩阵(matrix)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9B%B8%E7%AD%89"><span class="nav-text">矩阵相等</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E7%9F%A9%E9%98%B5"><span class="nav-text">零矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E4%B8%8E%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="nav-text">矩阵与线性方程组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E7%9F%A9%E9%98%B5%E4%B8%8E%E5%90%91%E9%87%8F%E4%B9%98%E7%A7%AF%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-text">对矩阵与向量乘积的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-text">对线性方程组的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-text">可逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A1%8C%E5%9B%BE%E5%92%8C%E5%88%97%E5%9B%BE"><span class="nav-text">线性方程组的行图和列图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gauss%E6%B6%88%E5%85%83%E6%B3%95"><span class="nav-text">Gauss消元法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-text">结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA"><span class="nav-text">矩阵表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E8%A1%8C%E5%8F%98%E6%8D%A2%E5%92%8C%E5%88%9D%E7%AD%89%E7%9F%A9%E9%98%B5"><span class="nav-text">初等行变换和初等矩阵</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BF%90%E7%AE%97"><span class="nav-text">矩阵的运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95"><span class="nav-text">加法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E4%B9%98-1"><span class="nav-text">数乘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%98%E6%B3%95"><span class="nav-text">乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A6%E4%B9%98"><span class="nav-text">左乘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%B3%E4%B9%98"><span class="nav-text">右乘</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E5%B9%82"><span class="nav-text">方幂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E7%9F%A9%E9%98%B5"><span class="nav-text">分块矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E7%BD%AE"><span class="nav-text">转置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E7%BD%AE%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">转置的应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%80%86%E7%9F%A9%E9%98%B5-1"><span class="nav-text">可逆矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86"><span class="nav-text">初等矩阵的逆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gauss-jordan%E6%B6%88%E5%85%83%E6%B3%95"><span class="nav-text">Gauss-Jordan消元法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E8%A7%92%E9%98%B5%E7%9A%84%E9%80%86"><span class="nav-text">三角阵的逆</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5"><span class="nav-text">伴随矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cramers-rule"><span class="nav-text">Cramer&#39;s rule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="nav-text">矩阵的秩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E5%BC%8F"><span class="nav-text">子式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%A9%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="nav-text">秩的行列式定义</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -264,7 +261,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-26 10:21:41" itemprop="dateModified" datetime="2023-03-26T10:21:41+08:00">2023-03-26</time>
+      <time title="修改时间：2023-04-09 13:04:10" itemprop="dateModified" datetime="2023-04-09T13:04:10+08:00">2023-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -294,14 +291,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.9k</span>
+      <span>4.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>14 分钟</span>
+      <span>15 分钟</span>
     </span>
 </div>
 
@@ -319,178 +316,386 @@
 <li>矩阵</li>
 </ul>
 <span id="more"></span>
-<h1 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>给定一个n阶方阵 $A$,定义 $A$ 的行列式 $det(A)&#x3D;|A|$，是一个数，几何意义为“有向”长度、面积、体积的推广,当 $n&#x3D;1$ 时，即 $det(a)&#x3D;|a|$，$a$ 为一位坐标上的有向长度。</p>
-<p>可以理解为一个函数：<br>$$M_n(R)→R<br>A→|A|&#x3D;det(A)$$</p>
-<h2 id="基本构成"><a href="#基本构成" class="headerlink" title="基本构成"></a>基本构成</h2><p>$$<br>\left|<br>\begin{array}{cccc}<br>   a_{11}  &amp;  a_{12}   &amp; a_{13} \\<br>   a_{21}  &amp;  a_{22}   &amp; a_{23}\\<br>   a_{31}  &amp;  a_{32}   &amp; a_{33}<br>\end{array}<br>\right|<br>$$<br>数 $a_{ij}$ 称为<strong>元素</strong>或<strong>元</strong>，第一下标 $i$ 表示<strong>行标(r)<strong>，第二下标 $j$ 表示</strong>列标(c)</strong></p>
-<h2 id="二阶线性方程组与二阶行列式"><a href="#二阶线性方程组与二阶行列式" class="headerlink" title="二阶线性方程组与二阶行列式"></a>二阶线性方程组与二阶行列式</h2><p>$$\begin{cases}a_{11}x+a_{12}x&#x3D;b_1 \\a_{21}x+a_{22}x&#x3D;b_2\end{cases}→\begin{cases}x_1&#x3D;\frac{b_1a_{22}-a_{12}b_2}{a_{11}a_{22}-a_{12}a_{21}} \\x_1&#x3D;\frac{b_2a_{11}-a_{21}b_1}{a_{11}a_{22}-a_{12}a_{21}}\end{cases}$$</p>
-<p>记<br>分母$D$&#x3D;$\left|\begin{array}{cc}a_{11}&amp;a_{12}\\a_{21} &amp; a_{22}\end{array}\right|$，称$D$为系数行列式</p>
-<p>可将$x_1,x_2$的分子分别写成</p>
-<p>$$D_1&#x3D;\left|\begin{array}{cc}b_1 &amp;  a_{12}\\b_2 &amp;  a_{22}\end{array}\right|和 D_2&#x3D;\left|\begin{array}{cc}a_{11}&amp;b_1 \\a_{22} &amp;  b_2\end{array}\right|$$</p>
+<h1 id="行列式">行列式</h1>
+<h2 id="定义">定义</h2>
+<p>给定一个n阶方阵 <span class="math inline">\(A\)</span>,定义 <span
+class="math inline">\(A\)</span> 的行列式 <span
+class="math inline">\(det(A)=|A|\)</span>，是一个<strong>数</strong>。</p>
+<p>几何意义：表示长度、面积、体积。</p>
+<p>当 <span class="math inline">\(n=1\)</span> 时，即 <span
+class="math inline">\(det(a)=|a|\)</span>，<span
+class="math inline">\(a\)</span> 为一位坐标上的有向长度。</p>
+<p>可以理解为一个函数：</p>
+<p><span class="math display">\[M_n(R)→R
+A→|A|=det(A)\]</span></p>
+<h2 id="基本构成">基本构成</h2>
+<p><span class="math display">\[
+\left|
+\begin{array}{cccc}
+   a_{11}  &amp;  a_{12}   &amp; a_{13} \\\\
+   a_{21}  &amp;  a_{22}   &amp; a_{23}\\\\
+   a_{31}  &amp;  a_{32}   &amp; a_{33}
+\end{array}
+\right|
+\]</span></p>
+<p><span class="math inline">\(a_{ij}\)</span> 表示第<span
+class="math inline">\(i\)</span>行(row)，第<span
+class="math inline">\(j\)</span>列(col)的<strong>元素</strong>（或称<strong>元</strong>）</p>
+<h2 id="二阶线性方程组与二阶行列式">二阶线性方程组与二阶行列式</h2>
+<p><span class="math display">\[\begin{cases}a_{11}x+a_{12}x=b_1
+\\\\a_{21}x+a_{22}x=b_2\end{cases}→\begin{cases}x_1=\frac{b_1a_{22}-a_{12}b_2}{a_{11}a_{22}-a_{12}a_{21}}
+\\\\x_1=\frac{b_2a_{11}-a_{21}b_1}{a_{11}a_{22}-a_{12}a_{21}}\end{cases}\]</span></p>
+<p>记 分母<span class="math inline">\(D\)</span>=<span
+class="math inline">\(\left|\begin{array}{cc}a_{11}&amp;a_{12}\\\\a_{21}
+&amp; a_{22}\end{array}\right|\)</span>，称<span
+class="math inline">\(D\)</span>为系数行列式</p>
+<p>可将<span class="math inline">\(x_1,x_2\)</span>的分子分别写成</p>
+<p><span class="math display">\[D_1=\left|\begin{array}{cc}b_1
+&amp;  a_{12}\\\\b_2 &amp;  a_{22}\end{array}\right|和
+D_2=\left|\begin{array}{cc}a_{11}&amp;b_1 \\\\a_{22}
+&amp;  b_2\end{array}\right|\]</span></p>
 <p>可得</p>
-<p>$$x_1&#x3D;\frac{D_1}{D}，x_2&#x3D;\frac{D_2}{D}$$</p>
-<h3 id="二阶行列式的几何意义"><a href="#二阶行列式的几何意义" class="headerlink" title="二阶行列式的几何意义"></a>二阶行列式的几何意义</h3><p>$$det\left|\begin{array}{c}a&amp;b\\c&amp;d\end{array}\right|&#x3D;平行四边形“S”的面积&#x3D;\pm||α||\times||β||\times sin\theta$$<br>其中$α&#x3D;\left|\begin{array}{c}a\\c\end{array}\right|,β&#x3D;\left|\begin{array}{c}b\\d\end{array}\right|$<img src="https://pic1.zhimg.com/80/v2-d953f1bd546a3fcd5943c2d6531540f7_720w.png" alt="jihe"></p>
-<h3 id="二、三阶行列式计算方法"><a href="#二、三阶行列式计算方法" class="headerlink" title="二、三阶行列式计算方法"></a>二、三阶行列式计算方法</h3><p>$$det(A)&#x3D;主对角线元素之积-副对角线元素之积$$</p>
-<h2 id="全排列和对换"><a href="#全排列和对换" class="headerlink" title="全排列和对换"></a>全排列和对换</h2><h3 id="排列"><a href="#排列" class="headerlink" title="排列"></a>排列</h3><p>把n个不同的元素排成一列，叫做这n个元素的全排列</p>
-<h4 id="逆序"><a href="#逆序" class="headerlink" title="逆序"></a>逆序</h4><p>元素先后次序与标准次序（通常为从小到大）不一样时，称构成一个<strong>逆序</strong></p>
-<h4 id="逆序数"><a href="#逆序数" class="headerlink" title="逆序数"></a>逆序数</h4><p>若标准次序为从小到大，则 $p_1p_2···p_n$ 的逆序数为 $p_i$ 后比 $p_i$ 小的个数 $t_i$ 的总和 $\sum_{i&#x3D;1}^n t_i$</p>
+<p><span
+class="math display">\[x_1=\frac{D_1}{D}，x_2=\frac{D_2}{D}\]</span></p>
+<h3 id="二阶行列式的几何意义">二阶行列式的几何意义</h3>
+<p><span
+class="math display">\[det\left|\begin{array}{c}a&amp;b\\\\c&amp;d\end{array}\right|=平行四边形“S”的面积=\pm||α||\times||β||\times
+sin\theta\]</span> 其中<span
+class="math inline">\(α=\left|\begin{array}{c}a\\\\c\end{array}\right|,β=\left|\begin{array}{c}b\\\\d\end{array}\right|\)</span><img
+src="https://pic1.zhimg.com/80/v2-d953f1bd546a3fcd5943c2d6531540f7_720w.png"
+alt="jihe" /></p>
+<h3 id="二三阶行列式计算方法">二、三阶行列式计算方法</h3>
+<p><span
+class="math display">\[det(A)=主对角线元素之积-副对角线元素之积\]</span></p>
+<h2 id="全排列和对换">全排列和对换</h2>
+<h3 id="排列">排列</h3>
+<p>将n个不同的元素排成一列，叫做这n个元素的全排列</p>
+<h4 id="逆序">逆序</h4>
+<p>元素先后次序与标准次序（通常为从小到大）不一样时，称构成一个<strong>逆序</strong></p>
+<h4 id="逆序数">逆序数</h4>
+<p>若标准次序为从小到大，则 <span
+class="math inline">\(p_1p_2···p_n\)</span> 的逆序数为 <span
+class="math inline">\(p_i\)</span> 后比 <span
+class="math inline">\(p_i\)</span> 小的个数 <span
+class="math inline">\(t_i\)</span> 的总和 <span
+class="math inline">\(\sum_{i=1}^n t_i\)</span></p>
 <p>逆序数为奇数为奇排列，逆序数为偶数为偶排列</p>
-<h3 id="对换"><a href="#对换" class="headerlink" title="对换"></a>对换</h3><p>对换包括<strong>相邻对换</strong>和<strong>对换</strong></p>
+<h3 id="对换">对换</h3>
+<p>对换包括<strong>相邻对换</strong>和<strong>对换</strong></p>
 <p>任意（相邻）对换排列中的两个元素，排列改变奇偶性</p>
 <p>奇排列对换成标准排列的对换次数为<strong>奇数</strong>，偶排列对换成标准排列的对换次数为<strong>偶数</strong></p>
-<h2 id="行列式性质"><a href="#行列式性质" class="headerlink" title="行列式性质"></a>行列式性质</h2><p>1.行列式与转置行列式相等 $det(A)&#x3D;det(A^T)$</p>
+<h2 id="行列式性质">行列式性质</h2>
+<p>1.行列式与转置行列式相等 <span
+class="math inline">\(det(A)=det(A^T)\)</span></p>
 <p>2.对换行列式的两行（列），行列式变号</p>
-<p>$$det(α_1,α_2,···，α_i,α_j,···α_n)&#x3D;-det(α_1,α_2,···，α_j,α_i,···α_n)$$</p>
+<p><span
+class="math display">\[det(α_1,α_2,···，α_i,α_j,···α_n)=-det(α_1,α_2,···，α_j,α_i,···α_n)\]</span></p>
 <p>3.若有一行（列）全为0，行列式为0</p>
 <p>4.若有两行（列）完全相同，行列式为0</p>
-<p>$$det(α_1,α_1,···，α_n)&#x3D;0$$</p>
-<p>5.若有$k$为一行（列）公倍数，$k$可提出在行列式外面（逆运算也成立）</p>
-<p>$$det(α_1,α_2,···，kα_i,···α_n)\overset{r_i&#x2F;k}{&#x3D;}k·det(α_1,α_2,···，α_i,···α_n)$$</p>
+<p><span class="math display">\[det(α_1,α_1,···，α_n)=0\]</span></p>
+<p>5.若有<span class="math inline">\(k\)</span>为一行（列）公倍数，<span
+class="math inline">\(k\)</span>可提出在行列式外面（逆运算也成立）</p>
+<p><span
+class="math display">\[det(α_1,α_2,···，kα_i,···α_n)\overset{r_i/k}{=}k·det(α_1,α_2,···，α_i,···α_n)\]</span></p>
 <p>6.若有两行（列）成比例，行列式为0</p>
 <p>7.<strong>若某一行（列）元素都为两个数之和，则可将行列式拆分为两个（其余元素不变）</strong></p>
-<p>$$det(α_1+α_2,···,α_n)&#x3D;det(α_1,···,α_n)+det(α_2,···,α_n)$$</p>
+<p><span
+class="math display">\[det(α_1+α_2,···,α_n)=det(α_1,···,α_n)+det(α_2,···,α_n)\]</span></p>
 <p>8.<strong>将某行（列）各项乘同一个数后加到另一行中，行列式不变</strong></p>
-<p>$$det(α_1,α_2,···，α_i,···α_n)\overset{r_i+kr_j}{&#x3D;}det(α_1,α_2,···，α_i+ka_j,···α_n),(i\neq j)$$</p>
-<h2 id="初等变换"><a href="#初等变换" class="headerlink" title="初等变换"></a>初等变换</h2><p>行列式有三种初等变换，对应上述性质</p>
+<p><span
+class="math display">\[det(α_1,α_2,···，α_i,···α_n)\overset{r_i+kr_j}{=}det(α_1,α_2,···，α_i+ka_j,···α_n),(i\neq
+j)\]</span></p>
+<h2 id="初等变换">初等变换</h2>
+<p>行列式有三种初等变换，对应上述性质</p>
 <p>1.行交换</p>
 <p>2.行乘法</p>
 <p>3.行加法</p>
-<h2 id="行列式的计算"><a href="#行列式的计算" class="headerlink" title="行列式的计算"></a>行列式的计算</h2><h3 id="行列式计算公式"><a href="#行列式计算公式" class="headerlink" title="行列式计算公式"></a>行列式计算公式</h3><p>通过拆分每列每行只保留一项,正负号与置换阵（排列数）有关</p>
-<p>$$n阶行列式&#x3D;\sum_{j_1j_2···j_n}  (-1)^t a_{1j_1}a_{2j_2} ···a_{nj_n}$$</p>
-<p>其中$j_1j_2···j_n$为排列数，$t$为排列式奇偶性</p>
+<h2 id="行列式的计算">行列式的计算</h2>
+<h3 id="行列式计算公式">行列式计算公式</h3>
+<p>通过拆分每列每行只保留一项,正负号与置换阵（排列数）有关</p>
+<p><span class="math display">\[n阶行列式=\sum_{j_1j_2···j_n}  (-1)^t
+a_{1j_1}a_{2j_2} ···a_{nj_n}\]</span></p>
+<p>其中<span class="math inline">\(j_1j_2···j_n\)</span>为排列数，<span
+class="math inline">\(t\)</span>为排列式奇偶性</p>
 <p>一般转化为上（下）三角行列式计算</p>
-<p>$$三角行列式<br>&#x3D;a_{11}a_{22}···a_{nn}（主对角线）\\<br>&#x3D;(-1)^\frac{n(n-1)}{2}a_{n1}a_{(n-1)2}···a_{1n}（副对角对角线）<br>$$</p>
-<h3 id="降阶"><a href="#降阶" class="headerlink" title="降阶"></a>降阶</h3><p>将A的行（列）消去，写成n-1阶行列式的组合，进行递归运算</p>
-<h4 id="余子式"><a href="#余子式" class="headerlink" title="余子式"></a>余子式</h4><p>设 $A&#x3D;|{a_{ij}}|_ {n\times n}，M_{ij}为A划去第i行第j列的n-1阶矩阵$</p>
-<p>$detM_{ij}$称为余子式</p>
-<p>$c_{ij}&#x3D;(-1)^{i+j}detM_{ij}$称为代数余子式</p>
-<h4 id="行列式展开定理"><a href="#行列式展开定理" class="headerlink" title="行列式展开定理"></a>行列式展开定理</h4><p>有较多0的情况或者可化0的时候使用，一般将某行（列）化为只含1项非零项。</p>
-<p>$\det A&#x3D;a_ {i1}C_ {i1}+a_{i2}C_{i2}+\cdots+a_{in}C_{in},\forall i,j&#x3D;1,\cdots,n$</p>
+<p><span class="math display">\[三角行列式
+=a_{11}a_{22}···a_{nn}（主对角线）\\\\
+=(-1)^\frac{n(n-1)}{2}a_{n1}a_{(n-1)2}···a_{1n}（副对角对角线）
+\]</span></p>
+<h3 id="降阶">降阶</h3>
+<p>将A的行（列）消去，写成n-1阶行列式的组合，进行递归运算</p>
+<h4 id="余子式">余子式</h4>
+<p>设 <span class="math inline">\(A=|{a_{ij}}|_ {n\times
+n}，M_{ij}为A划去第i行第j列的n-1阶矩阵\)</span></p>
+<p><span class="math inline">\(detM_{ij}\)</span>称为余子式</p>
+<p><span
+class="math inline">\(c_{ij}=(-1)^{i+j}detM_{ij}\)</span>称为代数余子式</p>
+<h4 id="行列式展开定理">行列式展开定理</h4>
+<p>有较多0的情况或者可化0的时候使用，一般将某行（列）化为只含1项非零项。</p>
+<p><span class="math inline">\(\det A=a_ {i1}C_
+{i1}+a_{i2}C_{i2}+\cdots+a_{in}C_{in},\forall
+i,j=1,\cdots,n\)</span></p>
 <p>如果某一行中有很多0，可以减少计算代数余子式。</p>
-<h4 id="典例：范德蒙（Vandermonde-）行列式"><a href="#典例：范德蒙（Vandermonde-）行列式" class="headerlink" title="典例：范德蒙（Vandermonde ）行列式"></a>典例：范德蒙（Vandermonde ）行列式</h4><p>$$<br>D_{n}&#x3D;\left|\begin{array}{ccccc}<br>1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \<br>x_{1} &amp; x_{2} &amp; x_{3} &amp; \cdots &amp; x_{n} \<br>x_{1}^{2} &amp; x_{2}^{2} &amp; x_{3}^{2} &amp; \cdots &amp; x_{n}^{2} \<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>x_{1}^{n-1} &amp; x_{2}^{n-1} &amp; x_{3}^{n-1} &amp; \cdots &amp; x_{n}^{n-1}<br>\end{array}\right|&#x3D;\prod_{1 \leq i&lt;j \leq n}\left(x_{j}-x_{i}\right)<br>$$</p>
-<h1 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h1><h2 id="n维空间中的点"><a href="#n维空间中的点" class="headerlink" title="n维空间中的点"></a>n维空间中的点</h2><p>定义$n$维空间的点为一个$n$元的有序数组$x&#x3D;(x_1,x_2,···，x_n)$</p>
-<h3 id="点的相等"><a href="#点的相等" class="headerlink" title="点的相等"></a>点的相等</h3><p>$$<br>x_i&#x3D;y_i,\forall 1\leq i \leq n<br>$$</p>
-<p>若每一项相等，则称$x&#x3D;(x_1,···，x_n)$与$y&#x3D;(y_1,···，y_n)$相等</p>
-<h3 id="点的和"><a href="#点的和" class="headerlink" title="点的和"></a>点的和</h3><p>$$<br>x+y&#x3D;(x_1+y_1,···,x_n+y_n)<br>$$</p>
+<h4 id="典例范德蒙vandermonde-行列式">典例：范德蒙（Vandermonde
+）行列式</h4>
+<p><span class="math display">\[
+D_{n}=\left|\begin{array}{ccccc}
+1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\
+x_{1} &amp; x_{2} &amp; x_{3} &amp; \cdots &amp; x_{n} \\
+x_{1}^{2} &amp; x_{2}^{2} &amp; x_{3}^{2} &amp; \cdots &amp; x_{n}^{2}
+\\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+x_{1}^{n-1} &amp; x_{2}^{n-1} &amp; x_{3}^{n-1} &amp; \cdots &amp;
+x_{n}^{n-1}
+\end{array}\right|=\prod_{1 \leq i&lt;j \leq n}\left(x_{j}-x_{i}\right)
+\]</span></p>
+<h1 id="向量">向量</h1>
+<h2 id="n维空间中的点">n维空间中的点</h2>
+<p>定义<span class="math inline">\(n\)</span>维空间的点为一个<span
+class="math inline">\(n\)</span>元的有序数组<span
+class="math inline">\(x=(x_1,x_2,···，x_n)\)</span></p>
+<h3 id="点的相等">点的相等</h3>
+<p><span class="math display">\[
+x_i=y_i,\forall 1\leq i \leq n
+\]</span></p>
+<p>若每一项相等，则称<span
+class="math inline">\(x=(x_1,···，x_n)\)</span>与<span
+class="math inline">\(y=(y_1,···，y_n)\)</span>相等</p>
+<h3 id="点的和">点的和</h3>
+<p><span class="math display">\[
+x+y=(x_1+y_1,···,x_n+y_n)
+\]</span></p>
 <p>满足：</p>
-<p>1.交换律：$x+y&#x3D;y+x$</p>
-<p>2.结合律：$(x+y)+z&#x3D;x+(y+z)$</p>
-<p>3.存在零元：x+0&#x3D;x</p>
-<p>4.存在负元：x+(-1)x&#x3D;0</p>
-<h3 id="数乘"><a href="#数乘" class="headerlink" title="数乘"></a>数乘</h3><p>$$cx&#x3D;(cx_1,···，cx_n)$$</p>
-<h2 id="向量的定义"><a href="#向量的定义" class="headerlink" title="向量的定义"></a>向量的定义</h2><p>向量指空间中具有一定长度和方向的有向线段，通常记起点为$A$，终点为$B$的向量为$\vec{AB}$或$\pmb{AB}$</p>
+<p>1.交换律：<span class="math inline">\(x+y=y+x\)</span></p>
+<p>2.结合律：<span class="math inline">\((x+y)+z=x+(y+z)\)</span></p>
+<p>3.存在零元：x+0=x</p>
+<p>4.存在负元：x+(-1)x=0</p>
+<h3 id="数乘">数乘</h3>
+<p><span class="math display">\[cx=(cx_1,···，cx_n)\]</span></p>
+<h2 id="向量的定义">向量的定义</h2>
+<p>向量指空间中具有一定长度和方向的有向线段，通常记起点为<span
+class="math inline">\(A\)</span>，终点为<span
+class="math inline">\(B\)</span>的向量为<span
+class="math inline">\(\vec{AB}\)</span>或<span
+class="math inline">\(\pmb{AB}\)</span></p>
 <p>如果固定向量的期间为远点，则向量等同于n维空间中的点、n元有序数组</p>
-<p>记为：$\pmb{a}&#x3D;\begin{pmatrix}<br>a_1\\<br>\vdots \\<br>a_n\\<br>\end{pmatrix}或&#x3D;(a_1,···,a_n)$</p>
-<h3 id="向量的加法（减法）"><a href="#向量的加法（减法）" class="headerlink" title="向量的加法（减法）"></a>向量的加法（减法）</h3><p>满足三角形法则，满足结合律，交换律，结合律，存在零向量，存在负向量</p>
-<p>$$\pmb{a+b}&#x3D;\begin{pmatrix}<br>a_1+b_1\\<br>\vdots \\<br>a_n+b_n\\<br>\end{pmatrix}$$</p>
-<h3 id="向量的数乘"><a href="#向量的数乘" class="headerlink" title="向量的数乘"></a>向量的数乘</h3><p>长度$\times n$倍，方向不变</p>
-<h3 id="向量的线性组合"><a href="#向量的线性组合" class="headerlink" title="向量的线性组合"></a>向量的线性组合</h3><p>设$\pmb{V_1},\pmb{V_2},···,\pmb{V_m}$为$m$个$n$维向量，称$c_1\pmb{V_1}+···+c_m\pmb{V_m}$为向量$\pmb{V_1},\pmb{V_2},···,\pmb{V_m}$的线性组合</p>
+<p>记为：<span class="math inline">\(\pmb{a}=\begin{pmatrix} a_1\\\\
+\vdots \\\\ a_n\\\\ \end{pmatrix}或=(a_1,···,a_n)\)</span></p>
+<h3 id="向量的加法减法">向量的加法（减法）</h3>
+<p>满足三角形法则，满足结合律，交换律，结合律，存在零向量，存在负向量</p>
+<p><span class="math display">\[\pmb{a+b}=\begin{pmatrix}
+a_1+b_1\\\\
+\vdots \\\\
+a_n+b_n\\\\
+\end{pmatrix}\]</span></p>
+<h3 id="向量的数乘">向量的数乘</h3>
+<p>长度<span class="math inline">\(\times n\)</span>倍，方向不变</p>
+<h3 id="向量的线性组合">向量的线性组合</h3>
+<p>设<span
+class="math inline">\(\pmb{V_1},\pmb{V_2},···,\pmb{V_m}\)</span>为<span
+class="math inline">\(m\)</span>个<span
+class="math inline">\(n\)</span>维向量，称<span
+class="math inline">\(c_1\pmb{V_1}+···+c_m\pmb{V_m}\)</span>为向量<span
+class="math inline">\(\pmb{V_1},\pmb{V_2},···,\pmb{V_m}\)</span>的线性组合</p>
 <p>在三维空间中，几个向量的所有的线性组合通常为一条直线、一个平面或一个3维空间,特殊为点（均为零向量）</p>
-<h3 id="向量的点积"><a href="#向量的点积" class="headerlink" title="向量的点积"></a>向量的点积</h3><p>设$\pmb{V}$和$\pmb{W}$是两个$n$维向量，他们的点积为：</p>
-<p>$$<br>\pmb{V}\pmb{W}&#x3D;v_1w_1+···+v_nw_n<br>$$</p>
+<h3 id="向量的点积">向量的点积</h3>
+<p>设<span class="math inline">\(\pmb{V}\)</span>和<span
+class="math inline">\(\pmb{W}\)</span>是两个<span
+class="math inline">\(n\)</span>维向量，他们的点积为：</p>
+<p><span class="math display">\[
+\pmb{V}\pmb{W}=v_1w_1+···+v_nw_n
+\]</span></p>
 <p><strong>点积</strong>又称<strong>内积</strong>或<strong>数量积</strong></p>
 <p>具有对称性、线性性、正定性</p>
-<h3 id="向量的膜"><a href="#向量的膜" class="headerlink" title="向量的膜"></a>向量的膜</h3><p>定义为</p>
-<p>$$<br>||\pmb{V}||&#x3D;\sqrt{V·V}&#x3D;\sqrt{v_1^2+···+v_n^2}<br>$$</p>
-<p>当$||\pmb{V}||&#x3D;1$时，被称作单位向量</p>
-<p>单位化：对于任意非零向量，$\frac{\pmb{V}}{||\pmb{V}||}$表示$V$方向上的单位向量</p>
-<h3 id="向量的夹角"><a href="#向量的夹角" class="headerlink" title="向量的夹角"></a>向量的夹角</h3><p>$$<br>cos\theta&#x3D;\frac{\pmb{V}·\pmb{W}}{||\pmb{V}||||\pmb{W}||}<br>$$</p>
-<p>若$V·W&gt;0$，则$cos\theta &gt;0,0&lt;\theta&lt;\frac{\pi}{2}$</p>
-<p>若$V·W&lt;0$，则$cos \theta &lt;0,\frac{\pi}{2}&lt;\theta&lt;\pi$</p>
-<p>若$V·W&#x3D;0$，则称两向量垂直或正交，记作$V\perp W$</p>
+<h3 id="向量的膜">向量的膜</h3>
+<p>定义为</p>
+<p><span class="math display">\[
+||\pmb{V}||=\sqrt{V·V}=\sqrt{v_1^2+···+v_n^2}
+\]</span></p>
+<p>当<span
+class="math inline">\(||\pmb{V}||=1\)</span>时，被称作单位向量</p>
+<p>单位化：对于任意非零向量，<span
+class="math inline">\(\frac{\pmb{V}}{||\pmb{V}||}\)</span>表示<span
+class="math inline">\(V\)</span>方向上的单位向量</p>
+<h3 id="向量的夹角">向量的夹角</h3>
+<p><span class="math display">\[
+cos\theta=\frac{\pmb{V}·\pmb{W}}{||\pmb{V}||||\pmb{W}||}
+\]</span></p>
+<p>若<span class="math inline">\(V·W&gt;0\)</span>，则<span
+class="math inline">\(cos\theta
+&gt;0,0&lt;\theta&lt;\frac{\pi}{2}\)</span></p>
+<p>若<span class="math inline">\(V·W&lt;0\)</span>，则<span
+class="math inline">\(cos \theta
+&lt;0,\frac{\pi}{2}&lt;\theta&lt;\pi\)</span></p>
+<p>若<span
+class="math inline">\(V·W=0\)</span>，则称两向量垂直或正交，记作<span
+class="math inline">\(V\perp W\)</span></p>
 <p>规定零向量与任意向量垂直</p>
-<h3 id="两个不等式"><a href="#两个不等式" class="headerlink" title="两个不等式"></a>两个不等式</h3><p>1.Cauchy-Schwarz不等式：</p>
-<p>$$|v·w|\leq ||v||||w||$$</p>
+<h3 id="两个不等式">两个不等式</h3>
+<p>1.Cauchy-Schwarz不等式：</p>
+<p><span class="math display">\[|v·w|\leq ||v||||w||\]</span></p>
 <p>当且仅当一个向量是另一个向量的倍数时等号成立</p>
 <p>2.三角不等式：</p>
-<p>$$|v+w|\leq ||v||+||w||$$</p>
+<p><span class="math display">\[|v+w|\leq ||v||+||w||\]</span></p>
 <p>当且仅当一个向量是另一个向量的非负倍数时等号成立</p>
-<h1 id="矩阵-matrix"><a href="#矩阵-matrix" class="headerlink" title="矩阵(matrix)"></a>矩阵(matrix)</h1><p>$$A_{m\times n}&#x3D;\begin{pmatrix}<br>a_{11} &amp; a_{12} &amp; a_{13}\\<br>a_{21} &amp; a_{ij} &amp; a_{23}\\<br>a_{31} &amp; a_{32} &amp; a_{mn}\\<br>\end{pmatrix}，a_{ij}表示第i行第j列<br>$$</p>
-<p>矩阵是一张 $m$ 行 $n$ 列的<strong>数表</strong>，用$a_{ij}$表示第$i$行第j列</p>
+<h1 id="矩阵matrix">矩阵(matrix)</h1>
+<p><span class="math display">\[A_{m\times n}=\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; a_{13}\\\\
+a_{21} &amp; a_{ij} &amp; a_{23}\\\\
+a_{31} &amp; a_{32} &amp; a_{mn}\\\\
+\end{pmatrix}，a_{ij}表示第i行第j列
+\]</span></p>
+<p>矩阵是一张 <span class="math inline">\(m\)</span> 行 <span
+class="math inline">\(n\)</span> 列的<strong>数表</strong>，用<span
+class="math inline">\(a_{ij}\)</span>表示第<span
+class="math inline">\(i\)</span>行第j列</p>
 <ul>
 <li>用列向量表示：</li>
 </ul>
-<p>$$<br>A&#x3D;(\alpha_1,\alpha_2,\alpha_3···)<br>$$</p>
+<p><span class="math display">\[
+A=(\alpha_1,\alpha_2,\alpha_3···)
+\]</span></p>
 <ul>
-<li><p><strong>方阵</strong>:行数和列数相等，有主对角线和副对角线</p>
-</li>
-<li><p><strong>对角阵</strong>（diag）:除对角线外的元素都为0的方阵</p>
-</li>
+<li><p><strong>方阵</strong>:行数和列数相等，有主对角线和副对角线</p></li>
+<li><p><strong>对角阵</strong>（diag）:除对角线外的元素都为0的方阵</p></li>
 </ul>
-<h2 id="矩阵相等"><a href="#矩阵相等" class="headerlink" title="矩阵相等"></a>矩阵相等</h2><ul>
+<h2 id="矩阵相等">矩阵相等</h2>
+<ul>
 <li><strong>行列数</strong>相同</li>
 <li><strong>对应元素</strong>相等</li>
 </ul>
-<h2 id="零矩阵"><a href="#零矩阵" class="headerlink" title="零矩阵"></a>零矩阵</h2><ul>
-<li><p>元素全是 $0$ 的矩阵</p>
-</li>
-<li><p>不同行列数的零矩阵不相等</p>
-</li>
-</ul>
-<h2 id="矩阵与线性方程组"><a href="#矩阵与线性方程组" class="headerlink" title="矩阵与线性方程组"></a>矩阵与线性方程组</h2><p>矩阵可由<em>描述线性方程组</em>而来，或由行列式而来</p>
-<h3 id="对矩阵与向量乘积的理解"><a href="#对矩阵与向量乘积的理解" class="headerlink" title="对矩阵与向量乘积的理解"></a>对矩阵与向量乘积的理解</h3><p>$$<br>A\vec{x}<br>$$</p>
+<h2 id="零矩阵">零矩阵</h2>
 <ul>
-<li>理解1：得到$A$各列向量的一个线性组合</li>
+<li><p>元素全是 <span class="math inline">\(0\)</span> 的矩阵</p></li>
+<li><p>不同行列数的零矩阵不相等</p></li>
 </ul>
-<p>$$<br>A\vec{x}&#x3D;(\mathbf{u},\mathbf{v},\mathbf{w})\begin{pmatrix}<br>x_{1} \\<br>x_{2} \\<br>x_{3} \\<br>\end{pmatrix}&#x3D;x_{1}\mathbf{u}+x_{2}\mathbf{v}+x_{3}\mathbf{w}<br>$$</p>
+<h2 id="矩阵与线性方程组">矩阵与线性方程组</h2>
+<p>矩阵可由<em>描述线性方程组</em>而来，或由行列式而来</p>
+<h3 id="对矩阵与向量乘积的理解">对矩阵与向量乘积的理解</h3>
+<p><span class="math display">\[
+A\vec{x}
+\]</span></p>
 <ul>
-<li>理解2：$A$各行向量与列向量$\vec{x}$做内积</li>
+<li>理解1：得到<span
+class="math inline">\(A\)</span>各列向量的一个线性组合</li>
 </ul>
-<p>$$<br>A \mathbf{x}&#x3D;\left(\begin{array}{l}<br>\left(a_{11}, a_{12}, a_{13}\right) \cdot\left(x_1, x_2, x_3\right) \<br>\left(a_{21}, a_{22}, a_{23}\right) \cdot\left(x_1, x_2, x_3\right) \<br>\left(a_{31}, a_{32}, a_{33}\right) \cdot\left(x_1, x_2, x_3\right)<br>\end{array}\right)<br>$$</p>
+<p><span class="math display">\[
+A\vec{x}=(\mathbf{u},\mathbf{v},\mathbf{w})\begin{pmatrix}
+x_{1} \\\\
+x_{2} \\\\
+x_{3} \\\\
+\end{pmatrix}=x_{1}\mathbf{u}+x_{2}\mathbf{v}+x_{3}\mathbf{w}
+\]</span></p>
+<ul>
+<li>理解2：<span class="math inline">\(A\)</span>各行向量与列向量<span
+class="math inline">\(\vec{x}\)</span>做内积</li>
+</ul>
+<p><span class="math display">\[
+A \mathbf{x}=\left(\begin{array}{l}
+\left(a_{11}, a_{12}, a_{13}\right) \cdot\left(x_1, x_2, x_3\right) \\
+\left(a_{21}, a_{22}, a_{23}\right) \cdot\left(x_1, x_2, x_3\right) \\
+\left(a_{31}, a_{32}, a_{33}\right) \cdot\left(x_1, x_2, x_3\right)
+\end{array}\right)
+\]</span></p>
 <ul>
 <li>理解3：分块矩阵</li>
 </ul>
-<h3 id="对线性方程组的理解"><a href="#对线性方程组的理解" class="headerlink" title="对线性方程组的理解"></a>对线性方程组的理解</h3><p>$$<br>A\vec{x}&#x3D;\vec{b}<br>$$</p>
+<h3 id="对线性方程组的理解">对线性方程组的理解</h3>
+<p><span class="math display">\[
+A\vec{x}=\vec{b}
+\]</span></p>
 <ul>
-<li>理解1：求$A$列向量的线性组合, 使之等于$\vec{b}$</li>
-<li>理解2：求向量 $\vec{x}$, 使之与$A$的行向量内积分别为$\vec{b}$中的元素</li>
+<li>理解1：求<span class="math inline">\(A\)</span>列向量的线性组合,
+使之等于<span class="math inline">\(\vec{b}\)</span></li>
+<li>理解2：求向量 <span class="math inline">\(\vec{x}\)</span>,
+使之与<span class="math inline">\(A\)</span>的行向量内积分别为<span
+class="math inline">\(\vec{b}\)</span>中的元素</li>
 </ul>
-<h3 id="可逆矩阵"><a href="#可逆矩阵" class="headerlink" title="可逆矩阵"></a>可逆矩阵</h3><p>若$A\vec{x}&#x3D;\vec{b}$对任意向量$\vec{b}$有唯一解, 则称方阵$A$<strong>可逆</strong>，此时$\vec{x}&#x3D;A^{-1}\vec{b}$（$\vec{x}$ 可表示为 $A$ 的列向量的线性组合）</p>
+<h3 id="可逆矩阵">可逆矩阵</h3>
+<p>若<span
+class="math inline">\(A\vec{x}=\vec{b}\)</span>对任意向量<span
+class="math inline">\(\vec{b}\)</span>有唯一解, 则称方阵<span
+class="math inline">\(A\)</span><strong>可逆</strong>，此时<span
+class="math inline">\(\vec{x}=A^{-1}\vec{b}\)</span>（<span
+class="math inline">\(\vec{x}\)</span> 可表示为 <span
+class="math inline">\(A\)</span> 的列向量的线性组合）</p>
 <ul>
-<li><p>若$A&#x3D;(\vec u, \vec v, \vec w)$可逆, 则$\vec u, \vec v, \vec w$的全部线性组合所得空间是整个三维空间, 这时向量$\vec u, \vec v, \vec w$线性无关&#x2F;不共面, 相应$A \vec x&#x3D;\vec b$只有零解</p>
-</li>
-<li><p>若矩阵的零解可以写成多种线性组合，这种情况称$A&#x3D;(\vec u, \vec v, \vec w)$是<strong>奇异</strong>的（singular），向量$\vec u, \vec v, \vec w$是<strong>线性相关</strong>的</p>
+<li><p>若<span class="math inline">\(A=(\vec u, \vec v, \vec
+w)\)</span>可逆, 则<span class="math inline">\(\vec u, \vec v, \vec
+w\)</span>的全部线性组合所得空间是整个三维空间, 这时向量<span
+class="math inline">\(\vec u, \vec v, \vec w\)</span>线性无关/不共面,
+相应<span class="math inline">\(A \vec x=\vec
+b\)</span>只有零解</p></li>
+<li><p>若矩阵的零解可以写成多种线性组合，这种情况称<span
+class="math inline">\(A=(\vec u, \vec v, \vec
+w)\)</span>是<strong>奇异</strong>的（singular），向量<span
+class="math inline">\(\vec u, \vec v, \vec
+w\)</span>是<strong>线性相关</strong>的</p>
 <ul>
-<li>若方阵$A$的列向量线性无关，则$A$<strong>可逆</strong>，$A\vec{x}&#x3D;0$<strong>只有零解</strong></li>
-<li>若方阵$A$的列向量线性相关，则$A$<strong>奇异</strong>，$A\vec{x}&#x3D;0$有<strong>无穷多解</strong></li>
+<li>若方阵<span
+class="math inline">\(A\)</span>的列向量线性无关，则<span
+class="math inline">\(A\)</span><strong>可逆</strong>，<span
+class="math inline">\(A\vec{x}=0\)</span><strong>只有零解</strong></li>
+<li>若方阵<span
+class="math inline">\(A\)</span>的列向量线性相关，则<span
+class="math inline">\(A\)</span><strong>奇异</strong>，<span
+class="math inline">\(A\vec{x}=0\)</span>有<strong>无穷多解</strong></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="线性方程组的行图和列图"><a href="#线性方程组的行图和列图" class="headerlink" title="线性方程组的行图和列图"></a>线性方程组的行图和列图</h3><p>方程组$A_{m\times n}\vec{x}&#x3D;\vec{b}$</p>
+<h3 id="线性方程组的行图和列图">线性方程组的行图和列图</h3>
+<p>方程组<span class="math inline">\(A_{m\times
+n}\vec{x}=\vec{b}\)</span></p>
 <ul>
-<li><p>每一行代表一个直线（n&#x3D;2），或一个平面（n&#x3D;3），或一个超平面（n&gt;3）</p>
+<li>每一行代表一个直线（n=2），或一个平面（n=3），或一个超平面（n&gt;3）
 <ul>
-<li>此时解方程组$\Leftrightarrow$找行图的交点；</li>
+<li>此时解方程组<span
+class="math inline">\(\Leftrightarrow\)</span>找行图的交点；</li>
+</ul></li>
+<li>列的角度：解方程组求<span
+class="math inline">\(\Leftrightarrow\)</span>求<span
+class="math inline">\(\vec{b}\)</span>关于系数矩阵列向量<span
+class="math inline">\((\vec{\alpha_1,\alpha_2,\alpha_3...})\)</span>（不共线）的线性组合，若有唯一解则称矩阵是可逆的</li>
 </ul>
-</li>
-<li><p>列的角度：解方程组求$\Leftrightarrow$求$\vec{b}$关于系数矩阵列向量$(\vec{\alpha_1,\alpha_2,\alpha_3…})$（不共线）的线性组合，若有唯一解则称矩阵是可逆的</p>
-</li>
-</ul>
-<h2 id="Gauss消元法"><a href="#Gauss消元法" class="headerlink" title="Gauss消元法"></a>Gauss消元法</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ul>
+<h2 id="gauss消元法">Gauss消元法</h2>
+<h3 id="步骤">步骤</h3>
+<ul>
 <li>通过交换方程和倍数相加得到阶梯矩阵，确定主元</li>
-<li>n个方程有n个主元$\Leftrightarrow$方程组有唯一解</li>
-<li>消元终止$\Rightarrow$方程组无解或有无穷多解</li>
+<li>n个方程有n个主元<span
+class="math inline">\(\Leftrightarrow\)</span>方程组有唯一解</li>
+<li>消元终止<span
+class="math inline">\(\Rightarrow\)</span>方程组无解或有无穷多解</li>
 </ul>
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><ul>
-<li>无解（$0&#x3D;c$）</li>
+<h3 id="结果">结果</h3>
+<ul>
+<li>无解（<span class="math inline">\(0=c\)</span>）</li>
 <li>有唯一解</li>
-<li>无穷多解（$0&#x3D;0$）</li>
+<li>无穷多解（<span class="math inline">\(0=0\)</span>）</li>
 </ul>
-<h3 id="矩阵表示"><a href="#矩阵表示" class="headerlink" title="矩阵表示"></a>矩阵表示</h3><ul>
-<li>$A\vec{x}&#x3D;\vec{b}$表示线性方程组<ul>
-<li>单位矩阵：与任何向量相乘等于自身，$I\vec{b}&#x3D;\vec{b}$</li>
-<li>消去矩阵：将单位阵中某个$0$变为非零的数得到的矩阵，是一类初等矩阵</li>
-<li>消元&#x3D;消去矩阵同时左乘系数矩阵$A$和常数项$\vec{b}$</li>
-<li>置换阵：将单位矩阵的第$i,j$行交换得到的矩阵，是一类初等矩阵</li>
+<h3 id="矩阵表示">矩阵表示</h3>
+<ul>
+<li><span class="math inline">\(A\vec{x}=\vec{b}\)</span>表示线性方程组
+<ul>
+<li>单位矩阵：与任何向量相乘等于自身，<span
+class="math inline">\(I\vec{b}=\vec{b}\)</span></li>
+<li>消去矩阵：将单位阵中某个<span
+class="math inline">\(0\)</span>变为非零的数得到的矩阵，是一类初等矩阵</li>
+<li>消元=消去矩阵同时左乘系数矩阵<span
+class="math inline">\(A\)</span>和常数项<span
+class="math inline">\(\vec{b}\)</span></li>
+<li>置换阵：将单位矩阵的第<span
+class="math inline">\(i,j\)</span>行交换得到的矩阵，是一类初等矩阵</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="初等行变换和初等矩阵"><a href="#初等行变换和初等矩阵" class="headerlink" title="初等行变换和初等矩阵"></a>初等行变换和初等矩阵</h3><p>方程组$A\vec{x}&#x3D;\vec{b}$三种通解变形</p>
+<h3 id="初等行变换和初等矩阵">初等行变换和初等矩阵</h3>
+<p>方程组<span
+class="math inline">\(A\vec{x}=\vec{b}\)</span>三种通解变形</p>
 <ul>
 <li>把一个方程减去另一个方程的倍数</li>
 <li>交换两个方程</li>
 <li>用一个非零数乘一个方程</li>
 </ul>
-<p>相应增广矩阵$(A|\vec b)$的三种行变换</p>
+<p>相应增广矩阵<span class="math inline">\((A|\vec
+b)\)</span>的三种行变换</p>
 <ul>
 <li>把一行减去另一行的倍数</li>
 <li>交换两行</li>
@@ -498,117 +703,262 @@
 </ul>
 <p>由单位矩阵经过<strong>一次</strong>行变换的矩阵成为初等矩阵</p>
 <p><strong>左乘换行，右乘换列</strong>；</p>
-<p><img src="https://user-images.githubusercontent.com/111374823/225307284-a33d7d72-ac2b-43a0-ad3d-6b7a02408be3.png" alt="图示"></p>
-<h2 id="矩阵的运算"><a href="#矩阵的运算" class="headerlink" title="矩阵的运算"></a>矩阵的运算</h2><h3 id="加法"><a href="#加法" class="headerlink" title="加法"></a>加法</h3><p>当两个矩阵<strong>行列数相等</strong>时才可以相加</p>
-<p>$$<br>A+B:&#x3D;(a_{ij}+b_{ij})_{m\times n}<br>$$</p>
+<figure>
+<img
+src="https://user-images.githubusercontent.com/111374823/225307284-a33d7d72-ac2b-43a0-ad3d-6b7a02408be3.png"
+alt="图示" />
+<figcaption aria-hidden="true">图示</figcaption>
+</figure>
+<h2 id="矩阵的运算">矩阵的运算</h2>
+<h3 id="加法">加法</h3>
+<p>当两个矩阵<strong>行列数相等</strong>时才可以相加</p>
+<p><span class="math display">\[
+A+B:=(a_{ij}+b_{ij})_{m\times n}
+\]</span></p>
 <p>矩阵的加法满足：</p>
-<ol>
-<li><p><code>交换律</code>：$A+B&#x3D;B+A$</p>
-</li>
-<li><p><code>结合律</code>$(A+B)+C&#x3D;A+(B+C)$</p>
-</li>
-<li><p>存在<code>零元</code>：$A+0&#x3D;A$</p>
-</li>
-<li><p>存在<code>负矩阵</code>：$A+(-A)&#x3D;0$ (减法)</p>
-</li>
+<ol type="1">
+<li><p><code>交换律</code>：<span
+class="math inline">\(A+B=B+A\)</span></p></li>
+<li><p><code>结合律</code><span
+class="math inline">\((A+B)+C=A+(B+C)\)</span></p></li>
+<li><p>存在<code>零元</code>：<span
+class="math inline">\(A+0=A\)</span></p></li>
+<li><p>存在<code>负矩阵</code>：<span
+class="math inline">\(A+(-A)=0\)</span> (减法)</p></li>
 </ol>
-<h3 id="数乘-1"><a href="#数乘-1" class="headerlink" title="数乘"></a>数乘</h3><p>$$cA:&#x3D;(ca_{ij})_{m\times n}$$</p>
-<h3 id="乘法"><a href="#乘法" class="headerlink" title="乘法"></a>乘法</h3><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Matrix_multiplication_diagram.svg/282px-Matrix_multiplication_diagram.svg.png"></p>
+<h3 id="数乘-1">数乘</h3>
+<p><span class="math display">\[cA:=(ca_{ij})_{m\times n}\]</span></p>
+<h3 id="乘法">乘法</h3>
+<p><img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Matrix_multiplication_diagram.svg/282px-Matrix_multiplication_diagram.svg.png" /></p>
 <ul>
-<li>要求 : $A的列数&#x3D;B的行数$</li>
+<li>要求 : <span class="math inline">\(A的列数=B的行数\)</span></li>
 </ul>
-<p>$$<br>A_{m\times s}B_{s\times n}&#x3D;C_{m\times n}<br>$$</p>
-<p>$$<br>C_{ij}&#x3D;a_{i1}b_{1i}+a_{i2}b_{2i}+···+a_{in}b_{mi}<br>&#x3D;\sum_{k&#x3D;1}^n a_{ik}b_{kj}<br>$$</p>
-<p>${\displaystyle c_{ij}}$是$A$的第$i$行和$B$的第$j$列的点积</p>
-<p>$$<br>AB的第i行&#x3D;(A的第i行)B<br>$$</p>
+<p><span class="math display">\[
+A_{m\times s}B_{s\times n}=C_{m\times n}
+\]</span></p>
+<p><span class="math display">\[
+C_{ij}=a_{i1}b_{1i}+a_{i2}b_{2i}+···+a_{in}b_{mi}
+=\sum_{k=1}^n a_{ik}b_{kj}
+\]</span></p>
+<p><span class="math inline">\({\displaystyle c_{ij}}\)</span>是<span
+class="math inline">\(A\)</span>的第<span
+class="math inline">\(i\)</span>行和<span
+class="math inline">\(B\)</span>的第<span
+class="math inline">\(j\)</span>列的点积</p>
+<p><span class="math display">\[
+AB的第i行=(A的第i行)B
+\]</span></p>
 <ul>
-<li><code>结合律</code>：$(AB)C&#x3D;A(BC)$</li>
-<li><code>左分配律</code> $A(B+C)&#x3D;AB+AC$</li>
-<li><code>右分配律</code> $(B+C)A&#x3D;BA+CB$</li>
-<li>$k(AB)&#x3D;(kA)B&#x3D;A(kB),k为任意常数$</li>
-<li>$I_mA&#x3D;A&#x3D;Ai_n$</li>
-<li>$AB\neq BA$（不一定相等）<ul>
-<li>若$AB&#x3D;BA$，则称$A$和$B$是可交换的</li>
+<li><code>结合律</code>：<span
+class="math inline">\((AB)C=A(BC)\)</span></li>
+<li><code>左分配律</code> <span
+class="math inline">\(A(B+C)=AB+AC\)</span></li>
+<li><code>右分配律</code> <span
+class="math inline">\((B+C)A=BA+CB\)</span></li>
+<li><span
+class="math inline">\(k(AB)=(kA)B=A(kB),k为任意常数\)</span></li>
+<li><span class="math inline">\(I_mA=A=Ai_n\)</span></li>
+<li><span class="math inline">\(AB\neq BA\)</span>（不一定相等）
+<ul>
+<li>若<span class="math inline">\(AB=BA\)</span>，则称<span
+class="math inline">\(A\)</span>和<span
+class="math inline">\(B\)</span>是可交换的</li>
 <li>不满足<code>消去律</code></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h4 id="左乘"><a href="#左乘" class="headerlink" title="左乘"></a>左乘</h4><p>设矩阵$B$的列向量是$b_1,b_2,···,b_p$,借助矩阵和向量乘积的定义：</p>
-<p>$$<br>AB&#x3D;A(\vec b_1,\vec b_2,···,\vec b_p):&#x3D;(A\vec b_1,A\vec b_2,···,A\vec b_p)<br>$$</p>
-<p>矩阵的每一列$A\vec b_i$是矩阵$A$的行向量的线性组合</p>
-<h4 id="右乘"><a href="#右乘" class="headerlink" title="右乘"></a>右乘</h4><p>$$<br>AB&#x3D;\begin{pmatrix}<br>\vec \alpha_{1} \\<br>\vec \alpha_{2} \\<br>\vec \alpha_{3} \\<br>\end{pmatrix}B&#x3D;\begin{pmatrix}<br>\vec \alpha_{1}B \\<br>\vec \alpha_{2}B \\<br>\vec \alpha_{3}B \\<br>\end{pmatrix}<br>$$</p>
-<p>矩阵的每一行$\vec \alpha_{i}B$是矩阵$B$的列向量的线性组合</p>
-<h3 id="方幂"><a href="#方幂" class="headerlink" title="方幂"></a>方幂</h3><p>只有方阵可以有幂运算。</p>
-<p>$$<br>A^n&#x3D;\underbrace{A···A}_n<br>$$</p>
+<h4 id="左乘">左乘</h4>
+<p>设矩阵<span class="math inline">\(B\)</span>的列向量是<span
+class="math inline">\(b_1,b_2,···,b_p\)</span>,借助矩阵和向量乘积的定义：</p>
+<p><span class="math display">\[
+AB=A(\vec b_1,\vec b_2,···,\vec b_p):=(A\vec b_1,A\vec b_2,···,A\vec
+b_p)
+\]</span></p>
+<p>矩阵的每一列<span class="math inline">\(A\vec b_i\)</span>是矩阵<span
+class="math inline">\(A\)</span>的行向量的线性组合</p>
+<h4 id="右乘">右乘</h4>
+<p><span class="math display">\[
+AB=\begin{pmatrix}
+\vec \alpha_{1} \\\\
+\vec \alpha_{2} \\\\
+\vec \alpha_{3} \\\\
+\end{pmatrix}B=\begin{pmatrix}
+\vec \alpha_{1}B \\\\
+\vec \alpha_{2}B \\\\
+\vec \alpha_{3}B \\\\
+\end{pmatrix}
+\]</span></p>
+<p>矩阵的每一行<span class="math inline">\(\vec
+\alpha_{i}B\)</span>是矩阵<span
+class="math inline">\(B\)</span>的列向量的线性组合</p>
+<h3 id="方幂">方幂</h3>
+<p>只有方阵可以有幂运算。</p>
+<p><span class="math display">\[
+A^n=\underbrace{A···A}_n
+\]</span></p>
 <ul>
-<li><p>$A^0&#x3D;I_n$</p>
-</li>
-<li><p>$A^p·A^q&#x3D;A^{p+q}$</p>
-</li>
-<li><p>$(A^{p})^q&#x3D;A^{pq}$</p>
-</li>
-<li><p>因为$AB\neq BA$，所以:</p>
+<li><p><span class="math inline">\(A^0=I_n\)</span></p></li>
+<li><p><span class="math inline">\(A^p·A^q=A^{p+q}\)</span></p></li>
+<li><p><span class="math inline">\((A^{p})^q=A^{pq}\)</span></p></li>
+<li><p>因为<span class="math inline">\(AB\neq BA\)</span>，所以:</p>
 <ul>
-<li>$(A + B)^2\neq A^2+ 2AB+B^2$</li>
-<li>$(A+B)(A-B)\neq A^2-B^2$</li>
+<li><span class="math inline">\((A + B)^2\neq A^2+ 2AB+B^2\)</span></li>
+<li><span class="math inline">\((A+B)(A-B)\neq A^2-B^2\)</span></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="分块矩阵"><a href="#分块矩阵" class="headerlink" title="分块矩阵"></a>分块矩阵</h2><p>运算法则与矩阵相同，用于大矩阵运算</p>
-<p>$$<br>A&#x3D;\left(<br>\begin{array}{c|cc}<br>    A_{11}  &amp;  A_{12} \\<br>    \hline<br>   A_{21} &amp;  A_{22} \\<br>\end{array}<br>\right)<br>$$</p>
+<h2 id="分块矩阵">分块矩阵</h2>
+<p>用于大型矩阵运算，运算法则与矩阵相同</p>
+<p><span class="math display">\[
+A=\left(
+\begin{array}{c|cc}
+    A_{11}  &amp;  A_{12} \\\\
+    \hline
+   A_{21} &amp;  A_{22} \\\\
+\end{array}
+\right)
+\]</span></p>
 <p><code>初等块行变换</code>：（列变换为右乘）</p>
 <ul>
-<li>一个块行<code>减</code>去另一个块行<code>左乘</code>$P$</li>
+<li>一个块行<code>减</code>去另一个块行<code>左乘</code><span
+class="math inline">\(P\)</span></li>
 <li>两个块行<code>互换位置</code></li>
 <li>用一个可逆矩阵<code>左乘</code>某一块行</li>
 </ul>
-<h2 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h2><p>将$A_{m\times n}$行列互换成$A_{n\times m}$,得到转置矩阵$A^T$,与原来矩阵$A$成对角线对称。</p>
-<ol>
-<li>$(A^T)^T&#x3D;A$</li>
-<li>$(A+B)^T&#x3D;A^T+B^T$</li>
-<li>$(kA)^T&#x3D;kA^T$</li>
-<li>$(AB)^T&#x3D;B^TA^T $</li>
+<h2 id="转置">转置</h2>
+<p>将<span class="math inline">\(A_{m\times n}\)</span>行列互换成<span
+class="math inline">\(A_{n\times m}\)</span>,得到转置矩阵<span
+class="math inline">\(A^T\)</span>,与原来矩阵<span
+class="math inline">\(A\)</span>成对角线对称。</p>
+<ol type="1">
+<li><span class="math inline">\((A^T)^T=A\)</span></li>
+<li><span class="math inline">\((A+B)^T=A^T+B^T\)</span></li>
+<li><span class="math inline">\((kA)^T=kA^T\)</span></li>
+<li>$(AB)<sup>T=B</sup>TA^T $</li>
 </ol>
 <ul>
-<li><p>由4,有：$(A_1···A_k)^T&#x3D;A_k^T···A_1^T$ </p>
-</li>
-<li><p>若$A^T&#x3D;A$ ， $A$ 为对称矩阵</p>
-</li>
-<li><p>若$A^T&#x3D;-A$，$A$为反对称矩阵</p>
+<li><p>由4,有：<span
+class="math inline">\((A_1···A_k)^T=A_k^T···A_1^T\)</span></p></li>
+<li><p>若<span class="math inline">\(A^T=A\)</span> ， <span
+class="math inline">\(A\)</span> 为对称矩阵</p></li>
+<li><p>若<span class="math inline">\(A^T=-A\)</span>，<span
+class="math inline">\(A\)</span>为反对称矩阵</p>
 <ul>
-<li>设$R_{m\times n}$,则$RR^T$ 为 $m\times m$的对称阵,$R^TR$ 为 $n\times n$的反对称阵，其对角元非负，两个矩阵的元的和(trace)相等。</li>
+<li>设<span class="math inline">\(R_{m\times n}\)</span>,则<span
+class="math inline">\(RR^T\)</span> 为 <span
+class="math inline">\(m\times m\)</span>的对称阵,<span
+class="math inline">\(R^TR\)</span> 为 <span
+class="math inline">\(n\times
+n\)</span>的反对称阵，其对角元非负，两个矩阵的元的和(trace)相等。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="转置的应用"><a href="#转置的应用" class="headerlink" title="转置的应用"></a>转置的应用</h3><ol>
-<li>向量内积：$\mathbf{x·y&#x3D;x^T y&#x3D;y^T x}$</li>
-</ol>
-<h2 id="可逆矩阵-1"><a href="#可逆矩阵-1" class="headerlink" title="可逆矩阵"></a>可逆矩阵</h2><p>若 $AB&#x3D;BA&#x3D;I$，则称 矩阵$A$ 是可逆的，$B$为$A$的逆矩阵，记作$A^{-1}$.</p>
+<h3 id="转置的应用">转置的应用</h3>
+<p>例： 向量内积：<span class="math inline">\(\mathbf{x·y=x^T y=y^T
+x}\)</span></p>
+<h2 id="可逆矩阵-1">可逆矩阵</h2>
+<p>类似<span class="math inline">\(a\times
+\frac{1}{a}=1\)</span>，在矩阵中称 <span
+class="math inline">\(\frac{1}{a}\)</span> 为逆</p>
+<p>若 <span class="math inline">\(AB=BA=I\)</span>，则称 矩阵<span
+class="math inline">\(A\)</span> 是可逆的，<span
+class="math inline">\(B\)</span>为<span
+class="math inline">\(A\)</span>的逆矩阵，记作<span
+class="math inline">\(A^{-1}\)</span>.</p>
 <p>不可逆矩阵可以称为奇异矩阵，例如零矩阵；</p>
 <p>可逆矩阵可以称为非奇异矩阵</p>
-<ol>
-<li>若方阵 $A$满足$AB&#x3D;I,CA&#x3D;I$，则$B&#x3D;C$，特别的，方阵的逆唯一.</li>
-<li>$A可逆\Leftrightarrow A\vec{x}&#x3D;\vec{b}有唯一解\vec{x}&#x3D;A^{-1}\vec{b}$</li>
-<li>$A\vec{x}&#x3D;0有非零解 \Leftrightarrow A不可逆$</li>
+<ol type="1">
+<li>若方阵 <span class="math inline">\(A\)</span>满足<span
+class="math inline">\(AB=I,CA=I\)</span>，则<span
+class="math inline">\(B=C\)</span>，特别的，方阵的逆唯一.</li>
+<li><span class="math inline">\(A可逆\Leftrightarrow
+A\vec{x}=\vec{b}有唯一解\vec{x}=A^{-1}\vec{b}\)</span></li>
+<li><span class="math inline">\(A\vec{x}=0有非零解 \Leftrightarrow
+A不可逆\)</span></li>
 <li>对角矩阵的逆为对角矩阵元的倒数</li>
-<li>二阶方阵的逆：<br>$$A_{2\times 2}&#x3D;\left(<br>\begin{array}{cc}<br>a  &amp;  b \\<br>c &amp;  d \\<br>\end{array}<br>\right)可逆\Leftrightarrow ad-bc\neq 0，且A^{-1}&#x3D;\frac{1}{ad-bc}\left(<br>\begin{array}{cc}<br>d &amp;  -b \\<br>-c &amp;  a \\<br>\end{array}<br>\right)<br>$$</li>
+<li>二阶方阵的逆： <span class="math display">\[A_{2\times 2}=\left(
+\begin{array}{cc}
+a  &amp;  b \\\\
+c &amp;  d \\\\
+\end{array}
+\right)可逆\Leftrightarrow ad-bc\neq 0，且A^{-1}=\frac{1}{ad-bc}\left(
+\begin{array}{cc}
+d &amp;  -b \\\\
+-c &amp;  a \\\\
+\end{array}
+\right)
+\]</span></li>
 </ol>
 <ul>
-<li>$(A^{-1})^{-1}&#x3D;A$，$A$可逆则$A^{-1}$也可逆</li>
-<li>$(AB)^{-1}&#x3D;B^{-1}A^{-1}$，$n$阶方阵$A$和$B$都可逆，则$AB$可逆</li>
-<li>$(A^{T})^{-1}&#x3D;(A^{-1})^T$，$A$可逆则$A^{T}$也可逆</li>
+<li><span class="math inline">\((A^{-1})^{-1}=A\)</span>，<span
+class="math inline">\(A\)</span>可逆则<span
+class="math inline">\(A^{-1}\)</span>也可逆</li>
+<li><span class="math inline">\((AB)^{-1}=B^{-1}A^{-1}\)</span>，<span
+class="math inline">\(n\)</span>阶方阵<span
+class="math inline">\(A\)</span>和<span
+class="math inline">\(B\)</span>都可逆，则<span
+class="math inline">\(AB\)</span>可逆</li>
+<li><span class="math inline">\((A^{T})^{-1}=(A^{-1})^T\)</span>，<span
+class="math inline">\(A\)</span>可逆则<span
+class="math inline">\(A^{T}\)</span>也可逆</li>
 </ul>
-<h3 id="初等矩阵的逆"><a href="#初等矩阵的逆" class="headerlink" title="初等矩阵的逆"></a>初等矩阵的逆</h3><p>初等矩阵都是可逆的，它的逆是将其变回单位矩阵的初等矩阵。</p>
-<p>例子：$E_{21}(-5)E_{21}(5)&#x3D;I$</p>
-<h3 id="Gauss-Jordan消元法"><a href="#Gauss-Jordan消元法" class="headerlink" title="Gauss-Jordan消元法"></a>Gauss-Jordan消元法</h3><p>若A是可逆的，将分块矩阵 $(A|I)$ 通过简单行变换，得到 $(I|A^{-1})$</p>
+<h3 id="初等矩阵的逆">初等矩阵的逆</h3>
+<p>初等矩阵都是可逆的，它的逆是将其变回单位矩阵的初等矩阵。</p>
+<p>例子：<span class="math inline">\(E_{21}(-5)E_{21}(5)=I\)</span></p>
+<h3 id="gauss-jordan消元法">Gauss-Jordan消元法</h3>
+<p>若A是可逆的，将分块矩阵 <span class="math inline">\((A|I)\)</span>
+通过初等变换，可得到 <span class="math inline">\((I|A^{-1})\)</span></p>
+<p>扩展：求解<span
+class="math inline">\(A\bold{x}=B\)</span>，可以求<span
+class="math inline">\((A|B)\rightarrow (I|A^{-1}B)\)</span>，<span
+class="math inline">\(\bold{x}=A^{-1}B\)</span></p>
 <p>推论：</p>
-<p>$$A可逆\Leftrightarrow A可表示成一系列初等矩阵的乘积$$</p>
-<p>$$n阶方阵A可逆\Leftrightarrow A有n个主元$$</p>
-<h3 id="三角阵的逆"><a href="#三角阵的逆" class="headerlink" title="三角阵的逆"></a>三角阵的逆</h3><p>两个 $n$ 阶下(上)三角矩阵 $A$ 与 $B$ 的乘积仍为下(上)三角矩阵</p>
-<p>且 $AB$ 的主对角元等于 $A$ 与 $B$ 的相应主对角元的乘积.</p>
+<p><span class="math display">\[A可逆\Leftrightarrow
+A可表示成一系列初等矩阵的乘积\]</span></p>
+<p><span class="math display">\[n阶方阵A可逆\Leftrightarrow
+A有n个主元\]</span></p>
+<h3 id="三角阵的逆">三角阵的逆</h3>
+<p>两个 <span class="math inline">\(n\)</span> 阶下(上)三角矩阵 <span
+class="math inline">\(A\)</span> 与 <span
+class="math inline">\(B\)</span> 的乘积仍为下(上)三角矩阵</p>
+<p>且 <span class="math inline">\(AB\)</span> 的主对角元等于 <span
+class="math inline">\(A\)</span> 与 <span
+class="math inline">\(B\)</span> 的相应主对角元的乘积.</p>
 <p>可逆下三角矩阵的逆也是下三角阵</p>
-<p>分块上三角矩阵可逆$\Leftrightarrow$主对角线上各分块都是可逆的</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1].《线性代数（第六版）》.同济大学.高等教育出版社</p>
+<p>分块上三角矩阵可逆<span
+class="math inline">\(\Leftrightarrow\)</span>主对角线上各分块都是可逆的</p>
+<h2 id="伴随矩阵">伴随矩阵</h2>
+<p>A的伴随矩阵是一个n×n的矩阵，使得其第i 行第j
+列的元素是A关于第j行第i列的代数余子式</p>
+<p><span class="math display">\[
+[adj(A)]_{ij}=C_{ij}
+\]</span></p>
+<h2 id="cramers-rule">Cramer's rule</h2>
+<p><span class="math display">\[
+设(\alpha _1,\alpha _2,\alpha _3,\beta) \Leftrightarrow Ax=B\\\\
+A=(\alpha _1,\alpha _2,\alpha _3)\\\\
+A_i=(\beta,\alpha _2,\alpha _3)(i=1)
+\]</span></p>
+<p><span class="math display">\[
+则x=\frac{det|A_x|}{det|A|},y=\frac{|A_y|}{|A|},z=\frac{|A_z|}{|A|}
+\]</span></p>
+<h2 id="矩阵的秩">矩阵的秩</h2>
+<h3 id="子式"><strong>子式</strong></h3>
+<p>对于<span class="math inline">\(m\times n\)</span>的矩阵<span
+class="math inline">\(A\)</span>，任取<span
+class="math inline">\(k\)</span>行<span
+class="math inline">\(k\)</span>列，不变次序得到的含有<span
+class="math inline">\(k^2\)</span>个元素的矩阵，称为<span
+class="math inline">\(A\)</span>的<span
+class="math inline">\(k\)</span>阶子式</p>
+<h3 id="秩的行列式定义">秩的行列式定义</h3>
+<p><span
+class="math inline">\(A_{m×n}\)</span>的不为零的子式的最大阶数称为矩阵A的秩，记作r(A)，或rankA或R(A)</p>
+<p>零矩阵的秩为0；</p>
+<p>等价矩阵秩相同</p>
+<p><span class="math display">\[
+0\leq R(A) \leq min(m,n)
+\]</span></p>
+<h1 id="参考资料">参考资料</h1>
+<p>[1].《线性代数（第六版）》.同济大学.高等教育出版社</p>
 <p>[2].《学堂在线：线性代数（1）》.马辉、徐帆</p>
 
     </div>
@@ -689,7 +1039,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:10</span>
+    <span title="站点阅读时长">2:11</span>
   </span>
 </div>
 <div class="busuanzi-count">
