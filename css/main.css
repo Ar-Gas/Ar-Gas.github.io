@@ -2783,7 +2783,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #c2ff2d;
+  background: #a4fff7;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2851,4 +2851,8 @@ body {
 }
 .popup {
   opacity: 1;
+}
+/* 代码块隐藏 */
+.code-hidden {
+  display: none;
 }
