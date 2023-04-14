@@ -26,26 +26,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"fault"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ar Gas&#39;Blog">
-<meta property="og:url" content="https://ar-gas.github.io/categories/%E9%9A%8F%E7%AC%94/index.html">
+    <meta name="description" content="收录C++的一些用法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ 常用特性">
+<meta property="og:url" content="https://ar-gas.github.io/post/C++%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
+<meta property="og:description" content="收录C++的一些用法">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-14T01:45:00.000Z">
+<meta property="article:modified_time" content="2023-04-14T13:50:18.995Z">
 <meta property="article:author" content="Ar Gas">
-<meta property="article:tag" content="数学&#x2F;c++&#x2F;随笔&#x2F;读书笔记">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ar-gas.github.io/categories/%E9%9A%8F%E7%AC%94/">
+<link rel="canonical" href="https://ar-gas.github.io/post/C++%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"categories/随笔/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/C++%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/","path":"post/C++常用特性/","title":"C++ 常用特性"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分类: 随笔 | Ar Gas'Blog</title>
+<title>C++ 常用特性 | Ar Gas'Blog</title>
   
 
 
@@ -132,7 +134,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -145,6 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#for%E5%BE%AA%E7%8E%AFC-11"><span class="nav-text">for循环C++11</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2"><span class="nav-text">搜索</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -210,191 +213,163 @@
 
     </div>
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">随笔
-          <small>分类</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/C++%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpeg">
+      <meta itemprop="name" content="Ar Gas">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ar Gas'Blog">
+      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="C++ 常用特性 | Ar Gas'Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++ 常用特性
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+
+      <time title="创建时间：2023-04-14 09:45:00 / 修改时间：21:50:18" itemprop="dateCreated datePublished" datetime="2023-04-14T09:45:00+08:00">2023-04-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>102</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>收录C++的一些用法</p>
+<span id="more"></span>
+
+<h1 id="for循环C-11"><a href="#for循环C-11" class="headerlink" title="for循环C++11"></a>for循环C++11</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the C++03 way</span></span><br><span class="line"><span class="keyword">for</span> (std::vector&lt;<span class="type">int</span>&gt;::const_iterator ci = v.<span class="built_in">begin</span>(); ci != v.<span class="built_in">end</span>(); ++ci);</span><br><span class="line"></span><br><span class="line"><span class="comment">// the C++11 way</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> ci = v.<span class="built_in">cbegin</span>(); ci != v.<span class="built_in">cend</span>(); ++ci);</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span>&amp; elem : container) <span class="comment">//将迭代器元素的地址</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; elem : container) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> x : v) <span class="comment">//copy元素的值</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h1><p><code>binary_search(val)</code>二分搜索;</p>
+<p><code>lower_bound(val)</code>返回第一个<code>&gt;=</code> <code>val</code>的迭代器;</p>
+<p><code>upper_bound(val)</code>返回第一个<code>&gt;</code> <code>val</code>的迭代器</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-03-19T20:15:00+08:00"
-              content="2023-03-19">
-          03-19
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/post/%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B/" itemprop="url">
-            <span itemprop="name">沉默的螺旋</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          
 
-      
-    </header>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Ar Gas
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://ar-gas.github.io/post/C++%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/" title="C++ 常用特性">https://ar-gas.github.io/post/C++常用特性/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/CC%20BY-NC-SA%204.0/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C++</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" rel="prev" title="最小生成树">
+                  <i class="fa fa-chevron-left"></i> 最小生成树
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" rel="next" title="基础算法">
+                  基础算法 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-03-05T20:15:00+08:00"
-              content="2023-03-05">
-          03-05
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/post/%E9%A1%BA%E5%A2%83%E5%92%8C%E9%80%86%E5%A2%83/" itemprop="url">
-            <span itemprop="name">顺境和逆境</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-03-04T20:25:00+08:00"
-              content="2023-03-04">
-          03-04
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/post/chatGPT%20%E4%B8%80%E4%B8%AA%E4%BA%A4%E6%B5%81%E4%BC%9A%E7%9A%84%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">ChatGPT交流会的随笔</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-03-03T16:35:00+08:00"
-              content="2023-03-03">
-          03-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/%E5%B7%A5%E7%A8%8B%E4%BC%A6%E7%90%86%E9%9A%8F%E7%AC%94/" itemprop="url">
-            <span itemprop="name">工程伦理随笔</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-02-25T10:35:00+08:00"
-              content="2023-02-25">
-          02-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/%E7%94%9F%E6%97%A5%E5%B0%8F%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">生日小记</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-02-25T00:30:00+08:00"
-              content="2023-02-25">
-          02-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/%E8%A7%82%E7%82%B9%E8%87%AA%E5%B8%A6%E7%AB%8B%E5%9C%BA%EF%BC%8C%E4%BA%8B%E5%AE%9E%E8%B6%8A%E8%BE%A9%E8%B6%8A%E6%B8%85/" itemprop="url">
-            <span itemprop="name">观点自带立场，事实越辩越清</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-02-10T17:30:00+08:00"
-              content="2023-02-10">
-          02-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/%E5%85%B3%E4%BA%8E%E7%AB%9E%E4%BA%89/" itemprop="url">
-            <span itemprop="name">关于竞争</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-02-10T15:00:00+08:00"
-              content="2023-02-10">
-          02-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/%E4%BA%BA%E6%80%BB%E6%98%AF%E5%AF%B9%E7%86%9F%E6%82%89%E7%9A%84%E4%B8%96%E7%95%8C%E5%85%85%E6%BB%A1%E5%8E%8C%E5%80%A6%EF%BC%8C%E5%AF%B9%E6%9C%AA%E7%9F%A5%E7%9A%84%E4%B8%96%E7%95%8C%E5%85%85%E6%BB%A1%E5%B9%BB%E6%83%B3/" itemprop="url">
-            <span itemprop="name">人总是对熟悉的世界充满厌倦，对未知的世界充满幻想</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
-
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -483,13 +458,13 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"30eff3231bee011ad9ab2c5a367e163f"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"d7c916bc10a9aabb8d4ffe80994bf7c8"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
