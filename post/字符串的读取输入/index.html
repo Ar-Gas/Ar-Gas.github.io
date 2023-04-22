@@ -26,28 +26,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"fault"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="开个贴，写一些排序相关的东西">
+    <meta name="description" content="char* 输入 gets() gets(c)读取至&#39;\n&#39;或EOF停止，换行符不会复制，返回自动添加\0 C++11后不可用 fgets() fgets(c,int num,stream)读取num-1、&#39;\n&#39;、EOF停止，\n复制到字符串中，第n个字符不读取，返回自动添加\0 fgets()和gets()完全不同，fgets()包含任何结束换行符 一般用标准输入流:stdin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序&#x2F;Sort">
-<meta property="og:url" content="https://ar-gas.github.io/post/%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:title" content="字符串的输入&#x2F;输出">
+<meta property="og:url" content="https://ar-gas.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="开个贴，写一些排序相关的东西">
+<meta property="og:description" content="char* 输入 gets() gets(c)读取至&#39;\n&#39;或EOF停止，换行符不会复制，返回自动添加\0 C++11后不可用 fgets() fgets(c,int num,stream)读取num-1、&#39;\n&#39;、EOF停止，\n复制到字符串中，第n个字符不读取，返回自动添加\0 fgets()和gets()完全不同，fgets()包含任何结束换行符 一般用标准输入流:stdin">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-24T01:44:32.663Z">
-<meta property="article:modified_time" content="2023-03-28T14:17:55.347Z">
+<meta property="article:published_time" content="2023-04-19T11:55:59.337Z">
+<meta property="article:modified_time" content="2023-04-20T11:25:46.490Z">
 <meta property="article:author" content="Ar Gas">
-<meta property="article:tag" content="algrithm&#x2F;算法">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ar-gas.github.io/post/%E6%8E%92%E5%BA%8F/">
+<link rel="canonical" href="https://ar-gas.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/%E6%8E%92%E5%BA%8F/","path":"post/排序/","title":"排序/Sort"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/","path":"post/字符串的读取输入/","title":"字符串的输入/输出"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>排序/Sort | Ar Gas'Blog</title>
+<title>字符串的输入/输出 | Ar Gas'Blog</title>
   
 
 
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#c%E7%9A%84qsort%E4%B8%8Ec%E7%9A%84stsort"><span class="nav-text">c的qsort()与c++的st::sort()：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-selection-sort"><span class="nav-text">选择排序 Selection sort</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-insertion-sort"><span class="nav-text">插入排序 Insertion sort</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F-shell-sort"><span class="nav-text">希尔排序 Shell sort</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-merge-sort"><span class="nav-text">归并排序 Merge sort</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%AB%E6%8E%92-quick-sort"><span class="nav-text">快排 Quick sort</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A0%86%E6%8E%92-heap-sort"><span class="nav-text">堆排 Heap sort</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#char"><span class="nav-text">char*</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gets"><span class="nav-text">gets()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fgets"><span class="nav-text">fgets()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getchar"><span class="nav-text">getchar()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#puts"><span class="nav-text">puts()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fputs"><span class="nav-text">fputs()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#string"><span class="nav-text">string</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-1"><span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#stdcin"><span class="nav-text">std::cin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getline"><span class="nav-text">getline()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cout"><span class="nav-text">cout&lt;&lt;</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,7 +224,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/%E6%8E%92%E5%BA%8F/">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpeg">
@@ -237,12 +237,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="排序/Sort | Ar Gas'Blog">
+      <meta itemprop="name" content="字符串的输入/输出 | Ar Gas'Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          排序/Sort
+          字符串的输入/输出
         </h1>
 
         <div class="post-meta-container">
@@ -253,14 +253,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-03-24 09:44:32" itemprop="dateCreated datePublished" datetime="2023-03-24T09:44:32+08:00">2023-03-24</time>
+      <time title="创建时间：2023-04-19 19:55:59" itemprop="dateCreated datePublished" datetime="2023-04-19T19:55:59+08:00">2023-04-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-28 22:17:55" itemprop="dateModified" datetime="2023-03-28T22:17:55+08:00">2023-03-28</time>
+      <time title="修改时间：2023-04-20 19:25:46" itemprop="dateModified" datetime="2023-04-20T19:25:46+08:00">2023-04-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -272,7 +272,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
         </span>
     </span>
 
@@ -290,7 +290,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>357</span>
+      <span>201</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -308,69 +308,34 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>开个贴，写一些排序相关的东西</p>
-<span id="more"></span>
-<h1
-id="c的qsort与c的stsort"><code>c</code>的<code>qsort()</code>与<code>c++</code>的<code>st::sort()</code>：</h1>
-<p>实际上<code>sort</code>比快排<code>qsort</code>还要快，因为<code>c++</code>对<code>sort()</code>函数进行了优化，在<code>C++11</code>标准中排序的复杂度在最坏情况下为<code>O(nlogn)</code>,二者差距一到二个数量级。</p>
-<p><a
-target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/c-qsort-vs-c-sort/">参考链接</a></p>
-<h1 id="选择排序-selection-sort">选择排序 Selection sort</h1>
-<p>找到最值，与第一个指针交换。</p>
-<p>Find max or min,then exchange it with the first point.</p>
-<p><span
-class="math inline">\(\mathbf{time}:best:\omicron(n),worst:\omicron(n^2)\)</span></p>
-<p><span class="math inline">\(\mathbf{spcae}:\omicron(1)\)</span></p>
-<h1 id="插入排序-insertion-sort">插入排序 Insertion sort</h1>
-<p>找到最值，移动数组，插入空隙。</p>
-<p>Find max or min,then move the array of after-position,insert it to
-that position.</p>
-<p><span
-class="math inline">\(\mathbf{time}:best:\omicron(n),worst:\omicron(n^2)\)</span></p>
-<p><span class="math inline">\(\mathbf{spcae}:\omicron(1)\)</span></p>
-<figure>
-<img
-src="https://user-images.githubusercontent.com/111374823/228257166-a6c0f478-a970-42a3-bc28-567a528ea3a7.png"
-alt="Compara Selection sort with Insertion sort" />
-<figcaption aria-hidden="true">Compara Selection sort with Insertion
-sort</figcaption>
-</figure>
-<h2 id="希尔排序-shell-sort">希尔排序 Shell sort</h2>
-<p>让每间隔 <span class="math inline">\(h\)</span>
-的小数组是有序的，那么整体就是有序的<span class="math inline">\(（当 h
-\rightarrow 1）\)</span></p>
-<p>Let every interval <span class="math inline">\(h\)</span> of the
-small array be ordered, then the whole is ordered</p>
-<p>复杂度与 <span class="math inline">\(h\)</span> 有关。</p>
-<p><span class="math inline">\(\mathbf{time}:best:\omicron(nlog
-n),worst:\omicron(n^2)\)</span></p>
-<p><span class="math inline">\(\mathbf{spcae}:\omicron(1)\)</span></p>
-<h1 id="归并排序-merge-sort">归并排序 Merge sort</h1>
-<p>适用<strong>分而治之</strong>的方法，两两排序、归并、再排序、再归并（可用简单排序归并）···</p>
-<p>Using <em>Divide and Conquer</em> ,sort two number,merge two
-part,re-sort two part or number,re-merge two part...</p>
-<p><img
-src="https://user-images.githubusercontent.com/111374823/228256183-fe658482-c237-4f04-9d26-36f04ffb72d3.gif" /></p>
-<h1 id="快排-quick-sort">快排 Quick sort</h1>
-<p>将数据分区，（小于&lt;-&gt;大于）/（小于&lt;-&gt;等于&lt;-&gt;大于），再分而治之。</p>
-<p>Make date partition,with routine (lower&lt;-&gt;higher) or
-(lower&lt;-&gt;equle&lt;-&gt;higher),then divide and conquer.</p>
-<p>分区方案有：Lomuto partition scheme &amp; Hoare partition scheme:</p>
-<p>Lomuto：</p>
-<figure>
-<img
-src="https://user-images.githubusercontent.com/111374823/228255740-b6a958ba-fa99-4a62-bf84-ba0fb6ab6e3f.png"
-alt="Lomuto" />
-<figcaption aria-hidden="true">Lomuto</figcaption>
-</figure>
-<p>hoare：</p>
-<figure>
-<img
-src="https://user-images.githubusercontent.com/111374823/228255199-175509ce-e81a-44b9-8905-32657e9bc992.gif"
-alt="hoare" />
-<figcaption aria-hidden="true">hoare</figcaption>
-</figure>
-<h1 id="堆排-heap-sort">堆排 Heap sort</h1>
+        <h1 id="char">char*</h1>
+<h2 id="输入">输入</h2>
+<h3 id="gets">gets()</h3>
+<p><code>gets(c)</code>读取至<code>'\n'</code>或<code>EOF</code>停止，<code>换行符</code>不会复制，返回自动添加<code>\0</code></p>
+<p>C++11后不可用</p>
+<h3 id="fgets">fgets()</h3>
+<p><code>fgets(c,int num,stream)</code>读取<code>num-1</code>、<code>'\n'</code>、<code>EOF</code>停止，<strong><code>\n</code>复制到字符串中</strong>，第<code>n</code>个字符不读取，返回自动添加<code>\0</code></p>
+<p><code>fgets()</code>和<code>gets()</code>完全不同，<code>fgets()</code>包含任何结束换行符</p>
+<p>一般用标准输入流:<code>stdin</code></p>
+<h3 id="getchar">getchar()</h3>
+<p>返回读取字符，常用于抵消<code>'\n'</code></p>
+<p>与<code>getc(stdin)</code>等价</p>
+<h2 id="输出">输出</h2>
+<h3 id="puts">puts()</h3>
+<p><code>puts(c)</code>输出时在末尾添加<code>'\n'</code>；</p>
+<h3 id="fputs">fputs()</h3>
+<p><code>fputs(c，stdout)</code>输出直至<code>'\0'</code>，不会写入额外字符；</p>
+<h1 id="string">string</h1>
+<h2 id="输入-1">输入</h2>
+<h3 id="stdcin">std::cin</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cin&gt;&gt;s;</span><br></pre></td></tr></table></figure>
+<p>读到任意空白符（<code>'\n'</code>,<code>'\t'</code>,<code>'\0'</code>,<code>' '</code>）停止</p>
+<h3 id="getline">getline()</h3>
+<p><code>getline(cin,s,delim)</code>定界字符<code>delim</code>默认<code>'\n'</code>；</p>
+<p>定界字符提取但不储存，下次读取跳过。</p>
+<h2 id="输出-1">输出</h2>
+<h3 id="cout">cout&lt;&lt;</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout&lt;&lt;s;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -388,7 +353,7 @@ alt="hoare" />
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://ar-gas.github.io/post/%E6%8E%92%E5%BA%8F/" title="排序&#x2F;Sort">https://ar-gas.github.io/post/排序/</a>
+      <a href="https://ar-gas.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/" title="字符串的输入&#x2F;输出">https://ar-gas.github.io/post/字符串的读取输入/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/CC%20BY-NC-SA%204.0/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
@@ -397,20 +362,20 @@ alt="hoare" />
 </div>
 
           <div class="post-tags">
-              <a href="/tags/algrithm-%E7%AE%97%E6%B3%95/" rel="tag"># algrithm/算法</a>
+              <a href="/tags/C/" rel="tag"># C++</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/post/%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B/" rel="prev" title="沉默的螺旋">
-                  <i class="fa fa-chevron-left"></i> 沉默的螺旋
+                <a href="/post/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" rel="prev" title="基础算法">
+                  <i class="fa fa-chevron-left"></i> 基础算法
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/post/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%EF%BC%88TC++PL%20B.S.%EF%BC%89%E9%9A%8F%E7%AC%94/" rel="next" title="C++程序设计语言（TC++PL B.S.）随笔">
-                  C++程序设计语言（TC++PL B.S.）随笔 <i class="fa fa-chevron-right"></i>
+                <a href="/post/%E5%8E%86%E5%8F%B2%E7%AC%94%E8%AE%B0/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -518,7 +483,7 @@ alt="hoare" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"13b418b76581b121a01da3ae4660d966"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"d5327892fe261f4ef2e9ba6fdca464c6"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
