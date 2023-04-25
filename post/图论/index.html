@@ -33,14 +33,11 @@
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
 <meta property="og:description" content="简单图论">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://user-images.githubusercontent.com/111374823/230520438-5515ddf5-fb70-4781-82d6-82178b5298d7.png">
-<meta property="og:image" content="https://user-images.githubusercontent.com/111374823/230520450-4cb0d854-6bff-41cd-8f5b-f1a0ee2d42be.png">
 <meta property="article:published_time" content="2023-04-02T02:00:22.132Z">
 <meta property="article:modified_time" content="2023-04-07T01:32:38.891Z">
 <meta property="article:author" content="Ar Gas">
 <meta property="article:tag" content="algrithm&#x2F;算法">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/111374823/230520438-5515ddf5-fb70-4781-82d6-82178b5298d7.png">
 
 
 <link rel="canonical" href="https://ar-gas.github.io/post/%E5%9B%BE%E8%AE%BA/">
@@ -99,7 +96,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">39</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">38</span></a></li><li class="menu-item menu-item-update"><a href="/update/" rel="section"><i class="fa fa-calendar fa-fw"></i>update</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -150,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Representations-of-graphs"><span class="nav-text">Representations of graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adjacency-list"><span class="nav-text">Adjacency-list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adjacency-matrix"><span class="nav-text">Adjacency-matrix</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#representations-of-graphs"><span class="nav-text">Representations of graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#adjacency-list"><span class="nav-text">Adjacency-list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adjacency-matrix"><span class="nav-text">Adjacency-matrix</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#references"><span class="nav-text">References</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -165,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -313,28 +310,48 @@
     <div class="post-body" itemprop="articleBody">
         <p>简单图论</p>
 <span id="more"></span>
-
-
-
-<h1 id="Representations-of-graphs"><a href="#Representations-of-graphs" class="headerlink" title="Representations of graphs"></a>Representations of graphs</h1><p>Graph consists of two components:<strong>node(vertice)</strong> &amp; <strong>edge</strong></p>
-<p>Differing from the definition of edfe,<em>Graph</em> can be divided into <em>directed graph</em>,<em>Undirected graph</em>.And different connection also heve other different property.</p>
-<p>Here are two standard ways to represent a graph $G&#x3D;(V,E)$：</p>
-<h2 id="Adjacency-list"><a href="#Adjacency-list" class="headerlink" title="Adjacency-list"></a>Adjacency-list</h2><p><img src="https://user-images.githubusercontent.com/111374823/230520438-5515ddf5-fb70-4781-82d6-82178b5298d7.png" alt="adjacency list"></p>
-<p>Using list to express edge between the vertex element and followed elements,the <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/graph-and-its-representations/?ref=lbp">C++ codes</a> as follows:</p>
+<h1 id="representations-of-graphs">Representations of graphs</h1>
+<p>Graph consists of two components:<strong>node(vertice)</strong> &amp;
+<strong>edge</strong></p>
+<p>Differing from the definition of edfe,<em>Graph</em> can be divided
+into <em>directed graph</em>,<em>Undirected graph</em>.And different
+connection also heve other different property.</p>
+<p>Here are two standard ways to represent a graph <span
+class="math inline">\(G=(V,E)\)</span>：</p>
+<h2 id="adjacency-list">Adjacency-list</h2>
+<figure>
+<img
+src="https://user-images.githubusercontent.com/111374823/230520438-5515ddf5-fb70-4781-82d6-82178b5298d7.png"
+alt="adjacency list" />
+<figcaption aria-hidden="true">adjacency list</figcaption>
+</figure>
+<p>Using list to express edge between the vertex element and followed
+elements,the <a
+target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/graph-and-its-representations/?ref=lbp">C++
+codes</a> as follows:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A simple representation of graph using STL</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// A utility function to add an edge in an</span></span><br><span class="line"><span class="comment">// undirected graph.</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">addEdge</span><span class="params">(vector&lt;<span class="type">int</span>&gt; adj[], <span class="type">int</span> u, <span class="type">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    adj[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">    adj[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// A utility function to print the adjacency list</span></span><br><span class="line"><span class="comment">// representation of graph</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printGraph</span><span class="params">(vector&lt;<span class="type">int</span>&gt; adj[], <span class="type">int</span> V)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> v = <span class="number">0</span>; v &lt; V; ++v) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n Adjacency list of vertex &quot;</span> &lt;&lt; v</span><br><span class="line">             &lt;&lt; <span class="string">&quot;\n head &quot;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x : adj[v])</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;-&gt; &quot;</span> &lt;&lt; x;</span><br><span class="line">               cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Driver code</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> V = <span class="number">5</span>;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; adj[V];</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">1</span>, <span class="number">4</span>);</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">3</span>, <span class="number">4</span>);</span><br><span class="line">    <span class="built_in">printGraph</span>(adj, V);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>This way is used to represent a <strong>directed graphs</strong>,and is also a compact way to represent <strong>spare</strong> graphs.</p>
-<h2 id="Adjacency-matrix"><a href="#Adjacency-matrix" class="headerlink" title="Adjacency-matrix"></a>Adjacency-matrix</h2><p><img src="https://user-images.githubusercontent.com/111374823/230520450-4cb0d854-6bff-41cd-8f5b-f1a0ee2d42be.png" alt="adjacency matrix"></p>
+<p>This way is used to represent a <strong>directed graphs</strong>,and
+is also a compact way to represent <strong>spare</strong> graphs.</p>
+<h2 id="adjacency-matrix">Adjacency-matrix</h2>
+<figure>
+<img
+src="https://user-images.githubusercontent.com/111374823/230520450-4cb0d854-6bff-41cd-8f5b-f1a0ee2d42be.png"
+alt="adjacency matrix" />
+<figcaption aria-hidden="true">adjacency matrix</figcaption>
+</figure>
 <p>We using adj[i][j] to express the edge form i to j;</p>
-<p>Directed graph need to assign adj[i][j]&#x3D;1 and adj[j][i]&#x3D;1</p>
-<p>Undirected graph only need to assign  adj[i][j]&#x3D;;</p>
+<p>Directed graph need to assign adj[i][j]=1 and adj[j][i]=1</p>
+<p>Undirected graph only need to assign adj[i][j]=;</p>
 <p>here are the C++ codes:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// n is the number of vertices</span></span><br><span class="line">    <span class="comment">// m is the number of edges</span></span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="type">int</span> adjMat[n + <span class="number">1</span>][n + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="type">int</span> u, v;</span><br><span class="line">        cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">        adjMat[u][v] = <span class="number">1</span>;</span><br><span class="line">        adjMat[v][u] = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// for a directed graph with an edge pointing from u</span></span><br><span class="line">        <span class="comment">// to v,we just assign adjMat[u][v] as 1</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p>when we need to be able to tell quickly if there is an edge connecting two given vertices.</p>
+<p>when we need to be able to tell quickly if there is an edge
+connecting two given vertices.</p>
 </blockquote>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>[1].<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/graph-and-its-representations/?ref=lbp">Basics of Graph Theory</a></p>
+<h1 id="references">References</h1>
+<p>[1].<a
+target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/graph-and-its-representations/?ref=lbp">Basics
+of Graph Theory</a></p>
 
     </div>
 
@@ -408,13 +425,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">40k</span>
+    <span title="站点总字数">39k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:25</span>
+    <span title="站点阅读时长">2:20</span>
   </span>
 </div>
 <div class="busuanzi-count">
