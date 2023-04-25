@@ -26,29 +26,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"fault"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="简单笔记，阅读基础为C语言和部分STL等，以序号排列，持续更新  1001 引用 在使用指针的过程中，我们会经常担心指针指向了一些奇奇怪怪的地方，为了解决指针的弊端，C++引入了引用的功能,类似于指向不可修改的指针，永远指向某个对象 1T&amp; r; &#x2F;&#x2F;T&amp;: T的引用">
+    <meta name="description" content="Include 《A Tool of C++》、《C++ programming language》  newnew（动态存储分配），C++的一种创建对象的方式 12int a&#x3D;new int&amp;#123;7&amp;#125;;&#x2F;&#x2F;一个int变量int b&#x3D;new int[10]&#x2F;&#x2F;一个数量为10的int数组  引用引用与指针类似，但语法规则有很多不同 12345int a1&#x3D;2;int a2&#x3D;3int">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++程序设计语言（TC++PL B.S.）随笔">
-<meta property="og:url" content="https://ar-gas.github.io/post/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%EF%BC%88TC++PL%20B.S.%EF%BC%89%E9%9A%8F%E7%AC%94/index.html">
+<meta property="og:title" content="C++读书笔记">
+<meta property="og:url" content="https://ar-gas.github.io/post/C++%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="简单笔记，阅读基础为C语言和部分STL等，以序号排列，持续更新  1001 引用 在使用指针的过程中，我们会经常担心指针指向了一些奇奇怪怪的地方，为了解决指针的弊端，C++引入了引用的功能,类似于指向不可修改的指针，永远指向某个对象 1T&amp; r; &#x2F;&#x2F;T&amp;: T的引用">
+<meta property="og:description" content="Include 《A Tool of C++》、《C++ programming language》  newnew（动态存储分配），C++的一种创建对象的方式 12int a&#x3D;new int&amp;#123;7&amp;#125;;&#x2F;&#x2F;一个int变量int b&#x3D;new int[10]&#x2F;&#x2F;一个数量为10的int数组  引用引用与指针类似，但语法规则有很多不同 12345int a1&#x3D;2;int a2&#x3D;3int">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0c4349711484e068ed399a04ec8172e~tplv-k3u1fbpfcp-watermark.image">
 <meta property="article:published_time" content="2023-03-28T14:22:33.871Z">
-<meta property="article:modified_time" content="2023-03-16T05:00:21.338Z">
+<meta property="article:modified_time" content="2023-04-25T13:57:17.856Z">
 <meta property="article:author" content="Ar Gas">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="read-notes&#x2F;读书笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0c4349711484e068ed399a04ec8172e~tplv-k3u1fbpfcp-watermark.image">
 
 
-<link rel="canonical" href="https://ar-gas.github.io/post/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%EF%BC%88TC++PL%20B.S.%EF%BC%89%E9%9A%8F%E7%AC%94/">
+<link rel="canonical" href="https://ar-gas.github.io/post/C++%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%EF%BC%88TC++PL%20B.S.%EF%BC%89%E9%9A%8F%E7%AC%94/","path":"post/C++程序设计语言（TC++PL B.S.）随笔/","title":"C++程序设计语言（TC++PL B.S.）随笔"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/C++%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/","path":"post/C++读书笔记/","title":"C++读书笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>C++程序设计语言（TC++PL B.S.）随笔 | Ar Gas'Blog</title>
+<title>C++读书笔记 | Ar Gas'Blog</title>
   
 
 
@@ -148,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text">1001 引用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#section"><span class="nav-text">1002</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%9A%8F%E7%AC%94"><span class="nav-text">1002.5 随笔</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#new"><span class="nav-text">new</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text">引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8-%E8%B5%8B%E5%80%BC"><span class="nav-text">用{}赋值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E7%BB%91%E5%AE%9A"><span class="nav-text">结构化绑定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%AE%80%E6%98%93%E5%A4%8D%E6%95%B0%E7%B1%BB%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">简易复数类的实现</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9E%84%E9%80%A0-%E6%9E%90%E6%9E%84-%E5%87%BD%E6%95%B0"><span class="nav-text">构造+析构 函数</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -225,7 +227,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%EF%BC%88TC++PL%20B.S.%EF%BC%89%E9%9A%8F%E7%AC%94/">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/C++%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpeg">
@@ -238,12 +240,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="C++程序设计语言（TC++PL B.S.）随笔 | Ar Gas'Blog">
+      <meta itemprop="name" content="C++读书笔记 | Ar Gas'Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C++程序设计语言（TC++PL B.S.）随笔
+          C++读书笔记
         </h1>
 
         <div class="post-meta-container">
@@ -261,7 +263,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-16 13:00:21" itemprop="dateModified" datetime="2023-03-16T13:00:21+08:00">2023-03-16</time>
+      <time title="修改时间：2023-04-25 21:57:17" itemprop="dateModified" datetime="2023-04-25T21:57:17+08:00">2023-04-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -291,14 +293,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>165</span>
+      <span>628</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -310,24 +312,38 @@
     
     <div class="post-body" itemprop="articleBody">
         <blockquote>
-<p>简单笔记，阅读基础为C语言和部分STL等，以序号排列，持续更新</p>
+<p>Include 《A Tool of C++》、《C++ programming language》</p>
 </blockquote>
-<h6 id="引用">1001 引用</h6>
-<p>在使用指针的过程中，我们会经常担心指针指向了一些奇奇怪怪的地方，为了解决指针的弊端，C++引入了引用的功能,类似于指向不可修改的指针，永远指向某个对象</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">T&amp; r; <span class="comment">//T&amp;: T的引用</span></span><br></pre></td></tr></table></figure>
+<h5 id="new"><a href="#new" class="headerlink" title="new"></a>new</h5><p>new（动态存储分配），C++的一种创建对象的方式</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="keyword">new</span> <span class="type">int</span>&#123;<span class="number">7</span>&#125;;<span class="comment">//一个int变量</span></span><br><span class="line"><span class="type">int</span> b=<span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>]<span class="comment">//一个数量为10的int数组</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><p>引用与指针类似，但语法规则有很多不同</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a1=<span class="number">2</span>;</span><br><span class="line"><span class="type">int</span> a2=<span class="number">3</span></span><br><span class="line"><span class="type">int</span> &amp; r1=a1; <span class="comment">//T&amp;: T的引用</span></span><br><span class="line"><span class="type">int</span> &amp; r2=a2;</span><br><span class="line">r1=r2;</span><br></pre></td></tr></table></figure>
+<p>在赋值语句<code>r1=r2</code>中，引用会提取r2引用的值，改变r1引用的值，而指针只会改变指针的地址，不会改变元素。</p>
 <span id="more"></span>
-<h6 id="section">1002</h6>
-<p>使用赋值=有时会出现类型转换导致信息丢失，例如：</p>
+
+<h5 id="用-赋值"><a href="#用-赋值" class="headerlink" title="用{}赋值"></a>用{}赋值</h5><p>使用赋值&#x3D;有时会出现类型转换导致信息丢失，例如：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">7.2</span> <span class="comment">//a为7</span></span><br></pre></td></tr></table></figure>
+
 <p>而使用{}能发现这一错误</p>
-<figure>
-<img
-src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0c4349711484e068ed399a04ec8172e~tplv-k3u1fbpfcp-watermark.image?"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure>
-<h6 id="随笔">1002.5 随笔</h6>
-<p>作者在类的概念上进行了强调和讲解</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0c4349711484e068ed399a04ec8172e~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<p>函数的返回值也可以是一类对象{}：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Entry</span>&#123;</span><br><span class="line">	string name;</span><br><span class="line">	<span class="type">int</span> value;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">Entry <span class="title">read_entry</span><span class="params">(istream&amp; is)</span></span>&#123;</span><br><span class="line">	string s;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	is&gt;&gt;s&gt;&gt;i;</span><br><span class="line">	<span class="keyword">return</span> &#123;s,i&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> e = <span class="built_in">read_entry</span>(cin);<span class="comment">//auto:自动判断返回值</span></span><br><span class="line"></span><br><span class="line">cout&lt;&lt;<span class="string">&quot;&#123;&quot;</span>&lt;&lt;e.name&lt;&lt;<span class="string">&quot;,&quot;</span>&lt;&lt;e.value&lt;&lt;<span class="string">&quot;&#125;\n&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，auto自动判断返回值为{s,i};</p>
+<h5 id="结构化绑定"><a href="#结构化绑定" class="headerlink" title="结构化绑定"></a>结构化绑定</h5><p>续上条的代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> [n,v] = <span class="built_in">read_entry</span>(is);</span><br><span class="line">cout&lt;&lt;<span class="string">&quot;&#123;&quot;</span>&lt;&lt;n&lt;&lt;<span class="string">&quot;,&quot;</span>&lt;&lt;v&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p><code>n,v</code> 的类型是从函数<code>read_entry</code>中推出的，这种给类设定局部名字的方式称为结构化绑定，例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">map&lt;string,<span class="type">int</span>&gt;m;</span><br><span class="line"><span class="comment">//...input m....</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">const</span> <span class="keyword">auto</span> [key,value]:m)</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;&#123;&quot;</span>&lt;&lt;key&lt;&lt;<span class="string">&quot;,&quot;</span>&lt;&lt;value&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h5 id="类"><a href="#类" class="headerlink" title="类"></a>类</h5><p>class建议先阅读private的变量名，在阅读public的构造函数（构造函数用{}赋值）</p>
+<h6 id="简易复数类的实现"><a href="#简易复数类的实现" class="headerlink" title="简易复数类的实现"></a>简易复数类的实现</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">complex</span>&#123;</span><br><span class="line">	<span class="type">double</span> re im;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">complex</span>(<span class="type">double</span> r,<span class="type">double</span> i):re&#123;r&#125;,im&#123;i&#125;&#123;&#125;</span><br><span class="line">	<span class="built_in">complex</span>(<span class="type">double</span> r):re&#123;r&#125;,im&#123;<span class="number">0</span>&#125;&#123;&#125;</span><br><span class="line">	<span class="built_in">conplex</span>():re&#123;<span class="number">0</span>&#125;,im&#123;<span class="number">0</span>&#125;&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">double</span> <span class="title">real</span><span class="params">()</span><span class="type">const</span></span>&#123;<span class="keyword">return</span> re;&#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">real</span><span class="params">(<span class="type">double</span> d)</span></span>&#123;re=d;&#125;</span><br><span class="line">	<span class="function"><span class="type">double</span> <span class="title">imag</span><span class="params">()</span><span class="type">const</span></span>&#123;<span class="keyword">return</span> im;&#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">imag</span><span class="params">(<span class="type">double</span> d)</span></span>&#123;im=d;&#125;</span><br><span class="line"></span><br><span class="line">	complex &amp; <span class="keyword">operator</span>+=(complex z)&#123;</span><br><span class="line">		re+=z.re;</span><br><span class="line">		im+=z.im;</span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	complex &amp; <span class="keyword">operator</span>-=(complex z)&#123;</span><br><span class="line">		re-=z.re;</span><br><span class="line">		im-=z.im;</span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	complex &amp; <span class="keyword">operator</span>*=(complex);<span class="comment">//类外定义</span></span><br><span class="line">	complex &amp; <span class="keyword">operator</span>/=(complex);<span class="comment">//别处定义</span></span><br><span class="line"></span><br><span class="line">	complex <span class="keyword">operator</span>+(complex a,complex b)&#123;<span class="keyword">return</span> a+=b;&#125;</span><br><span class="line">	complex <span class="keyword">operator</span>-(complex a,complex b)&#123;<span class="keyword">return</span> a-=b;&#125;</span><br><span class="line">	complex <span class="keyword">operator</span>-(complex a)&#123;<span class="keyword">return</span> &#123;-a.<span class="built_in">real</span>(),-a.<span class="built_in">imag</span>()&#125;;&#125;</span><br><span class="line">	complex <span class="keyword">operator</span>*(complex a,complex b)&#123;<span class="keyword">return</span> a*=b;&#125;</span><br><span class="line">	complex <span class="keyword">operator</span>/(complex a,complex b)&#123;<span class="keyword">return</span> a/=b;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span>==(complex a,complex b)&#123;</span><br><span class="line">		<span class="keyword">return</span> a.<span class="built_in">real</span>()==b.<span class="built_in">real</span>()&amp;&amp;a.<span class="built_in">imag</span>()==b.<span class="built_in">imag</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span>!=(complex a,complex b)&#123;</span><br><span class="line">		<span class="keyword">return</span> !(a==b);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function">complex <span class="title">sqrt</span><span class="params">(complex)</span></span>;<span class="comment">//别处定义</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>拷贝相当废内存和时间，所以经常用返回值和<code>operator</code>来替代拷贝</p>
+<h6 id="构造-析构-函数"><a href="#构造-析构-函数" class="headerlink" title="构造+析构 函数"></a>构造+析构 函数</h6><p>以vector为例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">vector</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">vector</span>(<span class="type">int</span> s):elem&#123;<span class="keyword">new</span> <span class="type">double</span>[s]&#125;,sz&#123;s&#125;&#123;<span class="comment">//构造函数</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i!=s;++i)    <span class="comment">//初始化</span></span><br><span class="line">  			elem[i]=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>()&#123;<span class="type">double</span>[] elem;&#125;<span class="comment">//析构函数，释放资源</span></span><br><span class="line"></span><br><span class="line">	<span class="type">double</span>&amp;<span class="keyword">operator</span>[](<span class="type">int</span> i);</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span><span class="type">const</span></span>;<span class="comment">//类外定义</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">double</span>* elem;</span><br><span class="line">	<span class="type">int</span> sz;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>构造函数+析构函数可以让使用者无需设计释放函数，避免内存泄漏</p>
 
     </div>
 
@@ -345,7 +361,7 @@ alt="image.png" />
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://ar-gas.github.io/post/C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%EF%BC%88TC++PL%20B.S.%EF%BC%89%E9%9A%8F%E7%AC%94/" title="C++程序设计语言（TC++PL B.S.）随笔">https://ar-gas.github.io/post/C++程序设计语言（TC++PL B.S.）随笔/</a>
+      <a href="https://ar-gas.github.io/post/C++%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="C++读书笔记">https://ar-gas.github.io/post/C++读书笔记/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/CC%20BY-NC-SA%204.0/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
@@ -402,13 +418,13 @@ alt="image.png" />
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">39k</span>
+    <span title="站点总字数">40k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:23</span>
+    <span title="站点阅读时长">2:25</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -476,7 +492,7 @@ alt="image.png" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"b9c62ba1fc79fd8d4ddaa628b504f05b"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"6d2bd96fa67a0b12a7b32f24a2b232e4"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
