@@ -26,12 +26,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"fault"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="数学归纳法的等价定义基本条件：  当 $n&#x3D;1$ 时，$T$ 成立； 对任意 $n&gt;1$，如果 $n-1$ 时 $T$ 成立，那么 $n$ 时 $T$ 也成立  定义：如果对于带有参数 $n$ 的命题 $P$ ，当 $n&#x3D;1$ 时 $Р$ 成立；并且如果对每一个 $n (n&gt;1)$,若 $n-1$ 时 $P$ 成立能推出 $n$ 时 $Р$ 也成立；那么对任意自">
+    <meta name="description" content="数学归纳法的等价定义 基本条件：  当 \(n&#x3D;1\) 时，\(T\) 成立； 对任意 \(n&gt;1\)，如果 \(n-1\) 时 \(T\) 成立，那么 \(n\) 时 \(T\) 也成立  定义：如果对于带有参数 \(n\) 的命题 \(P\) ，当 \(n&#x3D;1\) 时 \(Р\) 成立；并且如果对每一个 \(n (n&gt;1)\),若 \(n-1\) 时 \(P\) 成">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《算法引论》笔记">
 <meta property="og:url" content="https://ar-gas.github.io/post/%E7%AE%97%E6%B3%95%E5%BC%95%E8%AE%BA%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="数学归纳法的等价定义基本条件：  当 $n&#x3D;1$ 时，$T$ 成立； 对任意 $n&gt;1$，如果 $n-1$ 时 $T$ 成立，那么 $n$ 时 $T$ 也成立  定义：如果对于带有参数 $n$ 的命题 $P$ ，当 $n&#x3D;1$ 时 $Р$ 成立；并且如果对每一个 $n (n&gt;1)$,若 $n-1$ 时 $P$ 成立能推出 $n$ 时 $Р$ 也成立；那么对任意自">
+<meta property="og:description" content="数学归纳法的等价定义 基本条件：  当 \(n&#x3D;1\) 时，\(T\) 成立； 对任意 \(n&gt;1\)，如果 \(n-1\) 时 \(T\) 成立，那么 \(n\) 时 \(T\) 也成立  定义：如果对于带有参数 \(n\) 的命题 \(P\) ，当 \(n&#x3D;1\) 时 \(Р\) 成立；并且如果对每一个 \(n (n&gt;1)\),若 \(n-1\) 时 \(P\) 成">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-22T02:56:57.956Z">
 <meta property="article:modified_time" content="2023-04-25T02:57:36.526Z">
@@ -310,28 +310,52 @@
     
     <div class="post-body" itemprop="articleBody">
         <span id="more"></span>
-
-<h1 id="数学归纳法的等价定义"><a href="#数学归纳法的等价定义" class="headerlink" title="数学归纳法的等价定义"></a>数学归纳法的等价定义</h1><p><strong>基本条件</strong>：</p>
-<ol>
-<li>当 $n&#x3D;1$ 时，$T$ 成立；</li>
-<li>对任意 $n&gt;1$，如果 $n-1$ 时 $T$ 成立，那么 $n$ 时 $T$ 也成立</li>
+<h1 id="数学归纳法的等价定义">数学归纳法的等价定义</h1>
+<p><strong>基本条件</strong>：</p>
+<ol type="1">
+<li>当 <span class="math inline">\(n=1\)</span> 时，<span
+class="math inline">\(T\)</span> 成立；</li>
+<li>对任意 <span class="math inline">\(n&gt;1\)</span>，如果 <span
+class="math inline">\(n-1\)</span> 时 <span
+class="math inline">\(T\)</span> 成立，那么 <span
+class="math inline">\(n\)</span> 时 <span
+class="math inline">\(T\)</span> 也成立</li>
 </ol>
-<p><strong>定义</strong>：如果对于带有参数 $n$ 的命题 $P$ ，当 $n&#x3D;1$ 时 $Р$ 成立；并且如果对每一个 $n (n&gt;1)$,若 $n-1$ 时 $P$ 成立能推出 $n$ 时 $Р$ 也成立；那么对任意自然数，$Р$ 都成立。</p>
-<p><code>等价一</code>：如果对于带有参数n的命题P，当n&#x3D; 1时Р成立;并且如果对每一个n (n ≥ 1 ),若n时Р成立能推出n+1时Р也成立;那么对任意自然数，Р都成立。</p>
-<p><code>等价二</code>：如果对于带有参数n的命题P，当n&#x3D;1时Р成立;并且如果对每一个n (n&gt; 1 ),若对任意小于n的自然数Р成立能推出对n命题Р也成立;那么对任意自然数,Р都成立。</p>
-<p><code>等价三</code>：如果对于带有参数n的命题P，当n&#x3D;1和n&#x3D;2时Р都成立;并且如果对每一个n (n &gt;2)，若n-2时Р成立能推出n时Р也成立;那么对任意自然数，Р都成立。</p>
-<p><code>等价四</code>：如果对于带有参数n的命题P，当n&#x3D;1和n&#x3D;2时Р都成立;并且如果对每一个n (n &gt;2)，若n-2时Р成立能推出n时Р也成立;那么对任意自然数，Р都成立。</p>
-<h1 id="一些公式"><a href="#一些公式" class="headerlink" title="一些公式"></a>一些公式</h1><ol>
-<li>   $x^n-1$ 能被 $x-1$ 除尽;</li>
-<li>   前n个自然数和为 n(n+1)&#x2F;2;</li>
-<li>   级数 $8+13+18+23+···+(3+5n)$ 之和是 $2.5n^2+5.5n$</li>
-<li>   $(1+x)^n&gt;&#x3D;1+nx$</li>
+<p><strong>定义</strong>：如果对于带有参数 <span
+class="math inline">\(n\)</span> 的命题 <span
+class="math inline">\(P\)</span> ，当 <span
+class="math inline">\(n=1\)</span> 时 <span
+class="math inline">\(Р\)</span> 成立；并且如果对每一个 <span
+class="math inline">\(n (n&gt;1)\)</span>,若 <span
+class="math inline">\(n-1\)</span> 时 <span
+class="math inline">\(P\)</span> 成立能推出 <span
+class="math inline">\(n\)</span> 时 <span
+class="math inline">\(Р\)</span> 也成立；那么对任意自然数，<span
+class="math inline">\(Р\)</span> 都成立。</p>
+<p><code>等价一</code>：如果对于带有参数n的命题P，当n=
+1时Р成立;并且如果对每一个n (n ≥ 1
+),若n时Р成立能推出n+1时Р也成立;那么对任意自然数，Р都成立。</p>
+<p><code>等价二</code>：如果对于带有参数n的命题P，当n=1时Р成立;并且如果对每一个n
+(n&gt; 1
+),若对任意小于n的自然数Р成立能推出对n命题Р也成立;那么对任意自然数,Р都成立。</p>
+<p><code>等价三</code>：如果对于带有参数n的命题P，当n=1和n=2时Р都成立;并且如果对每一个n
+(n &gt;2)，若n-2时Р成立能推出n时Р也成立;那么对任意自然数，Р都成立。</p>
+<p><code>等价四</code>：如果对于带有参数n的命题P，当n=1和n=2时Р都成立;并且如果对每一个n
+(n &gt;2)，若n-2时Р成立能推出n时Р也成立;那么对任意自然数，Р都成立。</p>
+<h1 id="一些公式">一些公式</h1>
+<ol type="1">
+<li><span class="math inline">\(x^n-1\)</span> 能被 <span
+class="math inline">\(x-1\)</span> 除尽;</li>
+<li>前n个自然数和为 n(n+1)/2;</li>
+<li>级数 <span class="math inline">\(8+13+18+23+···+(3+5n)\)</span>
+之和是 <span class="math inline">\(2.5n^2+5.5n\)</span></li>
+<li><span class="math inline">\((1+x)^n&gt;=1+nx\)</span></li>
 </ol>
-<h1 id="证明的思路"><a href="#证明的思路" class="headerlink" title="证明的思路"></a>证明的思路</h1><ol>
-<li>   证明增长率</li>
+<h1 id="证明的思路">证明的思路</h1>
+<ol type="1">
+<li>证明增长率</li>
 <li></li>
 </ol>
-<p>	</p>
 
     </div>
 
