@@ -26,28 +26,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"fault"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="char*输入gets()gets(c)读取至&#39;\n&#39;或EOF停止，换行符不会复制，返回自动添加\0 C++11后不可用 fgets()fgets(c,int num,stream)读取num-1、&#39;\n&#39;、EOF停止，**\n复制到字符串中**，第n个字符不读取，返回自动添加\0 fgets()和gets()完全不同，fgets()包含任何结束换行符 一般用标准输">
+    <meta name="description" content="快速幂利用$A^{n}&#x3D;(A^{n&#x2F;2})^2$快速实现偶数幂的计算，奇数幂-1即可 递归实现（伪代码） 123456int binpow(int a,int n)&amp;#123;	if n&#x3D;&#x3D;0 return 1;     if n是奇数 reutrn binpow(a,n-1);       n是偶数 return binpow(a,n&#x2F;2)*binpow(a,n&#x2F;2);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字符串的输入&#x2F;输出">
-<meta property="og:url" content="https://ar-gas.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/index.html">
+<meta property="og:title" content="数论算法">
+<meta property="og:url" content="https://ar-gas.github.io/post/%E6%95%B0%E8%AE%BA%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="char*输入gets()gets(c)读取至&#39;\n&#39;或EOF停止，换行符不会复制，返回自动添加\0 C++11后不可用 fgets()fgets(c,int num,stream)读取num-1、&#39;\n&#39;、EOF停止，**\n复制到字符串中**，第n个字符不读取，返回自动添加\0 fgets()和gets()完全不同，fgets()包含任何结束换行符 一般用标准输">
+<meta property="og:description" content="快速幂利用$A^{n}&#x3D;(A^{n&#x2F;2})^2$快速实现偶数幂的计算，奇数幂-1即可 递归实现（伪代码） 123456int binpow(int a,int n)&amp;#123;	if n&#x3D;&#x3D;0 return 1;     if n是奇数 reutrn binpow(a,n-1);       n是偶数 return binpow(a,n&#x2F;2)*binpow(a,n&#x2F;2);">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-19T11:55:59.337Z">
-<meta property="article:modified_time" content="2023-04-20T11:25:46.490Z">
+<meta property="article:published_time" content="2023-05-06T02:03:05.776Z">
+<meta property="article:modified_time" content="2023-05-06T03:37:07.987Z">
 <meta property="article:author" content="Ar Gas">
-<meta property="article:tag" content="C++">
+<meta property="article:tag" content="algrithm&#x2F;算法">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ar-gas.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/">
+<link rel="canonical" href="https://ar-gas.github.io/post/%E6%95%B0%E8%AE%BA%E7%AE%97%E6%B3%95/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/","path":"post/字符串的读取输入/","title":"字符串的输入/输出"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/%E6%95%B0%E8%AE%BA%E7%AE%97%E6%B3%95/","path":"post/数论算法/","title":"数论算法"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>字符串的输入/输出 | Ar Gas'Blog</title>
+<title>数论算法 | Ar Gas'Blog</title>
   
 
 
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#char"><span class="nav-text">char*</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gets"><span class="nav-text">gets()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fgets"><span class="nav-text">fgets()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getchar"><span class="nav-text">getchar()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#puts"><span class="nav-text">puts()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fputs"><span class="nav-text">fputs()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#string"><span class="nav-text">string</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-1"><span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#std-cin"><span class="nav-text">std::cin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getline"><span class="nav-text">getline()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cout-lt-lt"><span class="nav-text">cout&lt;&lt;</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="nav-text">快速幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GCD"><span class="nav-text">GCD</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,7 +224,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/%E6%95%B0%E8%AE%BA%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpeg">
@@ -237,12 +237,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="字符串的输入/输出 | Ar Gas'Blog">
+      <meta itemprop="name" content="数论算法 | Ar Gas'Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          字符串的输入/输出
+          数论算法
         </h1>
 
         <div class="post-meta-container">
@@ -252,15 +252,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-04-19 19:55:59" itemprop="dateCreated datePublished" datetime="2023-04-19T19:55:59+08:00">2023-04-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-20 19:25:46" itemprop="dateModified" datetime="2023-04-20T19:25:46+08:00">2023-04-20</time>
+      <time title="创建时间：2023-05-06 10:03:05 / 修改时间：11:37:07" itemprop="dateCreated datePublished" datetime="2023-05-06T10:03:05+08:00">2023-05-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -272,7 +266,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
         </span>
     </span>
 
@@ -290,7 +284,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>201</span>
+      <span>185</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -308,21 +302,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="char"><a href="#char" class="headerlink" title="char*"></a>char*</h1><h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><h3 id="gets"><a href="#gets" class="headerlink" title="gets()"></a>gets()</h3><p><code>gets(c)</code>读取至<code>&#39;\n&#39;</code>或<code>EOF</code>停止，<code>换行符</code>不会复制，返回自动添加<code>\0</code></p>
-<p>C++11后不可用</p>
-<h3 id="fgets"><a href="#fgets" class="headerlink" title="fgets()"></a>fgets()</h3><p><code>fgets(c,int num,stream)</code>读取<code>num-1</code>、<code>&#39;\n&#39;</code>、<code>EOF</code>停止，**<code>\n</code>复制到字符串中**，第<code>n</code>个字符不读取，返回自动添加<code>\0</code></p>
-<p><code>fgets()</code>和<code>gets()</code>完全不同，<code>fgets()</code>包含任何结束换行符</p>
-<p>一般用标准输入流:<code>stdin</code></p>
-<h3 id="getchar"><a href="#getchar" class="headerlink" title="getchar()"></a>getchar()</h3><p>返回读取字符，常用于抵消<code>&#39;\n&#39;</code></p>
-<p>与<code>getc(stdin)</code>等价</p>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><h3 id="puts"><a href="#puts" class="headerlink" title="puts()"></a>puts()</h3><p><code>puts(c)</code>输出时在末尾添加<code>&#39;\n&#39;</code>；</p>
-<h3 id="fputs"><a href="#fputs" class="headerlink" title="fputs()"></a>fputs()</h3><p><code>fputs(c，stdout)</code>输出直至<code>&#39;\0&#39;</code>，不会写入额外字符；</p>
-<h1 id="string"><a href="#string" class="headerlink" title="string"></a>string</h1><h2 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h2><h3 id="std-cin"><a href="#std-cin" class="headerlink" title="std::cin"></a>std::cin</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cin&gt;&gt;s;</span><br></pre></td></tr></table></figure>
+        <h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><p>利用$A^{n}&#x3D;(A^{n&#x2F;2})^2$快速实现偶数幂的计算，奇数幂<code>-1</code>即可</p>
+<p>递归实现（伪代码）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int binpow(int a,int n)&#123;</span><br><span class="line">	if n==0 return 1; </span><br><span class="line">    if n是奇数 reutrn binpow(a,n-1);</span><br><span class="line">       n是偶数 return binpow(a,n/2)*binpow(a,n/2);</span><br><span class="line">       // 用 t 储存 binpow(a,n/2)，return t*t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>读到任意空白符（<code>&#39;\n&#39;</code>,<code>&#39;\t&#39;</code>,<code>&#39;\0&#39;</code>,<code>&#39; &#39;</code>）停止</p>
-<h3 id="getline"><a href="#getline" class="headerlink" title="getline()"></a>getline()</h3><p><code>getline(cin,s,delim)</code>定界字符<code>delim</code>默认<code>&#39;\n&#39;</code>；</p>
-<p>定界字符提取但不储存，下次读取跳过。</p>
-<h2 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h2><h3 id="cout-lt-lt"><a href="#cout-lt-lt" class="headerlink" title="cout&lt;&lt;"></a>cout&lt;&lt;</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout&lt;&lt;s;</span><br></pre></td></tr></table></figure>
+<p>利用十进制转二进制的原理，可以进行非递归运算</p>
+<p>非递归优化（C++）（位运算）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">binpow</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> res = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(n)&#123;</span><br><span class="line">		<span class="comment">/*如果n末位为1，把对应幂乘进去*/</span></span><br><span class="line">		<span class="keyword">if</span> (n &amp; <span class="number">1</span>) </span><br><span class="line">			res *=a;</span><br><span class="line">		<span class="comment">/*计算位对应的幂*/</span></span><br><span class="line">		a*=a;</span><br><span class="line"> 		n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="GCD"><a href="#GCD" class="headerlink" title="GCD"></a>GCD</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcd(a,b)=gcd(b,a mod b) if b == 0 return</span><br><span class="line">gcd(a,b)=gcd(b,a - b)</span><br></pre></td></tr></table></figure>
+
+<p>可扩展至 gcd(a,b,c,…,n)</p>
+
     </div>
 
     
@@ -339,7 +330,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://ar-gas.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/" title="字符串的输入&#x2F;输出">https://ar-gas.github.io/post/字符串的读取输入/</a>
+      <a href="https://ar-gas.github.io/post/%E6%95%B0%E8%AE%BA%E7%AE%97%E6%B3%95/" title="数论算法">https://ar-gas.github.io/post/数论算法/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/CC%20BY-NC-SA%204.0/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
@@ -348,21 +339,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/algrithm-%E7%AE%97%E6%B3%95/" rel="tag"># algrithm/算法</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/post/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" rel="prev" title="基础算法">
-                  <i class="fa fa-chevron-left"></i> 基础算法
+                <a href="/post/202305%E9%9A%8F%E6%89%8B%E8%AE%B0/" rel="prev" title="202305随手记">
+                  <i class="fa fa-chevron-left"></i> 202305随手记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/post/202305%E9%9A%8F%E6%89%8B%E8%AE%B0/" rel="next" title="202305随手记">
-                  202305随手记 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -469,7 +457,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"d5327892fe261f4ef2e9ba6fdca464c6"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"f904d3433baa995cea0a5a7fb8c1b51d"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
