@@ -94,7 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">40</span></a></li><li class="menu-item menu-item-update"><a href="/update/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新动态</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">37</span></a></li><li class="menu-item menu-item-update"><a href="/update/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新动态</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -159,18 +159,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -297,8 +297,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <blockquote>
-<p>这是我的第一篇个人博客，接下来将为您介绍：
-<strong>本博客如何食用、我的联系方式、其他博客推荐</strong></p>
+<p>这是我的第一篇个人博客，接下来将为您介绍：<br><strong>本博客如何食用、我的联系方式、其他博客推荐</strong></p>
 </blockquote>
           <!--noindex-->
             <div class="post-button">
@@ -361,9 +360,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-05-06 10:03:05 / 修改时间：11:37:07" itemprop="dateCreated datePublished" datetime="2023-05-06T10:03:05+08:00">2023-05-06</time>
+      <time title="创建时间：2023-05-06 10:03:05" itemprop="dateCreated datePublished" datetime="2023-05-06T10:03:05+08:00">2023-05-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-06-03 20:32:23" itemprop="dateModified" datetime="2023-06-03T20:32:23+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -386,7 +391,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>185</span>
+      <span>208</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -404,17 +409,23 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="快速幂">快速幂</h3>
-<p>利用<span
-class="math inline">\(A^{n}=(A^{n/2})^2\)</span>快速实现偶数幂的计算，奇数幂<code>-1</code>即可</p>
+          <h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><p>原理：$A^{n}&#x3D;(A^{n&#x2F;2})^2$</p>
+<ul>
+<li><p>如果是偶数幂，计算平方根次幂</p>
+</li>
+<li><p>如果是奇数幂，计算$n - 1$次幂</p>
+</li>
+</ul>
 <p>递归实现（伪代码）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int binpow(int a,int n)&#123;</span><br><span class="line">	if n==0 return 1; </span><br><span class="line">    if n是奇数 reutrn binpow(a,n-1);</span><br><span class="line">       n是偶数 return binpow(a,n/2)*binpow(a,n/2);</span><br><span class="line">       // 用 t 储存 binpow(a,n/2)，return t*t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>利用十进制转二进制的原理，可以进行非递归运算</p>
 <p>非递归优化（C++）（位运算）</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">binpow</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> res = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(n)&#123;</span><br><span class="line">		<span class="comment">/*如果n末位为1，把对应幂乘进去*/</span></span><br><span class="line">		<span class="keyword">if</span> (n &amp; <span class="number">1</span>) </span><br><span class="line">			res *=a;</span><br><span class="line">		<span class="comment">/*计算位对应的幂*/</span></span><br><span class="line">		a*=a;</span><br><span class="line"> 		n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="gcd">GCD</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcd(a,b)=gcd(b,a mod b) if b == 0 return</span><br><span class="line">gcd(a,b)=gcd(b,a - b)</span><br></pre></td></tr></table></figure>
-<p>可扩展至 gcd(a,b,c,...,n)</p>
+
+<h3 id="GCD-最大共因子"><a href="#GCD-最大共因子" class="headerlink" title="GCD 最大共因子"></a>GCD 最大共因子</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">方法1 gcd(a,b)=gcd(b,a mod b) if b == 0 return</span><br><span class="line">方法2 gcd(a,b)=gcd(b,a - b)</span><br></pre></td></tr></table></figure>
+
+<p>可扩展至 gcd(a,b,c,…,n)</p>
 
       
     </div>
@@ -459,7 +470,7 @@ class="math inline">\(A^{n}=(A^{n/2})^2\)</span>快速实现偶数幂的计算�
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/post/202305%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="post-title-link" itemprop="url">202305随手记</a>
+          <a href="/post/202305%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="post-title-link" itemprop="url">2023 05-06随手记</a>
         </h2>
 
         <div class="post-meta-container">
@@ -477,7 +488,7 @@ class="math inline">\(A^{n}=(A^{n/2})^2\)</span>快速实现偶数幂的计算�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-21 10:55:32" itemprop="dateModified" datetime="2023-05-21T10:55:32+08:00">2023-05-21</time>
+      <time title="修改时间：2023-05-31 11:31:57" itemprop="dateModified" datetime="2023-05-31T11:31:57+08:00">2023-05-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -496,14 +507,14 @@ class="math inline">\(A^{n}=(A^{n/2})^2\)</span>快速实现偶数幂的计算�
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>611</span>
+      <span>966</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>4 分钟</span>
     </span>
 </div>
 
@@ -514,11 +525,9 @@ class="math inline">\(A^{n}=(A^{n/2})^2\)</span>快速实现偶数幂的计算�
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="section">20230501</h1>
-<p>五一旅游不是看风景，是看人(</p>
+          <h1 id="20230501"><a href="#20230501" class="headerlink" title="20230501"></a>20230501</h1><p>五一旅游不是看风景，是看人(</p>
 <p>人文主义告诉我们，要遵从人自己的内心，人该怎么样，人就要怎么样。</p>
-<h1 id="section-1">20230502</h1>
-<p>最近积累了很多想读的硬书（具体数学、c++语言导论、c++程序设计语言，还有一些竞赛的数），直接啃未免容易半途而费，还是先给自己设一个ddl吧，众所周知，ddl是第一生产力。</p>
+<h1 id="20230502"><a href="#20230502" class="headerlink" title="20230502"></a>20230502</h1><p>最近积累了很多想读的硬书（具体数学、c++语言导论、c++程序设计语言，还有一些竞赛的数），直接啃未免容易半途而费，还是先给自己设一个ddl吧，众所周知，ddl是第一生产力。</p>
 <p>追逐技巧在有实力的人的面前就是卖弄。</p>
 <p>最近认为之前在学习英语的时候忽略了单词的读音和重读，现在需要补补了。</p>
 <p>最近在想，为什么高中的时候很难抽时间去读完一本书（知识书），大学期间可以在一天到一个月，或者一学期断断续续地读完一本专业书，甚至听说就业后一月阅读的知识密度会远高于大学期间，我想这就是专精化吧。</p>
@@ -526,22 +535,45 @@ class="math inline">\(A^{n}=(A^{n/2})^2\)</span>快速实现偶数幂的计算�
 <blockquote>
 <p>互联网裁员潮（2021-2023今）并不能代表计算机将步入低谷，实际原因是疫情过后资本从互联网和医药重回制造业、服务业和旅游业，互联网疫情中早期的大规模扩张不能适应需求缩减导致的，但是长期来看计算机依然是产业升级的主要行业之一。</p>
 </blockquote>
-<h1 id="section-2">20230509</h1>
-<p>莫扎特效应（Mozart
-Effect）的解释是，部分音乐对学习的辅助在于有一个放松愉悦的心情，同时又不会侵入干扰人的状态导致分心。</p>
+<h1 id="20230509"><a href="#20230509" class="headerlink" title="20230509"></a>20230509</h1><p>莫扎特效应（Mozart Effect）的解释是，部分音乐对学习的辅助在于有一个放松愉悦的心情，同时又不会侵入干扰人的状态导致分心。</p>
 <p>伪代码基于一两种语言所做的对算法和数据结构的抽象，可以省略一些细节，方便记忆。</p>
-<h1 id="section-3">20230511</h1>
-<p>（ 概念 &gt; 性质 &gt; 定理 ）~= 应用与实践</p>
-<h1 id="section-4">20230520</h1>
-<p>世界很大，人生更大，时间长了以后会发现，最在乎自己的就是自己本身。</p>
+<h1 id="20230511"><a href="#20230511" class="headerlink" title="20230511"></a>20230511</h1><p>（ 概念 &gt; 性质 &gt; 定理 ）~&#x3D; 应用与实践</p>
+<h1 id="20230520"><a href="#20230520" class="headerlink" title="20230520"></a>20230520</h1><p>世界很大，人生更大，时间长了以后会发现，最在乎自己的就是自己本身。</p>
 <p>挑战困难的必要条件：承认困难、积极面对、挑战自己、停止比较。</p>
-<h1 id="section-5">20230521</h1>
-<blockquote>
+<h1 id="20230521"><a href="#20230521" class="headerlink" title="20230521"></a>20230521</h1><blockquote>
 <p>不搞争论，是我的一个发明。不争论，是为了争取时间干。一争论就复杂了，把时间都争掉了，什么也干不成。不争论，大胆地试，大胆地闯。</p>
 </blockquote>
 <blockquote>
 <p>――《(邓小平)在武昌、深圳、珠海、上海等地的谈话要点》（一九九二年一月十八日――二月二十一日）</p>
 </blockquote>
+<h1 id="20230528"><a href="#20230528" class="headerlink" title="20230528"></a>20230528</h1><p>Bjarne Stroustrup 的书对于初学者来说简直就是噩梦！</p>
+<h1 id="20230531"><a href="#20230531" class="headerlink" title="20230531"></a>20230531</h1><p>英语的 “<strong>subject</strong>(主语)” 区别于中文的 “<strong>话题</strong>（topic）”，英语无论是什么句子，subject都是不可或缺的概念，引用下Quora上一个人的看法：</p>
+<blockquote>
+<p>In English, the topic and subject are usually the same word: The boy hit the girl. We’re talking about “the boy”—he’s the topic, and also the one doing the action. With certain constructions in English, though, we can underline a topic separate from the subject: As for the girl, the boy hit her. Here, the topic is “the girl,” (she’s what we’re talking about) but the subject of the action remains “the boy.” For English grammar, however, the subject is generally most important.</p>
+</blockquote>
+<blockquote>
+<p>In other words, the subject is the topic by default, and variant constructions allow us to separate the topic from the subject. This has a couple of results:</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>Grammatically, English has a lot of expletives—often in the form of pleonastic pronouns—which are words that are necessary for syntactic purposes but are otherwise meaningless.</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>The classic example is: “It is raining.” Here, “it” doesn’t signify anything. Nothing is “it.” It’s required because those English sentences require an argument, but the argument is non-existent. You can’t replace it with an agent like you normally can: you can’t say, “the day is raining,” or “the sky is raining.”</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>English makes heavy use of the passive voice. The purpose of the passive voice is to change the topic-subject into the topic-object, since, by default, English assumes that the subject is the topic. If we want to shift that, to make the topic of our sentence the object, we use the passive voice.</li>
+</ul>
+</blockquote>
+</blockquote>
+<p>不过这个人的观点并不权威，个人觉得有些意思，主要认为就是中文是表意的语言，英语更加注重 SVO 的形式。</p>
 
       
     </div>
@@ -604,7 +636,7 @@ Effect）的解释是，部分音乐对学习的辅助在于有一个放松愉�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-20 19:25:46" itemprop="dateModified" datetime="2023-04-20T19:25:46+08:00">2023-04-20</time>
+      <time title="修改时间：2023-06-03 20:39:27" itemprop="dateModified" datetime="2023-06-03T20:39:27+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -627,7 +659,7 @@ Effect）的解释是，部分音乐对学习的辅助在于有一个放松愉�
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>201</span>
+      <span>226</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -645,35 +677,15 @@ Effect）的解释是，部分音乐对学习的辅助在于有一个放松愉�
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="char">char*</h1>
-<h2 id="输入">输入</h2>
-<h3 id="gets">gets()</h3>
-<p><code>gets(c)</code>读取至<code>'\n'</code>或<code>EOF</code>停止，<code>换行符</code>不会复制，返回自动添加<code>\0</code></p>
-<p>C++11后不可用</p>
-<h3 id="fgets">fgets()</h3>
-<p><code>fgets(c,int num,stream)</code>读取<code>num-1</code>、<code>'\n'</code>、<code>EOF</code>停止，<strong><code>\n</code>复制到字符串中</strong>，第<code>n</code>个字符不读取，返回自动添加<code>\0</code></p>
-<p><code>fgets()</code>和<code>gets()</code>完全不同，<code>fgets()</code>包含任何结束换行符</p>
-<p>一般用标准输入流:<code>stdin</code></p>
-<h3 id="getchar">getchar()</h3>
-<p>返回读取字符，常用于抵消<code>'\n'</code></p>
-<p>与<code>getc(stdin)</code>等价</p>
-<h2 id="输出">输出</h2>
-<h3 id="puts">puts()</h3>
-<p><code>puts(c)</code>输出时在末尾添加<code>'\n'</code>；</p>
-<h3 id="fputs">fputs()</h3>
-<p><code>fputs(c，stdout)</code>输出直至<code>'\0'</code>，不会写入额外字符；</p>
-<h1 id="string">string</h1>
-<h2 id="输入-1">输入</h2>
-<h3 id="stdcin">std::cin</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cin&gt;&gt;s;</span><br></pre></td></tr></table></figure>
-<p>读到任意空白符（<code>'\n'</code>,<code>'\t'</code>,<code>'\0'</code>,<code>' '</code>）停止</p>
-<h3 id="getline">getline()</h3>
-<p><code>getline(cin,s,delim)</code>定界字符<code>delim</code>默认<code>'\n'</code>；</p>
-<p>定界字符提取但不储存，下次读取跳过。</p>
-<h2 id="输出-1">输出</h2>
-<h3 id="cout">cout&lt;&lt;</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout&lt;&lt;s;</span><br></pre></td></tr></table></figure>
-
+          <p>挖个坑，后续把 <code>C++</code> 的 <code>string</code> 笔记下，目前的就是一些简单的接口</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -735,7 +747,7 @@ Effect）的解释是，部分音乐对学习的辅助在于有一个放松愉�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-14 17:57:26" itemprop="dateModified" datetime="2023-05-14T17:57:26+08:00">2023-05-14</time>
+      <time title="修改时间：2023-06-03 20:05:15" itemprop="dateModified" datetime="2023-06-03T20:05:15+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -758,7 +770,7 @@ Effect）的解释是，部分音乐对学习的辅助在于有一个放松愉�
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>575</span>
+      <span>496</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -776,54 +788,32 @@ Effect）的解释是，部分音乐对学习的辅助在于有一个放松愉�
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="二分">二分</h1>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*整数*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;<span class="comment">/* ... */</span>&#125; <span class="comment">// 检查x是否满足某种性质</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">bsearch_1</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) r = mid;    <span class="comment">// check()判断mid是否满足性质</span></span><br><span class="line">        <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*区间[l, r]被划分成[l, mid - 1]和[mid, r]时使用：*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">bsearch_2</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> mid = l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) l = mid;</span><br><span class="line">        <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*浮点数*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;<span class="comment">/* ... */</span>&#125; <span class="comment">// 检查x是否满足某种性质</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">bsearch_3</span><span class="params">(<span class="type">double</span> l, <span class="type">double</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">double</span> eps = <span class="number">1e-6</span>;   <span class="comment">// eps 表示精度，取决于题目对精度的要求</span></span><br><span class="line">    <span class="keyword">while</span> (r - l &gt; eps)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="前缀和">前缀和</h1>
-<blockquote>
-<p>例题：给定 <span class="math inline">\(n\)</span> 个正整数组成的数列
-<span class="math inline">\(a_1, a_2, \cdots, a_n\)</span> 和 <span
-class="math inline">\(m\)</span> 个区间 <span
-class="math inline">\([l_i,r_i]\)</span>，分别求这 <span
-class="math inline">\(m\)</span> 个区间的区间和。</p>
+          <h1 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*整数*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;<span class="comment">/* ... */</span>&#125; <span class="comment">// 检查x是否满足某种性质</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">bsearch_1</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) r = mid;    <span class="comment">// check()判断mid是否满足性质</span></span><br><span class="line">        <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*区间[l, r]被划分成[l, mid - 1]和[mid, r]时使用：*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">bsearch_2</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> mid = l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) l = mid;</span><br><span class="line">        <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*浮点数*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;<span class="comment">/* ... */</span>&#125; <span class="comment">// 检查x是否满足某种性质</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">bsearch_3</span><span class="params">(<span class="type">double</span> l, <span class="type">double</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">double</span> eps = <span class="number">1e-6</span>;   <span class="comment">// eps 表示精度，取决于题目对精度的要求</span></span><br><span class="line">    <span class="keyword">while</span> (r - l &gt; eps)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h1><blockquote>
+<p>例题：给定 $n$ 个正整数组成的数列 $a_1, a_2, \cdots, a_n$ 和 $m$ 个区间 $[l_i,r_i]$，分别求这 $m$ 个区间的区间和。</p>
 </blockquote>
-<p>前缀和可以简单理解为「数列的前 n 项的和」，利用<span
-class="math inline">\(S_n -
-S_{n-r}=a_{n-r+1}+···+a_n\)</span>可以快速求出区间和</p>
-<h2 id="partial_sum">partial_sum</h2>
-<p>C++的前缀和函数:</p>
-<p><code>std::partial_sum(first,last,OutputIterator)</code>在[first,last)的输入迭代器计算<span
-class="math inline">\(S_n\)</span>，结果保存至<code>OutputIterator</code>中,支持自定义<code>op</code></p>
-<h2 id="多维前置和">多维前置和</h2>
-<ul>
-<li>基于<strong>容斥定理</strong> : (<span
-class="math inline">\(A_i\)</span>表示集合)</li>
+<p>前缀和：「数列的前 n 项的和」</p>
+<p>性质：$S_n - S_{n-r}&#x3D;a_{n-r+1}+···+a_n$，可以快速求出区间和</p>
+<h2 id="多维前置和"><a href="#多维前置和" class="headerlink" title="多维前置和"></a>多维前置和</h2><ul>
+<li>基于<strong>容斥定理</strong> : ($A_i$表示集合)</li>
 </ul>
-<p><img
-src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ea9f68290bbc9371b63eadadcbc776a9c4dc5432" /></p>
-<p>二维前缀和：<span
-class="math inline">\(sum_{i,j}=sum_{i-1,j}+sum_{i,j-1}-sum_{i-1,j-1}+a_{i,j}\)</span></p>
+<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ea9f68290bbc9371b63eadadcbc776a9c4dc5432"></p>
+<p>二维前缀和：$sum_{i,j}&#x3D;sum_{i-1,j}+sum_{i,j-1}-sum_{i-1,j-1}+a_{i,j}$</p>
 <ul>
 <li>基于<strong>DP</strong>的高维前缀和：</li>
 </ul>
 <p>二维：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        a[i][j] += a[i - <span class="number">1</span>][j];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        a[i][j] += a[i][j - <span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+
 <p>三维：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt;= n; k++) </span><br><span class="line">            a[i][j][k] += a[i - <span class="number">1</span>][j][k];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt;= n; k++)</span><br><span class="line">            a[i][j][k] += a[i][j - <span class="number">1</span>][k];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt;= n; k++)</span><br><span class="line">            a[i][j][k] += a[i][j][k - <span class="number">1</span>];</span><br></pre></td></tr></table></figure>
-<p>高维前缀和的核心思想也就是一维一维来处理，实现<span
-class="math inline">\(n·n^x\)</span>的复杂度。</p>
-<h2 id="树上前缀和">树上前缀和</h2>
-<h1 id="差分">差分</h1>
-<p>差分算法：</p>
-<p><span class="math display">\[
-b_i=\begin{cases}a_i-a_{i-1}\,&amp;i \in[2,n] \\
-a_1\,&amp;i=1\end{cases}
-\]</span></p>
-<h2 id="adjacent_difference">adjacent_difference</h2>
-<p>C++的差分函数：<code>std:: adjacent_difference</code>,用法与<code>partial_sum</code>相同，支持自定义<code>op</code></p>
-<h2 id="树上差分">树上差分</h2>
-<h1 id="参考链接">参考链接</h1>
-<p>[1].<a
-target="_blank" rel="noopener" href="https://www.cnblogs.com/heyuhhh/p/11585358.html">高维前缀和总结(sosdp)</a></p>
+
+<p>核心思想：一维一维来处理</p>
+<p>复杂度$n·n^x$</p>
+<h2 id="树上前缀和"><a href="#树上前缀和" class="headerlink" title="树上前缀和"></a>树上前缀和</h2><h1 id="差分"><a href="#差分" class="headerlink" title="差分"></a>差分</h1><p>差分算法：</p>
+<p>$$<br>b_i&#x3D;\begin{cases}a_i-a_{i-1},&amp;i \in[2,n] \ a_1,&amp;i&#x3D;1\end{cases}<br>$$</p>
+<h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h1><h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>[1].<a target="_blank" rel="noopener" href="https://www.cnblogs.com/heyuhhh/p/11585358.html">高维前缀和总结(sosdp)</a></p>
 
       
     </div>
@@ -886,7 +876,7 @@ target="_blank" rel="noopener" href="https://www.cnblogs.com/heyuhhh/p/11585358.
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-22 09:57:05" itemprop="dateModified" datetime="2023-04-22T09:57:05+08:00">2023-04-22</time>
+      <time title="修改时间：2023-06-03 20:34:03" itemprop="dateModified" datetime="2023-06-03T20:34:03+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -909,7 +899,7 @@ target="_blank" rel="noopener" href="https://www.cnblogs.com/heyuhhh/p/11585358.
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>155</span>
+      <span>165</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -927,7 +917,7 @@ target="_blank" rel="noopener" href="https://www.cnblogs.com/heyuhhh/p/11585358.
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>收录C++的一些用法</p>
+          <p>目前还在学习阶段，此贴无参考价值（2023 06 03）</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/C++%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/#more" rel="contents">
@@ -1032,9 +1022,7 @@ target="_blank" rel="noopener" href="https://www.cnblogs.com/heyuhhh/p/11585358.
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="参考资料">参考资料</h1>
-<p>[1].<a
-target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Eb41177d1/?spm_id_from=333.337.search-card.all.click&amp;vd_source=a326e65c6d0fa8e7b1904a3c161ec105">最小生成树Kruskal和Prim算法动画演示</a></p>
+          <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1].<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Eb41177d1/?spm_id_from=333.337.search-card.all.click&vd_source=a326e65c6d0fa8e7b1904a3c161ec105">最小生成树Kruskal和Prim算法动画演示</a></p>
 
       
     </div>
@@ -1139,18 +1127,16 @@ target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Eb41177d1
     
     <div class="post-body" itemprop="articleBody">
           <p>经典ICG博弈算法(Impartial Combinatorial Games 公平组合游戏)</p>
-<ol type="1">
+<ol>
 <li>有两名选手;</li>
 <li>两名选手交替操作，每次一步，每步都是在有限的合法集合中选取一种进行;</li>
 <li>在任何情况下，合法操作只取决于情况本身，与选手无关;</li>
 <li>游戏的败北条件为:当某位选手需要进行操作时，当前没有任何可以执行的合法操作，则该选手败北。</li>
 </ol>
-<h1 id="巴什博弈-bash-game">巴什博弈 Bash Game</h1>
-<blockquote>
+<h1 id="巴什博弈-Bash-Game"><a href="#巴什博弈-Bash-Game" class="headerlink" title="巴什博弈 Bash Game"></a>巴什博弈 Bash Game</h1><blockquote>
 <p><strong>题目</strong>：一堆n个物品，两个人轮流从中取出1~m个，最后取光者胜（不能继续取的人输）。</p>
 </blockquote>
-<p><strong>同余定理</strong>：n=k∗(m+1)+r，先者拿走r个，那么后者无论拿走1
-m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1)，那么先手无论怎样都会输。</p>
+<p><strong>同余定理</strong>：n&#x3D;k∗(m+1)+r，先者拿走r个，那么后者无论拿走1 m个先者只要的数目使和为m+1，那么先手必赢。反之若n&#x3D;k∗(m+1)，那么先手无论怎样都会输。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( n % (m + <span class="number">1</span>) ) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
@@ -1221,7 +1207,7 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-20 09:03:26" itemprop="dateModified" datetime="2023-04-20T09:03:26+08:00">2023-04-20</time>
+      <time title="修改时间：2023-06-03 20:06:57" itemprop="dateModified" datetime="2023-06-03T20:06:57+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1262,12 +1248,9 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="三个性质">三个性质</h1>
-<h2 id="无后效性">无后效性</h2>
-<p>未来状态只关心过去状态的结果，不关心过去状态的过程。</p>
-<h2 id="最优子结构">最优子结构</h2>
-<p><strong>最优子结构</strong>性质：一个问题的最优解由其子问题的最优解推出。</p>
-<ol type="1">
+          <h1 id="三个性质"><a href="#三个性质" class="headerlink" title="三个性质"></a>三个性质</h1><h2 id="无后效性"><a href="#无后效性" class="headerlink" title="无后效性"></a>无后效性</h2><p>未来状态只关心过去状态的结果，不关心过去状态的过程。</p>
+<h2 id="最优子结构"><a href="#最优子结构" class="headerlink" title="最优子结构"></a>最优子结构</h2><p><strong>最优子结构</strong>性质：一个问题的最优解由其子问题的最优解推出。</p>
+<ol>
 <li>证明问题最优解的第一个组成部分是做出一个选择；</li>
 <li>对于一个给定问题，在其可能的第一步选择中，假定你已经知道哪种选择才会得到最优解。你现在并不关心这种选择具体是如何得到的，只是假定已经知道了这种选择；</li>
 <li>给定可获得的最优解的选择后，确定这次选择会产生哪些子问题，以及如何最好地刻画子问题空间；</li>
@@ -1481,11 +1464,10 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="section">20230405</h1>
-<p>出于时间原因，这个系列停止了一些天，以后也很可能会断断续续得，写博客是一项非常耗时间的事情，需要有阅读过很多资料，需要撰稿人有比较强的逻辑梳理能力和写作表达能力，当然，也要有丰富的经验和经历，这也是我坚持写博客的一个原因。</p>
+          <h1 id="20230405"><a href="#20230405" class="headerlink" title="20230405"></a>20230405</h1><p>出于时间原因，这个系列停止了一些天，以后也很可能会断断续续得，写博客是一项非常耗时间的事情，需要有阅读过很多资料，需要撰稿人有比较强的逻辑梳理能力和写作表达能力，当然，也要有丰富的经验和经历，这也是我坚持写博客的一个原因。</p>
 <p>早先的博客文章可以说是“垃圾堆”了，缺乏条理，这是经验不足导致的。</p>
 <p>最近被搜索专题困扰。</p>
-<p>摘抄下《<em><strong>邓小平讲话实录</strong></em>》中关于邓公对台湾问题的看法：</p>
+<p>摘抄下《*<strong>邓小平讲话实录</strong>*》中关于邓公对台湾问题的看法：</p>
 <blockquote>
 <p><strong>华莱士</strong>：“台湾有什么必要同大陆统一？”</p>
 </blockquote>
@@ -1557,9 +1539,15 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-04-03 08:50:34 / 修改时间：21:37:05" itemprop="dateCreated datePublished" datetime="2023-04-03T08:50:34+08:00">2023-04-03</time>
+      <time title="创建时间：2023-04-03 08:50:34" itemprop="dateCreated datePublished" datetime="2023-04-03T08:50:34+08:00">2023-04-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-06-03 20:35:43" itemprop="dateModified" datetime="2023-06-03T20:35:43+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1578,7 +1566,7 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>517</span>
+      <span>439</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1667,7 +1655,7 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-07 09:32:38" itemprop="dateModified" datetime="2023-04-07T09:32:38+08:00">2023-04-07</time>
+      <time title="修改时间：2023-06-03 20:06:14" itemprop="dateModified" datetime="2023-06-03T20:06:14+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1690,7 +1678,7 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>365</span>
+      <span>380</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1708,7 +1696,7 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>简单图论</p>
+          <p>两种图，从外文摘抄的，后续有时间了反应一下</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E5%9B%BE%E8%AE%BA/#more" rel="contents">
@@ -1778,7 +1766,7 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-12 20:44:40" itemprop="dateModified" datetime="2023-04-12T20:44:40+08:00">2023-04-12</time>
+      <time title="修改时间：2023-06-03 20:36:08" itemprop="dateModified" datetime="2023-06-03T20:36:08+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1801,7 +1789,7 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>314</span>
+      <span>411</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1889,7 +1877,7 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-14 20:56:30" itemprop="dateModified" datetime="2023-04-14T20:56:30+08:00">2023-04-14</time>
+      <time title="修改时间：2023-06-03 20:37:49" itemprop="dateModified" datetime="2023-06-03T20:37:49+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1912,7 +1900,7 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>836</span>
+      <span>878</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -2046,11 +2034,10 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
           <blockquote>
 <p>Include 《A Tool of C++》、《C++ programming language》</p>
 </blockquote>
-<h4 id="new">new</h4>
-<p>new（动态存储分配），C++的一种创建对象的方式</p>
+<h4 id="new"><a href="#new" class="headerlink" title="new"></a>new</h4><p>new（动态存储分配），C++的一种创建对象的方式</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="keyword">new</span> <span class="type">int</span>&#123;<span class="number">7</span>&#125;;<span class="comment">//一个int变量</span></span><br><span class="line"><span class="type">int</span> b=<span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>]<span class="comment">//一个数量为10的int数组</span></span><br></pre></td></tr></table></figure>
-<h4 id="引用">引用</h4>
-<p>引用与指针类似，但语法规则有很多不同</p>
+
+<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><p>引用与指针类似，但语法规则有很多不同</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a1=<span class="number">2</span>;</span><br><span class="line"><span class="type">int</span> a2=<span class="number">3</span></span><br><span class="line"><span class="type">int</span> &amp; r1=a1; <span class="comment">//T&amp;: T的引用</span></span><br><span class="line"><span class="type">int</span> &amp; r2=a2;</span><br><span class="line">r1=r2;</span><br></pre></td></tr></table></figure>
 <p>在赋值语句<code>r1=r2</code>中，引用会提取r2引用的值，改变r1引用的值，而指针只会改变指针的地址，不会改变元素。</p>
           <!--noindex-->
@@ -2122,7 +2109,7 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-14 17:53:43" itemprop="dateModified" datetime="2023-05-14T17:53:43+08:00">2023-05-14</time>
+      <time title="修改时间：2023-06-03 20:26:40" itemprop="dateModified" datetime="2023-06-03T20:26:40+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2145,7 +2132,7 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>516</span>
+      <span>439</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -2273,8 +2260,7 @@ m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1
           <blockquote>
 <p>摘自随手记的一个片段</p>
 </blockquote>
-<p>学生，包括大型的社交媒体上的很多发声的人，很多情况下都在跟风，只要有人轻微地引导就可以把话题转向奇怪的方向，沉默永远是大多数的，这在新媒体上有个词，叫做“<a
-target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B%E7%90%86%E8%AE%BA">沉默的螺旋</a>”，说的不无道理。</p>
+<p>学生，包括大型的社交媒体上的很多发声的人，很多情况下都在跟风，只要有人轻微地引导就可以把话题转向奇怪的方向，沉默永远是大多数的，这在新媒体上有个词，叫做“<a target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/%E6%B2%89%E9%BB%98%E7%9A%84%E8%9E%BA%E6%97%8B%E7%90%86%E8%AE%BA">沉默的螺旋</a>”，说的不无道理。</p>
 <blockquote>
 <p>沉默的螺旋，不准确的来说，就是一些小群体占据了互联网的主要阵地，导致占据多数人的意见没有机会发出来。沉默的人会担心自己的想法是“非主流”，导致真正的大众且理性的声音并没有在网上出现。</p>
 </blockquote>
@@ -2422,120 +2408,6 @@ target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/%E6%B2%89%E9%B
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/%E8%8B%B1%E8%AF%AD%E4%BD%9C%E6%96%87%E7%B1%BB%E5%9E%8B-writing/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpeg">
-      <meta itemprop="name" content="Ar Gas">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ar Gas'Blog">
-      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ar Gas'Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/post/%E8%8B%B1%E8%AF%AD%E4%BD%9C%E6%96%87%E7%B1%BB%E5%9E%8B-writing/" class="post-title-link" itemprop="url">英语作文类型-writing</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-03-11 22:30:00" itemprop="dateCreated datePublished" datetime="2023-03-11T22:30:00+08:00">2023-03-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-15 09:51:10" itemprop="dateModified" datetime="2023-03-15T09:51:10+08:00">2023-03-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%8B%B1%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">英语</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>565</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>持续更新，现在是整理资料中···</p>
-</blockquote>
-<p>Essay,Application letter,Invitation letter,Report have take in.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/%E8%8B%B1%E8%AF%AD%E4%BD%9C%E6%96%87%E7%B1%BB%E5%9E%8B-writing/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-knapsack%20problem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2572,7 +2444,7 @@ target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/%E6%B2%89%E9%B
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-10 17:33:42" itemprop="dateModified" datetime="2023-03-10T17:33:42+08:00">2023-03-10</time>
+      <time title="修改时间：2023-06-03 20:08:17" itemprop="dateModified" datetime="2023-06-03T20:08:17+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2591,7 +2463,7 @@ target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/%E6%B2%89%E9%B
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>439</span>
+      <span>430</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -2820,45 +2692,25 @@ target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/%E6%B2%89%E9%B
     
     <div class="post-body" itemprop="articleBody">
           <p>收录了2023.03期间的小记</p>
-<h1 id="section">20230305</h1>
-<p>摘抄一篇文章，是大佬卢昌海的一篇文章，<a
-target="_blank" rel="noopener" href="https://www.changhai.org/articles/miscellaneous/misc/questionairy.php">原文链接</a></p>
+<h1 id="20230305"><a href="#20230305" class="headerlink" title="20230305"></a>20230305</h1><p>摘抄一篇文章，是大佬卢昌海的一篇文章，<a target="_blank" rel="noopener" href="https://www.changhai.org/articles/miscellaneous/misc/questionairy.php">原文链接</a></p>
 <blockquote>
-<p><em><strong>问</strong>：你怎么看待第十名现象？
-(中学里成绩徘徊在第十名左右的学生长大后的出息有时比第一名大)</em></p>
+<p><em><strong>问</strong>：你怎么看待第十名现象？ (中学里成绩徘徊在第十名左右的学生长大后的出息有时比第一名大)</em></p>
 </blockquote>
 <blockquote>
-<p><strong>答</strong>：这个名词说实在的我还是第一次听到，
-也不知道这一现象有多大的普遍性。 不过以我个人的经历为背景，
-我想这其中的道理可能是 “第十名” 的学生往往比 “第一名”
-的学生在个人兴趣的发展上更为超前， 更为投入， 或者说在学习上更具个性。
-中学的功课文理兼备， 涵盖的学科十分广泛，
-广泛到了很少有人会对所有这些功课同时感兴趣的程度。 应该说无论是 “第一名”
-还是 “第十名” 都属于名列前茅， 这样的学生通常都具有较强的学习能力。
-但是为了获得总成绩的第一名， 需要学生在所有功课上都投入相当的精力，
-这就往往会形成一个杂而不精的局面。 相反， 一个 “第十名”
-的学生往往能够在学习上有所侧重 (有所侧重当然也就意味着有所偏科，
-因此只能得 “第十名”)， 对自己喜爱的学科能够<strong>超越课本、
-超越课堂</strong>， 达到普通同学 (包括第一名的同学) 难以达到的深度。</p>
+<p><strong>答</strong>：这个名词说实在的我还是第一次听到， 也不知道这一现象有多大的普遍性。 不过以我个人的经历为背景， 我想这其中的道理可能是 “第十名” 的学生往往比 “第一名” 的学生在个人兴趣的发展上更为超前， 更为投入， 或者说在学习上更具个性。 中学的功课文理兼备， 涵盖的学科十分广泛， 广泛到了很少有人会对所有这些功课同时感兴趣的程度。 应该说无论是 “第一名” 还是 “第十名” 都属于名列前茅， 这样的学生通常都具有较强的学习能力。 但是为了获得总成绩的第一名， 需要学生在所有功课上都投入相当的精力， 这就往往会形成一个杂而不精的局面。 相反， 一个 “第十名” 的学生往往能够在学习上有所侧重 (有所侧重当然也就意味着有所偏科， 因此只能得 “第十名”)， 对自己喜爱的学科能够<strong>超越课本、 超越课堂</strong>， 达到普通同学 (包括第一名的同学) 难以达到的深度。</p>
 </blockquote>
 <blockquote>
-<p>另一方面， 随着知识一代一代地持续积累， 通才的存在变得越来越不可能，
-<strong>社会的发展在越来越大的程度上有赖于分工</strong>，
-有赖于学有专长的个体之间的互补。 在这种大环境下， 一个学有专长的
-“第十名” 学生往往会比一个博学强记的 “第一名”
-学生更能胜任社会所赋予的角色。 我想这就是第十名现象出现的主要原因。</p>
+<p>另一方面， 随着知识一代一代地持续积累， 通才的存在变得越来越不可能， <strong>社会的发展在越来越大的程度上有赖于分工</strong>， 有赖于学有专长的个体之间的互补。 在这种大环境下， 一个学有专长的 “第十名” 学生往往会比一个博学强记的 “第一名” 学生更能胜任社会所赋予的角色。 我想这就是第十名现象出现的主要原因。</p>
 </blockquote>
-<h1 id="section-1">20230308</h1>
-<p>有些新知识需要个桥梁，即前置知识。</p>
+<h1 id="20230308"><a href="#20230308" class="headerlink" title="20230308"></a>20230308</h1><p>有些新知识需要个桥梁，即前置知识。</p>
 <p>我相信所有知识一定有更简洁直观的理解。</p>
-<h1 id="section-2">20230311</h1>
-<ol type="1">
-<li><p>Some
-fact，我们可能这辈子都不会彻底知道，但是有人会记录下来，例如俄亥俄。</p></li>
-<li><p>算法读书还是先从入门开始，至少不能一上来就《算法导论》，小白可能一节都看不进去！（一上来就推荐经典书的大概是受了知识的诅咒了吧）（当然书是好书）</p></li>
+<h1 id="20230311"><a href="#20230311" class="headerlink" title="20230311"></a>20230311</h1><ol>
+<li><p>Some fact，我们可能这辈子都不会彻底知道，但是有人会记录下来，例如俄亥俄。</p>
+</li>
+<li><p>算法读书还是先从入门开始，至少不能一上来就《算法导论》，小白可能一节都看不进去！（一上来就推荐经典书的大概是受了知识的诅咒了吧）（当然书是好书）</p>
+</li>
 </ol>
-<h2 id="关于记笔记">关于记笔记</h2>
-<p>记笔记的习惯，在博客上居然主动了起来，不得不说网站文章真是博客的好载体，特别是markdown和latex的引入，我可以实现博客的随时修改，更新，配图配公式，关键是字还好看，依托于成熟的框架，我可以很轻松做成这件事</p>
+<h2 id="关于记笔记"><a href="#关于记笔记" class="headerlink" title="关于记笔记"></a>关于记笔记</h2><p>记笔记的习惯，在博客上居然主动了起来，不得不说网站文章真是博客的好载体，特别是markdown和latex的引入，我可以实现博客的随时修改，更新，配图配公式，关键是字还好看，依托于成熟的框架，我可以很轻松做成这件事</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/202303%E9%9A%8F%E6%89%8B%E8%AE%B0/#more" rel="contents">
@@ -2965,10 +2817,8 @@ fact，我们可能这辈子都不会彻底知道，但是有人会记录下来�
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a
-target="_blank" rel="noopener" href="https://www.xuetangx.com/live/live20211209IT002/live20230216IT001/15673576/31072546?channel=i.area.home_live_ad">ChatGPT会引领AI新范式吗？</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://blog.csdn.net/AITIME_HY/article/details/128463104?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167793189416800186576083%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&amp;request_id=167793189416800186576083&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-4-128463104-null-null.blog_rank_default&amp;utm_term=GPT%20&amp;spm=1018.2226.3001.4450">官方整理</a></p>
+          <p><a target="_blank" rel="noopener" href="https://www.xuetangx.com/live/live20211209IT002/live20230216IT001/15673576/31072546?channel=i.area.home_live_ad">ChatGPT会引领AI新范式吗？</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/AITIME_HY/article/details/128463104?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167793189416800186576083%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167793189416800186576083&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-4-128463104-null-null.blog_rank_default&utm_term=GPT%20&spm=1018.2226.3001.4450">官方整理</a></p>
 <p>几个比较关心的问题</p>
 <p>1.chatGPT短期内不会取代搜索引擎：chatGPT是基于大型数据的生成式大模型，在边界问题上的乱编导致其不能取代搜索引擎的独特性，也就是说chatGPT没有为信息来源负责。</p>
 <p>2.GPT的优势在于创造性，缺点在于边界问题的真实性。</p>
@@ -3042,7 +2892,7 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/AITIME_HY/article/det
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-05 21:40:38" itemprop="dateModified" datetime="2023-04-05T21:40:38+08:00">2023-04-05</time>
+      <time title="修改时间：2023-06-03 20:13:27" itemprop="dateModified" datetime="2023-06-03T20:13:27+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -3061,7 +2911,7 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/AITIME_HY/article/det
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1k</span>
+      <span>1.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -3080,16 +2930,13 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/AITIME_HY/article/det
     
     <div class="post-body" itemprop="articleBody">
           <p>这里收录一些工程伦理课上的有价值的问题</p>
-<h1 id="工程师">工程师</h1>
-<blockquote>
+<h1 id="工程师"><a href="#工程师" class="headerlink" title="工程师"></a>工程师</h1><blockquote>
 <p>工程师的自古以来地位低下，随着产业革命的数次升级，工程师们所做的贡献快速增长，但是所受的社会地位和声望却没有因此提升。</p>
 </blockquote>
 <blockquote>
-<p>过去工程伦理经历过三个阶段，为雇主忠诚（18-19世纪）--&gt;技术人员领导（20世纪20年代）--&gt;社会责任道义（二战后）
-其中技术人员领导被证明实际上是一种理想化的思想，由于对技术的完美的追求，会使得其超过了社会的有限的资源，最终导致社会的崩溃。一个好的技术专家不一定能成为一个好的组织专家，一个擅长经济的企业家不一定能成为一个合格的政治家。</p>
+<p>过去工程伦理经历过三个阶段，为雇主忠诚（18-19世纪）–&gt;技术人员领导（20世纪20年代）–&gt;社会责任道义（二战后）<br>其中技术人员领导被证明实际上是一种理想化的思想，由于对技术的完美的追求，会使得其超过了社会的有限的资源，最终导致社会的崩溃。一个好的技术专家不一定能成为一个好的组织专家，一个擅长经济的企业家不一定能成为一个合格的政治家。</p>
 </blockquote>
-<p>之前在掘金看过类似的文章，讲的是CTO的问题：<a
-target="_blank" rel="noopener" href="https://juejin.cn/post/7084107328949076004">为什么都是技术合伙人被踢出局</a></p>
+<p>之前在掘金看过类似的文章，讲的是CTO的问题：<a target="_blank" rel="noopener" href="https://juejin.cn/post/7084107328949076004">为什么都是技术合伙人被踢出局</a></p>
 <blockquote>
 <p>利益不仅仅只是钱，凡是有利害关系的都可以被称为利益</p>
 </blockquote>
@@ -3193,12 +3040,7 @@ target="_blank" rel="noopener" href="https://juejin.cn/post/7084107328949076004"
     
     
     <div class="post-body" itemprop="articleBody">
-          <figure>
-<img
-src="https://pica.zhimg.com/80/v2-a46ea7bebf639e97b979d512d4673b7d_720w.jpeg"
-alt="Birthday" />
-<figcaption aria-hidden="true">Birthday</figcaption>
-</figure>
+          <p><img src="https://pica.zhimg.com/80/v2-a46ea7bebf639e97b979d512d4673b7d_720w.jpeg" alt="Birthday"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E7%94%9F%E6%97%A5%E5%B0%8F%E8%AE%B0/#more" rel="contents">
@@ -3420,130 +3262,15 @@ alt="Birthday" />
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a
-target="_blank" rel="noopener" href="https://blog.codingnow.com/2007/12/history.html">原文连接</a></p>
+          <p><a target="_blank" rel="noopener" href="https://blog.codingnow.com/2007/12/history.html">原文连接</a></p>
 <p>我有一个忘记从哪继承来的观点：无论我们想学什么，都应该从学习他的历史开始。极端点说，无论学什么，都是在学他的历史。</p>
 <p>前几天在北京见到了我的小表妹，她刚上初一，人极为聪明。七年前我在北京工作时，她还没有上小学。那个时候我就回答过她许多科普问题。一个五岁的小姑娘的理解能力曾让我感叹不已。</p>
-<p>知道小妹妹居然在写 blog
-而且文笔不错，觉得挺高兴的。但听说她最近一次考试数学成绩不是特别好，有些令人担忧。我一直认为中学所谓文理分科就是件巨傻的事（似乎现在慢慢的不再分了）。但如果一味的去追求所谓文科上的造诣，怕是会耽误理性思维的发展。在迈入科学的殿堂的门槛上，一步错就能耽误十年啊。</p>
+<p>知道小妹妹居然在写 blog 而且文笔不错，觉得挺高兴的。但听说她最近一次考试数学成绩不是特别好，有些令人担忧。我一直认为中学所谓文理分科就是件巨傻的事（似乎现在慢慢的不再分了）。但如果一味的去追求所谓文科上的造诣，怕是会耽误理性思维的发展。在迈入科学的殿堂的门槛上，一步错就能耽误十年啊。</p>
 <p>小孩子一开始在学校学习或许更多的是为了比同龄人强，为了完成长辈的期望，为了达到别人设定的目标。但终有一天，长大了的后会发现，学习其实就是因为自己想知道。</p>
 <p>所以吃饭的时候，我多说了几句。无论学什么，都要先培养出兴趣。理科的东西老师教起来很枯燥，那么就可以从读他们的历史开始。一段段故事，一个个鲜活的人，就会变得生动。深一层的道理需要慢慢的去体会：无论学什么，都是在学他的历史。以前的人如何考虑这些问题，为何研究这些问题。他们怎样去归纳、总结。他们的思考怎样延伸出去，为什么又有了局限性。后人怎样做出了突破。人性是共通的，人的智力水平也相差无多。按着前人的路，没有太难理解的道理。而课堂上现在的教法，把历史上长长的思考过程压缩，裁减掉所有的错误和累赘，压缩成一条条公式与冷冰冰的推导。背了那些，除了考出完美的答卷，就没太多意义了。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E5%AD%A6%E4%B9%A0%E4%BB%8E%E5%8E%86%E5%8F%B2%E5%BC%80%E5%A7%8B%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/%E6%96%B0%E8%A7%86%E9%87%8E%E8%8B%B1%E8%AF%AD3%E5%8D%95%E8%AF%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpeg">
-      <meta itemprop="name" content="Ar Gas">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ar Gas'Blog">
-      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ar Gas'Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/post/%E6%96%B0%E8%A7%86%E9%87%8E%E8%8B%B1%E8%AF%AD3%E5%8D%95%E8%AF%8D/" class="post-title-link" itemprop="url">新视野大学英语（第三版）3单词(1-6-A，期末用)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-02-24 17:30:00" itemprop="dateCreated datePublished" datetime="2023-02-24T17:30:00+08:00">2023-02-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-15 09:51:08" itemprop="dateModified" datetime="2023-03-15T09:51:08+08:00">2023-03-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%8B%B1%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">英语</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>13 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>期末自用，包含unit1-6-A的单词</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/%E6%96%B0%E8%A7%86%E9%87%8E%E8%8B%B1%E8%AF%AD3%E5%8D%95%E8%AF%8D/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -3610,7 +3337,7 @@ target="_blank" rel="noopener" href="https://blog.codingnow.com/2007/12/history.
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-05 21:42:26" itemprop="dateModified" datetime="2023-04-05T21:42:26+08:00">2023-04-05</time>
+      <time title="修改时间：2023-06-03 20:22:28" itemprop="dateModified" datetime="2023-06-03T20:22:28+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -3651,10 +3378,11 @@ target="_blank" rel="noopener" href="https://blog.codingnow.com/2007/12/history.
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>目录：</p>
+          <p>已废弃</p>
+<p>目录：</p>
 <p><strong>力学</strong>_质点运动学</p>
-<p>   |_牛顿运动定律</p>
-<p>   |_动量、角动量与守恒定律</p>
+<p>&amp;emsp;&amp;nbsp; |_牛顿运动定律</p>
+<p>&amp;emsp;&amp;nbsp; |_动量、角动量与守恒定律</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86%E7%AC%94%E8%AE%B0/#more" rel="contents">
@@ -3761,8 +3489,7 @@ target="_blank" rel="noopener" href="https://blog.codingnow.com/2007/12/history.
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a
-target="_blank" rel="noopener" href="http://mindhacks.cn/2009/03/28/effective-learning-and-memorization/">原文链接</a></p>
+          <p><a target="_blank" rel="noopener" href="http://mindhacks.cn/2009/03/28/effective-learning-and-memorization/">原文链接</a></p>
 <p><strong>你所拥有的知识并不取决于你记得多少，而在于它们能否在恰当的时候被回忆起来。</strong></p>
 <p>让我稍微说得更详细一点：学习新知识并将其存放于大脑中，<strong>最终的目的是要在恰当的时候能够想得起来去使用</strong>。因此，学习的有效性<strong>显然应该这样来衡量</strong>：当遇到需要用到学过的知识的时候，相关的知识<strong>是否会自动从你脑海中“蹦”出来</strong>，最起码——能否通过有意识的搜索将它们提取出来。</p>
 <p>这可不像它听上去那么简单，否则就不会有“掉书袋”、“读死书”这种修辞手法了。</p>
@@ -3770,125 +3497,6 @@ target="_blank" rel="noopener" href="http://mindhacks.cn/2009/03/28/effective-le
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E5%9C%B0%E8%AE%B0%E5%BF%86%E4%B8%8E%E5%AD%A6%E4%B9%A0%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpeg">
-      <meta itemprop="name" content="Ar Gas">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ar Gas'Blog">
-      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ar Gas'Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/post/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="post-title-link" itemprop="url">二叉树</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-02-22 10:56:57" itemprop="dateCreated datePublished" datetime="2023-02-22T10:56:57+08:00">2023-02-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-22 11:11:37" itemprop="dateModified" datetime="2023-03-22T11:11:37+08:00">2023-03-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>348</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="准备知识">准备知识</h1>
-<h2 id="链表">链表</h2>
-<p>要了解二叉树，首先要理解<strong>链表</strong></p>
-<figure>
-<img
-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fd53355b4d574acba69d1eba29ca5604~tplv-k3u1fbpfcp-watermark.image?"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/%E4%BA%8C%E5%8F%89%E6%A0%91/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -3955,7 +3563,7 @@ alt="image.png" />
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-25 10:57:36" itemprop="dateModified" datetime="2023-04-25T10:57:36+08:00">2023-04-25</time>
+      <time title="修改时间：2023-06-03 20:35:18" itemprop="dateModified" datetime="2023-06-03T20:35:18+08:00">2023-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -3978,7 +3586,7 @@ alt="image.png" />
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>431</span>
+      <span>434</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -3996,54 +3604,15 @@ alt="image.png" />
     
     
     <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-<h1 id="数学归纳法的等价定义">数学归纳法的等价定义</h1>
-<p><strong>基本条件</strong>：</p>
-<ol type="1">
-<li>当 <span class="math inline">\(n=1\)</span> 时，<span
-class="math inline">\(T\)</span> 成立；</li>
-<li>对任意 <span class="math inline">\(n&gt;1\)</span>，如果 <span
-class="math inline">\(n-1\)</span> 时 <span
-class="math inline">\(T\)</span> 成立，那么 <span
-class="math inline">\(n\)</span> 时 <span
-class="math inline">\(T\)</span> 也成立</li>
-</ol>
-<p><strong>定义</strong>：如果对于带有参数 <span
-class="math inline">\(n\)</span> 的命题 <span
-class="math inline">\(P\)</span> ，当 <span
-class="math inline">\(n=1\)</span> 时 <span
-class="math inline">\(Р\)</span> 成立；并且如果对每一个 <span
-class="math inline">\(n (n&gt;1)\)</span>,若 <span
-class="math inline">\(n-1\)</span> 时 <span
-class="math inline">\(P\)</span> 成立能推出 <span
-class="math inline">\(n\)</span> 时 <span
-class="math inline">\(Р\)</span> 也成立；那么对任意自然数，<span
-class="math inline">\(Р\)</span> 都成立。</p>
-<p><code>等价一</code>：如果对于带有参数n的命题P，当n=
-1时Р成立;并且如果对每一个n (n ≥ 1
-),若n时Р成立能推出n+1时Р也成立;那么对任意自然数，Р都成立。</p>
-<p><code>等价二</code>：如果对于带有参数n的命题P，当n=1时Р成立;并且如果对每一个n
-(n&gt; 1
-),若对任意小于n的自然数Р成立能推出对n命题Р也成立;那么对任意自然数,Р都成立。</p>
-<p><code>等价三</code>：如果对于带有参数n的命题P，当n=1和n=2时Р都成立;并且如果对每一个n
-(n &gt;2)，若n-2时Р成立能推出n时Р也成立;那么对任意自然数，Р都成立。</p>
-<p><code>等价四</code>：如果对于带有参数n的命题P，当n=1和n=2时Р都成立;并且如果对每一个n
-(n &gt;2)，若n-2时Р成立能推出n时Р也成立;那么对任意自然数，Р都成立。</p>
-<h1 id="一些公式">一些公式</h1>
-<ol type="1">
-<li><span class="math inline">\(x^n-1\)</span> 能被 <span
-class="math inline">\(x-1\)</span> 除尽;</li>
-<li>前n个自然数和为 n(n+1)/2;</li>
-<li>级数 <span class="math inline">\(8+13+18+23+···+(3+5n)\)</span>
-之和是 <span class="math inline">\(2.5n^2+5.5n\)</span></li>
-<li><span class="math inline">\((1+x)^n&gt;=1+nx\)</span></li>
-</ol>
-<h1 id="证明的思路">证明的思路</h1>
-<ol type="1">
-<li>证明增长率</li>
-<li></li>
-</ol>
-
+          <p>学习阶段</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/%E7%AE%97%E6%B3%95%E5%BC%95%E8%AE%BA%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -4263,27 +3832,26 @@ class="math inline">\(x-1\)</span> 除尽;</li>
     
     <div class="post-body" itemprop="articleBody">
           <p>这里外链一些做的不错的笔记</p>
-<p><a
-target="_blank" rel="noopener" href="https://www.cnblogs.com/ixtwuko/p/advanced-mathematics.html">高等数学笔记-ixkwuko</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://ryzenx.com/math-notes-html/##%E7%9B%AE%E5%BD%95">高等数学（上）-Steven-nagisa-Y</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ixtwuko/p/advanced-mathematics.html">高等数学笔记-ixkwuko</a></p>
+<p><a target="_blank" rel="noopener" href="https://ryzenx.com/math-notes-html/##%E7%9B%AE%E5%BD%95">高等数学（上）-Steven-nagisa-Y</a></p>
 <p><a target="_blank" rel="noopener" href="https://lvjr.bitbucket.io/gdsx.html">高等数学文档</a></p>
 <!----more---->
+
 <blockquote>
 <p>常见习题、概念</p>
 </blockquote>
 <p>二重极限的证明：</p>
 <ul>
-<li>证明值为<code>x</code>
-<ul>
+<li>证明值为<code>x</code><ul>
 <li>转化为一元极限</li>
 <li>极限定义</li>
-</ul></li>
-<li>证明极限是否存在
-<ul>
+</ul>
+</li>
+<li>证明极限是否存在<ul>
 <li><code>y</code>路径不同是否影响。例：<code>y=kx</code>，<code>y=x^2+x^3</code>在<code>x趋于0</code>时</li>
 <li>极限定义</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p>累次极限有先后顺序，前一极限存在，后一极限一定存在</p>
 <p>二重极限存在，二次极限也存在，则二次极限的值是二重极限。</p>
@@ -4386,11 +3954,9 @@ target="_blank" rel="noopener" href="https://ryzenx.com/math-notes-html/##%E7%9B
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a
-target="_blank" rel="noopener" href="http://mindhacks.cn/2009/02/09/writing-is-better-thinking/">原文链接</a></p>
+          <p><a target="_blank" rel="noopener" href="http://mindhacks.cn/2009/02/09/writing-is-better-thinking/">原文链接</a></p>
 <p>我经常在走路和睡前总结所学过的内容，思考遗留的问题，一段时间的阅读和思考之后，一个总体的知识框架就会逐渐浮现在脑海中。然后我会将它书写下来，<strong>然而，我往往非常惊讶地发现，当我书写的时候，新的内容仍然源源不断的冒出来，就像我的键盘自己也会思考一样。</strong></p>
-<p>大半年前的时候，我曾在一篇文章《<a
-target="_blank" rel="noopener" href="http://mindhacks.cn/2008/04/18/learning-from-polya/">跟波利亚学解题</a>》中写到将问题求解的思维过程记录下来的好处，现在再次回忆起来，当时列出的几点其实不仅对于问题求解是大有好处，对于平时的思考也是同样的道理。</p>
+<p>大半年前的时候，我曾在一篇文章《<a target="_blank" rel="noopener" href="http://mindhacks.cn/2008/04/18/learning-from-polya/">跟波利亚学解题</a>》中写到将问题求解的思维过程记录下来的好处，现在再次回忆起来，当时列出的几点其实不仅对于问题求解是大有好处，对于平时的思考也是同样的道理。</p>
 <p>书写的好处有以下几点：</p>
           <!--noindex-->
             <div class="post-button">
@@ -4719,8 +4285,7 @@ target="_blank" rel="noopener" href="http://mindhacks.cn/2008/04/18/learning-fro
           <blockquote>
 <p>最近面临期末，之前还剩了个微分方程没有学，发现要记的还挺多的，就做些笔记，以下笔记较为精简，部分条件未给出（例如导数存在）</p>
 </blockquote>
-<h2 id="研究微分方程的目的">研究微分方程的目的</h2>
-<p>在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个<strong>导数和函数的关系式</strong>来解得，在力学，天文学，物理学及技术科学等中应用广泛</p>
+<h2 id="研究微分方程的目的"><a href="#研究微分方程的目的" class="headerlink" title="研究微分方程的目的"></a>研究微分方程的目的</h2><p>在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个<strong>导数和函数的关系式</strong>来解得，在力学，天文学，物理学及技术科学等中应用广泛</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%AC%94%E8%AE%B0/#more" rel="contents">
@@ -4827,13 +4392,9 @@ target="_blank" rel="noopener" href="http://mindhacks.cn/2008/04/18/learning-fro
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="基于hexo的github博客教程">基于HEXO的Github博客教程</h1>
-<h2 id="搭建教程">搭建教程</h2>
-<p><a
-target="_blank" rel="noopener" href="https://www.cnblogs.com/huanhao/p/hexobase.html">【基础篇】hexo博客搭建教程</a></p>
+          <h1 id="基于HEXO的Github博客教程"><a href="#基于HEXO的Github博客教程" class="headerlink" title="基于HEXO的Github博客教程"></a>基于HEXO的Github博客教程</h1><h2 id="搭建教程"><a href="#搭建教程" class="headerlink" title="搭建教程"></a>搭建教程</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/huanhao/p/hexobase.html">【基础篇】hexo博客搭建教程</a></p>
 <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo静态博客架构官网</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://theme-next.js.org/">NexT主题官网（hexo的老牌主题，历经多年更新，功能最全，使用人最多）</a></p>
+<p><a target="_blank" rel="noopener" href="https://theme-next.js.org/">NexT主题官网（hexo的老牌主题，历经多年更新，功能最全，使用人最多）</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90/#more" rel="contents">
@@ -4880,13 +4441,13 @@ target="_blank" rel="noopener" href="https://theme-next.js.org/">NexT主题官�
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">41k</span>
+    <span title="站点总字数">37k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:29</span>
+    <span title="站点阅读时长">2:14</span>
   </span>
 </div>
 <div class="busuanzi-count">
