@@ -26,20 +26,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"fault"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="二分12345678910111213141516171819202122232425262728293031323334353637383940&#x2F;*整数*&#x2F;bool check(int x) &amp;#123;&#x2F;* ... *&#x2F;&amp;#125; &#x2F;&#x2F; 检查x是否满足某种性质&#x2F;*区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：*&#x2F;int bsearch_1(int l, int r">
+    <meta name="description" content="二分 12345678910111213141516171819202122232425262728293031323334353637383940&#x2F;*整数*&#x2F;bool check(int x) &amp;#123;&#x2F;* ... *&#x2F;&amp;#125; &#x2F;&#x2F; 检查x是否满足某种性质&#x2F;*区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：*&#x2F;int bsearch_1(int l, int">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础算法">
 <meta property="og:url" content="https://ar-gas.github.io/post/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="二分12345678910111213141516171819202122232425262728293031323334353637383940&#x2F;*整数*&#x2F;bool check(int x) &amp;#123;&#x2F;* ... *&#x2F;&amp;#125; &#x2F;&#x2F; 检查x是否满足某种性质&#x2F;*区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：*&#x2F;int bsearch_1(int l, int r">
+<meta property="og:description" content="二分 12345678910111213141516171819202122232425262728293031323334353637383940&#x2F;*整数*&#x2F;bool check(int x) &amp;#123;&#x2F;* ... *&#x2F;&amp;#125; &#x2F;&#x2F; 检查x是否满足某种性质&#x2F;*区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：*&#x2F;int bsearch_1(int l, int">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/ea9f68290bbc9371b63eadadcbc776a9c4dc5432">
 <meta property="article:published_time" content="2023-04-14T12:57:00.000Z">
-<meta property="article:modified_time" content="2023-06-04T03:17:07.373Z">
+<meta property="article:modified_time" content="2023-06-15T13:36:26.975Z">
 <meta property="article:author" content="Ar Gas">
 <meta property="article:tag" content="algrithm&#x2F;算法">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/ea9f68290bbc9371b63eadadcbc776a9c4dc5432">
 
 
 <link rel="canonical" href="https://ar-gas.github.io/post/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/">
@@ -98,7 +96,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">37</span></a></li><li class="menu-item menu-item-update"><a href="/update/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新动态</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">38</span></a></li><li class="menu-item menu-item-update"><a href="/update/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新动态</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -149,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%88%86"><span class="nav-text">二分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E5%92%8C"><span class="nav-text">前缀和</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E5%89%8D%E7%BD%AE%E5%92%8C"><span class="nav-text">多维前置和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%91%E4%B8%8A%E5%89%8D%E7%BC%80%E5%92%8C"><span class="nav-text">树上前缀和</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%AE%E5%88%86"><span class="nav-text">差分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-text">双指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-text">同向双指针</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-text">参考链接</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%88%86"><span class="nav-text">二分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E5%92%8C"><span class="nav-text">前缀和</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E5%89%8D%E7%BD%AE%E5%92%8C"><span class="nav-text">多维前置和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%91%E4%B8%8A%E5%89%8D%E7%BC%80%E5%92%8C"><span class="nav-text">树上前缀和</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%AE%E5%88%86"><span class="nav-text">差分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-text">双指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-text">同向双指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-text">相向双指针</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-text">参考链接</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -164,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -262,7 +260,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-06-04 11:17:07" itemprop="dateModified" datetime="2023-06-04T11:17:07+08:00">2023-06-04</time>
+      <time title="修改时间：2023-06-15 21:36:26" itemprop="dateModified" datetime="2023-06-15T21:36:26+08:00">2023-06-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -292,14 +290,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>528</span>
+      <span>941</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -310,38 +308,79 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*整数*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;<span class="comment">/* ... */</span>&#125; <span class="comment">// 检查x是否满足某种性质</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">bsearch_1</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) r = mid;    <span class="comment">// check()判断mid是否满足性质</span></span><br><span class="line">        <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*区间[l, r]被划分成[l, mid - 1]和[mid, r]时使用：*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">bsearch_2</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> mid = l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) l = mid;</span><br><span class="line">        <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*浮点数*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;<span class="comment">/* ... */</span>&#125; <span class="comment">// 检查x是否满足某种性质</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">bsearch_3</span><span class="params">(<span class="type">double</span> l, <span class="type">double</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">double</span> eps = <span class="number">1e-6</span>;   <span class="comment">// eps 表示精度，取决于题目对精度的要求</span></span><br><span class="line">    <span class="keyword">while</span> (r - l &gt; eps)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h1><blockquote>
-<p>例题：给定 $n$ 个正整数组成的数列 $a_1, a_2, \cdots, a_n$ 和 $m$ 个区间 $[l_i,r_i]$，分别求这 $m$ 个区间的区间和。</p>
+        <h1 id="二分">二分</h1>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*整数*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;<span class="comment">/* ... */</span>&#125; <span class="comment">// 检查x是否满足某种性质</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">bsearch_1</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) r = mid;    <span class="comment">// check()判断mid是否满足性质</span></span><br><span class="line">        <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*区间[l, r]被划分成[l, mid - 1]和[mid, r]时使用：*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">bsearch_2</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> mid = l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) l = mid;</span><br><span class="line">        <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*浮点数*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;<span class="comment">/* ... */</span>&#125; <span class="comment">// 检查x是否满足某种性质</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">bsearch_3</span><span class="params">(<span class="type">double</span> l, <span class="type">double</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">double</span> eps = <span class="number">1e-6</span>;   <span class="comment">// eps 表示精度，取决于题目对精度的要求</span></span><br><span class="line">    <span class="keyword">while</span> (r - l &gt; eps)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="前缀和">前缀和</h1>
+<blockquote>
+<p>例题：给定 <span class="math inline">\(n\)</span> 个正整数组成的数列
+<span class="math inline">\(a_1, a_2, \cdots, a_n\)</span> 和 <span
+class="math inline">\(m\)</span> 个区间 <span
+class="math inline">\([l_i,r_i]\)</span>，分别求这 <span
+class="math inline">\(m\)</span> 个区间的区间和。</p>
 </blockquote>
 <p>前缀和：「数列的前 n 项的和」</p>
-<p>性质：$S_n - S_{n-r}&#x3D;a_{n-r+1}+···+a_n$，可以快速求出区间和</p>
-<h2 id="多维前置和"><a href="#多维前置和" class="headerlink" title="多维前置和"></a>多维前置和</h2><ul>
-<li>基于<strong>容斥定理</strong> : ($A_i$表示集合)</li>
+<p>性质：<span class="math inline">\(S_n -
+S_{n-r}=a_{n-r+1}+···+a_n\)</span>，可以快速求出区间和</p>
+<h2 id="多维前置和">多维前置和</h2>
+<ul>
+<li>基于<strong>容斥定理</strong> : (<span
+class="math inline">\(A_i\)</span>表示集合)</li>
 </ul>
-<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ea9f68290bbc9371b63eadadcbc776a9c4dc5432"></p>
-<p>二维前缀和：$sum_{i,j}&#x3D;sum_{i-1,j}+sum_{i,j-1}-sum_{i-1,j-1}+a_{i,j}$</p>
+<p><img
+src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ea9f68290bbc9371b63eadadcbc776a9c4dc5432" /></p>
+<p>二维前缀和：<span
+class="math inline">\(sum_{i,j}=sum_{i-1,j}+sum_{i,j-1}-sum_{i-1,j-1}+a_{i,j}\)</span></p>
 <ul>
 <li>基于<strong>DP</strong>的高维前缀和：</li>
 </ul>
 <p>二维：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        a[i][j] += a[i - <span class="number">1</span>][j];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        a[i][j] += a[i][j - <span class="number">1</span>];</span><br></pre></td></tr></table></figure>
-
 <p>三维：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt;= n; k++) </span><br><span class="line">            a[i][j][k] += a[i - <span class="number">1</span>][j][k];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt;= n; k++)</span><br><span class="line">            a[i][j][k] += a[i][j - <span class="number">1</span>][k];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt;= n; k++)</span><br><span class="line">            a[i][j][k] += a[i][j][k - <span class="number">1</span>];</span><br></pre></td></tr></table></figure>
-
 <p>核心思想：一维一维来处理</p>
-<p>复杂度$n·n^x$</p>
-<h2 id="树上前缀和"><a href="#树上前缀和" class="headerlink" title="树上前缀和"></a>树上前缀和</h2><h1 id="差分"><a href="#差分" class="headerlink" title="差分"></a>差分</h1><p>差分算法：</p>
-<p>$$<br>b_i&#x3D;\begin{cases}a_i-a_{i-1},&amp;i \in[2,n] \ a_1,&amp;i&#x3D;1\end{cases}<br>$$</p>
-<h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h1><h2 id="同向双指针"><a href="#同向双指针" class="headerlink" title="同向双指针"></a>同向双指针</h2><p>条件：</p>
-<ol>
+<p>复杂度<span class="math inline">\(n·n^x\)</span></p>
+<h2 id="树上前缀和">树上前缀和</h2>
+<h1 id="差分">差分</h1>
+<p>差分算法：</p>
+<p><span class="math display">\[
+b_i=\begin{cases}a_i-a_{i-1}\,&amp;i \in[2,n] \\
+a_1\,&amp;i=1\end{cases}
+\]</span></p>
+<h1 id="双指针">双指针</h1>
+<h2 id="同向双指针">同向双指针</h2>
+<p>条件：</p>
+<ol type="1">
 <li>单调性</li>
 <li>连续序列</li>
 </ol>
 <p>时间复杂度：O(左指针遍历+右指针遍历)</p>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>[1].<a target="_blank" rel="noopener" href="https://www.cnblogs.com/heyuhhh/p/11585358.html">高维前缀和总结(sosdp)</a></p>
+<p>例题：</p>
+<p><a
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-size-subarray-sum/solution/biao-ti-xia-biao-zong-suan-cuo-qing-kan-k81nh/">长度最小的子数组</a></p>
+<h2 id="相向双指针">相向双指针</h2>
+<p>以二数和为例，如果暴力求二数和的所有情况，时间复杂度是 <span
+class="math inline">\(O(n^2)\)</span> 级别；</p>
+<p>将数组排序，选择最大最小两数，其和与target数值进行比较，我们可以用<span
+class="math inline">\(O(1)\)</span> 的复杂度去获取<span
+class="math inline">\(O(n)\)</span> 的信息，从而优化</p>
+<p><a
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/">两数之和
+II - 输入有序数组</a></p>
+<p>参考代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;numbers, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>, right = numbers.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (;;) &#123; <span class="comment">// left &lt; right</span></span><br><span class="line">            <span class="type">int</span> s = numbers[left] + numbers[right];</span><br><span class="line">            <span class="keyword">if</span> (s == target) <span class="keyword">return</span> &#123;left + <span class="number">1</span>, right + <span class="number">1</span>&#125;;</span><br><span class="line">            s &gt; target ? --right : ++left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/3sum/">三数之和</a></p>
+<p>参考代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">threeSum</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">            <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">            vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; ans;</span><br><span class="line">            <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">2</span>; ++i)&#123;</span><br><span class="line">                <span class="type">int</span> x = nums[i];</span><br><span class="line">                <span class="keyword">if</span>( i &amp;&amp; x == nums[i - <span class="number">1</span>])<span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>( x + nums[i + <span class="number">1</span>] + nums[i + <span class="number">2</span>] &gt; <span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">if</span>( x + nums[n - <span class="number">2</span>] + nums[n - <span class="number">1</span>] &lt; <span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">                <span class="type">int</span> j = i + <span class="number">1</span>, k = n - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">while</span>(j &lt; k)&#123;</span><br><span class="line">                    <span class="type">int</span> s = x + nums[j] + nums[k];</span><br><span class="line">                    <span class="keyword">if</span>(s &gt; <span class="number">0</span>) --k;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(s &lt; <span class="number">0</span>) ++j;</span><br><span class="line">                    <span class="keyword">else</span>&#123;</span><br><span class="line">                        ans.<span class="built_in">push_back</span>(&#123;x,nums[j],nums[k]&#125;);</span><br><span class="line">                        <span class="keyword">for</span>(++j; j &lt; k &amp;&amp; nums[j] == nums[j - <span class="number">1</span>]; ++j);</span><br><span class="line">                        <span class="keyword">for</span>(--k; k &gt; j &amp;&amp; nums[k] == nums[k + <span class="number">1</span>]; --k);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/3sum-closest/">近似三数和</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">threeSumClosest</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> temp = <span class="number">0xFFFFFFF</span>;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(target &gt;= nums[n - <span class="number">1</span>] + nums[n - <span class="number">2</span>] + nums[n - <span class="number">3</span>])</span><br><span class="line">            <span class="keyword">return</span> nums[n - <span class="number">1</span>] + nums[n - <span class="number">2</span>] + nums[n - <span class="number">3</span>];</span><br><span class="line">        <span class="keyword">if</span>(target &lt;= nums[<span class="number">0</span>] + nums[<span class="number">1</span>] + nums[<span class="number">2</span>])</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>] + nums[<span class="number">1</span>] + nums[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">2</span>; i++)&#123;</span><br><span class="line">            <span class="type">int</span> j = i + <span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> k = n <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">while</span>(j &lt; k)&#123;</span><br><span class="line">                <span class="type">int</span> s =nums[i] + nums[j] + nums[k];</span><br><span class="line">                <span class="keyword">if</span>(s == target)&#123;ans = s;<span class="keyword">break</span>;&#125;</span><br><span class="line">                <span class="keyword">if</span>(<span class="built_in">abs</span>(s-target) &lt; temp)&#123;temp = <span class="built_in">abs</span>(s-target);ans = s;&#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(s &gt; target) --k;</span><br><span class="line">                <span class="keyword">else</span> ++j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="参考链接">参考链接</h1>
+<p>[1].<a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/heyuhhh/p/11585358.html">高维前缀和总结(sosdp)</a></p>
+<p>[2].<a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hd4y1r7Gq/?spm_id_from=333.788&amp;vd_source=a326e65c6d0fa8e7b1904a3c161ec105">基础算法精讲-灵茶山艾府)</a></p>
+<p>推荐讲师：<a
+target="_blank" rel="noopener" href="https://space.bilibili.com/206214">灵茶山艾府</a>（2023力扣榜单前5）</p>
 
     </div>
 
@@ -415,13 +454,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">37k</span>
+    <span title="站点总字数">38k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:14</span>
+    <span title="站点阅读时长">2:19</span>
   </span>
 </div>
 <div class="busuanzi-count">
