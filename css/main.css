@@ -2721,6 +2721,13 @@ mjx-container[display='true'] + br {
 .back-to-top.back-to-top-on {
   margin-top: 16px;
 }
+body {
+  background: url("https://user-images.githubusercontent.com/111374823/264272180-5ae96cc9-de4d-46cf-9bd4-1fc2faaa1d54.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 100% 100%;
+}
 .main-inner .sub-menu,
 .main-inner .post-block,
 .main-inner .tabs-comment,
