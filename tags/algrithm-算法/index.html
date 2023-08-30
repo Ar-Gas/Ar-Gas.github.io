@@ -415,7 +415,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">28k</span>
+    <span title="站点总字数">27k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
@@ -441,8 +441,7 @@
         <span id="busuanzi_value_site_pv"></span>
       </span>
     </span>
-</div><script color="0,0,0" opacity="0.3" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
-
+</div>
 
     </div>
   </footer>
@@ -485,57 +484,6 @@
 
 <script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"63adf520dcdb44f02cbc5fa2600d1665"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // 查找所有 div.table-container 元素
-    const tableContainers = document.querySelectorAll(".table-container");
-
-    // 遍历所有 div.table-container 元素
-    tableContainers.forEach(function(tableContainer) {
-      // 获取 div.table-container 内的 span 元素数量
-      const spanCount = tableContainer.querySelectorAll("tbody > tr > td.code > pre > span").length;
-
-      // 检查 span 元素数量是否 >= 3
-      if (spanCount >= 3) {
-        // 检查 div.table-container 前面是否有 figcaption 元素，如果没有则添加一个
-        const prevElement = tableContainer.previousElementSibling;
-        let figcaption;
-        let iElement;
-        if (!prevElement || prevElement.tagName.toLowerCase() !== "figcaption") {
-          // 在 div.table-container 前插入一个 figcaption 元素
-          figcaption = document.createElement("figcaption");
-
-          // 将 figcaption 插入到 DOM 中
-          tableContainer.parentNode.insertBefore(figcaption, tableContainer);
-        } else {
-          figcaption = prevElement;
-        }
-
-        // 创建一个 <i> 标签并添加功能
-        iElement = document.createElement("i");
-        iElement.className = "fas fa-angle-down";
-        // 插入一点空格
-        iElement.innerHTML = "&nbsp;&nbsp;&nbsp;";
-        figcaption.insertBefore(iElement, figcaption.firstChild);
-
-        // 为 <i> 标签添加点击事件
-        iElement.addEventListener("click", function() {
-          // 切换 tableContainer 的 "code-hidden" 类
-          tableContainer.classList.toggle("code-hidden");
-
-          // 切换 <i> 标签的类名
-          if (iElement.classList.contains("fa-angle-down")) {
-            iElement.classList.remove("fa-angle-down");
-            iElement.classList.add("fa-angle-right");
-          } else {
-            iElement.classList.remove("fa-angle-right");
-            iElement.classList.add("fa-angle-down");
-          }
-        });
-      }
-    });
-  });
-</script>
 
 </body>
 </html>
