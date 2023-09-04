@@ -26,29 +26,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#3216B0","save":"auto","position":"right"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="学习阶段">
+    <meta name="description" content="The Missing Semester of Your CS Education 计算机教育中缺失的一课 课程链接 1.shell 初步 shell 基于空格分割命令并进行解析，然后执行第一个单词代表的程序，并将后续的单词作为程序可以访问的参数。 12date &#x2F;&#x2F;显示时间:2023-09-03 22:00:31echo hello &#x2F;&#x2F;hello 单、双引号，转义符号\可以在参数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《算法引论》笔记">
-<meta property="og:url" content="https://ar-gas.github.io/post/%E7%AE%97%E6%B3%95%E5%BC%95%E8%AE%BA%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="The Missing Semester of Your CS Education">
+<meta property="og:url" content="https://ar-gas.github.io/post/The%20Missing%20Semester%20of%20Your%20CS%20Education/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="学习阶段">
+<meta property="og:description" content="The Missing Semester of Your CS Education 计算机教育中缺失的一课 课程链接 1.shell 初步 shell 基于空格分割命令并进行解析，然后执行第一个单词代表的程序，并将后续的单词作为程序可以访问的参数。 12date &#x2F;&#x2F;显示时间:2023-09-03 22:00:31echo hello &#x2F;&#x2F;hello 单、双引号，转义符号\可以在参数">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-27T23:04:00.000Z">
-<meta property="article:modified_time" content="2023-06-04T03:18:20.039Z">
+<meta property="article:published_time" content="2023-09-03T13:53:23.000Z">
+<meta property="article:modified_time" content="2023-09-03T14:56:41.101Z">
 <meta property="article:author" content="Ar Gas">
-<meta property="article:tag" content="read-notes&#x2F;读书笔记">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ar-gas.github.io/post/%E7%AE%97%E6%B3%95%E5%BC%95%E8%AE%BA%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="https://ar-gas.github.io/post/The%20Missing%20Semester%20of%20Your%20CS%20Education/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/%E7%AE%97%E6%B3%95%E5%BC%95%E8%AE%BA%E7%AC%94%E8%AE%B0/","path":"post/算法引论笔记/","title":"《算法引论》笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/The%20Missing%20Semester%20of%20Your%20CS%20Education/","path":"post/The Missing Semester of Your CS Education/","title":"The Missing Semester of Your CS Education"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>《算法引论》笔记 | Ar Gas'Blog</title>
+<title>The Missing Semester of Your CS Education | Ar Gas'Blog</title>
   
 
 
@@ -148,7 +147,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95%E7%9A%84%E7%AD%89%E4%BB%B7%E5%AE%9A%E4%B9%89"><span class="nav-text">数学归纳法的等价定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%85%AC%E5%BC%8F"><span class="nav-text">一些公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="nav-text">证明的思路</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#the-missing-semester-of-your-cs-education-%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%99%E8%82%B2%E4%B8%AD%E7%BC%BA%E5%A4%B1%E7%9A%84%E4%B8%80%E8%AF%BE"><span class="nav-text">The
+Missing Semester of Your CS Education 计算机教育中缺失的一课</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shell-%E5%88%9D%E6%AD%A5"><span class="nav-text">1.shell 初步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E5%88%86%E9%9A%94"><span class="nav-text">目录分隔：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-text">重定向：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sudo"><span class="nav-text">sudo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercises"><span class="nav-text">Exercises</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -225,7 +225,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/%E7%AE%97%E6%B3%95%E5%BC%95%E8%AE%BA%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/The%20Missing%20Semester%20of%20Your%20CS%20Education/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -238,12 +238,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="《算法引论》笔记 | Ar Gas'Blog">
+      <meta itemprop="name" content="The Missing Semester of Your CS Education | Ar Gas'Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          《算法引论》笔记
+          The Missing Semester of Your CS Education
         </h1>
 
         <div class="post-meta-container">
@@ -253,15 +253,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-02-28 07:04:00" itemprop="dateCreated datePublished" datetime="2023-02-28T07:04:00+08:00">2023-02-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-06-04 11:18:20" itemprop="dateModified" datetime="2023-06-04T11:18:20+08:00">2023-06-04</time>
+      <time title="创建时间：2023-09-03 21:53:23 / 修改时间：22:56:41" itemprop="dateCreated datePublished" datetime="2023-09-03T21:53:23+08:00">2023-09-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -269,11 +263,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">阅读笔记</span></a>
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课程笔记</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+          <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计算机基础</span></a>
         </span>
     </span>
 
@@ -291,7 +285,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>434</span>
+      <span>476</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -309,53 +303,51 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>学习阶段</p>
-<span id="more"></span>
-<h1 id="数学归纳法的等价定义">数学归纳法的等价定义</h1>
-<p><strong>基本条件</strong>：</p>
-<ol type="1">
-<li>当 <span class="math inline">\(n=1\)</span> 时，<span
-class="math inline">\(T\)</span> 成立；</li>
-<li>对任意 <span class="math inline">\(n&gt;1\)</span>，如果 <span
-class="math inline">\(n-1\)</span> 时 <span
-class="math inline">\(T\)</span> 成立，那么 <span
-class="math inline">\(n\)</span> 时 <span
-class="math inline">\(T\)</span> 也成立</li>
-</ol>
-<p><strong>定义</strong>：如果对于带有参数 <span
-class="math inline">\(n\)</span> 的命题 <span
-class="math inline">\(P\)</span> ，当 <span
-class="math inline">\(n=1\)</span> 时 <span
-class="math inline">\(Р\)</span> 成立；并且如果对每一个 <span
-class="math inline">\(n (n&gt;1)\)</span>,若 <span
-class="math inline">\(n-1\)</span> 时 <span
-class="math inline">\(P\)</span> 成立能推出 <span
-class="math inline">\(n\)</span> 时 <span
-class="math inline">\(Р\)</span> 也成立；那么对任意自然数，<span
-class="math inline">\(Р\)</span> 都成立。</p>
-<p><code>等价一</code>：如果对于带有参数n的命题P，当n=
-1时Р成立;并且如果对每一个n (n ≥ 1
-),若n时Р成立能推出n+1时Р也成立;那么对任意自然数，Р都成立。</p>
-<p><code>等价二</code>：如果对于带有参数n的命题P，当n=1时Р成立;并且如果对每一个n
-(n&gt; 1
-),若对任意小于n的自然数Р成立能推出对n命题Р也成立;那么对任意自然数,Р都成立。</p>
-<p><code>等价三</code>：如果对于带有参数n的命题P，当n=1和n=2时Р都成立;并且如果对每一个n
-(n &gt;2)，若n-2时Р成立能推出n时Р也成立;那么对任意自然数，Р都成立。</p>
-<p><code>等价四</code>：如果对于带有参数n的命题P，当n=1和n=2时Р都成立;并且如果对每一个n
-(n &gt;2)，若n-2时Р成立能推出n时Р也成立;那么对任意自然数，Р都成立。</p>
-<h1 id="一些公式">一些公式</h1>
-<ol type="1">
-<li><span class="math inline">\(x^n-1\)</span> 能被 <span
-class="math inline">\(x-1\)</span> 除尽;</li>
-<li>前n个自然数和为 n(n+1)/2;</li>
-<li>级数 <span class="math inline">\(8+13+18+23+···+(3+5n)\)</span>
-之和是 <span class="math inline">\(2.5n^2+5.5n\)</span></li>
-<li><span class="math inline">\((1+x)^n&gt;=1+nx\)</span></li>
-</ol>
-<h1 id="证明的思路">证明的思路</h1>
-<ol type="1">
-<li>证明增长率</li>
-</ol>
+        <h1
+id="the-missing-semester-of-your-cs-education-计算机教育中缺失的一课">The
+Missing Semester of Your CS Education 计算机教育中缺失的一课</h1>
+<p><a target="_blank" rel="noopener" href="https://missing-semester-cn.github.io/">课程链接</a></p>
+<h1 id="shell-初步">1.shell 初步</h1>
+<p>shell
+基于空格分割命令并进行解析，然后执行第一个单词代表的程序，并将后续的单词作为程序可以访问的参数。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">date //显示时间:2023-09-03 22:00:31</span><br><span class="line">echo hello //hello</span><br></pre></td></tr></table></figure>
+<p>单、双引号，转义符号<code>\</code>可以在参数中加空格</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;My Photos&quot;</span><br><span class="line">My\Photos</span><br></pre></td></tr></table></figure>
+<h3 id="目录分隔">目录分隔：</h3>
+<ul>
+<li>Linux 和 macOS 上使用 <code>/</code> 分割</li>
+<li>Windows上是 <code>\</code></li>
+<li><code>.</code> 表示的是当前目录</li>
+<li><code>..</code> 表示上级目录</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pwd //获取当前路径</span><br><span class="line">cd \home //home子目录</span><br><span class="line">cd .. //返回上级目录</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls //当前目录下包含的文件</span><br></pre></td></tr></table></figure>
+<p><code>rwx</code>
+分别代表了文件所有者（<code>missing</code>），用户组（<code>users</code>）
+以及其他所有人具有的权限：</p>
+<ul>
+<li><code>w</code>：只有文件所有者可以修改</li>
+<li><code>x</code>：用户需要具备该文件夹以及其父文件夹的“搜索”权限</li>
+<li><code>r</code>：用户必须对该文件夹具备读权限</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mv //重命名或移动文件</span><br><span class="line">cp // 拷贝文件</span><br><span class="line">mkdir //新建文件夹</span><br><span class="line"></span><br><span class="line">man //查询指令的工作方式</span><br><span class="line">例：</span><br><span class="line">man ls</span><br></pre></td></tr></table></figure>
+<h3 id="重定向">重定向：</h3>
+<ul>
+<li><code>&lt; file</code> 输出流</li>
+<li><code>&gt; file</code>输入流</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">missing:~$ echo hello &gt; hello.txt</span><br><span class="line">missing:~$ cat hello.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat &lt; hello.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat &lt; hello.txt &gt; hello2.txt</span><br><span class="line">missing:~$ cat hello2.txt</span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
+<p><code>|</code>
+操作符允许我们将一个程序的输出和另外一个程序的输入连接起来</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">missing:~$ ls -l / | tail -n1</span><br><span class="line">drwxr-xr-x 1 root  root  4096 Jun 20  2019 var</span><br><span class="line">missing:~$ curl --head --silent google.com | grep --ignore-case content-length | cut --delimiter=&#x27; &#x27; -f2</span><br><span class="line">219</span><br></pre></td></tr></table></figure>
+<h3 id="sudo">sudo</h3>
+<p>root
+user（根用户）可以自由创建、读取、更新和删除系统中的任何文件，通常在我们并不会以根用户的身份直接登录系统。</p>
+<p><code>sudo</code> 命令让您可以以 su（super user 或 root
+的简写）的身份执行一些操作。</p>
+<p><strong>PS</strong>：只有根用户才能向 <code>sysfs</code>
+文件写入内容（Windows 和 macOS 没有这个文件）</p>
+<h3 id="exercises">Exercises</h3>
 
     </div>
 
@@ -373,7 +365,7 @@ class="math inline">\(x-1\)</span> 除尽;</li>
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://ar-gas.github.io/post/%E7%AE%97%E6%B3%95%E5%BC%95%E8%AE%BA%E7%AC%94%E8%AE%B0/" title="《算法引论》笔记">https://ar-gas.github.io/post/算法引论笔记/</a>
+      <a href="https://ar-gas.github.io/post/The%20Missing%20Semester%20of%20Your%20CS%20Education/" title="The Missing Semester of Your CS Education">https://ar-gas.github.io/post/The Missing Semester of Your CS Education/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/CC%20BY-NC-SA%204.0/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
@@ -382,21 +374,20 @@ class="math inline">\(x-1\)</span> 除尽;</li>
 </div>
 
           <div class="post-tags">
-              <a href="/tags/read-notes-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># read-notes/读书笔记</a>
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+              <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="tag"># 课程笔记</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/post/%E7%94%9F%E6%97%A5%E5%B0%8F%E8%AE%B0/" rel="prev" title="生日小记">
-                  <i class="fa fa-chevron-left"></i> 生日小记
+                <a href="/post/HDU%204699%20Editor/" rel="prev" title="HDU 4699 Editor">
+                  <i class="fa fa-chevron-left"></i> HDU 4699 Editor
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/post/chatGPT%20%E4%B8%80%E4%B8%AA%E4%BA%A4%E6%B5%81%E4%BC%9A%E7%9A%84%E7%AC%94%E8%AE%B0/" rel="next" title="ChatGPT交流会的随笔">
-                  ChatGPT交流会的随笔 <i class="fa fa-chevron-right"></i>
+                <a href="/post/AcWing%2092/" rel="next" title="AcWing 92 递归实现指数型枚举">
+                  AcWing 92 递归实现指数型枚举 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -492,13 +483,13 @@ class="math inline">\(x-1\)</span> 除尽;</li>
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"2dd07d93f7b01166a9a1af2d6f1a21a4"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"a428f1f8bdce43499f1519c83b9bae30"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
