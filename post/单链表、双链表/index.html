@@ -26,28 +26,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#3216B0","save":"auto","position":"right"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="两种图，从外文摘抄的，后续有时间了反应一下">
+    <meta name="description" content="单链表 题目 AcWing 826 代码 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273#include&lt;bits&#x2F;stdc++.h&gt;using na">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图论">
-<meta property="og:url" content="https://ar-gas.github.io/post/%E5%9B%BE%E8%AE%BA/index.html">
+<meta property="og:title" content="单链表、双链表">
+<meta property="og:url" content="https://ar-gas.github.io/post/%E5%8D%95%E9%93%BE%E8%A1%A8%E3%80%81%E5%8F%8C%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="两种图，从外文摘抄的，后续有时间了反应一下">
+<meta property="og:description" content="单链表 题目 AcWing 826 代码 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273#include&lt;bits&#x2F;stdc++.h&gt;using na">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-02T01:42:00.000Z">
-<meta property="article:modified_time" content="2023-06-04T03:18:25.565Z">
+<meta property="article:published_time" content="2023-09-07T03:16:00.000Z">
+<meta property="article:modified_time" content="2023-09-07T03:35:37.488Z">
 <meta property="article:author" content="Ar Gas">
-<meta property="article:tag" content="algrithm&#x2F;算法">
+<meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ar-gas.github.io/post/%E5%9B%BE%E8%AE%BA/">
+<link rel="canonical" href="https://ar-gas.github.io/post/%E5%8D%95%E9%93%BE%E8%A1%A8%E3%80%81%E5%8F%8C%E9%93%BE%E8%A1%A8/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/%E5%9B%BE%E8%AE%BA/","path":"post/图论/","title":"图论"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/%E5%8D%95%E9%93%BE%E8%A1%A8%E3%80%81%E5%8F%8C%E9%93%BE%E8%A1%A8/","path":"post/单链表、双链表/","title":"单链表、双链表"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>图论 | Ar Gas'Blog</title>
+<title>单链表、双链表 | Ar Gas'Blog</title>
   
 
 
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#representations-of-graphs"><span class="nav-text">Representations of graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#adjacency-list"><span class="nav-text">Adjacency-list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adjacency-matrix"><span class="nav-text">Adjacency-matrix</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#references"><span class="nav-text">References</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E9%93%BE%E8%A1%A8"><span class="nav-text">单链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8C%E9%93%BE%E8%A1%A8"><span class="nav-text">双链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-text">代码</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,7 +224,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/%E5%9B%BE%E8%AE%BA/">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/%E5%8D%95%E9%93%BE%E8%A1%A8%E3%80%81%E5%8F%8C%E9%93%BE%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -237,12 +237,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="图论 | Ar Gas'Blog">
+      <meta itemprop="name" content="单链表、双链表 | Ar Gas'Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          图论
+          单链表、双链表
         </h1>
 
         <div class="post-meta-container">
@@ -252,15 +252,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-04-02 09:42:00" itemprop="dateCreated datePublished" datetime="2023-04-02T09:42:00+08:00">2023-04-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-06-04 11:18:25" itemprop="dateModified" datetime="2023-06-04T11:18:25+08:00">2023-06-04</time>
+      <time title="创建时间：2023-09-07 11:16:00 / 修改时间：11:35:37" itemprop="dateCreated datePublished" datetime="2023-09-07T11:16:00+08:00">2023-09-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -268,11 +262,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
         </span>
     </span>
 
@@ -290,7 +280,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>380</span>
+      <span>402</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -308,50 +298,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>两种图，从外文摘抄的，后续有时间了反应一下</p>
-<span id="more"></span>
-<h1 id="representations-of-graphs">Representations of graphs</h1>
-<p>Graph consists of two components:<strong>node(vertice)</strong> &amp;
-<strong>edge</strong></p>
-<p>Differing from the definition of edfe,<em>Graph</em> can be divided
-into <em>directed graph</em>,<em>Undirected graph</em>.And different
-connection also heve other different property.</p>
-<p>Here are two standard ways to represent a graph <span
-class="math inline">\(G=(V,E)\)</span>：</p>
-<h2 id="adjacency-list">Adjacency-list</h2>
-<figure>
-<img
-src="https://user-images.githubusercontent.com/111374823/230520438-5515ddf5-fb70-4781-82d6-82178b5298d7.png"
-alt="adjacency list" />
-<figcaption aria-hidden="true">adjacency list</figcaption>
-</figure>
-<p>Using list to express edge between the vertex element and followed
-elements,the <a
-target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/graph-and-its-representations/?ref=lbp">C++
-codes</a> as follows:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A simple representation of graph using STL</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// A utility function to add an edge in an</span></span><br><span class="line"><span class="comment">// undirected graph.</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">addEdge</span><span class="params">(vector&lt;<span class="type">int</span>&gt; adj[], <span class="type">int</span> u, <span class="type">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    adj[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">    adj[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// A utility function to print the adjacency list</span></span><br><span class="line"><span class="comment">// representation of graph</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printGraph</span><span class="params">(vector&lt;<span class="type">int</span>&gt; adj[], <span class="type">int</span> V)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> v = <span class="number">0</span>; v &lt; V; ++v) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n Adjacency list of vertex &quot;</span> &lt;&lt; v</span><br><span class="line">             &lt;&lt; <span class="string">&quot;\n head &quot;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x : adj[v])</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;-&gt; &quot;</span> &lt;&lt; x;</span><br><span class="line">               cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Driver code</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> V = <span class="number">5</span>;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; adj[V];</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">1</span>, <span class="number">4</span>);</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">    <span class="built_in">addEdge</span>(adj, <span class="number">3</span>, <span class="number">4</span>);</span><br><span class="line">    <span class="built_in">printGraph</span>(adj, V);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>This way is used to represent a <strong>directed graphs</strong>,and
-is also a compact way to represent <strong>spare</strong> graphs.</p>
-<h2 id="adjacency-matrix">Adjacency-matrix</h2>
-<figure>
-<img
-src="https://user-images.githubusercontent.com/111374823/230520450-4cb0d854-6bff-41cd-8f5b-f1a0ee2d42be.png"
-alt="adjacency matrix" />
-<figcaption aria-hidden="true">adjacency matrix</figcaption>
-</figure>
-<p>We using adj[i][j] to express the edge form i to j;</p>
-<p>Directed graph need to assign adj[i][j]=1 and adj[j][i]=1</p>
-<p>Undirected graph only need to assign adj[i][j]=;</p>
-<p>here are the C++ codes:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// n is the number of vertices</span></span><br><span class="line">    <span class="comment">// m is the number of edges</span></span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="type">int</span> adjMat[n + <span class="number">1</span>][n + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="type">int</span> u, v;</span><br><span class="line">        cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">        adjMat[u][v] = <span class="number">1</span>;</span><br><span class="line">        adjMat[v][u] = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// for a directed graph with an edge pointing from u</span></span><br><span class="line">        <span class="comment">// to v,we just assign adjMat[u][v] as 1</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>when we need to be able to tell quickly if there is an edge
-connecting two given vertices.</p>
-</blockquote>
-<h1 id="references">References</h1>
-<p>[1].<a
-target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/graph-and-its-representations/?ref=lbp">Basics
-of Graph Theory</a></p>
+        <h1 id="单链表">单链表</h1>
+<h2 id="题目">题目</h2>
+<p><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/828/">AcWing
+826</a></p>
+<h2 id="代码">代码</h2>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*单链表（静态单向）*/</span></span><br><span class="line"><span class="comment">//e[i]:  val</span></span><br><span class="line"><span class="comment">//ne[i]: next (-1: NULL)</span></span><br><span class="line"><span class="comment">//head : 头节点下标</span></span><br><span class="line"><span class="comment">//idx:   当前用的点下标</span></span><br><span class="line"><span class="type">int</span> head, e[N], ne[N], idx;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	head = <span class="number">-1</span>;</span><br><span class="line">	idx = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将x拆入头节点</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add_to_head</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="comment">//让idx点连接head,head连接idx,更新idx</span></span><br><span class="line">	e[idx] = x, ne[idx] = head, head = idx ++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将x插入k后</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">	<span class="comment">//让idx点连接k的next,k连接idx,更新idx</span></span><br><span class="line">	e[idx] = x;</span><br><span class="line">	ne[idx] = ne[k];</span><br><span class="line">	ne[k] = idx;</span><br><span class="line">	idx ++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除k的后节点</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">	<span class="comment">//k节点next指向后节点的next</span></span><br><span class="line">	ne[k] = ne[ne[k]];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> <span class="type">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">init</span>();</span><br><span class="line">	<span class="type">int</span> n; </span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">while</span> (n--)&#123;</span><br><span class="line">		<span class="type">int</span> k, x;</span><br><span class="line">		<span class="type">char</span> op;</span><br><span class="line"></span><br><span class="line">		cin &gt;&gt; op;</span><br><span class="line">		<span class="keyword">if</span> (op == <span class="string">&#x27;H&#x27;</span>)&#123;</span><br><span class="line">			cin &gt;&gt; x;</span><br><span class="line">			<span class="built_in">add_to_head</span>(x);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (op == <span class="string">&#x27;D&#x27;</span>)&#123;</span><br><span class="line">			cin &gt;&gt; k;</span><br><span class="line">			<span class="keyword">if</span>(!k) head = ne[head]; <span class="comment">//删除头节点</span></span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">remove</span>(k - <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			cin &gt;&gt; k &gt;&gt; x;</span><br><span class="line">			<span class="built_in">add</span>(k - <span class="number">1</span>, x);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = head; i != <span class="number">-1</span>; i = ne[i])</span><br><span class="line">		cout &lt;&lt; e[i] &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Debug:</span></span><br><span class="line"><span class="comment">//1.检查读入</span></span><br><span class="line"><span class="comment">//2.检查各个状态处理情况</span></span><br></pre></td></tr></table></figure>
+<h1 id="双链表">双链表</h1>
+<h2 id="代码-1">代码</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">/*双链表（静态双向）*/</span><br><span class="line">//e[i]:  val</span><br><span class="line">//r[i]:  right_next</span><br><span class="line">//l[i]:  left_next</span><br><span class="line">//head : 头节点下标</span><br><span class="line">//idx:   当前用的点下标</span><br><span class="line">int head, e[N], l[N], r[N], idx;</span><br><span class="line"></span><br><span class="line">void init()&#123;</span><br><span class="line">	// 0 表示头端点</span><br><span class="line">	// 1 表示右端点 </span><br><span class="line">	r[0] = 1;</span><br><span class="line">	l[1] = 0;</span><br><span class="line">	idx = 2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//将x插入k右边</span><br><span class="line">//在k的左边插入x = 在l[k]的右边插入x</span><br><span class="line">void add(int k, int x)&#123;</span><br><span class="line">	//让idx点连接左右点,左右点连接k,更新idx</span><br><span class="line">	e[idx]  = x;</span><br><span class="line">	r[idx]  = k;</span><br><span class="line">	l[idx]  = r[k];</span><br><span class="line">	l[r[k]] = idx;</span><br><span class="line">	r[k]    = idx;</span><br><span class="line"></span><br><span class="line">	idx ++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//删除k点</span><br><span class="line">void remove(int k)&#123;</span><br><span class="line">	//跳过k点</span><br><span class="line">	r[l[k]] = r[k];</span><br><span class="line">	l[r[k]] = l[k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -369,7 +325,7 @@ of Graph Theory</a></p>
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://ar-gas.github.io/post/%E5%9B%BE%E8%AE%BA/" title="图论">https://ar-gas.github.io/post/图论/</a>
+      <a href="https://ar-gas.github.io/post/%E5%8D%95%E9%93%BE%E8%A1%A8%E3%80%81%E5%8F%8C%E9%93%BE%E8%A1%A8/" title="单链表、双链表">https://ar-gas.github.io/post/单链表、双链表/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/CC%20BY-NC-SA%204.0/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
@@ -378,20 +334,20 @@ of Graph Theory</a></p>
 </div>
 
           <div class="post-tags">
-              <a href="/tags/algrithm-%E7%AE%97%E6%B3%95/" rel="tag"># algrithm/算法</a>
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/post/%E6%90%9C%E7%B4%A2/" rel="prev" title="搜索">
-                  <i class="fa fa-chevron-left"></i> 搜索
+                <a href="/post/AcWing%2093/" rel="prev" title="AcWing 93 递归实现组合型枚举">
+                  <i class="fa fa-chevron-left"></i> AcWing 93 递归实现组合型枚举
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/post/NQueen%20Problem/" rel="next" title="NQueen problem">
-                  NQueen problem <i class="fa fa-chevron-right"></i>
+                <a href="/post/%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97/" rel="next" title="数组模拟栈、队列">
+                  数组模拟栈、队列 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -493,7 +449,7 @@ of Graph Theory</a></p>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"9d18f4c3dff758191093ec7ae854f65c"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"65bf7643ea02e4df929ee61e3182cc12"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
