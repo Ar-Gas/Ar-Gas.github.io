@@ -533,6 +533,105 @@ target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/desc
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/AcWing%2094/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Ar Gas">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ar Gas'Blog">
+      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ar Gas'Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/post/AcWing%2094/" class="post-title-link" itemprop="url">AcWing 93 递归实现组合型枚举</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-09-04 15:34:00 / 修改时间：22:09:10" itemprop="dateCreated datePublished" datetime="2023-09-04T15:34:00+08:00">2023-09-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>97</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="题目">题目</h1>
+<p><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/96/">AcWing
+94</a></p>
+<h1 id="ac代码">AC代码</h1>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;<span class="comment">// n个数</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> order[N];</span><br><span class="line"><span class="type">bool</span> chosen[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">calc</span><span class="params">(<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">	<span class="comment">//边界输出</span></span><br><span class="line">	<span class="keyword">if</span> (k == n + <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, order[i]);</span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(chosen[i]) <span class="keyword">continue</span>; </span><br><span class="line">		<span class="comment">//k位选择i</span></span><br><span class="line">        order[k] = i;</span><br><span class="line">		chosen[i] = <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">calc</span>(k + <span class="number">1</span>);</span><br><span class="line">		<span class="comment">//k位不选择i</span></span><br><span class="line">        chosen[i] = <span class="number">0</span>;<span class="comment">//回溯</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="built_in">calc</span>(<span class="number">1</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/AcWing%2093/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -614,105 +713,6 @@ target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/desc
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/AcWing%2094/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Ar Gas">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ar Gas'Blog">
-      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ar Gas'Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/post/AcWing%2094/" class="post-title-link" itemprop="url">AcWing 93 递归实现组合型枚举</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-09-04 15:34:00 / 修改时间：22:09:10" itemprop="dateCreated datePublished" datetime="2023-09-04T15:34:00+08:00">2023-09-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>97</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="题目">题目</h1>
-<p><a
-target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/96/">AcWing
-94</a></p>
-<h1 id="ac代码">AC代码</h1>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;<span class="comment">// n个数</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> order[N];</span><br><span class="line"><span class="type">bool</span> chosen[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">calc</span><span class="params">(<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">	<span class="comment">//边界输出</span></span><br><span class="line">	<span class="keyword">if</span> (k == n + <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, order[i]);</span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(chosen[i]) <span class="keyword">continue</span>; </span><br><span class="line">		<span class="comment">//k位选择i</span></span><br><span class="line">        order[k] = i;</span><br><span class="line">		chosen[i] = <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">calc</span>(k + <span class="number">1</span>);</span><br><span class="line">		<span class="comment">//k位不选择i</span></span><br><span class="line">        chosen[i] = <span class="number">0</span>;<span class="comment">//回溯</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="built_in">calc</span>(<span class="number">1</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
       
     </div>
 
@@ -862,7 +862,7 @@ target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/desc
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/post/The%20Missing%20Semester%20of%20Your%20CS%20Education/" class="post-title-link" itemprop="url">The Missing Semester of Your CS Education</a>
+          <a href="/post/The%20Missing%20Semester%20of%20Your%20CS%20Education/" class="post-title-link" itemprop="url">计算机教育中缺失的一课（小记）</a>
         </h2>
 
         <div class="post-meta-container">
@@ -872,9 +872,15 @@ target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/desc
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-09-03 21:53:23 / 修改时间：22:56:41" itemprop="dateCreated datePublished" datetime="2023-09-03T21:53:23+08:00">2023-09-03</time>
+      <time title="创建时间：2023-09-03 21:53:23" itemprop="dateCreated datePublished" datetime="2023-09-03T21:53:23+08:00">2023-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-09-08 18:00:34" itemprop="dateModified" datetime="2023-09-08T18:00:34+08:00">2023-09-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -897,7 +903,7 @@ target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/desc
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>476</span>
+      <span>525</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -918,49 +924,16 @@ target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/desc
           <h1
 id="the-missing-semester-of-your-cs-education-计算机教育中缺失的一课">The
 Missing Semester of Your CS Education 计算机教育中缺失的一课</h1>
+<p>计算机导论的补充，介绍了工作中常用的几个工具，Shell，Git，Vim等，适合初学者了解。</p>
 <p><a target="_blank" rel="noopener" href="https://missing-semester-cn.github.io/">课程链接</a></p>
-<h1 id="shell-初步">1.shell 初步</h1>
-<p>shell
-基于空格分割命令并进行解析，然后执行第一个单词代表的程序，并将后续的单词作为程序可以访问的参数。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">date //显示时间:2023-09-03 22:00:31</span><br><span class="line">echo hello //hello</span><br></pre></td></tr></table></figure>
-<p>单、双引号，转义符号<code>\</code>可以在参数中加空格</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;My Photos&quot;</span><br><span class="line">My\Photos</span><br></pre></td></tr></table></figure>
-<h3 id="目录分隔">目录分隔：</h3>
-<ul>
-<li>Linux 和 macOS 上使用 <code>/</code> 分割</li>
-<li>Windows上是 <code>\</code></li>
-<li><code>.</code> 表示的是当前目录</li>
-<li><code>..</code> 表示上级目录</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pwd //获取当前路径</span><br><span class="line">cd \home //home子目录</span><br><span class="line">cd .. //返回上级目录</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls //当前目录下包含的文件</span><br></pre></td></tr></table></figure>
-<p><code>rwx</code>
-分别代表了文件所有者（<code>missing</code>），用户组（<code>users</code>）
-以及其他所有人具有的权限：</p>
-<ul>
-<li><code>w</code>：只有文件所有者可以修改</li>
-<li><code>x</code>：用户需要具备该文件夹以及其父文件夹的“搜索”权限</li>
-<li><code>r</code>：用户必须对该文件夹具备读权限</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mv //重命名或移动文件</span><br><span class="line">cp // 拷贝文件</span><br><span class="line">mkdir //新建文件夹</span><br><span class="line"></span><br><span class="line">man //查询指令的工作方式</span><br><span class="line">例：</span><br><span class="line">man ls</span><br></pre></td></tr></table></figure>
-<h3 id="重定向">重定向：</h3>
-<ul>
-<li><code>&lt; file</code> 输出流</li>
-<li><code>&gt; file</code>输入流</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">missing:~$ echo hello &gt; hello.txt</span><br><span class="line">missing:~$ cat hello.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat &lt; hello.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat &lt; hello.txt &gt; hello2.txt</span><br><span class="line">missing:~$ cat hello2.txt</span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
-<p><code>|</code>
-操作符允许我们将一个程序的输出和另外一个程序的输入连接起来</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">missing:~$ ls -l / | tail -n1</span><br><span class="line">drwxr-xr-x 1 root  root  4096 Jun 20  2019 var</span><br><span class="line">missing:~$ curl --head --silent google.com | grep --ignore-case content-length | cut --delimiter=&#x27; &#x27; -f2</span><br><span class="line">219</span><br></pre></td></tr></table></figure>
-<h3 id="sudo">sudo</h3>
-<p>root
-user（根用户）可以自由创建、读取、更新和删除系统中的任何文件，通常在我们并不会以根用户的身份直接登录系统。</p>
-<p><code>sudo</code> 命令让您可以以 su（super user 或 root
-的简写）的身份执行一些操作。</p>
-<p><strong>PS</strong>：只有根用户才能向 <code>sysfs</code>
-文件写入内容（Windows 和 macOS 没有这个文件）</p>
-<h3 id="exercises">Exercises</h3>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/The%20Missing%20Semester%20of%20Your%20CS%20Education/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
