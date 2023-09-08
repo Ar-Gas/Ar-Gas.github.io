@@ -26,12 +26,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#3216B0","save":"auto","position":"right"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="挖个坑，后续把 C++ 的 string 笔记下，目前的就是一些简单的接口">
+    <meta name="description" content="挖个坑，后续把 C++ 的 string 笔记下，目前的就是一些简单的接口">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字符串的输入&#x2F;输出">
 <meta property="og:url" content="https://ar-gas.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="挖个坑，后续把 C++ 的 string 笔记下，目前的就是一些简单的接口">
+<meta property="og:description" content="挖个坑，后续把 C++ 的 string 笔记下，目前的就是一些简单的接口">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-19T11:56:00.000Z">
 <meta property="article:modified_time" content="2023-06-04T03:18:33.737Z">
@@ -96,7 +96,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">36</span></a></li><li class="menu-item menu-item-update"><a href="/update/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新动态</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">14</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">38</span></a></li><li class="menu-item menu-item-update"><a href="/update/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新动态</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#char"><span class="nav-text">char*</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gets"><span class="nav-text">gets()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fgets"><span class="nav-text">fgets()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getchar"><span class="nav-text">getchar()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#puts"><span class="nav-text">puts()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fputs"><span class="nav-text">fputs()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#string"><span class="nav-text">string</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-1"><span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#stdcin"><span class="nav-text">std::cin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getline"><span class="nav-text">getline()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cout"><span class="nav-text">cout&lt;&lt;</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#char"><span class="nav-text">char*</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gets"><span class="nav-text">gets()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fgets"><span class="nav-text">fgets()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getchar"><span class="nav-text">getchar()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#puts"><span class="nav-text">puts()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fputs"><span class="nav-text">fputs()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#string"><span class="nav-text">string</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-1"><span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#std-cin"><span class="nav-text">std::cin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getline"><span class="nav-text">getline()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cout-lt-lt"><span class="nav-text">cout&lt;&lt;</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -308,38 +308,24 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>挖个坑，后续把 <code>C++</code> 的 <code>string</code>
-笔记下，目前的就是一些简单的接口</p>
+        <p>挖个坑，后续把 <code>C++</code> 的 <code>string</code> 笔记下，目前的就是一些简单的接口</p>
 <span id="more"></span>
-<h1 id="char">char*</h1>
-<h2 id="输入">输入</h2>
-<h3 id="gets">gets()</h3>
-<p><code>gets(c)</code>读取至<code>'\n'</code>或<code>EOF</code>停止，<code>换行符</code>不会复制，返回自动添加<code>\0</code></p>
+
+<h1 id="char"><a href="#char" class="headerlink" title="char*"></a>char*</h1><h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><h3 id="gets"><a href="#gets" class="headerlink" title="gets()"></a>gets()</h3><p><code>gets(c)</code>读取至<code>&#39;\n&#39;</code>或<code>EOF</code>停止，<code>换行符</code>不会复制，返回自动添加<code>\0</code></p>
 <p>C++11后不可用</p>
-<h3 id="fgets">fgets()</h3>
-<p><code>fgets(c,int num,stream)</code>读取<code>num-1</code>、<code>'\n'</code>、<code>EOF</code>停止，<strong><code>\n</code>复制到字符串中</strong>，第<code>n</code>个字符不读取，返回自动添加<code>\0</code></p>
+<h3 id="fgets"><a href="#fgets" class="headerlink" title="fgets()"></a>fgets()</h3><p><code>fgets(c,int num,stream)</code>读取<code>num-1</code>、<code>&#39;\n&#39;</code>、<code>EOF</code>停止，**<code>\n</code>复制到字符串中**，第<code>n</code>个字符不读取，返回自动添加<code>\0</code></p>
 <p><code>fgets()</code>和<code>gets()</code>完全不同，<code>fgets()</code>包含任何结束换行符</p>
 <p>一般用标准输入流:<code>stdin</code></p>
-<h3 id="getchar">getchar()</h3>
-<p>返回读取字符，常用于抵消<code>'\n'</code></p>
+<h3 id="getchar"><a href="#getchar" class="headerlink" title="getchar()"></a>getchar()</h3><p>返回读取字符，常用于抵消<code>&#39;\n&#39;</code></p>
 <p>与<code>getc(stdin)</code>等价</p>
-<h2 id="输出">输出</h2>
-<h3 id="puts">puts()</h3>
-<p><code>puts(c)</code>输出时在末尾添加<code>'\n'</code>；</p>
-<h3 id="fputs">fputs()</h3>
-<p><code>fputs(c，stdout)</code>输出直至<code>'\0'</code>，不会写入额外字符；</p>
-<h1 id="string">string</h1>
-<h2 id="输入-1">输入</h2>
-<h3 id="stdcin">std::cin</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cin&gt;&gt;s;</span><br></pre></td></tr></table></figure>
-<p>读到任意空白符（<code>'\n'</code>,<code>'\t'</code>,<code>'\0'</code>,<code>' '</code>）停止</p>
-<h3 id="getline">getline()</h3>
-<p><code>getline(cin,s,delim)</code>定界字符<code>delim</code>默认<code>'\n'</code>；</p>
-<p>定界字符提取但不储存，下次读取跳过。</p>
-<h2 id="输出-1">输出</h2>
-<h3 id="cout">cout&lt;&lt;</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout&lt;&lt;s;</span><br></pre></td></tr></table></figure>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><h3 id="puts"><a href="#puts" class="headerlink" title="puts()"></a>puts()</h3><p><code>puts(c)</code>输出时在末尾添加<code>&#39;\n&#39;</code>；</p>
+<h3 id="fputs"><a href="#fputs" class="headerlink" title="fputs()"></a>fputs()</h3><p><code>fputs(c，stdout)</code>输出直至<code>&#39;\0&#39;</code>，不会写入额外字符；</p>
+<h1 id="string"><a href="#string" class="headerlink" title="string"></a>string</h1><h2 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h2><h3 id="std-cin"><a href="#std-cin" class="headerlink" title="std::cin"></a>std::cin</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cin&gt;&gt;s;</span><br></pre></td></tr></table></figure>
 
+<p>读到任意空白符（<code>&#39;\n&#39;</code>,<code>&#39;\t&#39;</code>,<code>&#39;\0&#39;</code>,<code>&#39; &#39;</code>）停止</p>
+<h3 id="getline"><a href="#getline" class="headerlink" title="getline()"></a>getline()</h3><p><code>getline(cin,s,delim)</code>定界字符<code>delim</code>默认<code>&#39;\n&#39;</code>；</p>
+<p>定界字符提取但不储存，下次读取跳过。</p>
+<h2 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h2><h3 id="cout-lt-lt"><a href="#cout-lt-lt" class="headerlink" title="cout&lt;&lt;"></a>cout&lt;&lt;</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout&lt;&lt;s;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -412,13 +398,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">26k</span>
+    <span title="站点总字数">27k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:36</span>
+    <span title="站点阅读时长">1:38</span>
   </span>
 </div>
 <div class="busuanzi-count">
