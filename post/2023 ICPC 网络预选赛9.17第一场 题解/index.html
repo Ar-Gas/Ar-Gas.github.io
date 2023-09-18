@@ -26,28 +26,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#3216B0","save":"auto","position":"right"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="经典ICG博弈算法(Impartial Combinatorial Games 公平组合游戏)">
+    <meta name="description" content="A 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687#include&lt;bits&#x2F;stdc++.h&gt;usi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博弈论 Game Theory">
-<meta property="og:url" content="https://ar-gas.github.io/post/%E5%8D%9A%E5%BC%88%E8%AE%BA/index.html">
+<meta property="og:title" content="2023 ICPC（亚）预选赛9.17第一场 题解">
+<meta property="og:url" content="https://ar-gas.github.io/post/2023%20ICPC%20%E7%BD%91%E7%BB%9C%E9%A2%84%E9%80%89%E8%B5%9B9.17%E7%AC%AC%E4%B8%80%E5%9C%BA%20%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="经典ICG博弈算法(Impartial Combinatorial Games 公平组合游戏)">
+<meta property="og:description" content="A 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687#include&lt;bits&#x2F;stdc++.h&gt;usi">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-11T08:23:00.000Z">
-<meta property="article:modified_time" content="2023-09-08T13:08:09.546Z">
+<meta property="article:published_time" content="2023-09-18T08:17:00.000Z">
+<meta property="article:modified_time" content="2023-09-18T08:19:48.239Z">
 <meta property="article:author" content="Ar Gas">
-<meta property="article:tag" content="algrithm&#x2F;算法">
+<meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ar-gas.github.io/post/%E5%8D%9A%E5%BC%88%E8%AE%BA/">
+<link rel="canonical" href="https://ar-gas.github.io/post/2023%20ICPC%20%E7%BD%91%E7%BB%9C%E9%A2%84%E9%80%89%E8%B5%9B9.17%E7%AC%AC%E4%B8%80%E5%9C%BA%20%E9%A2%98%E8%A7%A3/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/%E5%8D%9A%E5%BC%88%E8%AE%BA/","path":"post/博弈论/","title":"博弈论 Game Theory"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/2023%20ICPC%20%E7%BD%91%E7%BB%9C%E9%A2%84%E9%80%89%E8%B5%9B9.17%E7%AC%AC%E4%B8%80%E5%9C%BA%20%E9%A2%98%E8%A7%A3/","path":"post/2023 ICPC 网络预选赛9.17第一场 题解/","title":"2023 ICPC（亚）预选赛9.17第一场 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>博弈论 Game Theory | Ar Gas'Blog</title>
+<title>2023 ICPC（亚）预选赛9.17第一场 题解 | Ar Gas'Blog</title>
   
 
 
@@ -147,9 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%B4%E4%BB%80%E5%8D%9A%E5%BC%88-bash-game"><span class="nav-text">巴什博弈 Bash Game</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8D%9A%E5%BC%88-fibonacci-nim-game"><span class="nav-text">斐波那契博弈 Fibonacci Nim
-Game</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A8%81%E4%BD%90%E5%A4%AB%E5%8D%9A%E5%BC%88-wythoff-game"><span class="nav-text">威佐夫博弈 Wythoff Game</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%BC%E5%A7%86%E5%8D%9A%E5%BC%88-nimm-game"><span class="nav-text">尼姆博弈 Nimm Game</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sg%E5%87%BD%E6%95%B0-spraguegrundy-function"><span class="nav-text">SG函数 Sprague–Grundy
-function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mex-minimum-excluded"><span class="nav-text">MEX (Minimum EXcluded)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sg-function"><span class="nav-text">SG function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#build"><span class="nav-text">Build</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sg-theory"><span class="nav-text">SG Theory</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#a"><span class="nav-text">A</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#l"><span class="nav-text">L</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -226,7 +224,7 @@ function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a cla
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/%E5%8D%9A%E5%BC%88%E8%AE%BA/">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/2023%20ICPC%20%E7%BD%91%E7%BB%9C%E9%A2%84%E9%80%89%E8%B5%9B9.17%E7%AC%AC%E4%B8%80%E5%9C%BA%20%E9%A2%98%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -239,12 +237,12 @@ function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a cla
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="博弈论 Game Theory | Ar Gas'Blog">
+      <meta itemprop="name" content="2023 ICPC（亚）预选赛9.17第一场 题解 | Ar Gas'Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          博弈论 Game Theory
+          2023 ICPC（亚）预选赛9.17第一场 题解
         </h1>
 
         <div class="post-meta-container">
@@ -254,15 +252,9 @@ function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a cla
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-04-11 16:23:00" itemprop="dateCreated datePublished" datetime="2023-04-11T16:23:00+08:00">2023-04-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-08 21:08:09" itemprop="dateModified" datetime="2023-09-08T21:08:09+08:00">2023-09-08</time>
+      <time title="创建时间：2023-09-18 16:17:00 / 修改时间：16:19:48" itemprop="dateCreated datePublished" datetime="2023-09-18T16:17:00+08:00">2023-09-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -270,11 +262,7 @@ function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a cla
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
         </span>
     </span>
 
@@ -292,14 +280,14 @@ function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a cla
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>787</span>
+      <span>279</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -310,82 +298,10 @@ function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a cla
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>经典ICG博弈算法(Impartial Combinatorial Games 公平组合游戏)</p>
-<span id="more"></span>
-<ol type="1">
-<li>有两名选手;</li>
-<li>两名选手交替操作，每次一步，每步都是在有限的合法集合中选取一种进行;</li>
-<li>在任何情况下，合法操作只取决于情况本身，与选手无关;</li>
-<li>游戏的败北条件为:当某位选手需要进行操作时，当前没有任何可以执行的合法操作，则该选手败北。</li>
-</ol>
-<h1 id="巴什博弈-bash-game">巴什博弈 Bash Game</h1>
-<blockquote>
-<p><strong>题目</strong>：一堆n个物品，两个人轮流从中取出1~m个，最后取光者胜（不能继续取的人输）。</p>
-</blockquote>
-<p><strong>同余定理</strong>：n=k∗(m+1)+r，先者拿走r个，那么后者无论拿走1
-m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1)，那么先手无论怎样都会输。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( n % (m + <span class="number">1</span>) ) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="斐波那契博弈-fibonacci-nim-game">斐波那契博弈 Fibonacci Nim
-Game</h1>
-<blockquote>
-<p><strong>题目</strong>：一堆石子有n个，两人轮流取，先取者第一次可以去任意多个，但是不能取完，以后每次取的石子数不能超过上次取子数的2倍。取完者胜。</p>
-</blockquote>
-<p>先手胜当且仅当n不是斐波那契数</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f[<span class="number">0</span>] = f[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; f[i - <span class="number">1</span>] &lt; n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    f[i] = f[i - <span class="number">1</span>] + f[i - <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">if</span> (f[i] == n)  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="威佐夫博弈-wythoff-game">威佐夫博弈 Wythoff Game</h1>
-<blockquote>
-<p><strong>题目</strong>：有两堆各若干物品，两个人轮流从任意一堆中至少取出一个或者从两堆中取出同样多的物品，规定每次至少取一个，至多不限，最后取光者胜。</p>
-</blockquote>
-<p>首先算出差值，<code>插值</code>*<code>黄金分割比</code>==<code>最小值</code>的话后手赢，否则先手赢。（可能涉及高精度问题）</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> r = (<span class="built_in">sqrt</span>(<span class="number">5</span>) + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line"><span class="type">int</span> d = <span class="built_in">abs</span>(a - b) * r;</span><br><span class="line"><span class="keyword">if</span> (d != <span class="built_in">min</span>(a, b)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="尼姆博弈-nimm-game">尼姆博弈 Nimm Game</h1>
-<blockquote>
-<p><strong>题目</strong>：有n堆物品，两人轮流取，每次取某堆中不少于1个，最后取完者胜。</p>
-</blockquote>
-<p>将n堆物品的数量全部<code>异或</code>后为<code>0</code>则结果必败，否则必胜。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    res ^= arr[i];</span><br><span class="line"><span class="keyword">if</span> (res)  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">else</span>  <span class="keyword">return</span> <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="sg函数-spraguegrundy-function">SG函数 Sprague–Grundy
-function</h1>
-<ul>
-<li><p>Suppose current game state is X.</p></li>
-<li><p>If X is a terminal state, SG(X) = 0.</p></li>
-<li><p>令每个局面为一个状态，SG值为X</p></li>
-<li><p>结束状态SG值为0</p></li>
-</ul>
-<p>SG函数是将一般的ICG问题抽象为有向图模型。</p>
-<h2 id="mex-minimum-excluded">MEX (Minimum EXcluded)</h2>
-<p>MEX of a set of non-negative integers is the <strong>smallest
-non-negative integer <em>not</em> in the set</strong>.</p>
-<p>MEX 是对集合的运算，找出集合中不包含的最小非负整数值。</p>
-<p>Example: - mex{0,2,4}=1; - mex{0,1,2,,4}=3; - mex{}=0.</p>
-<h2 id="sg-function">SG function</h2>
-<p>Let y are positions which X can reach</p>
-<p><span class="math display">\[
-SG(X) = mex(SG(y))
-\]</span></p>
-<p><span class="math display">\[
-SG(X) = mex(SG(y)|y 是 x 的后继)
-\]</span></p>
-<h2 id="build">Build</h2>
-<ol type="1">
-<li>找出必败态</li>
-<li>找出前驱点</li>
-<li>计算SG值</li>
-</ol>
-<p><img
-src="https://user-images.githubusercontent.com/111374823/231119482-df974c30-7539-494e-b446-837d30ecbfd1.png" /></p>
-<h2 id="sg-theory">SG Theory</h2>
-<p>设G1,G2,...Gn为n个“有向图”游戏的和(Sum)，游戏G的移动规则是：任选一个子游戏Gi并移动上面的棋子</p>
-<p><span class="math display">\[
-sg(G)=sg(G_1)\oplus sg(G_2)\oplus ...\oplus  sg(G_n)
-\]</span></p>
-<h1 id="参考资料">参考资料</h1>
-<p>[1].<a
-target="_blank" rel="noopener" href="https://juejin.cn/post/7175087280640491581">浅谈博弈论-掘金</a></p>
-<p>[2].<a
-target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15b411W73J/?spm_id_from=333.337.search-card.all.click&amp;vd_source=a326e65c6d0fa8e7b1904a3c161ec105">博弈论基础-sjj</a></p>
-<p>[3].<a
-target="_blank" rel="noopener" href="https://assets.hkoi.org/training2021/game-theory.pdf">game-theory</a></p>
+        <h1 id="a">A</h1>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100100</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="type">long</span> n,m;</span><br><span class="line">string s1[N],s2[N];</span><br><span class="line"></span><br><span class="line">map&lt;string, <span class="type">bool</span>&gt; ex; <span class="comment">// exist</span></span><br><span class="line">map&lt;<span class="type">long</span> <span class="type">long</span>, string&gt; st; <span class="comment">// store</span></span><br><span class="line"></span><br><span class="line">map&lt;string, <span class="type">bool</span>&gt; e1; <span class="comment">// exist for s1</span></span><br><span class="line">map&lt;string, <span class="type">bool</span>&gt; e2; <span class="comment">// exist for s2</span></span><br><span class="line"></span><br><span class="line">vector&lt;string&gt; ans; <span class="comment">//answer</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt;m;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++ i)&#123;</span><br><span class="line">    	cin &gt;&gt; s1[i];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++ i)&#123;</span><br><span class="line">    	cin &gt;&gt; s2[i];</span><br><span class="line">	&#125;<span class="comment">//get</span></span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> max_n = <span class="built_in">max</span>(n, m);</span><br><span class="line"></span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> idx = <span class="number">0</span>;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> p1 = <span class="number">0</span>, p2 = <span class="number">0</span>; </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i + p1 &lt; n || i + p2 &lt; m; i ++)&#123;</span><br><span class="line">		<span class="keyword">while</span> (e1[s1[i + p1]] == <span class="number">1</span> )&#123;</span><br><span class="line">			p1 ++;</span><br><span class="line">			<span class="keyword">if</span> (i + p1 &gt;= n )&#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (i + p1 &lt; n )&#123;</span><br><span class="line">			st[idx ++] = s1[i + p1];</span><br><span class="line">			e1[s1[i + p1]] = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span> (e2[s2[i + p2]] == <span class="number">1</span> )&#123;</span><br><span class="line">			p2 ++;</span><br><span class="line">			<span class="keyword">if</span> (i + p2 &gt;= m)&#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (i + p2 &lt; m)&#123;</span><br><span class="line">			st[idx ++] = s2[i + p2];</span><br><span class="line">			e2[s2[i + p2]] = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	if (n &gt; m)&#123;</span></span><br><span class="line"><span class="comment">		for (int i = m; i &lt; n; i ++)&#123;</span></span><br><span class="line"><span class="comment">			st[idx++] = s1[i];</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">	if (m &gt; n)&#123;</span></span><br><span class="line"><span class="comment">		for (int i = n; i &lt; m; i ++)&#123;</span></span><br><span class="line"><span class="comment">			st[idx++] = s2[i];</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">long</span> <span class="type">long</span> i = <span class="number">0</span>; i &lt; idx; i ++)&#123;</span><br><span class="line">		<span class="keyword">if</span> (ex[st[i]] != <span class="number">1</span>)&#123;</span><br><span class="line">			ans.<span class="built_in">push_back</span>(st[i]);</span><br><span class="line">			ex[st[i]] = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">long</span> <span class="type">long</span> i = <span class="number">0</span>; i &lt; ans.<span class="built_in">size</span>() - <span class="number">1</span>; i++)&#123;</span><br><span class="line">			cout &lt;&lt; ans[i] &lt;&lt; endl; </span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; ans[ans.<span class="built_in">size</span>() - <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="l">L</h1>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n,t;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; t;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> maxt = <span class="number">-1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">		<span class="type">long</span> <span class="type">long</span> x;</span><br><span class="line">		cin &gt;&gt; x;</span><br><span class="line">		</span><br><span class="line">		maxt = <span class="built_in">max</span> (x, maxt);</span><br><span class="line">	&#125;	</span><br><span class="line">	</span><br><span class="line">	ans = maxt / t;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> (maxt % t != <span class="number">0</span>)</span><br><span class="line">		ans ++;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">if</span> (ans &gt;= <span class="number">2</span>) </span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">		cout &lt;&lt; <span class="number">2</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -403,7 +319,7 @@ target="_blank" rel="noopener" href="https://assets.hkoi.org/training2021/game-t
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://ar-gas.github.io/post/%E5%8D%9A%E5%BC%88%E8%AE%BA/" title="博弈论 Game Theory">https://ar-gas.github.io/post/博弈论/</a>
+      <a href="https://ar-gas.github.io/post/2023%20ICPC%20%E7%BD%91%E7%BB%9C%E9%A2%84%E9%80%89%E8%B5%9B9.17%E7%AC%AC%E4%B8%80%E5%9C%BA%20%E9%A2%98%E8%A7%A3/" title="2023 ICPC（亚）预选赛9.17第一场 题解">https://ar-gas.github.io/post/2023 ICPC 网络预选赛9.17第一场 题解/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/CC%20BY-NC-SA%204.0/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
@@ -412,21 +328,18 @@ target="_blank" rel="noopener" href="https://assets.hkoi.org/training2021/game-t
 </div>
 
           <div class="post-tags">
-              <a href="/tags/algrithm-%E7%AE%97%E6%B3%95/" rel="tag"># algrithm/算法</a>
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="prev" title="动态规划">
-                  <i class="fa fa-chevron-left"></i> 动态规划
+                <a href="/post/Linux%E5%AE%89%E8%A3%85%E7%AE%80%E6%98%8E/" rel="prev" title="Linux安装简明">
+                  <i class="fa fa-chevron-left"></i> Linux安装简明
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" rel="next" title="最小生成树">
-                  最小生成树 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -527,7 +440,7 @@ target="_blank" rel="noopener" href="https://assets.hkoi.org/training2021/game-t
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"bf14db9dc2b65e186772c4c5d37d5877"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"4d82bfb42f6946a5eebb6bb401faf6d2"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
