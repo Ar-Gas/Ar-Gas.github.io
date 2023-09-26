@@ -297,7 +297,8 @@
     
     <div class="post-body" itemprop="articleBody">
           <blockquote>
-<p>这是我的第一篇个人博客，接下来将为您介绍：<br><strong>本博客如何食用、我的联系方式、其他博客推荐</strong></p>
+<p>这是我的第一篇个人博客，接下来将为您介绍：
+<strong>本博客如何食用、我的联系方式、其他博客推荐</strong></p>
 </blockquote>
           <!--noindex-->
             <div class="post-button">
@@ -360,9 +361,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-09-25 14:32:00 / 修改时间：14:32:46" itemprop="dateCreated datePublished" datetime="2023-09-25T14:32:00+08:00">2023-09-25</time>
+      <time title="创建时间：2023-09-25 14:32:00" itemprop="dateCreated datePublished" datetime="2023-09-25T14:32:00+08:00">2023-09-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-09-26 13:48:15" itemprop="dateModified" datetime="2023-09-26T13:48:15+08:00">2023-09-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -381,7 +388,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>6k</span>
+      <span>6.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -399,67 +406,169 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62744444">原文链接 - 知乎</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/chen-yi-bo-31-39">作者：陈益波</a></p>
+          <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62744444">原文链接 -
+知乎</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.zhihu.com/people/chen-yi-bo-31-39">作者：陈益波</a></p>
 <p>转载记：作者的专业水平虽然大部分人达不到，但是可以作为学习计算机编程的一个清单，文章很多经验之谈在学长学姐那里也听过，脚踏实地，立意高远。</p>
 <p>作者于2015年博士毕业加入一家量化私募公司，刚好做了四年系统工程师的工作。本文作为这个岗位所用到的技能总结，希望对想进入这个行业的人有所帮助。本人非科班出身，工作中用的技术大多数通过自学获得，有不足之处还请同行多多指教，有好的学习资料希望不吝推荐！</p>
-<p>量化交易这些年在国内方兴未艾，这几年国外顶级量化交易公司纷纷进入国内来捞金。预计未来量化交易在中国会有一个长足发展。一般量化团队分两类技术工种，<strong>策略开发岗</strong>和<strong>系统开发岗</strong>。<strong>本文介绍系统开发岗</strong>涉及的一些技术知识，文中前面几点C++、 操作系统、网络等是核心技能，后面几点是辅助技能。<strong>精学其中的一部分就足以找到工作</strong>。</p>
-<h2 id="一-C-编程"><a href="#一-C-编程" class="headerlink" title="一. C++编程"></a>一. C++编程</h2><p>C++是核心语言，必须非常熟练地掌握。低频的交易系统可以不用C++，但是对于延迟有要求的策略，通常都是使用C++作为交易系统的开发语言。入门推荐看<strong>《C++程序设计教程》。</strong>该书我大学时的ACM教练钱能老师写的，写的非常深入浅出，里面还介绍了STL的使用方法，对于初学者很有实用性。很意外的在 【**<a href="https://link.zhihu.com/?target=https://www.cnblogs.com/lizhigang/p/6933031.html">学习C++从入门到精通的的十本最经典书籍</a>】** 的帖子中看到此书，说明钱能老师的书是受到读者认可的。</p>
-<p>【**<a href="https://link.zhihu.com/?target=https://www.cnblogs.com/lizhigang/p/6933031.html">C++十本经典书籍</a>】<strong>帖子中说到的</strong>《Effective C++》<strong>和</strong>《More Effective C++》<strong>也是我看过的很经典的书籍。还有</strong>《Inside the C++ Object Model》<strong>虽然我没看过，但是看内容应该也是很值得一读的书。</strong>《<a href="https://link.zhihu.com/?target=http://www.sunistudio.com/cppfaq/">C++ FAQ LITE</a>》<strong>是</strong>《C++ FAQ Book》**的子集，是一本很实用的C++学习和准备面试的书籍。</p>
-<p><strong>《深入Linux内核架构》</strong>也是一本学习C++的好书，既可以了解Linux的内核架构逻辑，又可以参考里面涉及的代码，Linux内核的代码中本身也有很多值得学习的地方。比如里面多处用到的**__cacheline_aligned_in_smp** 就是对提升性能非常有用的<strong>cache line</strong>对齐编程。</p>
-<p>说到C++，顺便提一下写C++会用到的代码版本管理工具<strong>Git，</strong>编译器<strong>g++</strong> 和编译管理工具<strong>makefile</strong>和调试工具<strong>gdb</strong>。</p>
-<p><strong>Git</strong>是Linux之父Linus Torvalds为了开发Linux而开发的一个非常好用的代码版本管理工具。它是码农必须掌握的工具。在这里推荐<strong>廖雪峰</strong>的<strong>《<a href="https://link.zhihu.com/?target=https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/">Git教程</a>》</strong>，写的相当好。廖雪峰的官网还有介绍Python等别的实用的语言的入门教程，有兴趣也可以看看。</p>
-<p>**g++<strong>是Linux环境下最常用的编译器，使用</strong>g++<strong>编译、链接、生产可执行文件、静态链接库及动态链接库，怎么加入依赖的头文件和依赖的库这些都是必须学会的基本操作。</strong>g++<strong>编译时可以选的参数非常多，有的参数可以起到调试或编译优化的作用，如果是要成为高频系统工程师，编译优化也是必须要学的。熟悉</strong>g++**的使用方法会让工作事半功倍。</p>
-<p><strong>makefile</strong>是Linux 环境下最常用的编译管理工具，需要简单的了解makefile是如何工作和使用的。量化系统并不是特别大型的系统，makefile不是核心需求，只需要看得懂makefile文件的意思并能依葫芦画瓢就能满足日常工作需求。 这里推荐一篇写的比较详细的博文<strong>《<a href="https://link.zhihu.com/?target=https://www.cnblogs.com/wang_yb/p/3990952.html">Makefile 使用总结 - wang_yb - 博客园</a>》</strong></p>
+<p>量化交易这些年在国内方兴未艾，这几年国外顶级量化交易公司纷纷进入国内来捞金。预计未来量化交易在中国会有一个长足发展。一般量化团队分两类技术工种，<strong>策略开发岗</strong>和<strong>系统开发岗</strong>。<strong>本文介绍系统开发岗</strong>涉及的一些技术知识，文中前面几点C++、
+操作系统、网络等是核心技能，后面几点是辅助技能。<strong>精学其中的一部分就足以找到工作</strong>。</p>
+<h2 id="一.-c编程">一. C++编程</h2>
+<p>C++是核心语言，必须非常熟练地掌握。低频的交易系统可以不用C++，但是对于延迟有要求的策略，通常都是使用C++作为交易系统的开发语言。入门推荐看<strong>《C++程序设计教程》。</strong>该书我大学时的ACM教练钱能老师写的，写的非常深入浅出，里面还介绍了STL的使用方法，对于初学者很有实用性。很意外的在
+【<strong><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/lizhigang/p/6933031.html">学习C++从入门到精通的的十本最经典书籍</a></strong>】
+的帖子中看到此书，说明钱能老师的书是受到读者认可的。</p>
+<p>【<strong><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/lizhigang/p/6933031.html">C++十本经典书籍</a></strong>】帖子中说到的<strong>《Effective
+C++》</strong>和<strong>《More Effective
+C++》</strong>也是我看过的很经典的书籍。还有<strong>《Inside the C++
+Object
+Model》</strong>虽然我没看过，但是看内容应该也是很值得一读的书。<strong>《<a
+target="_blank" rel="noopener" href="https://www.sunistudio.com/cppfaq/">C++ FAQ
+LITE</a>》</strong>是<strong>《C++ FAQ
+Book》</strong>的子集，是一本很实用的C++学习和准备面试的书籍。</p>
+<p><strong>《深入Linux内核架构》</strong>也是一本学习C++的好书，既可以了解Linux的内核架构逻辑，又可以参考里面涉及的代码，Linux内核的代码中本身也有很多值得学习的地方。比如里面多处用到的**__cacheline_aligned_in_smp**
+就是对提升性能非常有用的<strong>cache line</strong>对齐编程。</p>
+<p>说到C++，顺便提一下写C++会用到的代码版本管理工具<strong>Git，</strong>编译器<strong>g++</strong>
+和编译管理工具<strong>makefile</strong>和调试工具<strong>gdb</strong>。</p>
+<p><strong>Git</strong>是Linux之父Linus
+Torvalds为了开发Linux而开发的一个非常好用的代码版本管理工具。它是码农必须掌握的工具。在这里推荐<strong>廖雪峰</strong>的<strong>《<a
+target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">Git教程</a>》</strong>，写的相当好。廖雪峰的官网还有介绍Python等别的实用的语言的入门教程，有兴趣也可以看看。</p>
+<p><strong>g++</strong>是Linux环境下最常用的编译器，使用<strong>g++</strong>编译、链接、生产可执行文件、静态链接库及动态链接库，怎么加入依赖的头文件和依赖的库这些都是必须学会的基本操作。<strong>g++</strong>编译时可以选的参数非常多，有的参数可以起到调试或编译优化的作用，如果是要成为高频系统工程师，编译优化也是必须要学的。熟悉<strong>g++</strong>的使用方法会让工作事半功倍。</p>
+<p><strong>makefile</strong>是Linux
+环境下最常用的编译管理工具，需要简单的了解makefile是如何工作和使用的。量化系统并不是特别大型的系统，makefile不是核心需求，只需要看得懂makefile文件的意思并能依葫芦画瓢就能满足日常工作需求。
+这里推荐一篇写的比较详细的博文<strong>《<a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/wang_yb/p/3990952.html">Makefile 使用总结
+- wang_yb - 博客园</a>》</strong></p>
 <p><strong>gdb</strong>是C++的debug工具，最常用的时候是代码崩溃了，通过core文件来查看崩溃时堆栈状态来定位bug的位置。在代码运行中偶尔也会用到<strong>pstack</strong>来查看各线程堆栈状态，这个也是一个比较有用的工具。</p>
-<h2 id="二-Linux环境"><a href="#二-Linux环境" class="headerlink" title="二. Linux环境"></a>二. Linux环境</h2><p>Shell 语言是Linux环境的基础语言，Shell脚本经常会在定时任务中用到。推荐一个网站吧 <strong>《<a href="https://link.zhihu.com/?target=http://www.runoob.com/linux/linux-shell.html">Shell 教程 | 菜鸟教程</a>》</strong><br>我在工作中很常用的有下列Linux命令。如果有不熟悉的可以多了解一下，都是比较实用的。</p>
+<h2 id="二.-linux环境">二. Linux环境</h2>
+<p>Shell
+语言是Linux环境的基础语言，Shell脚本经常会在定时任务中用到。推荐一个网站吧
+<strong>《<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-shell.html">Shell
+教程 | 菜鸟教程</a>》</strong>
+我在工作中很常用的有下列Linux命令。如果有不熟悉的可以多了解一下，都是比较实用的。</p>
 <p>文件目录操作: mkdir, cd, pwd, which</p>
-<p>文件查看，查找: ls, cat, more, less, grep, tail, find, ldd, whereis, tee, awk</p>
+<p>文件查看，查找: ls, cat, more, less, grep, tail, find, ldd, whereis,
+tee, awk</p>
 <p>文件操作: cp, scp, rm, gzip, gunzip, zip, unzip, tar, mv, ln</p>
 <p>日期时间: ntpdate, date</p>
 <p>网络: ping, telnet, traceroute, tcpdump, netstat, wget</p>
-<p>用户权限: useradd, passwd, chmod, chown, chgrp, sudo, visudo, su, who</p>
+<p>用户权限: useradd, passwd, chmod, chown, chgrp, sudo, visudo, su,
+who</p>
 <p>硬盘管理: df, du, mount, unmout, fs</p>
 <p>进程管理: ps, kill, killall, pstack, whom, fg, bg</p>
 <p>CPU：turbostat</p>
 <p>应用安装: rpm, yum</p>
 <p>定时任务：crontab</p>
-<p>在Linux下编辑文件我使用的是Vim这个工具，<strong>《<a href="https://link.zhihu.com/?target=http://www.runoob.com/linux/linux-vim.html">Linux vi&#x2F;vim | 菜鸟教程</a>》</strong></p>
-<h2 id="三-计算机网络协议和编程"><a href="#三-计算机网络协议和编程" class="headerlink" title="三. 计算机网络协议和编程"></a>三. 计算机网络协议和编程</h2><p>交易并不是在单机上完成，一般量化交易至少会涉及交易服务器、交易柜台、行情源机器、监控后台等多个机器，这些机器之间是通过网络交互的。只有学会了网络编程，才能让这些机器间连成一体。关于网络的各种概念的入门，我是通过<strong>网易云课堂</strong>上的免费视频学的。看完后就能明白虚拟机网络设置时的网桥、NAT等是啥意思，碰到公司网络问题就能比较容易解决。或者要配置专线网络时运营商让操作的IP、路由、网段，网关，防火墙等东西能有个概念，然后按部就班就能顺利完成专线组网。<strong>网易云课堂</strong>上有很全的编程语言、计算机技术、前端技术、大数据、人工智能的免费和收费资料，想学计算计技术推荐上这个网站上上网课。</p>
-<p>简单实用的网络工具如<strong>zeromq编程</strong>，zeromq是非常好用的一个消息队列工具，支持全部主流语言。基础点的如<strong>socket编程</strong>。在这里推荐三本书《<strong>UNIX环境高级编程》，《UNIX网络编程》，《TCP&#x2F;IP详解》</strong></p>
-<p>再复杂的就是<strong>kernel bypass技术</strong>了。为了更快的获得行情和下单交易返回，<strong>kernel bypass</strong>是非常有必要学会的技术。业界最常用的网卡硬件是基于<strong>Solarflare网卡</strong>，该网卡提供3个层级的<strong>kernel bypass</strong>。最简单的就是<strong>onload</strong>, 不需要用户改代码，安装了网卡驱动后，在程序使用<strong>onload</strong>启动就可以了，非常的简单易用。第二个层级是<strong>tcpdirect</strong>，速度上要比<strong>onload</strong>再快一点，但是需要用户修改代码。<strong>ef_vi则是最最底层的</strong>，跳过所有协议栈，直接读取网卡的某条一条特定的RX队列。做的比较专业的高频团队一般都是使用ef_vi来接收行情。这个网卡的相关资料可能登录 <strong>Solarflare官网</strong>下载官方使用文档进行学习。</p>
-<p><a href="https://link.zhihu.com/?target=https://support.solarflare.com/index.php/component/cognidox/?view=categories&id=361">OpenOnload</a></p>
-<p>除了Solarflare，<strong>Exanic X10</strong> 似乎最近也比较火，据说性能上<strong>比Solarflare X2522有微弱的优势，但是兼容性上好像要稍微差一点</strong>。</p>
+<p>在Linux下编辑文件我使用的是Vim这个工具，<strong>《<a
+target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-vim.html">Linux vi/vim |
+菜鸟教程</a>》</strong></p>
+<h2 id="三.-计算机网络协议和编程">三. 计算机网络协议和编程</h2>
+<p>交易并不是在单机上完成，一般量化交易至少会涉及交易服务器、交易柜台、行情源机器、监控后台等多个机器，这些机器之间是通过网络交互的。只有学会了网络编程，才能让这些机器间连成一体。关于网络的各种概念的入门，我是通过<strong>网易云课堂</strong>上的免费视频学的。看完后就能明白虚拟机网络设置时的网桥、NAT等是啥意思，碰到公司网络问题就能比较容易解决。或者要配置专线网络时运营商让操作的IP、路由、网段，网关，防火墙等东西能有个概念，然后按部就班就能顺利完成专线组网。<strong>网易云课堂</strong>上有很全的编程语言、计算机技术、前端技术、大数据、人工智能的免费和收费资料，想学计算计技术推荐上这个网站上上网课。</p>
+<p>简单实用的网络工具如<strong>zeromq编程</strong>，zeromq是非常好用的一个消息队列工具，支持全部主流语言。基础点的如<strong>socket编程</strong>。在这里推荐三本书《<strong>UNIX环境高级编程》，《UNIX网络编程》，《TCP/IP详解》</strong></p>
+<p>再复杂的就是<strong>kernel
+bypass技术</strong>了。为了更快的获得行情和下单交易返回，<strong>kernel
+bypass</strong>是非常有必要学会的技术。业界最常用的网卡硬件是基于<strong>Solarflare网卡</strong>，该网卡提供3个层级的<strong>kernel
+bypass</strong>。最简单的就是<strong>onload</strong>,
+不需要用户改代码，安装了网卡驱动后，在程序使用<strong>onload</strong>启动就可以了，非常的简单易用。第二个层级是<strong>tcpdirect</strong>，速度上要比<strong>onload</strong>再快一点，但是需要用户修改代码。<strong>ef_vi则是最最底层的</strong>，跳过所有协议栈，直接读取网卡的某条一条特定的RX队列。做的比较专业的高频团队一般都是使用ef_vi来接收行情。这个网卡的相关资料可能登录
+<strong>Solarflare官网</strong>下载官方使用文档进行学习。</p>
+<p><a
+href="https://link.zhihu.com/?target=https%3A//support.solarflare.com/index.php/component/cognidox/%3Fview%3Dcategories%26id%3D361">OpenOnload（链接已挂，自行查找）</a></p>
+<p>除了Solarflare，<strong>Exanic X10</strong>
+似乎最近也比较火，据说性能上<strong>比Solarflare
+X2522有微弱的优势，但是兼容性上好像要稍微差一点</strong>。</p>
 <p>熟悉计算机网络不仅是为了更快的写程序，同时也是为了解决实际工作中经常会碰到的网络问题，如果多个网卡下的DNS,、网关、网络、路由、组播等的设置。</p>
-<h2 id="四-操作系统原理"><a href="#四-操作系统原理" class="headerlink" title="四. 操作系统原理"></a>四. 操作系统原理</h2><p>中断、上下文切换、内核调度、内存管理、用户态、内核态这些内容不熟悉操作系统的话，会导致很难明白为什么这些对交易会造成负面影响以及如何才能优化的，同时像共享内存，信号量，memory map这些功能的使用也离不开对操作系统的理解。以下推荐几本我看过的书籍。</p>
+<h2 id="四.-操作系统原理">四. 操作系统原理</h2>
+<p>中断、上下文切换、内核调度、内存管理、用户态、内核态这些内容不熟悉操作系统的话，会导致很难明白为什么这些对交易会造成负面影响以及如何才能优化的，同时像共享内存，信号量，memory
+map这些功能的使用也离不开对操作系统的理解。以下推荐几本我看过的书籍。</p>
 <p><strong>《30天自制操作系统》</strong>是一本写的比较有趣味性的书籍。书中做的系统虽然很粗糙，但是把操作系统的概念，开机发生的事情、中断、CPU调度、内存分配等概念深入浅出的介绍清楚了。</p>
-<p><strong>《操作系统精髓与设计原理》</strong>是我读的第一本关于操作系统的书，也是高校里操作系统这门课的教科书。作者William Stallings是毕业于MIT的计算机博士，世界知名的计算机学者和畅销书教材作者。该作者关于计算机的其他书有空也是值得一读的。</p>
+<p><strong>《操作系统精髓与设计原理》</strong>是我读的第一本关于操作系统的书，也是高校里操作系统这门课的教科书。作者William
+Stallings是毕业于MIT的计算机博士，世界知名的计算机学者和畅销书教材作者。该作者关于计算机的其他书有空也是值得一读的。</p>
 <p><strong>《深入Linux内核架构》</strong>是推荐一读的好书，里面含有一小部分源码，写的很详实，入木三分。Linux的内核源码是非常注重性能的，通过这本书也能学点怎么让代码性能更优。</p>
 <p>了解系统原理的目的是为了做系统调优。通过系统调优配合上网络调优，可以让ping的结果飞快，交易系统运行起来就快多了。</p>
-<h2 id="五-计算机基本原理"><a href="#五-计算机基本原理" class="headerlink" title="五. 计算机基本原理"></a>五. 计算机基本原理</h2><p>BIOS和grub里面有很多优化设置和CPU有关。了解了CPU工作原理，这样在双路CPU时才明白为什么要用NUMA配置，要不要开超线程，交易的程序应该如何设置CPU亲缘性和隔离，以及中断服务如何优化。了解了cache的机制才明白为什么要尽量在核心结构上做cache line对齐，让内存访问尽量线性，保持内存访问的空间局部性和时间局部性。关于Cache，有一个老外做了7个很有意思的实验帮忙读者了解Cache对性能的影响《<a href="https://link.zhihu.com/?target=http://igoro.com/archive/gallery-of-processor-cache-effects/">Gallery of Processor Cache Effects</a>》，原文见下面这个卡片。</p>
-<p><a href="https://link.zhihu.com/?target=http://igoro.com/archive/gallery-of-processor-cache-effects/?spm=a2c4e.11153940.blogcont515902.9.5f0a1f77E5MoIH">Gallery of Processor Cache Effects<img src="https://pic4.zhimg.com/v2-c7544de9749c34688e91f71fe84106a7_180x120.jpg" alt="img"></a></p>
+<h2 id="五.-计算机基本原理">五. 计算机基本原理</h2>
+<p>BIOS和grub里面有很多优化设置和CPU有关。了解了CPU工作原理，这样在双路CPU时才明白为什么要用NUMA配置，要不要开超线程，交易的程序应该如何设置CPU亲缘性和隔离，以及中断服务如何优化。了解了cache的机制才明白为什么要尽量在核心结构上做cache
+line对齐，让内存访问尽量线性，保持内存访问的空间局部性和时间局部性。关于Cache，有一个老外做了7个很有意思的实验帮忙读者了解Cache对性能的影响《<a
+href="https://link.zhihu.com/?target=http%3A//igoro.com/archive/gallery-of-processor-cache-effects/">Gallery
+of Processor Cache Effects</a>》，原文见下面这个卡片。</p>
+<p><a
+target="_blank" rel="noopener" href="http://igoro.com/archive/gallery-of-processor-cache-effects/">Gallery
+of Processor Cache Effects<img
+src="https://pic4.zhimg.com/v2-c7544de9749c34688e91f71fe84106a7_180x120.jpg"
+alt="img" /></a></p>
 <p>多了解点计算机的原理，才能更好的理解如何使用prefetch预取数据来优化效率。关于指令预取，这里附带一篇介绍性的文章。</p>
-<p><a href="https://link.zhihu.com/?target=http://linuxperformance.top/index.php/archives/109/">CPU预取与性能简介 - LinuxPerformance.Top<img src="https://pic3.zhimg.com/v2-9bbe8585fc9cd52808cd30a664cc26f2_180x120.jpg" alt="img"></a></p>
-<p>调优上光靠自己记录和分析效率比较低。使用工具来帮忙分析会事半功倍，熟悉英特尔的<strong>VTune</strong>, 或谷歌的 <strong>Google CPU Profiler</strong>等工具是加分项。Vtune是收费软件，可以申请试用一个月，功能非常强大，可以说是优化神器。</p>
-<h2 id="六-数据库"><a href="#六-数据库" class="headerlink" title="六. 数据库"></a>六. 数据库</h2><p>量化交易很关键的就是数据了。数据一般是存在数据库中。了解数据库的<strong>配置</strong>，<strong>上线</strong>，<strong>索引</strong>，<strong>备份</strong>，<strong>镜像</strong>设置等设置在工作中涉及到数据库时会有帮助。<strong>熟悉数据库的高级用法</strong>会让工作中和数据库打交道时事半功倍。期货的数据量并不是特别大，用MySQL或SQL Server存储基本能满足需求。但是证券的行情就不太行了，数据量太大了，特别是证券的逐笔数据，非常巨大。目前我还没有找到特别合适的方法来存储逐笔数据。同行们在这一点上如果有好的工具请多多指教！据说KDB+和Q语言结合起来非常强大，但是KDB很贵另外Q的学习难度也比较大，本人没有使用过。</p>
-<h2 id="七-主流柜台系统"><a href="#七-主流柜台系统" class="headerlink" title="七. 主流柜台系统"></a>七. 主流柜台系统</h2><p>量化交易少不了与柜台系统打交道。像期货里的<strong>盛立</strong>、<strong>飞创</strong>、<strong>易盛</strong>、<strong>飞马</strong>、<strong>ctp</strong>、<strong>广策</strong>、证券里的<strong>LT、</strong> <strong>宽睿</strong>、<strong>xtp</strong>、<strong>顶点</strong>、<strong>奇点</strong>等柜台。有的柜台网上是可以下载API并申请模拟帐号去测试的。如果对接过其中的某个，在面试中属于加分项。同行中有的团队为了追求极致速度会自己开发柜台系统。关于交易柜台的介绍可以参考下面这篇文章：</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/56906849">呆若木鸡：一文读懂量化系统接入及相关平台<img src="https://pic3.zhimg.com/v2-11e229acbaff99e1b1a099af08b5a902_180x120.jpg" alt="img"></a></p>
-<h2 id="八-设计模式"><a href="#八-设计模式" class="headerlink" title="八. 设计模式"></a>八. 设计模式</h2><p>设计模式也是有必要学习的一门课，是教你如何模式化的写代码的。我看的第一本设计模式的书籍叫<strong>《Head First 设计模式》</strong>，写的比较有趣很有可读性。学了设计模式后不要每次写个程序都思考这个应该要用什么模式。最优秀的程序员应该像《笑傲江湖》中的令狐冲那样，学会独孤九剑后又全部忘掉。最后实际写的代码有时是非标准模式，有时是几种模式的结合。根据具体问题具体分析，千变万化，随机应变。武侠中的重剑无锋，无招胜有招，想必就是这个意思。</p>
-<h2 id="九-算法"><a href="#九-算法" class="headerlink" title="九. 算法"></a>九. <strong>算法</strong></h2><p>算法在实际开发中被用到的非常非常少，感觉学过的各种确定性算法，启发式算法，机器学习算法能被交易系统开发中用到的不足1%，但是学习算法对于<strong>训练逻辑思维能力帮助非常大</strong>。可以这么说，如果你能熟练掌握各种算法，那么写任何程序都是比较容易的。因为你的思维能力会被训练的特别强。我在本科时主攻的是ACM&#x2F;ICPC程序设计竞赛编程，通过学MIT的<strong>《算法导论》</strong>公开课，刘汝佳的<strong>《算法艺术与信息学竞赛》</strong>，同时也看了一些<strong>高级数据结构</strong>，<strong>动态规划</strong>，<strong>概率论</strong>，博弈论，计算几何，组合数学，线性规划，等相关的书籍。刷北大，杭电等在线Online Judge。<strong>《<a href="https://link.zhihu.com/?target=https://www.cnblogs.com/imzscilovecode/p/8884095.html">ACM&#x2F;IOI 国家队集训队论文集锦</a>》</strong>也看了其中的一小部分。从大二零基础开始学算法，和两个队友一起花了近3年的时间学习各种算法，大三时成绩还一般，最后在大四时超常发挥拿到亚洲区域预赛金奖顺利晋级ACM&#x2F;ICPC全球总决赛，最后运气极好的拿到了全球并列第20名的成绩。</p>
-<h2 id="十-Python"><a href="#十-Python" class="headerlink" title="十. Python"></a>十. <strong>Python</strong></h2><p><strong>Python是非常推荐熟练掌握的语言</strong>，既可以写脚本，又可以写对时效性要求不是那么高的小工程，对数据分析的支持也特别好。<strong>C++ 加 Python 可以应对绝大多数量化工程师工作上的需求</strong>。 关于Python的书知乎上有非常多的资料。这里引用其中的一个</p>
-<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/20039623">编程零基础应当如何开始学习 Python？<img src="https://pic1.zhimg.com/zhihu-card-default_ipico.jpg" alt="img"></a></p>
-<h2 id="十一-前端技术"><a href="#十一-前端技术" class="headerlink" title="十一. 前端技术"></a>十一. <strong>前端技术</strong></h2><p>交易系统怎么样至少都要有一个前端系统用于监控的。这个选择性可以有很多，可以做成Windows应用，也可以是基于浏览器的网页，还可以做成手机app。选择什么方案主要就看公司的喜好了。适当了解一些前端技术在做全栈工程师时会用得上。<strong>前端当然非常重要，但是由于前端的替代性强，选择太广，入职前不需要花很多的时间在这个上面</strong>。只需要稍微了解一下C#， java 或 pyhon web编程, 手机app编程就可以了。如果是<strong>对相应的技术特别感兴趣，多学点时髦的技术，工作后做一些好用的工具出来对团队提高工作效率也是非常有帮助的</strong>。</p>
-<h2 id="十二-其他技术"><a href="#十二-其他技术" class="headerlink" title="十二. 其他技术"></a>十二. <strong>其他技术</strong></h2><p><strong>Java</strong> 语言依然是市场占有率蛮高开发系统非常好用的语言。Java语言有非常丰富和成熟的工具，对网页支持做的也很好，学习一下Java工作后可以在周边系统使用上。</p>
-<p><strong>R</strong>, <strong>matlab</strong> 这两个是除<strong>python</strong>外使用非常广泛的数据分析语言。如果有兴趣并且时间充足，稍微了解一点，在和策略开发人员做对接时可能会用上。当然，不了解也不会影响本职工作。</p>
-<p>日常工作中<strong>运维</strong>也是需要的，特别是刚入职时，<strong>量化团队一般都比较小，入职初期各种打杂是难免的</strong>。用U盘装机Windows和Linux，给Linux配置机器名，网络，设置用户权限安装Java, Python，Openonload环境等这些都是工作中很可能会碰上的需求。复杂点的就是了解一些远程管理工具如IPMI，iLO进行远程机器管理甚至装机。这些不是核心，要是在学校如果闲着无聊多去捣鼓捣鼓，熟悉这些东西对工作是有帮助的。</p>
-<h2 id="十三-金融相关知识"><a href="#十三-金融相关知识" class="headerlink" title="十三. 金融相关知识"></a>十三. 金融相关知识</h2><p>在找工作时并不需要提前学过金融，这点在入职后学习完全没有问题。不过多了解一些，面试时可以留下更好的印象，属于加分技能项。这一点上本人主要是通过考了<strong>CFA Level1</strong>稍微系统性学习金融相关的基础知识，大概全天侯地花了一个多月来准备这个考试，其实<strong>只要做一下CFA 的Notes和练几次模拟考</strong>就可以通过这个考试了。个人觉得CFA考试硬知识还是蛮多的，属于含金量蛮高的考试。考证方面除了CFA，也考过国内的<strong>证券从业资格考试</strong>和<strong>基金从业资格考试</strong>，这两个考试在国内工作是蛮有用的，从业后很多公司会要求去考个从业资格，不如提前考了，部分基础知识对面试和工作是有帮助的。另外也看了一些和这个岗位相关性不大但是蛮有意思的书籍，在此一并推荐一下：<strong>《宽客-华尔街顶级数量金融大师的另类人生》</strong>，<strong>《金融的逻辑》</strong>，<strong>《乱世华尔街》</strong>，<strong>《Flash Boys》，《打开高频交易的黑箱》等</strong></p>
-<p><strong>还有相对专业一些的书籍：《High-Frequency Trading: A Practical Guide to Algorithmic Strategies and Trading Systems》《Algorithmic_Trading_and_DMA》</strong></p>
+<p><a
+target="_blank" rel="noopener" href="http://linuxperformance.top/index.php/archives/109/">CPU预取与性能简介
+- LinuxPerformance.Top<img
+src="https://pic3.zhimg.com/v2-9bbe8585fc9cd52808cd30a664cc26f2_180x120.jpg"
+alt="img" /></a></p>
+<p>调优上光靠自己记录和分析效率比较低。使用工具来帮忙分析会事半功倍，熟悉英特尔的<strong>VTune</strong>,
+或谷歌的 <strong>Google CPU
+Profiler</strong>等工具是加分项。Vtune是收费软件，可以申请试用一个月，功能非常强大，可以说是优化神器。</p>
+<h2 id="六.-数据库">六. 数据库</h2>
+<p>量化交易很关键的就是数据了。数据一般是存在数据库中。了解数据库的<strong>配置</strong>，<strong>上线</strong>，<strong>索引</strong>，<strong>备份</strong>，<strong>镜像</strong>设置等设置在工作中涉及到数据库时会有帮助。<strong>熟悉数据库的高级用法</strong>会让工作中和数据库打交道时事半功倍。期货的数据量并不是特别大，用MySQL或SQL
+Server存储基本能满足需求。但是证券的行情就不太行了，数据量太大了，特别是证券的逐笔数据，非常巨大。目前我还没有找到特别合适的方法来存储逐笔数据。同行们在这一点上如果有好的工具请多多指教！据说KDB+和Q语言结合起来非常强大，但是KDB很贵另外Q的学习难度也比较大，本人没有使用过。</p>
+<h2 id="七.-主流柜台系统">七. 主流柜台系统</h2>
+<p>量化交易少不了与柜台系统打交道。像期货里的<strong>盛立</strong>、<strong>飞创</strong>、<strong>易盛</strong>、<strong>飞马</strong>、<strong>ctp</strong>、<strong>广策</strong>、证券里的<strong>LT、</strong>
+<strong>宽睿</strong>、<strong>xtp</strong>、<strong>顶点</strong>、<strong>奇点</strong>等柜台。有的柜台网上是可以下载API并申请模拟帐号去测试的。如果对接过其中的某个，在面试中属于加分项。同行中有的团队为了追求极致速度会自己开发柜台系统。关于交易柜台的介绍可以参考下面这篇文章：</p>
+<p><a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/56906849">呆若木鸡：一文读懂量化系统接入及相关平台<img
+src="https://pic3.zhimg.com/v2-11e229acbaff99e1b1a099af08b5a902_180x120.jpg"
+alt="img" /></a></p>
+<h2 id="八.-设计模式">八. 设计模式</h2>
+<p>设计模式也是有必要学习的一门课，是教你如何模式化的写代码的。我看的第一本设计模式的书籍叫<strong>《Head
+First
+设计模式》</strong>，写的比较有趣很有可读性。学了设计模式后不要每次写个程序都思考这个应该要用什么模式。最优秀的程序员应该像《笑傲江湖》中的令狐冲那样，学会独孤九剑后又全部忘掉。最后实际写的代码有时是非标准模式，有时是几种模式的结合。根据具体问题具体分析，千变万化，随机应变。武侠中的重剑无锋，无招胜有招，想必就是这个意思。</p>
+<h2 id="九.-算法">九. <strong>算法</strong></h2>
+<p>算法在实际开发中被用到的非常非常少，感觉学过的各种确定性算法，启发式算法，机器学习算法能被交易系统开发中用到的不足1%，但是学习算法对于<strong>训练逻辑思维能力帮助非常大</strong>。可以这么说，如果你能熟练掌握各种算法，那么写任何程序都是比较容易的。因为你的思维能力会被训练的特别强。我在本科时主攻的是ACM/ICPC程序设计竞赛编程，通过学MIT的<strong>《算法导论》</strong>公开课，刘汝佳的<strong>《算法艺术与信息学竞赛》</strong>，同时也看了一些<strong>高级数据结构</strong>，<strong>动态规划</strong>，<strong>概率论</strong>，博弈论，计算几何，组合数学，线性规划，等相关的书籍。刷北大，杭电等在线Online
+Judge。<strong>《<a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/imzscilovecode/p/8884095.html">ACM/IOI
+国家队集训队论文集锦</a>》</strong>也看了其中的一小部分。从大二零基础开始学算法，和两个队友一起花了近3年的时间学习各种算法，大三时成绩还一般，最后在大四时超常发挥拿到亚洲区域预赛金奖顺利晋级ACM/ICPC全球总决赛，最后运气极好的拿到了全球并列第20名的成绩。</p>
+<blockquote>
+<p>转者注：ACM/IOI 国家队集训队论文可以在<a
+target="_blank" rel="noopener" href="https://github.com/OI-wiki/libs">Oi wiki/lib</a>上看最新版</p>
+</blockquote>
+<h2 id="十.-python">十. <strong>Python</strong></h2>
+<p><strong>Python是非常推荐熟练掌握的语言</strong>，既可以写脚本，又可以写对时效性要求不是那么高的小工程，对数据分析的支持也特别好。<strong>C++
+加 Python 可以应对绝大多数量化工程师工作上的需求</strong>。
+关于Python的书知乎上有非常多的资料。这里引用其中的一个</p>
+<p><a
+target="_blank" rel="noopener" href="https://www.zhihu.com/question/20039623">编程零基础应当如何开始学习
+Python？<img src="https://pic1.zhimg.com/zhihu-card-default_ipico.jpg"
+alt="img" /></a></p>
+<h2 id="十一.-前端技术">十一. <strong>前端技术</strong></h2>
+<p>交易系统怎么样至少都要有一个前端系统用于监控的。这个选择性可以有很多，可以做成Windows应用，也可以是基于浏览器的网页，还可以做成手机app。选择什么方案主要就看公司的喜好了。适当了解一些前端技术在做全栈工程师时会用得上。<strong>前端当然非常重要，但是由于前端的替代性强，选择太广，入职前不需要花很多的时间在这个上面</strong>。只需要稍微了解一下C#，
+java 或 pyhon web编程,
+手机app编程就可以了。如果是<strong>对相应的技术特别感兴趣，多学点时髦的技术，工作后做一些好用的工具出来对团队提高工作效率也是非常有帮助的</strong>。</p>
+<h2 id="十二.-其他技术">十二. <strong>其他技术</strong></h2>
+<p><strong>Java</strong>
+语言依然是市场占有率蛮高开发系统非常好用的语言。Java语言有非常丰富和成熟的工具，对网页支持做的也很好，学习一下Java工作后可以在周边系统使用上。</p>
+<p><strong>R</strong>, <strong>matlab</strong>
+这两个是除<strong>python</strong>外使用非常广泛的数据分析语言。如果有兴趣并且时间充足，稍微了解一点，在和策略开发人员做对接时可能会用上。当然，不了解也不会影响本职工作。</p>
+<p>日常工作中<strong>运维</strong>也是需要的，特别是刚入职时，<strong>量化团队一般都比较小，入职初期各种打杂是难免的</strong>。用U盘装机Windows和Linux，给Linux配置机器名，网络，设置用户权限安装Java,
+Python，Openonload环境等这些都是工作中很可能会碰上的需求。复杂点的就是了解一些远程管理工具如IPMI，iLO进行远程机器管理甚至装机。这些不是核心，要是在学校如果闲着无聊多去捣鼓捣鼓，熟悉这些东西对工作是有帮助的。</p>
+<h2 id="十三.-金融相关知识">十三. 金融相关知识</h2>
+<p>在找工作时并不需要提前学过金融，这点在入职后学习完全没有问题。不过多了解一些，面试时可以留下更好的印象，属于加分技能项。这一点上本人主要是通过考了<strong>CFA
+Level1</strong>稍微系统性学习金融相关的基础知识，大概全天侯地花了一个多月来准备这个考试，其实<strong>只要做一下CFA
+的Notes和练几次模拟考</strong>就可以通过这个考试了。个人觉得CFA考试硬知识还是蛮多的，属于含金量蛮高的考试。考证方面除了CFA，也考过国内的<strong>证券从业资格考试</strong>和<strong>基金从业资格考试</strong>，这两个考试在国内工作是蛮有用的，从业后很多公司会要求去考个从业资格，不如提前考了，部分基础知识对面试和工作是有帮助的。另外也看了一些和这个岗位相关性不大但是蛮有意思的书籍，在此一并推荐一下：<strong>《宽客-华尔街顶级数量金融大师的另类人生》</strong>，<strong>《金融的逻辑》</strong>，<strong>《乱世华尔街》</strong>，<strong>《Flash
+Boys》，《打开高频交易的黑箱》等</strong></p>
+<p><strong>还有相对专业一些的书籍：《High-Frequency Trading: A Practical
+Guide to Algorithmic Strategies and Trading
+Systems》《Algorithmic_Trading_and_DMA》</strong></p>
 <p>随着跟团队的融合，也需要不断了解策略方面的一些基础知识，比如说多因子模型、CTA策略、做市商策略等等，这样有利于跟研发人员进行对接，起到事半功倍的作用。这方面有很多书籍以及卖方研报可以学习。</p>
-<h2 id="十四-逻辑问题"><a href="#十四-逻辑问题" class="headerlink" title="十四. 逻辑问题"></a>十四. 逻辑问题</h2><p>本人学习华尔街的对冲基金公司，在面试中也会拿一两个逻辑问题来考察一下面试选手的思维方式。推荐看一下<strong>《Heard on The Street: Quantitative Questions from Wall Street Job Interviews》</strong>的第一部分，纯算术和逻辑题。属于有点意思的题目。但和工作的关系相关性不大。如果回答不出来对最终的录取与否影响非常小。但是如果能回答得出来，是属于加分项。</p>
-<h2 id="十五-硬件"><a href="#十五-硬件" class="headerlink" title="十五. 硬件"></a>十五. <strong>硬件</strong></h2><p>我们这个岗位如果只是程序写的好，但是使用的硬件很差那也是有点跑车引擎装在拖拉机上跑的感觉。认识行业内靠谱的硬件商，找到能提供靠谱的超频服务器并能帮忙做优化，有故障时及时响应的供应商在工作中能省掉很多麻烦事。如果您有优质的供应商欢迎推荐！</p>
-<h2 id="十六-机器学习"><a href="#十六-机器学习" class="headerlink" title="十六. 机器学习"></a><strong>十六. 机器学习</strong></h2><p>机器学习和大数据是当前的大热门技术，在量化交易中也有一些用武之地。另外学习机器学习背后的算法思路对于训练逻辑，了解数据分析很有帮助。如果空闲时对这块内容感兴趣，个人非常推荐您去好好学学机器学习的常用算法，如线性回归、逻辑回归、K-Means、KNN、支持向量机、决策树、增强学习、推荐系统、神经网络等等非常经典的算法，熟悉这些算法并做一些实验。如果您能熟练掌握上面说的那些技能并熟悉机器学习算法的使用，那么就业时进入AI领域去当算法工程师也是前景非常不错的岗位。目前就业市场AI人才缺口很大。比较容易拿到高薪offer。机器学习这块可以到<strong>Coursera</strong>上看<strong>吴恩达的机器学习公开课</strong>，讲的非常清楚。</p>
-<h2 id="十七-人性的缺点"><a href="#十七-人性的缺点" class="headerlink" title="十七. 人性的缺点"></a><strong>十七. 人性的缺点</strong></h2><p>所有的系统最后做出来都是给人去使用的，<strong>写程序要考虑到人是有缺点的，比如会健忘、漏操作、误操作、看错东西、敲错数字等</strong>。IT工程师在<strong>实现功能时应该多多考虑到系统功能外的人性缺点</strong>，这样会减少很多不必要的麻烦。比如当系统功能有变动，我一般是会发布一个中间版本，既支持旧有的模式，又支持新功能，等所有交易员所有帐号都已经切换到了中间版本，再检查所有新功能需要的配置变更是不是都已经改了。在确认都改动完成后，再发布一个只支持新配置模式的版本。这样的系统迭代升级，就不会因为某个交易员某次升级忘记做相应的改动而出现错误。让整个升级更加符合人性。为了减少人为操作错误，<strong>运维上要尽量自动化</strong>，脚本一次调试正确后，后面就不会再出错了。另外实在不可避免的，要多加一些容错自动检查和监控。系统启动时巡检易出错的配置项是否符合一定的配置逻辑，如果出错则报警退出。<strong>让错误尽早发现</strong>，不要等进入交易时间了才发现错误。优秀的程序员应该<strong>不仅实现出功能</strong>，而且会<strong>做到以人为本</strong>，会<strong>预先思考用户可能会犯的错误</strong>，在<strong>系统设计时加入相应的措施来避免出错或能及时检测到出错</strong>。这里顺便提一点，量化系统工程师虽然有一小部分工作和策略开发相关，比如都要写程序。但是两者的知识体系以及思维方式是非常不一样的。在工作中要做好分工协作，相信做策略的同事，遇到问题多跟公司内部人员沟通。在策略亏损时，<strong>不要试图去干预策略</strong>，这通常不是一件好事，毕竟隔行如隔山。</p>
-<h2 id="十八-与人为善"><a href="#十八-与人为善" class="headerlink" title="十八. 与人为善"></a>十八. 与人为善</h2><p>如果能掌握上面说的的那些要点，找个高薪的岗位并不困难。但是要工作的舒心顺心，<strong>做事之外做人也是非常重要的</strong>。工作中，经常会碰到期货公司、证券公司或第三方的技术故障，对待他们稍微宽容一些，学会与人进行良好沟通。不要碰到点小问题就把别人骂的狗血零头，没有必要。再说期货公司、交易所、第三方在做到基本公平的情况下并非资源是完全平等分配的。处理好与外部的关系，在某些资源上别人也更愿意更好更快地为你服务。很多时候，<strong>与人方便就是与己方便</strong>。从另一方面来说，人生要想走到更高一个发展阶段，光凭技术单打独斗是很难的，要依靠团队作战。团队协作，业务拓展，很多时候<strong>情商比智商更重要</strong>。</p>
+<h2 id="十四.-逻辑问题">十四. 逻辑问题</h2>
+<p>本人学习华尔街的对冲基金公司，在面试中也会拿一两个逻辑问题来考察一下面试选手的思维方式。推荐看一下<strong>《Heard
+on The Street: Quantitative Questions from Wall Street Job
+Interviews》</strong>的第一部分，纯算术和逻辑题。属于有点意思的题目。但和工作的关系相关性不大。如果回答不出来对最终的录取与否影响非常小。但是如果能回答得出来，是属于加分项。</p>
+<h2 id="十五.-硬件">十五. <strong>硬件</strong></h2>
+<p>我们这个岗位如果只是程序写的好，但是使用的硬件很差那也是有点跑车引擎装在拖拉机上跑的感觉。认识行业内靠谱的硬件商，找到能提供靠谱的超频服务器并能帮忙做优化，有故障时及时响应的供应商在工作中能省掉很多麻烦事。如果您有优质的供应商欢迎推荐！</p>
+<h2 id="十六.-机器学习"><strong>十六. 机器学习</strong></h2>
+<p>机器学习和大数据是当前的大热门技术，在量化交易中也有一些用武之地。另外学习机器学习背后的算法思路对于训练逻辑，了解数据分析很有帮助。如果空闲时对这块内容感兴趣，个人非常推荐您去好好学学机器学习的常用算法，如线性回归、逻辑回归、K-Means、KNN、支持向量机、决策树、增强学习、推荐系统、神经网络等等非常经典的算法，熟悉这些算法并做一些实验。如果您能熟练掌握上面说的那些技能并熟悉机器学习算法的使用，那么就业时进入AI领域去当算法工程师也是前景非常不错的岗位。目前就业市场AI人才缺口很大。比较容易拿到高薪offer。机器学习这块可以到<strong>Coursera</strong>上看<strong>吴恩达的机器学习公开课</strong>，讲的非常清楚。</p>
+<h2 id="十七.-人性的缺点"><strong>十七. 人性的缺点</strong></h2>
+<p>所有的系统最后做出来都是给人去使用的，<strong>写程序要考虑到人是有缺点的，比如会健忘、漏操作、误操作、看错东西、敲错数字等</strong>。IT工程师在<strong>实现功能时应该多多考虑到系统功能外的人性缺点</strong>，这样会减少很多不必要的麻烦。比如当系统功能有变动，我一般是会发布一个中间版本，既支持旧有的模式，又支持新功能，等所有交易员所有帐号都已经切换到了中间版本，再检查所有新功能需要的配置变更是不是都已经改了。在确认都改动完成后，再发布一个只支持新配置模式的版本。这样的系统迭代升级，就不会因为某个交易员某次升级忘记做相应的改动而出现错误。让整个升级更加符合人性。为了减少人为操作错误，<strong>运维上要尽量自动化</strong>，脚本一次调试正确后，后面就不会再出错了。另外实在不可避免的，要多加一些容错自动检查和监控。系统启动时巡检易出错的配置项是否符合一定的配置逻辑，如果出错则报警退出。<strong>让错误尽早发现</strong>，不要等进入交易时间了才发现错误。优秀的程序员应该<strong>不仅实现出功能</strong>，而且会<strong>做到以人为本</strong>，会<strong>预先思考用户可能会犯的错误</strong>，在<strong>系统设计时加入相应的措施来避免出错或能及时检测到出错</strong>。这里顺便提一点，量化系统工程师虽然有一小部分工作和策略开发相关，比如都要写程序。但是两者的知识体系以及思维方式是非常不一样的。在工作中要做好分工协作，相信做策略的同事，遇到问题多跟公司内部人员沟通。在策略亏损时，<strong>不要试图去干预策略</strong>，这通常不是一件好事，毕竟隔行如隔山。</p>
+<h2 id="十八.-与人为善">十八. 与人为善</h2>
+<p>如果能掌握上面说的的那些要点，找个高薪的岗位并不困难。但是要工作的舒心顺心，<strong>做事之外做人也是非常重要的</strong>。工作中，经常会碰到期货公司、证券公司或第三方的技术故障，对待他们稍微宽容一些，学会与人进行良好沟通。不要碰到点小问题就把别人骂的狗血零头，没有必要。再说期货公司、交易所、第三方在做到基本公平的情况下并非资源是完全平等分配的。处理好与外部的关系，在某些资源上别人也更愿意更好更快地为你服务。很多时候，<strong>与人方便就是与己方便</strong>。从另一方面来说，人生要想走到更高一个发展阶段，光凭技术单打独斗是很难的，要依靠团队作战。团队协作，业务拓展，很多时候<strong>情商比智商更重要</strong>。</p>
 
       
     </div>
@@ -557,27 +666,28 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="算法常见简写"><a href="#算法常见简写" class="headerlink" title="算法常见简写"></a>算法常见简写</h1><!---more --->
-
-<ol>
-<li>数组：<br>            1. 连接数组：Next[]，ne[]<br>            1. 子节点：Son[]，Ne[]<br>            1. 父节点：Father[]， Fa[]， Pre[]<br>            1. 数值数组：val[]， e[]</li>
+          <h1 id="算法常见简写">算法常见简写</h1>
+<!---more --->
+<ol type="1">
+<li>数组： 1. 连接数组：Next[]，ne[] 1. 子节点：Son[]，Ne[] 1.
+父节点：Father[]， Fa[]， Pre[] 1. 数值数组：val[]， e[]</li>
 <li>map：mp</li>
 <li>priority_queue：pq</li>
 <li>queue：q</li>
 <li>stack：st</li>
-<li>指针：<ol>
+<li>指针：
+<ol type="1">
 <li>pre：前</li>
-<li>r &#x2F; right：右</li>
-<li>l &#x2F; left ：左</li>
+<li>r / right：右</li>
+<li>l / left ：左</li>
 <li>cur: 当次调用函数所操作的当前元素</li>
-<li>idx：当前可添加节点&#x2F;数组点</li>
+<li>idx：当前可添加节点/数组点</li>
 <li>id：记录数组索引</li>
 <li>tmp：临时变量</li>
-<li>i&#x2F;j&#x2F;k：遍历</li>
+<li>i/j/k：遍历</li>
 <li>p，q：通用指针</li>
 <li>null：空指针</li>
-</ol>
-</li>
+</ol></li>
 </ol>
 
       
@@ -676,9 +786,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-linked-list/"> 206. 反转链表</a></p>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-linked-list-ii/">92. 反转链表 II</a></p>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-nodes-in-k-group/">25. K 个一组翻转链表</a></p>
+          <h1 id="题目">题目</h1>
+<h2 id="leetcode">Leetcode</h2>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-linked-list/">206.
+反转链表</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-linked-list-ii/">92.
+反转链表 II</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-nodes-in-k-group/">25.
+K 个一组翻转链表</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/#more" rel="contents">
@@ -789,99 +904,156 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="题单"><a href="#题单" class="headerlink" title="题单"></a>题单</h1><p><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211">[kuangbin带你飞]专题六 最小生成树 </a></p>
+          <h1 id="题单">题单</h1>
+<p><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211">[kuangbin带你飞]专题六
+最小生成树</a></p>
 <table>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 48%" />
+<col style="width: 48%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>A</th>
-<th><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-1251/origin">POJ 1251 POJ 1251</a></th>
-<th><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/A">Jungle Roads  丛林道路</a></th>
+<th><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-1251/origin">POJ
+1251 POJ 1251</a></th>
+<th><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/A">Jungle
+Roads 丛林道路</a></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td>B</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-1287/origin">POJ 1287  POJ 1287</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/B">Networking  联网</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-1287/origin">POJ
+1287 POJ 1287</a></td>
+<td><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/B">Networking
+联网</a></td>
 </tr>
-<tr>
+<tr class="even">
 <td>C</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-2031/origin">POJ 2031  POJ 2031</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/C">Building a Space Station 建造空间站</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-2031/origin">POJ
+2031 POJ 2031</a></td>
+<td><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/C">Building a
+Space Station 建造空间站</a></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>D</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-2421/origin">POJ 2421  POJ 2421</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/D">Constructing Roads  修建道路</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-2421/origin">POJ
+2421 POJ 2421</a></td>
+<td><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/D">Constructing
+Roads 修建道路</a></td>
 </tr>
-<tr>
+<tr class="even">
 <td>E</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/ZOJ-1586/origin">ZOJ 1586  佐吉1586</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/E">QS Network  QS 网络</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/ZOJ-1586/origin">ZOJ
+1586 佐吉1586</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/E">QS
+Network QS 网络</a></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>F</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-1789/origin">POJ 1789  邮政编码 1789</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/F">Truck History  卡车历史</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-1789/origin">POJ
+1789 邮政编码 1789</a></td>
+<td><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/F">Truck
+History 卡车历史</a></td>
 </tr>
-<tr>
+<tr class="even">
 <td>G</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-2349/origin">POJ 2349  邮政编码 2349</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/G">Arctic Network  北极网络</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-2349/origin">POJ
+2349 邮政编码 2349</a></td>
+<td><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/G">Arctic
+Network 北极网络</a></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>H</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-1751/origin">POJ 1751  邮政编码 1751</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/H">Highways  高速公路</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-1751/origin">POJ
+1751 邮政编码 1751</a></td>
+<td><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/H">Highways
+高速公路</a></td>
 </tr>
-<tr>
+<tr class="even">
 <td>I</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-1258/origin">POJ 1258  POJ 1258</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/I">Agri-Net  农业网</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-1258/origin">POJ
+1258 POJ 1258</a></td>
+<td><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/I">Agri-Net
+农业网</a></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>J</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-3026/origin">POJ 3026  POJ 3026</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/J">Borg Maze  博格迷宫</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-3026/origin">POJ
+3026 POJ 3026</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/J">Borg
+Maze 博格迷宫</a></td>
 </tr>
-<tr>
+<tr class="even">
 <td>K</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-1679/origin">POJ 1679  邮政编码 1679</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/K">The Unique MST 独特的MST</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/POJ-1679/origin">POJ
+1679 邮政编码 1679</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/K">The
+Unique MST 独特的MST</a></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>L</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/HDU-1233/origin">HDU 1233  HDU 1233</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/L">还是畅通工程</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/HDU-1233/origin">HDU
+1233 HDU 1233</a></td>
+<td><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/L">还是畅通工程</a></td>
 </tr>
-<tr>
+<tr class="even">
 <td>M</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/HDU-1301/origin">HDU 1301  HDU 1301</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/M">Jungle Roads  丛林道路</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/HDU-1301/origin">HDU
+1301 HDU 1301</a></td>
+<td><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/M">Jungle
+Roads 丛林道路</a></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>N</td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/HDU-1875/origin">HDU 1875  HDU 1875</a></td>
-<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/N">畅通工程再续</a></td>
+<td><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/problem/HDU-1875/origin">HDU
+1875 HDU 1875</a></td>
+<td><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276211#problem/N">畅通工程再续</a></td>
 </tr>
-</tbody></table>
-<hr>
-<h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>普里姆算法</strong>（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由<strong>此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点（英语：Vertex (graph theory)），且其所有边的权值之和亦为最小</strong>。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克（英语：Vojtěch Jarník）发现；并在1957年由美国计算机科学家罗伯特·普里姆（英语：Robert C. Prim）独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。</p>
-<h2 id="prime"><a href="#prime" class="headerlink" title="prime"></a>prime</h2><ol>
-<li><p>输入：一个加权连通图，其中顶点集合为V，边集合为E；</p>
-</li>
-<li><p>初始化：Vnew &#x3D; {x}，其中x为集合V中的任一节点（起始点），Enew &#x3D; {},为空；</p>
-</li>
-<li><p>递归下列操作，直到Vnew &#x3D; V：</p>
-<ol>
-<li>在集合E中选取权值最小的边&lt;u, v&gt;，其中u为集合Vnew中的元素，而v不在Vnew集合当中，并且v∈V（如果存在有多条满足前述条件即具有相同权值的边，则可任意选取其中之一）；</li>
+</tbody>
+</table>
+<hr />
+<h1 id="最小生成树">最小生成树</h1>
+<h2 id="简介">简介</h2>
+<p><strong>普里姆算法</strong>（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由<strong>此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点（英语：Vertex
+(graph
+theory)），且其所有边的权值之和亦为最小</strong>。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克（英语：Vojtěch
+Jarník）发现；并在1957年由美国计算机科学家罗伯特·普里姆（英语：Robert C.
+Prim）独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。</p>
+<h2 id="prime">prime</h2>
+<ol type="1">
+<li><p>输入：一个加权连通图，其中顶点集合为V，边集合为E；</p></li>
+<li><p>初始化：Vnew = {x}，其中x为集合V中的任一节点（起始点），Enew =
+{},为空；</p></li>
+<li><p>递归下列操作，直到Vnew = V：</p>
+<ol type="1">
+<li>在集合E中选取权值最小的边&lt;u,
+v&gt;，其中u为集合Vnew中的元素，而v不在Vnew集合当中，并且v∈V（如果存在有多条满足前述条件即具有相同权值的边，则可任意选取其中之一）；</li>
 <li>将v加入集合Vnew中，将&lt;u, v&gt;边加入集合Enew中；</li>
+</ol></li>
+<li><p>输出：使用集合Vnew和Enew来描述所得到的最小生成树。</p></li>
 </ol>
-</li>
-<li><p>输出：使用集合Vnew和Enew来描述所得到的最小生成树。</p>
-</li>
-</ol>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><hr>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/biyeymyhjob/archive/2012/07/30/2615542.html">最小生成树-Prim算法和Kruskal算法 - 博客园-华山大师兄</a></p>
+<h2 id="代码">代码</h2>
+<hr />
+<h1 id="题解">题解</h1>
+<h1 id="参考资料">参考资料</h1>
+<p><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/biyeymyhjob/archive/2012/07/30/2615542.html">最小生成树-Prim算法和Kruskal算法
+- 博客园-华山大师兄</a></p>
 
       
     </div>
@@ -1093,9 +1265,13 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>因一段时间未用虚拟机，打开后发现崩了QAQ，故重新配置了一下，写个文档节约下次时间。</p>
-<h1 id="安装VMware17"><a href="#安装VMware17" class="headerlink" title="安装VMware17"></a>安装VMware17</h1><p>bilibili找的盗版（雾</p>
-<h1 id="安装Ubuntu的ISO"><a href="#安装Ubuntu的ISO" class="headerlink" title="安装Ubuntu的ISO"></a>安装Ubuntu的ISO</h1><p>在阿里云或者其他大学镜像安装对应，我下载的版本是：ubuntu-20.04.6-live-server-amd64</p>
-<h1 id="安装linux-配置"><a href="#安装linux-配置" class="headerlink" title="安装linux 配置"></a>安装linux 配置</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ig4y1s7eL/?vd_source=a326e65c6d0fa8e7b1904a3c161ec105">参考链接</a></p>
+<h1 id="安装vmware17">安装VMware17</h1>
+<p>bilibili找的盗版（雾</p>
+<h1 id="安装ubuntu的iso">安装Ubuntu的ISO</h1>
+<p>在阿里云或者其他大学镜像安装对应，我下载的版本是：ubuntu-20.04.6-live-server-amd64</p>
+<h1 id="安装linux-配置">安装linux 配置</h1>
+<p><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ig4y1s7eL/?vd_source=a326e65c6d0fa8e7b1904a3c161ec105">参考链接</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/Linux%E5%AE%89%E8%A3%85%E7%AE%80%E6%98%8E/#more" rel="contents">
@@ -1206,124 +1382,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/838/">ACWing 836</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/839/">ACWing 837</a></li>
+          <h1 id="题目">题目</h1>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/838/">ACWing
+836</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/839/">ACWing
+837</a></li>
 </ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E5%B9%B6%E6%9F%A5%E9%9B%86/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/AcWing%20835/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Ar Gas">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ar Gas'Blog">
-      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ar Gas'Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/post/AcWing%20835/" class="post-title-link" itemprop="url">AcWing 835</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-09-12 15:42:00" itemprop="dateCreated datePublished" datetime="2023-09-12T15:42:00+08:00">2023-09-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-24 22:52:09" itemprop="dateModified" datetime="2023-09-24T22:52:09+08:00">2023-09-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%A2%98%E8%A7%A3/AcWing/" itemprop="url" rel="index"><span itemprop="name">AcWing</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>165</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/837/">AcWing 835</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/AcWing%20835/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1431,10 +1501,127 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/842/">AcWing 840</a></p>
+          <h1 id="题目">题目</h1>
+<p><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/842/">AcWing
+840</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/AcWing%20840/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/AcWing%20835/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Ar Gas">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ar Gas'Blog">
+      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ar Gas'Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/post/AcWing%20835/" class="post-title-link" itemprop="url">AcWing 835</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-09-12 15:42:00" itemprop="dateCreated datePublished" datetime="2023-09-12T15:42:00+08:00">2023-09-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-09-24 22:52:09" itemprop="dateModified" datetime="2023-09-24T22:52:09+08:00">2023-09-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/AcWing/" itemprop="url" rel="index"><span itemprop="name">AcWing</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>165</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="题目">题目</h1>
+<p><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/837/">AcWing
+835</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/AcWing%20835/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1542,7 +1729,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/843/">AcWing 841</a></p>
+          <h1 id="题目">题目</h1>
+<p><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/843/">AcWing
+841</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/AcWing%20841/#more" rel="contents">
@@ -1653,8 +1843,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="题单"><a href="#题单" class="headerlink" title="题单"></a>题单</h1><p><a target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276210">[kuangbin带你飞]专题五 并查集</a></p>
-<ol>
+          <h1 id="题单">题单</h1>
+<p><a
+target="_blank" rel="noopener" href="https://vjudge.csgrandeur.cn/contest/276210">[kuangbin带你飞]专题五
+并查集</a></p>
+<ol type="1">
 <li>POJ 2236 Wireless Network</li>
 <li>POJ 1611 The Suspects</li>
 <li>HDU 1213 How Many Tables</li>
@@ -1670,8 +1863,8 @@
 <li>HDU 1272 小希的迷宫</li>
 <li>POJ 1308 Is It A Tree?</li>
 </ol>
-<hr>
-<h1 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h1>
+<hr />
+<h1 id="并查集">并查集</h1>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E%20%E4%B8%93%E9%A2%98%E4%BA%94%20%E5%B9%B6%E6%9F%A5%E9%9B%86/#more" rel="contents">
@@ -1782,7 +1975,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/833/">AcWing 831</a></p>
+          <h1 id="题目">题目</h1>
+<p><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/833/">AcWing
+831</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/KMP%E7%AE%97%E6%B3%95/#more" rel="contents">
@@ -1893,7 +2089,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h1><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/832/">AcWing 830</a></p>
+          <h1 id="单调栈">单调栈</h1>
+<p><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/832/">AcWing
+830</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E5%8D%95%E8%B0%83%E6%A0%88%E3%80%81%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/#more" rel="contents">
@@ -2001,11 +2200,10 @@
     
     <div class="post-body" itemprop="articleBody">
           <span id="more"></span>
-
-<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> stk[N], tt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	tt = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	stk[ ++ tt] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	tt -- ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (tt &gt; <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> q[N], hh, tt = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	q[++ tt] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">	hh ++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(hh &lt;= tt)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="栈">栈</h1>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> stk[N], tt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	tt = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	stk[ ++ tt] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	tt -- ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (tt &gt; <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="队列">队列</h1>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> q[N], hh, tt = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	q[++ tt] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">	hh ++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(hh &lt;= tt)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -2109,121 +2307,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/828/">AcWing 826</a></p>
+          <h1 id="单链表">单链表</h1>
+<h2 id="题目">题目</h2>
+<p><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/828/">AcWing
+826</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E5%8D%95%E9%93%BE%E8%A1%A8%E3%80%81%E5%8F%8C%E9%93%BE%E8%A1%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/AcWing%2094/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Ar Gas">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ar Gas'Blog">
-      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ar Gas'Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/post/AcWing%2094/" class="post-title-link" itemprop="url">AcWing 93 递归实现组合型枚举</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-09-04 15:34:00" itemprop="dateCreated datePublished" datetime="2023-09-04T15:34:00+08:00">2023-09-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-21 20:07:31" itemprop="dateModified" datetime="2023-09-21T20:07:31+08:00">2023-09-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%A2%98%E8%A7%A3/AcWing/" itemprop="url" rel="index"><span itemprop="name">AcWing</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>98</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/96/">AcWing 94</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/AcWing%2094/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2331,12 +2422,129 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/95/">ACWing 93</a></li>
+          <h1 id="题目">题目</h1>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/95/">ACWing
+93</a></li>
 </ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/AcWing%2093/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/AcWing%2094/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Ar Gas">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ar Gas'Blog">
+      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ar Gas'Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/post/AcWing%2094/" class="post-title-link" itemprop="url">AcWing 93 递归实现组合型枚举</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-09-04 15:34:00" itemprop="dateCreated datePublished" datetime="2023-09-04T15:34:00+08:00">2023-09-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-09-21 20:07:31" itemprop="dateModified" datetime="2023-09-21T20:07:31+08:00">2023-09-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/AcWing/" itemprop="url" rel="index"><span itemprop="name">AcWing</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>98</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="题目">题目</h1>
+<p><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/96/">AcWing
+94</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/AcWing%2094/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2444,8 +2652,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/94/">ACWing 92</a></li>
+          <h1 id="题目">题目</h1>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/94/">ACWing
+92</a></li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -2557,7 +2768,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="The-Missing-Semester-of-Your-CS-Education-计算机教育中缺失的一课"><a href="#The-Missing-Semester-of-Your-CS-Education-计算机教育中缺失的一课" class="headerlink" title="The Missing Semester of Your CS Education 计算机教育中缺失的一课"></a>The Missing Semester of Your CS Education 计算机教育中缺失的一课</h1><p>计算机导论的补充，介绍了工作中常用的几个工具，Shell，Git，Vim等，适合初学者了解。</p>
+          <h1
+id="the-missing-semester-of-your-cs-education-计算机教育中缺失的一课">The
+Missing Semester of Your CS Education 计算机教育中缺失的一课</h1>
+<p>计算机导论的补充，介绍了工作中常用的几个工具，Shell，Git，Vim等，适合初学者了解。</p>
 <p><a target="_blank" rel="noopener" href="https://missing-semester-cn.github.io/">课程链接</a></p>
           <!--noindex-->
             <div class="post-button">
@@ -2669,11 +2883,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><ul>
-<li><p><a target="_blank" rel="noopener" href="https://acm.hdu.edu.cn/showproblem.php?pid=4699">HDU 4699</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/130/">ACWing 128(译)</a></p>
-</li>
+          <h1 id="题目">题目：</h1>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://acm.hdu.edu.cn/showproblem.php?pid=4699">HDU
+4699</a></p></li>
+<li><p><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/130/">ACWing
+128(译)</a></p></li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -2781,7 +2997,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django</span><br></pre></td></tr></table></figure>
+          <h1 id="环境搭建">环境搭建</h1>
+<h2 id="安装">安装</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/Django-note/#more" rel="contents">
@@ -2995,7 +3213,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3>
+          <h3 id="快速幂">快速幂</h3>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E6%95%B0%E8%AE%BA%E7%AE%97%E6%B3%95/#more" rel="contents">
@@ -3109,10 +3327,9 @@
           <p>文章首次写于：<strong>2023-04-19</strong></p>
 <p>更新日志：</p>
 <ul>
-<li><p>20230419：编写了字符串-C、字符串-C++的输入输出</p>
-</li>
-<li><p>20230916：添加了&lt; String &gt;库、&lt; cctype &gt;库、字符串流 &lt; sstream &gt;库</p>
-</li>
+<li><p>20230419：编写了字符串-C、字符串-C++的输入输出</p></li>
+<li><p>20230916：添加了&lt; String &gt;库、&lt; cctype &gt;库、字符串流
+&lt; sstream &gt;库</p></li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -3446,7 +3663,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[1].<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Eb41177d1/?spm_id_from=333.337.search-card.all.click&vd_source=a326e65c6d0fa8e7b1904a3c161ec105">最小生成树Kruskal和Prim算法动画演示</a></p>
+          <h1 id="参考资料">参考资料</h1>
+<p>[1].<a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Eb41177d1/?spm_id_from=333.337.search-card.all.click&amp;vd_source=a326e65c6d0fa8e7b1904a3c161ec105">最小生成树Kruskal和Prim算法动画演示</a></p>
 
       
     </div>
@@ -3661,17 +3880,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="两个性质"><a href="#两个性质" class="headerlink" title="两个性质"></a>两个性质</h1><ol>
+          <h1 id="两个性质">两个性质</h1>
+<ol type="1">
 <li><strong>最优子结构</strong>：问题的最优解由其子问题的最优解<strong>组合而成</strong>；且子问题可独立求解；</li>
 <li><strong>重叠子问题</strong>：子问题的算法相同。</li>
 </ol>
-<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol>
-<li><p>问题结构分析（数学语言描述）；</p>
-</li>
-<li><p>递推关系建立；</p>
-</li>
-<li><p>自底向上计算，确立计算顺序；</p>
-</li>
+<h1 id="步骤">步骤</h1>
+<ol type="1">
+<li><p>问题结构分析（数学语言描述）；</p></li>
+<li><p>递推关系建立；</p></li>
+<li><p>自底向上计算，确立计算顺序；</p></li>
 <li><p>最优方案追踪（记录数组回溯）</p>
           <!--noindex-->
             <div class="post-button">
@@ -4654,8 +4872,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://www.xuetangx.com/live/live20211209IT002/live20230216IT001/15673576/31072546?channel=i.area.home_live_ad">ChatGPT会引领AI新范式吗？</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/AITIME_HY/article/details/128463104?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167793189416800186576083%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167793189416800186576083&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-4-128463104-null-null.blog_rank_default&utm_term=GPT%20&spm=1018.2226.3001.4450">官方整理</a></p>
+          <p><a
+target="_blank" rel="noopener" href="https://www.xuetangx.com/live/live20211209IT002/live20230216IT001/15673576/31072546?channel=i.area.home_live_ad">ChatGPT会引领AI新范式吗？</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/AITIME_HY/article/details/128463104?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167793189416800186576083%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&amp;request_id=167793189416800186576083&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-4-128463104-null-null.blog_rank_default&amp;utm_term=GPT%20&amp;spm=1018.2226.3001.4450">官方整理</a></p>
 <p>几个比较关心的问题</p>
 <p>1.chatGPT短期内不会取代搜索引擎：chatGPT是基于大型数据的生成式大模型，在边界问题上的乱编导致其不能取代搜索引擎的独特性，也就是说chatGPT没有为信息来源负责。</p>
 <p>2.GPT的优势在于创造性，缺点在于边界问题的真实性。</p>
@@ -4871,7 +5091,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://pica.zhimg.com/80/v2-a46ea7bebf639e97b979d512d4673b7d_720w.jpeg" alt="Birthday"></p>
+          <figure>
+<img
+src="https://pica.zhimg.com/80/v2-a46ea7bebf639e97b979d512d4673b7d_720w.jpeg"
+alt="Birthday" />
+<figcaption aria-hidden="true">Birthday</figcaption>
+</figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E7%94%9F%E6%97%A5%E5%B0%8F%E8%AE%B0/#more" rel="contents">
@@ -4978,10 +5203,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://blog.codingnow.com/2007/12/history.html">原文连接</a></p>
+          <p><a
+target="_blank" rel="noopener" href="https://blog.codingnow.com/2007/12/history.html">原文连接</a></p>
 <p>我有一个忘记从哪继承来的观点：无论我们想学什么，都应该从学习他的历史开始。极端点说，无论学什么，都是在学他的历史。</p>
 <p>前几天在北京见到了我的小表妹，她刚上初一，人极为聪明。七年前我在北京工作时，她还没有上小学。那个时候我就回答过她许多科普问题。一个五岁的小姑娘的理解能力曾让我感叹不已。</p>
-<p>知道小妹妹居然在写 blog 而且文笔不错，觉得挺高兴的。但听说她最近一次考试数学成绩不是特别好，有些令人担忧。我一直认为中学所谓文理分科就是件巨傻的事（似乎现在慢慢的不再分了）。但如果一味的去追求所谓文科上的造诣，怕是会耽误理性思维的发展。在迈入科学的殿堂的门槛上，一步错就能耽误十年啊。</p>
+<p>知道小妹妹居然在写 blog
+而且文笔不错，觉得挺高兴的。但听说她最近一次考试数学成绩不是特别好，有些令人担忧。我一直认为中学所谓文理分科就是件巨傻的事（似乎现在慢慢的不再分了）。但如果一味的去追求所谓文科上的造诣，怕是会耽误理性思维的发展。在迈入科学的殿堂的门槛上，一步错就能耽误十年啊。</p>
 <p>小孩子一开始在学校学习或许更多的是为了比同龄人强，为了完成长辈的期望，为了达到别人设定的目标。但终有一天，长大了的后会发现，学习其实就是因为自己想知道。</p>
 <p>所以吃饭的时候，我多说了几句。无论学什么，都要先培养出兴趣。理科的东西老师教起来很枯燥，那么就可以从读他们的历史开始。一段段故事，一个个鲜活的人，就会变得生动。深一层的道理需要慢慢的去体会：无论学什么，都是在学他的历史。以前的人如何考虑这些问题，为何研究这些问题。他们怎样去归纳、总结。他们的思考怎样延伸出去，为什么又有了局限性。后人怎样做出了突破。人性是共通的，人的智力水平也相差无多。按着前人的路，没有太难理解的道理。而课堂上现在的教法，把历史上长长的思考过程压缩，裁减掉所有的错误和累赘，压缩成一条条公式与冷冰冰的推导。背了那些，除了考出完美的答卷，就没太多意义了。</p>
           <!--noindex-->
@@ -5090,7 +5317,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="http://mindhacks.cn/2009/03/28/effective-learning-and-memorization/">原文链接</a></p>
+          <p><a
+target="_blank" rel="noopener" href="http://mindhacks.cn/2009/03/28/effective-learning-and-memorization/">原文链接</a></p>
 <p><strong>你所拥有的知识并不取决于你记得多少，而在于它们能否在恰当的时候被回忆起来。</strong></p>
 <p>让我稍微说得更详细一点：学习新知识并将其存放于大脑中，<strong>最终的目的是要在恰当的时候能够想得起来去使用</strong>。因此，学习的有效性<strong>显然应该这样来衡量</strong>：当遇到需要用到学过的知识的时候，相关的知识<strong>是否会自动从你脑海中“蹦”出来</strong>，最起码——能否通过有意识的搜索将它们提取出来。</p>
 <p>这可不像它听上去那么简单，否则就不会有“掉书袋”、“读死书”这种修辞手法了。</p>
@@ -5322,26 +5550,27 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>这里外链一些做的不错的笔记</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ixtwuko/p/advanced-mathematics.html">高等数学笔记-ixkwuko</a></p>
-<p><a target="_blank" rel="noopener" href="https://ryzenx.com/math-notes-html/##%E7%9B%AE%E5%BD%95">高等数学（上）-Steven-nagisa-Y</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/ixtwuko/p/advanced-mathematics.html">高等数学笔记-ixkwuko</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://ryzenx.com/math-notes-html/##%E7%9B%AE%E5%BD%95">高等数学（上）-Steven-nagisa-Y</a></p>
 <p><a target="_blank" rel="noopener" href="https://lvjr.bitbucket.io/gdsx.html">高等数学文档</a></p>
 <!----more---->
-
 <blockquote>
 <p>常见习题、概念</p>
 </blockquote>
 <p>二重极限的证明：</p>
 <ul>
-<li>证明值为<code>x</code><ul>
+<li>证明值为<code>x</code>
+<ul>
 <li>转化为一元极限</li>
 <li>极限定义</li>
-</ul>
-</li>
-<li>证明极限是否存在<ul>
+</ul></li>
+<li>证明极限是否存在
+<ul>
 <li><code>y</code>路径不同是否影响。例：<code>y=kx</code>，<code>y=x^2+x^3</code>在<code>x趋于0</code>时</li>
 <li>极限定义</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <p>累次极限有先后顺序，前一极限存在，后一极限一定存在</p>
 <p>二重极限存在，二次极限也存在，则二次极限的值是二重极限。</p>
@@ -5444,9 +5673,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="http://mindhacks.cn/2009/02/09/writing-is-better-thinking/">原文链接</a></p>
+          <p><a
+target="_blank" rel="noopener" href="http://mindhacks.cn/2009/02/09/writing-is-better-thinking/">原文链接</a></p>
 <p>我经常在走路和睡前总结所学过的内容，思考遗留的问题，一段时间的阅读和思考之后，一个总体的知识框架就会逐渐浮现在脑海中。然后我会将它书写下来，<strong>然而，我往往非常惊讶地发现，当我书写的时候，新的内容仍然源源不断的冒出来，就像我的键盘自己也会思考一样。</strong></p>
-<p>大半年前的时候，我曾在一篇文章《<a target="_blank" rel="noopener" href="http://mindhacks.cn/2008/04/18/learning-from-polya/">跟波利亚学解题</a>》中写到将问题求解的思维过程记录下来的好处，现在再次回忆起来，当时列出的几点其实不仅对于问题求解是大有好处，对于平时的思考也是同样的道理。</p>
+<p>大半年前的时候，我曾在一篇文章《<a
+target="_blank" rel="noopener" href="http://mindhacks.cn/2008/04/18/learning-from-polya/">跟波利亚学解题</a>》中写到将问题求解的思维过程记录下来的好处，现在再次回忆起来，当时列出的几点其实不仅对于问题求解是大有好处，对于平时的思考也是同样的道理。</p>
 <p>书写的好处有以下几点：</p>
           <!--noindex-->
             <div class="post-button">
@@ -5561,7 +5792,8 @@
           <blockquote>
 <p>最近面临期末，之前还剩了个微分方程没有学，发现要记的还挺多的，就做些笔记，以下笔记较为精简，部分条件未给出（例如导数存在）</p>
 </blockquote>
-<h2 id="研究微分方程的目的"><a href="#研究微分方程的目的" class="headerlink" title="研究微分方程的目的"></a>研究微分方程的目的</h2><p>在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个<strong>导数和函数的关系式</strong>来解得，在力学，天文学，物理学及技术科学等中应用广泛</p>
+<h2 id="研究微分方程的目的">研究微分方程的目的</h2>
+<p>在实际构建函数的过程中，人们发现一些函数不容易直接得到，但是一些函数可以通过建立一个<strong>导数和函数的关系式</strong>来解得，在力学，天文学，物理学及技术科学等中应用广泛</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%AC%94%E8%AE%B0/#more" rel="contents">
@@ -5668,9 +5900,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="基于HEXO的Github博客教程"><a href="#基于HEXO的Github博客教程" class="headerlink" title="基于HEXO的Github博客教程"></a>基于HEXO的Github博客教程</h1><h2 id="搭建教程"><a href="#搭建教程" class="headerlink" title="搭建教程"></a>搭建教程</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/huanhao/p/hexobase.html">【基础篇】hexo博客搭建教程</a></p>
+          <h1 id="基于hexo的github博客教程">基于HEXO的Github博客教程</h1>
+<h2 id="搭建教程">搭建教程</h2>
+<p><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/huanhao/p/hexobase.html">【基础篇】hexo博客搭建教程</a></p>
 <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo静态博客架构官网</a></p>
-<p><a target="_blank" rel="noopener" href="https://theme-next.js.org/">NexT主题官网（hexo的老牌主题，历经多年更新，功能最全，使用人最多）</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://theme-next.js.org/">NexT主题官网（hexo的老牌主题，历经多年更新，功能最全，使用人最多）</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90/#more" rel="contents">
