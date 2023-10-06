@@ -34,7 +34,7 @@
 <meta property="og:description" content="质数 试除法-判定 O(sqrt(n)) 12345678bool is_prime(int x)&amp;#123;    if (x &lt; 2) return false;    for (int i &#x3D; 2; i &lt;&#x3D; x &#x2F; i; i ++ ) &#x2F;&#x2F; i * i可能会爆int，使用等价写法        if (x % i &#x3D;&#x3D; 0)            return fals">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-06T02:03:00.000Z">
-<meta property="article:modified_time" content="2023-10-05T10:19:20.664Z">
+<meta property="article:modified_time" content="2023-10-06T13:37:24.433Z">
 <meta property="article:author" content="Ar Gas">
 <meta property="article:tag" content="algrithm&#x2F;算法">
 <meta name="twitter:card" content="summary">
@@ -96,7 +96,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">55</span></a></li><li class="menu-item menu-item-update"><a href="/update/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新动态</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">57</span></a></li><li class="menu-item menu-item-update"><a href="/update/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新动态</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -148,7 +148,7 @@
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B4%A8%E6%95%B0"><span class="nav-text">质数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%95%E9%99%A4%E6%B3%95-%E5%88%A4%E5%AE%9A-osqrtn"><span class="nav-text">试除法-判定 O(sqrt(n))</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%95%E9%99%A4%E6%B3%95-%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0-olog-n---osqrtn"><span class="nav-text">试除法-分解质因数 O(log n) -
-O(sqrt(n))</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%B4%E7%B4%A0%E7%AD%9B%E6%B3%95%E6%B1%82%E7%B4%A0%E6%95%B0"><span class="nav-text">朴素筛法求素数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%AD%9B%E6%B3%95%E6%B1%82%E7%B4%A0%E6%95%B0"><span class="nav-text">线性筛法求素数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%95%E9%99%A4%E6%B3%95%E6%B1%82%E7%BA%A6%E6%95%B0"><span class="nav-text">试除法求约数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="nav-text">快速幂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gcd-%E6%9C%80%E5%A4%A7%E5%85%B1%E5%9B%A0%E5%AD%90"><span class="nav-text">GCD 最大共因子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></div>
+O(sqrt(n))</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%B4%E7%B4%A0%E7%AD%9B%E6%B3%95%E6%B1%82%E7%B4%A0%E6%95%B0"><span class="nav-text">朴素筛法求素数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%AD%9B%E6%B3%95%E6%B1%82%E7%B4%A0%E6%95%B0"><span class="nav-text">线性筛法求素数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%95%E9%99%A4%E6%B3%95%E6%B1%82%E7%BA%A6%E6%95%B0"><span class="nav-text">试除法求约数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0"><span class="nav-text">求欧拉函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%9B%E6%B3%95%E6%B1%82%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0"><span class="nav-text">筛法求欧拉函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%95%E4%B8%80"><span class="nav-text">法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%95%E4%BA%8C"><span class="nav-text">法二</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="nav-text">快速幂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gcd-%E6%9C%80%E5%A4%A7%E5%85%B1%E5%9B%A0%E5%AD%90"><span class="nav-text">GCD 最大共因子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -163,7 +163,7 @@ O(sqrt(n))</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" h
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -261,7 +261,7 @@ O(sqrt(n))</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" h
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-05 18:19:20" itemprop="dateModified" datetime="2023-10-05T18:19:20+08:00">2023-10-05</time>
+      <time title="修改时间：2023-10-06 21:37:24" itemprop="dateModified" datetime="2023-10-06T21:37:24+08:00">2023-10-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -291,14 +291,14 @@ O(sqrt(n))</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" h
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>476</span>
+      <span>872</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -322,6 +322,28 @@ O(sqrt(n))</h2>
 <p>介绍参考文末引用文章</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> primes[N], cnt;     <span class="comment">// primes[]存储所有素数</span></span><br><span class="line"><span class="type">bool</span> st[N];         <span class="comment">// st[x]存储x是否被筛掉</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_primes</span><span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!st[i]) primes[cnt ++ ] = i; <span class="comment">//记录素数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; primes[j] &lt;= n / i; j ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            st[primes[j] * i] = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % primes[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="试除法求约数">试除法求约数</h2>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">get_divisors</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= x / i; i ++ )</span><br><span class="line">        <span class="keyword">if</span> (x % i == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(i);</span><br><span class="line">            <span class="keyword">if</span> (i != x / i) res.<span class="built_in">push_back</span>(x / i);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">sort</span>(res.<span class="built_in">begin</span>(), res.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="求欧拉函数">求欧拉函数</h2>
+<p>欧拉函数是求小于等于n的数中与n互质的数的数目</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">phi</span><span class="params">(<span class="type">int</span> x)</span> <span class="comment">// phi 是欧拉函数/fa/读音</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> res = x;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= x / i; i ++ )</span><br><span class="line">        <span class="keyword">if</span> (x % i == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            res = res / i * (i - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> (x % i == <span class="number">0</span>) x /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; <span class="number">1</span>) res = res / x * (x - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="筛法求欧拉函数">筛法求欧拉函数</h2>
+<h3 id="法一">法一</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> primes[N], cnt;     <span class="comment">// primes[]存储所有素数</span></span><br><span class="line"><span class="type">int</span> euler[N];           <span class="comment">// 存储每个数的欧拉函数</span></span><br><span class="line"><span class="type">bool</span> st[N];         <span class="comment">// st[x]存储x是否被筛掉</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_eulers</span><span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    euler[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!st[i])</span><br><span class="line">        &#123;</span><br><span class="line">            primes[cnt ++ ] = i;</span><br><span class="line">            euler[i] = i - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; primes[j] &lt;= n / i; j ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> t = primes[j] * i;</span><br><span class="line">            st[t] = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % primes[j] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                euler[t] = euler[i] * primes[j];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            euler[t] = euler[i] * (primes[j] - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="法二">法二</h3>
+<p>来自<a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/linyujun/p/5194170.html">博客园</a></p>
+<p>需要用到如下性质</p>
+<p>p为质数</p>
+<ol type="1">
+<li><p><span class="math inline">\(phi(p)=p-1\)</span> 因为质数 p 除了 1
+以外的因数只有 p，故 1 至 p 的整数只有 p 与 p 不互质</p></li>
+<li><p>如果i mod p = 0, 那么 <span class="math inline">\(phi(i *
+p)=phi(i) * p\)</span></p></li>
+<li><p>若i mod p ≠0, 那么 <span class="math inline">\(phi( i * p
+)=phi(i) * ( p-1 )\)</span></p></li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span>+<span class="number">10</span> ;</span><br><span class="line"><span class="type">int</span> phi[N], prime[N];</span><br><span class="line"><span class="type">int</span> tot;<span class="comment">//tot计数，表示prime[N]中有多少质数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Euler</span><span class="params">()</span></span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt; N; i ++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!phi[i])&#123;</span><br><span class="line">            phi[i] = i<span class="number">-1</span>;</span><br><span class="line">            prime[tot ++] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; tot &amp;&amp; <span class="number">1ll</span>*i*prime[j] &lt; N; j ++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i % prime[j]) phi[i * prime[j]] = phi[i] * (prime[j]<span class="number">-1</span>);</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                phi[i * prime[j] ] = phi[i] * prime[j];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">Euler</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
 <h1 id="快速幂">快速幂</h1>
 <p>原理：<span class="math inline">\(A^{n}=(A^{n/2})^2\)</span></p>
 <ul>
@@ -339,7 +361,7 @@ O(sqrt(n))</h2>
 <p>可扩展至 gcd(a,b,c,...,n)</p>
 <h1 id="参考">参考</h1>
 <ol type="1">
-<li>AcWing</li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/blog/content/406/">AcWing</a></li>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/100051075">素数筛 -
 知乎Pecco用户</a></li>
 </ol>
@@ -416,13 +438,13 @@ O(sqrt(n))</h2>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">40k</span>
+    <span title="站点总字数">43k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:26</span>
+    <span title="站点阅读时长">2:37</span>
   </span>
 </div>
 <div class="busuanzi-count">
