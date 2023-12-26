@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#for%E5%BE%AA%E7%8E%AFC-11"><span class="nav-text">for循环C++11</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2"><span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#zero-initializer"><span class="nav-text">zero-initializer</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#for%E5%BE%AA%E7%8E%AFc11"><span class="nav-text">for循环C++11</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2"><span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#zero-initializer"><span class="nav-text">zero-initializer</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -310,22 +310,20 @@
     <div class="post-body" itemprop="articleBody">
         <p>目前还在学习阶段，此贴无参考价值（2023 06 03）</p>
 <span id="more"></span>
-
-<h1 id="for循环C-11"><a href="#for循环C-11" class="headerlink" title="for循环C++11"></a>for循环C++11</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the C++03 way</span></span><br><span class="line"><span class="keyword">for</span> (std::vector&lt;<span class="type">int</span>&gt;::const_iterator ci = v.<span class="built_in">begin</span>(); ci != v.<span class="built_in">end</span>(); ++ci);</span><br><span class="line"></span><br><span class="line"><span class="comment">// the C++11 way</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> ci = v.<span class="built_in">cbegin</span>(); ci != v.<span class="built_in">cend</span>(); ++ci);</span><br></pre></td></tr></table></figure>
-
-
+<h1 id="for循环c11">for循环C++11</h1>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the C++03 way</span></span><br><span class="line"><span class="keyword">for</span> (std::vector&lt;<span class="type">int</span>&gt;::const_iterator ci = v.<span class="built_in">begin</span>(); ci != v.<span class="built_in">end</span>(); ++ci);</span><br><span class="line"></span><br><span class="line"><span class="comment">// the C++11 way</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> ci = v.<span class="built_in">cbegin</span>(); ci != v.<span class="built_in">cend</span>(); ++ci);</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span>&amp; elem : container) <span class="comment">//将迭代器元素的地址</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; elem : container) </span><br></pre></td></tr></table></figure>
-
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> x : v) <span class="comment">//copy元素的值</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h1><p><code>binary_search(val)</code>二分搜索;</p>
-<p><code>lower_bound(val)</code>返回第一个<code>&gt;=</code> <code>val</code>的迭代器;</p>
-<p><code>upper_bound(val)</code>返回第一个<code>&gt;</code> <code>val</code>的迭代器</p>
-<h1 id="zero-initializer"><a href="#zero-initializer" class="headerlink" title="zero-initializer"></a>zero-initializer</h1><p>C++支持数组0-初始化</p>
+<h1 id="搜索">搜索</h1>
+<p><code>binary_search(val)</code>二分搜索;</p>
+<p><code>lower_bound(val)</code>返回第一个<code>&gt;=</code>
+<code>val</code>的迭代器;</p>
+<p><code>upper_bound(val)</code>返回第一个<code>&gt;</code>
+<code>val</code>的迭代器</p>
+<h1 id="zero-initializer">zero-initializer</h1>
+<p>C++支持数组0-初始化</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> boolArray[ARRAY_SIZE] = &#123; <span class="number">0</span> &#125;;<span class="comment">//等效于memset(boolArray,0,sizeof(Array));</span></span><br><span class="line"><span class="type">char</span> myarray[ARRAY_SIZE] = &#123;<span class="number">0</span>&#125;<span class="comment">//全部是字符0</span></span><br><span class="line"><span class="type">char</span>* myPtrArray[ARRAY_SIZE] = &#123; <span class="number">0</span> &#125;;<span class="comment">//空指针</span></span><br></pre></td></tr></table></figure>
-
 <p>但是不支持其他数值初始化</p>
 
     </div>
@@ -406,7 +404,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:33</span>
+    <span title="站点阅读时长">2:34</span>
   </span>
 </div>
 <div class="busuanzi-count">
