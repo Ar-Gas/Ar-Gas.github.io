@@ -26,12 +26,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#3216B0","save":"auto","position":"right"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="前言2024新年伊始，我也到了要准备工作的时候了，我计划开始写一篇长篇的C++面经整理，记录看到的点滴面经。  目录：（一级标题：知识框架；二级标题：知识领域；三级标题：面试问题：四级：内容）  C++语言 特性 原理 内存安全   工具 算法题 Linux 操作系统 计算机网络 设计模式 测试调优 数据库原理   C++语言特性C++11有哪些特性？C++20有哪些特性？原理cpp编译一般经过几">
+    <meta name="description" content="前言 2024新年伊始，我也到了要准备工作的时候了，我计划开始写一篇长篇的C++面经整理，记录看到的点滴面经。  目录：（一级标题：知识框架；二级标题：知识领域；三级标题：面试问题：四级：内容）  C++语言  特性 原理 内存安全  工具 算法题 Linux 操作系统 计算机网络 设计模式 测试调优 数据库原理   C++语言 特性 C++11有哪些">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++面经整理">
 <meta property="og:url" content="https://ar-gas.github.io/post/C++%E9%9D%A2%E7%BB%8F%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="前言2024新年伊始，我也到了要准备工作的时候了，我计划开始写一篇长篇的C++面经整理，记录看到的点滴面经。  目录：（一级标题：知识框架；二级标题：知识领域；三级标题：面试问题：四级：内容）  C++语言 特性 原理 内存安全   工具 算法题 Linux 操作系统 计算机网络 设计模式 测试调优 数据库原理   C++语言特性C++11有哪些特性？C++20有哪些特性？原理cpp编译一般经过几">
+<meta property="og:description" content="前言 2024新年伊始，我也到了要准备工作的时候了，我计划开始写一篇长篇的C++面经整理，记录看到的点滴面经。  目录：（一级标题：知识框架；二级标题：知识领域；三级标题：面试问题：四级：内容）  C++语言  特性 原理 内存安全  工具 算法题 Linux 操作系统 计算机网络 设计模式 测试调优 数据库原理   C++语言 特性 C++11有哪些">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-01T06:32:00.000Z">
 <meta property="article:modified_time" content="2024-01-01T06:45:45.707Z">
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E8%AF%AD%E8%A8%80"><span class="nav-text">C++语言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7"><span class="nav-text">特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-11%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E6%80%A7%EF%BC%9F"><span class="nav-text">C++11有哪些特性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-20%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E6%80%A7%EF%BC%9F"><span class="nav-text">C++20有哪些特性？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cpp%E7%BC%96%E8%AF%91%E4%B8%80%E8%88%AC%E7%BB%8F%E8%BF%87%E5%87%A0%E4%B8%AA%E6%AD%A5%E9%AA%A4"><span class="nav-text">cpp编译一般经过几个步骤?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%AE%89%E5%85%A8"><span class="nav-text">内存安全</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7"><span class="nav-text">工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMake"><span class="nav-text">CMake</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98"><span class="nav-text">算法题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux"><span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-text">操作系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-text">计算机网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%B0%83%E4%BC%98"><span class="nav-text">测试调优</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86"><span class="nav-text">数据库原理</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c%E8%AF%AD%E8%A8%80"><span class="nav-text">C++语言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7"><span class="nav-text">特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c11%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E6%80%A7"><span class="nav-text">C++11有哪些特性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c20%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E6%80%A7"><span class="nav-text">C++20有哪些特性？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cpp%E7%BC%96%E8%AF%91%E4%B8%80%E8%88%AC%E7%BB%8F%E8%BF%87%E5%87%A0%E4%B8%AA%E6%AD%A5%E9%AA%A4"><span class="nav-text">cpp编译一般经过几个步骤?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%AE%89%E5%85%A8"><span class="nav-text">内存安全</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7"><span class="nav-text">工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql"><span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmake"><span class="nav-text">CMake</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98"><span class="nav-text">算法题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux"><span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-text">操作系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-text">计算机网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%B0%83%E4%BC%98"><span class="nav-text">测试调优</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86"><span class="nav-text">数据库原理</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -298,16 +298,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>2024新年伊始，我也到了要准备工作的时候了，我计划开始写一篇长篇的C++面经整理，记录看到的点滴面经。</p>
+        <h1 id="前言">前言</h1>
+<p>2024新年伊始，我也到了要准备工作的时候了，我计划开始写一篇长篇的C++面经整理，记录看到的点滴面经。</p>
 <blockquote>
 <p>目录：（一级标题：知识框架；二级标题：知识领域；三级标题：面试问题：四级：内容）</p>
 <ul>
-<li>C++语言<ul>
+<li>C++语言
+<ul>
 <li>特性</li>
 <li>原理</li>
 <li>内存安全</li>
-</ul>
-</li>
+</ul></li>
 <li>工具</li>
 <li>算法题</li>
 <li>Linux</li>
@@ -318,20 +319,36 @@
 <li>数据库原理</li>
 </ul>
 </blockquote>
-<h1 id="C-语言"><a href="#C-语言" class="headerlink" title="C++语言"></a>C++语言</h1><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><h3 id="C-11有哪些特性？"><a href="#C-11有哪些特性？" class="headerlink" title="C++11有哪些特性？"></a>C++11有哪些特性？</h3><h3 id="C-20有哪些特性？"><a href="#C-20有哪些特性？" class="headerlink" title="C++20有哪些特性？"></a>C++20有哪些特性？</h3><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h3 id="cpp编译一般经过几个步骤"><a href="#cpp编译一般经过几个步骤" class="headerlink" title="cpp编译一般经过几个步骤?"></a>cpp编译一般经过几个步骤?</h3><ol>
-<li><p>预处理阶段：在这个阶段，预处理器处理源文件中的预处理指令，比如 <code>#include</code>、<code>#define</code> 等。预处理器会根据这些指令展开头文件并替换宏定义，生成一个经过预处理的源文件。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">g++ -E source.cpp -o source.ii</span></span><br></pre></td></tr></table></figure>
-</li>
+<h1 id="c语言">C++语言</h1>
+<h2 id="特性">特性</h2>
+<h3 id="c11有哪些特性">C++11有哪些特性？</h3>
+<h3 id="c20有哪些特性">C++20有哪些特性？</h3>
+<h2 id="原理">原理</h2>
+<h3 id="cpp编译一般经过几个步骤">cpp编译一般经过几个步骤?</h3>
+<ol type="1">
+<li><p>预处理阶段：在这个阶段，预处理器处理源文件中的预处理指令，比如
+<code>#include</code>、<code>#define</code>
+等。预处理器会根据这些指令展开头文件并替换宏定义，生成一个经过预处理的源文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">g++ -E source.cpp -o source.ii</span></span><br></pre></td></tr></table></figure></li>
 <li><p>编译阶段：编译器将预处理后的源文件转换成汇编代码。在这个阶段，编译器会对源文件进行词法分析、语法分析和语义分析，并生成相应的中间代码或汇编代码。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">g++ -S source.ii -o source.s</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">g++ -S source.ii -o source.s</span></span><br></pre></td></tr></table></figure></li>
 <li><p>汇编阶段：汇编器将汇编代码转换成机器码或者目标文件。在这个阶段，汇编器会将汇编代码转换成可重定位的机器码，并生成目标文件。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">as source.s -o source.o</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">as source.s -o source.o</span></span><br></pre></td></tr></table></figure></li>
 <li><p>链接阶段：链接器将目标文件和库文件链接在一起，生成最终的可执行文件。在这个阶段，链接器会解析目标文件之间的引用关系，将它们连接到正确的位置上，并将库文件中的函数和变量链接到可执行文件中。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">g++ source.o -o executable</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="内存安全"><a href="#内存安全" class="headerlink" title="内存安全"></a>内存安全</h2><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h2 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h2><h1 id="算法题"><a href="#算法题" class="headerlink" title="算法题"></a>算法题</h1><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h1 id="测试调优"><a href="#测试调优" class="headerlink" title="测试调优"></a>测试调优</h1><h1 id="数据库原理"><a href="#数据库原理" class="headerlink" title="数据库原理"></a>数据库原理</h1>
+<h2 id="内存安全">内存安全</h2>
+<h1 id="工具">工具</h1>
+<h2 id="mysql">MySQL</h2>
+<h2 id="cmake">CMake</h2>
+<h1 id="算法题">算法题</h1>
+<h1 id="linux">Linux</h1>
+<h1 id="操作系统">操作系统</h1>
+<h1 id="计算机网络">计算机网络</h1>
+<h1 id="设计模式">设计模式</h1>
+<h1 id="测试调优">测试调优</h1>
+<h1 id="数据库原理">数据库原理</h1>
+
     </div>
 
     
