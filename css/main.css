@@ -2875,3 +2875,6 @@ body {
   margin-bottom: 60px;
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
+.post {
+  color: #000;
+}
