@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#644AD8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3D2D84" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#644AD8">
+  <meta name="google-site-verification" content="voHlKjw9ogaqJPKhkki4lYDnQ9ZyvmdsRJ912_DMcdk">
+  <meta name="msvalidate.01" content="F6014B0223A8A6F76A96AF3BEB33DD82">
+  <meta name="baidu-site-verification" content="codeva-rlnUxmK8sn">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300italic,400,400italic,700,700italic%7CSF+Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#3216B0","save":"auto","position":"right"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="原文：Introduction to the A* Algorithm，本文略有改动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A*算法">
+<meta property="og:url" content="https://ar-gas.github.io/post/A-star%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="Ar Gas&#39;Blog">
+<meta property="og:description" content="原文：Introduction to the A* Algorithm，本文略有改动">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://private-user-images.githubusercontent.com/111374823/303946478-1f1fbec0-7cde-47f9-aa47-6d188817ff37.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDc2ODQ1MTAsIm5iZiI6MTcwNzY4NDIxMCwicGF0aCI6Ii8xMTEzNzQ4MjMvMzAzOTQ2NDc4LTFmMWZiZWMwLTdjZGUtNDdmOS1hYTQ3LTZkMTg4ODE3ZmYzNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDIxMVQyMDQzMzBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wZWE3NTZjYzUyMWUyZWRlYjFlNzAzYTc5MTRjMjAyNTQwNzdkZjk1OTMyZGNiYjQ1MDIwYjk3OGU0M2VlNGY0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.6kAgSD0fmJHlVQWpoSN57SCyBdLB4N6eMt6jXsryOik">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/5/5d/Astar_progress_animation.gif">
+<meta property="article:published_time" content="2024-02-12T04:54:00.000Z">
+<meta property="article:modified_time" content="2024-02-12T04:59:11.472Z">
+<meta property="article:author" content="Ar Gas">
+<meta property="article:tag" content="algrithm&#x2F;算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://private-user-images.githubusercontent.com/111374823/303946478-1f1fbec0-7cde-47f9-aa47-6d188817ff37.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDc2ODQ1MTAsIm5iZiI6MTcwNzY4NDIxMCwicGF0aCI6Ii8xMTEzNzQ4MjMvMzAzOTQ2NDc4LTFmMWZiZWMwLTdjZGUtNDdmOS1hYTQ3LTZkMTg4ODE3ZmYzNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDIxMVQyMDQzMzBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wZWE3NTZjYzUyMWUyZWRlYjFlNzAzYTc5MTRjMjAyNTQwNzdkZjk1OTMyZGNiYjQ1MDIwYjk3OGU0M2VlNGY0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.6kAgSD0fmJHlVQWpoSN57SCyBdLB4N6eMt6jXsryOik">
+
+
+<link rel="canonical" href="https://ar-gas.github.io/post/A-star%E7%AE%97%E6%B3%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ar-gas.github.io/post/A-star%E7%AE%97%E6%B3%95/","path":"post/A-star算法/","title":"A*算法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>A*算法 | Ar Gas'Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Ar Gas'Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">比昨天多做一点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">29</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">62</span></a></li><li class="menu-item menu-item-update"><a href="/update/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新动态</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2"><span class="nav-text">广度优先搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E5%89%8D%E9%80%80%E5%87%BA"><span class="nav-text">提前退出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E8%8A%B1%E8%B4%B9"><span class="nav-text">移动花费</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8F%91%E5%BC%8F%E6%90%9C%E7%B4%A2"><span class="nav-text">启发式搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-%E7%AE%97%E6%B3%95"><span class="nav-text">A*算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-text">参考链接</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ar Gas"
+      src="/images/head.png">
+  <p class="site-author-name" itemprop="name">Ar Gas</p>
+  <div class="site-description" itemprop="description">我是这个博客的作者，QQ：2934060590，微信zyq2934060590</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Ar-Gas" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Ar-Gas" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/2934060590@qq.com" title="E-Mail → 2934060590@qq.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.cnblogs.com/kuangbin/" title="https:&#x2F;&#x2F;www.cnblogs.com&#x2F;kuangbin&#x2F;" rel="noopener" target="_blank">Kuangbin</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ar-gas.github.io/post/A-star%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Ar Gas">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ar Gas'Blog">
+      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="A*算法 | Ar Gas'Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          A*算法
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-02-12 12:54:00 / 修改时间：12:59:11" itemprop="dateCreated datePublished" datetime="2024-02-12T12:54:00+08:00">2024-02-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="https://private-user-images.githubusercontent.com/111374823/303946478-1f1fbec0-7cde-47f9-aa47-6d188817ff37.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDc2ODQ1MTAsIm5iZiI6MTcwNzY4NDIxMCwicGF0aCI6Ii8xMTEzNzQ4MjMvMzAzOTQ2NDc4LTFmMWZiZWMwLTdjZGUtNDdmOS1hYTQ3LTZkMTg4ODE3ZmYzNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDIxMVQyMDQzMzBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wZWE3NTZjYzUyMWUyZWRlYjFlNzAzYTc5MTRjMjAyNTQwNzdkZjk1OTMyZGNiYjQ1MDIwYjk3OGU0M2VlNGY0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.6kAgSD0fmJHlVQWpoSN57SCyBdLB4N6eMt6jXsryOik" alt="image"></p>
+<p>原文：<a target="_blank" rel="noopener" href="https://www.redblobgames.com/pathfinding/a-star/introduction.html">Introduction to the A* Algorithm</a>，本文略有改动</p>
+<span id="more"></span>
+
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>A* 算法是对 Dijkstra 算法的修改，针对单个目的地进行了优化。 Dijkstra算法可以找到到达所有地点的路径； A* 查找到一个位置或多个位置中最近的位置的路径。它优先考虑那些似乎更接近目标的路径。</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>A*基于Djikstra算法和BFS优化而来：</p>
+<h2 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h2><p>实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">frontier = Queue()</span><br><span class="line">frontier.put(start) <span class="comment"># ※</span></span><br><span class="line">reached = <span class="built_in">set</span>()</span><br><span class="line">reached.add(start)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> frontier.empty():</span><br><span class="line">   current = frontier.get()</span><br><span class="line">   <span class="keyword">for</span> <span class="built_in">next</span> <span class="keyword">in</span> graph.neighbors(current):</span><br><span class="line">      <span class="keyword">if</span> <span class="built_in">next</span> <span class="keyword">not</span> <span class="keyword">in</span> reached:</span><br><span class="line">         frontier.put(<span class="built_in">next</span>)</span><br><span class="line">         reached.add(<span class="built_in">next</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这里循环实际上并不构建路径；而是构建路径。它只告诉我们如何访问地图上的所有内容。这是因为广度优先搜索的用途不仅仅是查找路径；它还可以用于其他用途。</p>
+<p>所以让我们修改循环以跟踪我们到达的每个位置的来源，并将 <code>reached</code> 集重命名为 <code>came_from</code> 表（表的键为已到达的集合）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">frontier = Queue()</span><br><span class="line">frontier.put(start) <span class="comment"># ※</span></span><br><span class="line">came_from = <span class="built_in">dict</span>() <span class="comment"># path A-&gt;B is stored as came_from[B] == A</span></span><br><span class="line">came_from[start] = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> frontier.empty():</span><br><span class="line">   current = frontier.get()</span><br><span class="line">   <span class="keyword">for</span> <span class="built_in">next</span> <span class="keyword">in</span> graph.neighbors(current):</span><br><span class="line">      <span class="keyword">if</span> <span class="built_in">next</span> <span class="keyword">not</span> <span class="keyword">in</span> came_from:</span><br><span class="line">         frontier.put(<span class="built_in">next</span>)</span><br><span class="line">         came_from[<span class="built_in">next</span>] = current</span><br></pre></td></tr></table></figure>
+
+<p>现在每个位置的 <code>came_from</code> 都指向我们来自的地方。这些就像“面包屑”。它们足以重建整个路径。移动十字，看看如何按照箭头方向返回到起始位置的反向路径。</p>
+<p>重建路径的代码很简单：沿着箭头从目标向后到起点。路径是一系列边，但通常更容易存储节点：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">current = goal <span class="comment"># ×</span></span><br><span class="line">path = []</span><br><span class="line"><span class="keyword">while</span> current != start: <span class="comment"># ※</span></span><br><span class="line">   path.append(current)</span><br><span class="line">   current = came_from[current]</span><br><span class="line">path.append(start) <span class="comment"># optional</span></span><br><span class="line">path.reverse() <span class="comment"># optional</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="提前退出"><a href="#提前退出" class="headerlink" title="提前退出"></a>提前退出</h2><p>一旦我们找到了目标，我们就可以停止扩大边界，只需简单修改：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> current == goal: <span class="comment"># ×</span></span><br><span class="line">   <span class="keyword">break</span>           </span><br></pre></td></tr></table></figure>
+
+<p>完整代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">frontier = Queue()</span><br><span class="line">frontier.put(start) <span class="comment"># ※</span></span><br><span class="line">came_from = <span class="built_in">dict</span>()</span><br><span class="line">came_from[start] = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> frontier.empty():</span><br><span class="line">   current = frontier.get()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> current == goal:  <span class="comment"># ×</span></span><br><span class="line">      <span class="keyword">break</span>           </span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> <span class="built_in">next</span> <span class="keyword">in</span> graph.neighbors(current):</span><br><span class="line">      <span class="keyword">if</span> <span class="built_in">next</span> <span class="keyword">not</span> <span class="keyword">in</span> came_from:</span><br><span class="line">         frontier.put(<span class="built_in">next</span>)</span><br><span class="line">         came_from[<span class="built_in">next</span>] = current</span><br></pre></td></tr></table></figure>
+
+<h2 id="移动花费"><a href="#移动花费" class="headerlink" title="移动花费"></a>移动花费</h2><p>在某些寻路场景中，不同类型的移动有不同的成本。例如，在《文明》中，穿过平原或沙漠可能需要 1 个移动点，但穿过森林或丘陵可能需要 5 个移动点。为此，我们需要 Dijkstra 算法（或统一成本搜索）跟踪移动成本，因此让我们添加一个新变量 <code>cost_so_far</code> 来跟踪从起始位置开始的总移动成本。、</p>
+<p>我们最终可能会多次访问一个位置，且成本不同，因此我们需要稍微改变一下逻辑。如果某个位置从未到达过，我们不会将其添加到边界，而是如果到达该位置的新路径比之前的最佳路径更好，我们将添加它：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">frontier = PriorityQueue() <span class="comment"># 改动</span></span><br><span class="line">frontier.put(start, <span class="number">0</span>) <span class="comment"># ※</span></span><br><span class="line">came_from = <span class="built_in">dict</span>()</span><br><span class="line">cost_so_far = <span class="built_in">dict</span>()</span><br><span class="line">came_from[start] = <span class="literal">None</span></span><br><span class="line">cost_so_far[start] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> frontier.empty():</span><br><span class="line">   current = frontier.get()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> current == goal: <span class="comment"># ×</span></span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">   </span><br><span class="line">   <span class="comment"># 选择最小的成本</span></span><br><span class="line">   <span class="keyword">for</span> <span class="built_in">next</span> <span class="keyword">in</span> graph.neighbors(current):</span><br><span class="line">      new_cost = cost_so_far[current] + graph.cost(current, <span class="built_in">next</span>) <span class="comment"># 改动</span></span><br><span class="line">      <span class="keyword">if</span> <span class="built_in">next</span> <span class="keyword">not</span> <span class="keyword">in</span> cost_so_far <span class="keyword">or</span> new_cost &lt; cost_so_far[<span class="built_in">next</span>]: <span class="comment"># 改动</span></span><br><span class="line">         cost_so_far[<span class="built_in">next</span>] = new_cost <span class="comment"># 改动</span></span><br><span class="line">         priority = new_cost          <span class="comment"># 改动</span></span><br><span class="line">         frontier.put(<span class="built_in">next</span>, priority) <span class="comment"># 改动</span></span><br><span class="line">         came_from[<span class="built_in">next</span>] = current</span><br></pre></td></tr></table></figure>
+
+<p>使用优先级队列代替常规队列改变了边界扩展的方式。</p>
+<p>1 以外的移动成本使我们能够探索更有趣的图形，而不仅仅是网格。在页面顶部的地图中，移动成本取决于房间之间的距离。移动成本还可用于根据与敌人或盟友的接近程度来避开或优先选择区域。</p>
+<h2 id="启发式搜索"><a href="#启发式搜索" class="headerlink" title="启发式搜索"></a>启发式搜索</h2><p>通过广度优先搜索和 Dijkstra 算法，边界向各个方向扩展。如果您试图找到通往所有位置或许多位置的路径，这是一个合理的选择。然而，一种常见的情况是找到一条仅到达一个位置的路径。让我们向目标扩展边界，而不是向其他方向扩展。首先，我们将定义一个启发式函数，它告诉我们距离目标有多近。：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">heuristic</span>(<span class="params">a, b</span>):</span><br><span class="line">   <span class="comment"># Manhattan distance on a square grid</span></span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">abs</span>(a.x - b.x) + <span class="built_in">abs</span>(a.y - b.y) </span><br></pre></td></tr></table></figure>
+
+<p>在 Dijkstra 算法中，我们使用距起点的实际距离来进行优先级队列排序。相反，在贪婪最佳优先搜索中，我们将使用到目标的估计距离来进行优先级队列排序。将首先探索最接近目标的位置。该代码使用 Dijkstra 算法中的优先级队列，但没有 <code>cost_so_far</code> ：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">frontier = PriorityQueue()</span><br><span class="line">frontier.put(start, <span class="number">0</span>)<span class="comment"># ※</span></span><br><span class="line">came_from = <span class="built_in">dict</span>()</span><br><span class="line">came_from[start] = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> frontier.empty():</span><br><span class="line">   current = frontier.get()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> current == goal: <span class="comment"># ×</span></span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">   </span><br><span class="line">   <span class="keyword">for</span> <span class="built_in">next</span> <span class="keyword">in</span> graph.neighbors(current):</span><br><span class="line">      <span class="keyword">if</span> <span class="built_in">next</span> <span class="keyword">not</span> <span class="keyword">in</span> came_from:</span><br><span class="line">         priority = heuristic(goal, <span class="built_in">next</span>) <span class="comment"># 改动</span></span><br><span class="line">         frontier.put(<span class="built_in">next</span>, priority)</span><br><span class="line">         came_from[<span class="built_in">next</span>] = current</span><br></pre></td></tr></table></figure>
+
+<p>很显然，这些路径并不是最短的。当障碍物不多时，该算法运行得更快，但路径不太好。我们可以解决这个问题吗？是的！</p>
+<h2 id="A-算法"><a href="#A-算法" class="headerlink" title="A*算法"></a>A*算法</h2><p>Dijkstra 算法可以很好地找到最短路径，但它会浪费时间探索没有希望的方向。贪婪最佳优先搜索朝有希望的方向探索，但它可能找不到最短路径。 A* 算法同时使用距起点的实际距离和距目标的估计距离。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">frontier = PriorityQueue()</span><br><span class="line">frontier.put(start, <span class="number">0</span>) <span class="comment"># ※</span></span><br><span class="line">came_from = <span class="built_in">dict</span>()</span><br><span class="line">cost_so_far = <span class="built_in">dict</span>()</span><br><span class="line">came_from[start] = <span class="literal">None</span></span><br><span class="line">cost_so_far[start] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> frontier.empty():</span><br><span class="line">   current = frontier.get()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> current == goal: <span class="comment"># ×</span></span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">   </span><br><span class="line">   <span class="keyword">for</span> <span class="built_in">next</span> <span class="keyword">in</span> graph.neighbors(current):</span><br><span class="line">      new_cost = cost_so_far[current] + graph.cost(current, <span class="built_in">next</span>)</span><br><span class="line">      <span class="keyword">if</span> <span class="built_in">next</span> <span class="keyword">not</span> <span class="keyword">in</span> cost_so_far <span class="keyword">or</span> new_cost &lt; cost_so_far[<span class="built_in">next</span>]:</span><br><span class="line">         cost_so_far[<span class="built_in">next</span>] = new_cost</span><br><span class="line">         priority = new_cost + heuristic(goal, <span class="built_in">next</span>) <span class="comment"># 改动</span></span><br><span class="line">         frontier.put(<span class="built_in">next</span>, priority)</span><br><span class="line">         came_from[<span class="built_in">next</span>] = current</span><br></pre></td></tr></table></figure>
+
+<p>A* 是两全其美的。只要启发式算法不会高估距离，A* 就会找到一条最佳路径，就像 Dijkstra 算法一样。 A* 使用启发式方法对节点进行重新排序，以便更有可能更快地遇到目标节点。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Astar_progress_animation.gif" alt="img"></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>本文翻译自：<a target="_blank" rel="noopener" href="https://www.redblobgames.com/pathfinding/a-star/introduction.html">A*算法简介</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Ar Gas
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://ar-gas.github.io/post/A-star%E7%AE%97%E6%B3%95/" title="A*算法">https://ar-gas.github.io/post/A-star算法/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/CC%20BY-NC-SA%204.0/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/algrithm-%E7%AE%97%E6%B3%95/" rel="tag"># algrithm/算法</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/%E8%B5%84%E6%BA%90%E5%AF%BC%E8%88%AA/" rel="prev" title="资源导航">
+                  <i class="fa fa-chevron-left"></i> 资源导航
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="next" title="并查集">
+                  并查集 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ar Gas</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">45k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:43</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/Ar-Gas" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Ar-Gas","repo":"gitalk","client_id":"b6ad64a6eeb6c11a235b","client_secret":"4bf35376d6004a4aedd68d11bfe5c3d29a521c00","admin_user":"Ar-Gas","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"3d674f4a489043623c7d9270ece369ab"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
