@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#644AD8" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#3D2D84" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<meta name="theme-color" content="#644AD8"><meta name="generator" content="Hexo 6.3.0">
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -24,18 +23,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#3216B0","save":"auto","position":"right"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ar-gas.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#3216B0","save":"auto","position":"right"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="参考文章浅谈线段树 线段树 优点：较快完成区间更新和查询 缺点：空间大(2n - 4n)  代码实现">
+    <meta name="description" content="参考文章浅谈线段树 线段树线段树是基于分治思想的二叉树，用于维护区间信息（区间和、区间最值、区间GCD等），可以在logn的时间内执行区间修改和区间查询。 线段树中每个叶子节点储存元素本身，非子叶节点存储区间内元素的统计值。  优点：较快完成区间更新和查询 缺点：空间大(2n - 4n)  代码实现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线段树">
 <meta property="og:url" content="https://ar-gas.github.io/post/%E7%BA%BF%E6%AE%B5%E6%A0%91/index.html">
 <meta property="og:site_name" content="Ar Gas&#39;Blog">
-<meta property="og:description" content="参考文章浅谈线段树 线段树 优点：较快完成区间更新和查询 缺点：空间大(2n - 4n)  代码实现">
+<meta property="og:description" content="参考文章浅谈线段树 线段树线段树是基于分治思想的二叉树，用于维护区间信息（区间和、区间最值、区间GCD等），可以在logn的时间内执行区间修改和区间查询。 线段树中每个叶子节点储存元素本身，非子叶节点存储区间内元素的统计值。  优点：较快完成区间更新和查询 缺点：空间大(2n - 4n)  代码实现">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-06T04:54:00.000Z">
-<meta property="article:modified_time" content="2023-10-06T11:12:50.586Z">
-<meta property="article:author" content="Ar Gas">
+<meta property="article:modified_time" content="2024-03-17T06:13:09.993Z">
+<meta property="article:author" content="Ar Gas（氩气）">
 <meta property="article:tag" content="algrithm&#x2F;算法">
 <meta name="twitter:card" content="summary">
 
@@ -83,7 +82,7 @@
       <p class="site-title">Ar Gas'Blog</p>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">比昨天多做一点</p>
+      <p class="site-subtitle" itemprop="description">学以不知也，技以实践也，比昨天多做一点！</p>
   </div>
 
   <div class="site-nav-right">
@@ -96,7 +95,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">29</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">62</span></a></li><li class="menu-item menu-item-update"><a href="/update/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新动态</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于作者</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">18</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">30</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">64</span></a></li><li class="menu-item menu-item-update"><a href="/update/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新动态</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -153,22 +152,22 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Ar Gas"
+    <img class="site-author-image" itemprop="image" alt="Ar Gas（氩气）"
       src="/images/head.png">
-  <p class="site-author-name" itemprop="name">Ar Gas</p>
-  <div class="site-description" itemprop="description">我是这个博客的作者，QQ：2934060590，微信zyq2934060590</div>
+  <p class="site-author-name" itemprop="name">Ar Gas（氩气）</p>
+  <div class="site-description" itemprop="description">非常感谢您的浏览，您的关注是对我最大的支持！请用以下方式联系我：Email：2934060590@qq.com</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -228,12 +227,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Ar Gas">
+      <meta itemprop="name" content="Ar Gas（氩气）">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Ar Gas'Blog">
-      <meta itemprop="description" content="我是这个博客的作者，QQ：2934060590，微信zyq2934060590">
+      <meta itemprop="description" content="非常感谢您的浏览，您的关注是对我最大的支持！请用以下方式联系我：Email：2934060590@qq.com">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
@@ -252,9 +251,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-10-06 12:54:00 / 修改时间：19:12:50" itemprop="dateCreated datePublished" datetime="2023-10-06T12:54:00+08:00">2023-10-06</time>
+      <time title="创建时间：2023-10-06 12:54:00" itemprop="dateCreated datePublished" datetime="2023-10-06T12:54:00+08:00">2023-10-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-03-17 14:13:09" itemprop="dateModified" datetime="2024-03-17T14:13:09+08:00">2024-03-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -284,14 +289,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>673</span>
+      <span>921</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -303,21 +308,35 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/TheRoadToTheGold/p/6254255.html">浅谈线段树</a></p>
-<h1 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h1><ul>
+<h1 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h1><p>线段树是基于分治思想的二叉树，用于维护区间信息（区间和、区间最值、区间GCD等），可以在logn的时间内执行<strong>区间修改</strong>和<strong>区间查询</strong>。</p>
+<p>线段树中每个叶子节点储存元素本身，非子叶节点存储区间内元素的统计值。</p>
+<ul>
 <li>优点：较快完成区间更新和查询</li>
 <li>缺点：空间大(2n - 4n)</li>
 </ul>
 <h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><span id="more"></span>
 
-<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tree[k].l=l;tree[k].r=r;</span><br><span class="line">    <span class="keyword">if</span>(l==r)<span class="comment">//叶子节点 </span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;tree[k].w);</span><br><span class="line">        <span class="keyword">return</span> ; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> m=(l+r)/<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">build</span>(l,m,k*<span class="number">2</span>);<span class="comment">//左孩子 </span></span><br><span class="line">    <span class="built_in">build</span>(m+<span class="number">1</span>,r,k*<span class="number">2</span>+<span class="number">1</span>);<span class="comment">//右孩子 </span></span><br><span class="line">    tree[k].w=tree[k*<span class="number">2</span>].w+tree[k*<span class="number">2</span>+<span class="number">1</span>].w;<span class="comment">//状态合并，此结点的w=两个孩子的w之和 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结构体包含三个变量：l,r,sum；</p>
+<p>所有端点和区间和。</p>
+<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>递归建树</p>
+<p>父节点编号为p，左孩子为2p，右孩子为2p+1；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tree[k].l=l;tree[k].r=r;</span><br><span class="line">    <span class="keyword">if</span>(l==r)<span class="comment">//叶子节点 </span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;tree[k].w);</span><br><span class="line">        <span class="keyword">return</span> ; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> m=(l+r)/<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">build</span>(l,m,k*<span class="number">2</span>);<span class="comment">//左孩子 </span></span><br><span class="line">    <span class="built_in">build</span>(m+<span class="number">1</span>,r,k*<span class="number">2</span>+<span class="number">1</span>);<span class="comment">//右孩子 </span></span><br><span class="line">    tree[k].w=tree[k*<span class="number">2</span>].w+tree[k*<span class="number">2</span>+<span class="number">1</span>].w;<span class="comment">//状态合并，此结点的w=两个孩子的w之和 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="单点查询"><a href="#单点查询" class="headerlink" title="单点查询"></a>单点查询</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">ask</span><span class="params">(<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[k].l==tree[k].r) <span class="comment">//当前结点的左右端点相等，是叶子节点，是最终答案 </span></span><br><span class="line">    &#123;</span><br><span class="line">        ans=tree[k].w;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> m=(tree[k].l+tree[k].r)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;=m) <span class="built_in">ask</span>(k*<span class="number">2</span>);<span class="comment">//目标位置比中点靠左，就递归左孩子 </span></span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">ask</span>(k*<span class="number">2</span>+<span class="number">1</span>);<span class="comment">//反之，递归右孩子 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="单点修改"><a href="#单点修改" class="headerlink" title="单点修改"></a>单点修改</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[k].l==tree[k].r)<span class="comment">//找到目标位置 </span></span><br><span class="line">    &#123;</span><br><span class="line">        tree[k].w+=y;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> m=(tree[k].l+tree[k].r)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;=m) <span class="built_in">add</span>(k*<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">add</span>(k*<span class="number">2</span>+<span class="number">1</span>);</span><br><span class="line">    tree[k].w=tree[k*<span class="number">2</span>].w+tree[k*<span class="number">2</span>+<span class="number">1</span>].w;<span class="comment">//所有包含结点k的结点状态更新 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="单点修改"><a href="#单点修改" class="headerlink" title="单点修改"></a>单点修改</h2><p>从根节点介入，从下往上更新。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[k].l==tree[k].r)<span class="comment">//找到目标位置 </span></span><br><span class="line">    &#123;</span><br><span class="line">        tree[k].w+=y;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> m=(tree[k].l+tree[k].r)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;=m) <span class="built_in">add</span>(k*<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">add</span>(k*<span class="number">2</span>+<span class="number">1</span>);</span><br><span class="line">    tree[k].w=tree[k*<span class="number">2</span>].w+tree[k*<span class="number">2</span>+<span class="number">1</span>].w;<span class="comment">//所有包含结点k的结点状态更新 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="区间查询"><a href="#区间查询" class="headerlink" title="区间查询"></a>区间查询</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[k].l&gt;=x&amp;&amp;tree[k].r&lt;=y) </span><br><span class="line">    &#123;</span><br><span class="line">        ans+=tree[k].w;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> m=(tree[k].l+tree[k].r)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;=m) <span class="built_in">sum</span>(k*<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span>(y&gt;m) <span class="built_in">sum</span>(k*<span class="number">2</span>+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="区间查询"><a href="#区间查询" class="headerlink" title="区间查询"></a>区间查询</h2><p>拆分与拼凑</p>
+<ol>
+<li>区间完全覆盖，回溯，返回sum；</li>
+<li>左节点与[x,y]有重叠，递归返回左子树；</li>
+<li>右节点与[x,y]有重叠，递归返回右子树；</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[k].l&gt;=x&amp;&amp;tree[k].r&lt;=y) </span><br><span class="line">    &#123;</span><br><span class="line">        ans+=tree[k].w;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> m=(tree[k].l+tree[k].r)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;=m) <span class="built_in">sum</span>(k*<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span>(y&gt;m) <span class="built_in">sum</span>(k*<span class="number">2</span>+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="区间修改"><a href="#区间修改" class="headerlink" title="区间修改"></a>区间修改</h2><h3 id="懒标记"><a href="#懒标记" class="headerlink" title="懒标记"></a>懒标记</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">down</span><span class="params">(<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tree[k*<span class="number">2</span>].f+=tree[k].f;</span><br><span class="line">    tree[k*<span class="number">2</span>+<span class="number">1</span>].f+=tree[k].f;</span><br><span class="line">    tree[k*<span class="number">2</span>].w+=tree[k].f*(tree[k*<span class="number">2</span>].r-tree[k*<span class="number">2</span>].l+<span class="number">1</span>);</span><br><span class="line">    tree[k*<span class="number">2</span>+<span class="number">1</span>].w+=tree[k].f*(tree[k*<span class="number">2</span>+<span class="number">1</span>].r-tree[k*<span class="number">2</span>+<span class="number">1</span>].l+<span class="number">1</span>);</span><br><span class="line">    tree[k].f=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="区间修改"><a href="#区间修改" class="headerlink" title="区间修改"></a>区间修改</h2><p>当[x,y]完全覆盖区间[a,b]时，先修改该区间的sum值，再打上一个懒标记，下次再查询时再带上懒标记，可以把每次修改和查询的时间都控制到logn。</p>
+<h3 id="懒标记"><a href="#懒标记" class="headerlink" title="懒标记"></a>懒标记</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">down</span><span class="params">(<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tree[k*<span class="number">2</span>].f+=tree[k].f;</span><br><span class="line">    tree[k*<span class="number">2</span>+<span class="number">1</span>].f+=tree[k].f;</span><br><span class="line">    tree[k*<span class="number">2</span>].w+=tree[k].f*(tree[k*<span class="number">2</span>].r-tree[k*<span class="number">2</span>].l+<span class="number">1</span>);</span><br><span class="line">    tree[k*<span class="number">2</span>+<span class="number">1</span>].w+=tree[k].f*(tree[k*<span class="number">2</span>+<span class="number">1</span>].r-tree[k*<span class="number">2</span>+<span class="number">1</span>].l+<span class="number">1</span>);</span><br><span class="line">    tree[k].f=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="懒标记的区间修改"><a href="#懒标记的区间修改" class="headerlink" title="懒标记的区间修改"></a>懒标记的区间修改</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[k].l&gt;=a&amp;&amp;tree[k].r&lt;=b)<span class="comment">//当前区间全部对要修改的区间有用 </span></span><br><span class="line">    &#123;</span><br><span class="line">        tree[k].w+=(tree[k].r-tree[k].l+<span class="number">1</span>)*x;<span class="comment">//(r-1)+1区间点的总数</span></span><br><span class="line">        tree[k].f+=x;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(tree[k].f) <span class="built_in">down</span>(k);<span class="comment">//懒标记下传。只有不满足上面的if条件才执行，所以一定会用到当前节点的子节点 </span></span><br><span class="line">    <span class="type">int</span> m=(tree[k].l+tree[k].r)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(a&lt;=m) <span class="built_in">add</span>(k*<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span>(b&gt;m) <span class="built_in">add</span>(k*<span class="number">2</span>+<span class="number">1</span>);</span><br><span class="line">    tree[k].w=tree[k*<span class="number">2</span>].w+tree[k*<span class="number">2</span>+<span class="number">1</span>].w;<span class="comment">//更改区间状态 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -338,7 +357,7 @@
 <div class="post-copyright">
 <ul>
   <li class="post-copyright-author">
-      <strong>本文作者： </strong>Ar Gas
+      <strong>本文作者： </strong>Ar Gas（氩气）
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
@@ -398,13 +417,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">45k</span>
+    <span title="站点总字数">50k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:43</span>
+    <span title="站点阅读时长">3:02</span>
   </span>
 </div>
 <div class="busuanzi-count">
