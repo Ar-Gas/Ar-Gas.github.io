@@ -42,7 +42,7 @@ email = "2934060590@qq,com"
 
 siteStartYear = 2022
 
-favicon = "favicon.ico"
+favicon = "static/img/icon.png"
 
 # Syntax highlighting
 # customSyntaxHighlighting = true
