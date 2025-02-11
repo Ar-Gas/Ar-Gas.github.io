@@ -29,7 +29,7 @@ motto = "深入，深刻"
 
 rss = true
 
-# utterancesRepo = ""
+utterancesRepo = "Ar-Gas/Ar-Gas.github.io"
 
 # valine = true
 # LEANCLOUD_APP_ID = ""
