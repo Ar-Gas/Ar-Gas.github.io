@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on Ar-Gas&#39;blog</title>
+    <link>http://localhost:1313/tags/hexo/</link>
+    <description>Recent content in Hexo on Ar-Gas&#39;blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 09 Feb 2023 21:59:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>个人搭建博客·教程推荐</title>
+      <link>http://localhost:1313/past_posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90/</link>
+      <pubDate>Thu, 09 Feb 2023 21:59:00 +0000</pubDate>
+      <guid>http://localhost:1313/past_posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90/</guid>
+      <description>&lt;h1 id=&#34;基于hexo的github博客教程&#34;&gt;基于HEXO的Github博客教程&lt;/h1&gt;&#xA;&lt;h2 id=&#34;搭建教程&#34;&gt;搭建教程&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/huanhao/p/hexobase.html&#34; target=&#34;_blank&#34;&gt;【基础篇】hexo博客搭建教程&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hexo.io/zh-cn/&#34; target=&#34;_blank&#34;&gt;hexo静态博客架构官网&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://theme-next.js.org/&#34; target=&#34;_blank&#34;&gt;NexT主题官网（hexo的老牌主题，历经多年更新，功能最全，使用人最多）&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;h2 id=&#34;markdown语法教程&#34;&gt;Markdown语法教程&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/huanhao/p/markdown.html&#34; target=&#34;_blank&#34;&gt;【hexo博客进阶】Markdown语法&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;h2 id=&#34;图床&#34;&gt;图床&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_51603758/article/details/124963291&#34; target=&#34;_blank&#34;&gt;PicGo+Github+Typora图床搭建教程&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>这是一个怎样的博客？点击进入博客指南</title>
+      <link>http://localhost:1313/past_posts/%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Thu, 09 Feb 2023 10:24:00 +0000</pubDate>
+      <guid>http://localhost:1313/past_posts/%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;blockquote&gt;&#xD;&#xA;    &lt;p&gt;这是我的第一篇个人博客，接下来将为您介绍：&#xA;&lt;strong&gt;本博客如何食用、我的联系方式、其他博客推荐&lt;/strong&gt;&lt;/p&gt;&#xD;&#xA;  &lt;/blockquote&gt;&#xD;&#xA;&#xD;&#xA;&lt;h2 id=&#34;这是一个怎样的博客&#34;&gt;这是一个怎样的博客？&lt;/h2&gt;&#xA;&lt;h3 id=&#34;博主介绍&#34;&gt;博主介绍&lt;/h3&gt;&#xA;&lt;p&gt;博主目前为大二软件学生&lt;/p&gt;&#xA;&lt;h3 id=&#34;博客内容&#34;&gt;博客内容？&lt;/h3&gt;&#xA;&lt;p&gt;博客将会分享一些技术领域的文章&lt;/p&gt;&#xA;&lt;p&gt;感谢各位的光顾！&lt;/p&gt;&#xA;&lt;h2 id=&#34;联系方式&#34;&gt;联系方式&lt;/h2&gt;&#xA;&lt;p&gt;QQ：2934060590&lt;/p&gt;&#xA;&lt;p&gt;Email：2934060590@qq.com&lt;/p&gt;&#xA;&lt;p&gt;Wechat: zyq2934060590&lt;/p&gt;&#xA;&lt;p&gt;github: &lt;a href=&#34;https://github.com/Ar-Gas&#34; target=&#34;_blank&#34;&gt;Ar-Gas&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;h2 id=&#34;资源收藏&#34;&gt;资源收藏&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://csdiy.wiki/&#34; target=&#34;_blank&#34;&gt;CS自学手册&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;h2 id=&#34;其他博客推荐&#34;&gt;其他博客推荐&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.ruanyifeng.com/blog/&#34; target=&#34;_blank&#34;&gt;阮一峰的科技周刊&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://zclll.com/&#34; target=&#34;_blank&#34;&gt;zclll&amp;rsquo;s Blog&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/tigerisland45/article/details/103250664?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170771958816800226565875%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;amp;request_id=170771958816800226565875&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-103250664-null-null.142%5ev99%5epc_search_result_base1&amp;amp;utm_term=%E4%BB%99%E5%AE%A2%E4%BC%A0%E5%A5%87&amp;amp;spm=1018.2226.3001.4187&#34; target=&#34;_blank&#34;&gt;某神秘团伙&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://doraemonzzz.com/&#34; target=&#34;_blank&#34;&gt;蓝色的狸猫&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

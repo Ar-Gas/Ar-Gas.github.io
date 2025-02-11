@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="zh"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串 in C/C&#43;&#43; | Ar-Gas&#39;blog</title>
+
+    
+  
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+  
+
+
+<link rel="canonical" href="http://localhost:1313/posts/%E5%AD%97%E7%AC%A6%E4%B8%B2/" />
+
+
+
+<meta name="author" content="Ar-Gas" />
+<meta name="description" content="文章首次写于：2023-04-19
+更新日志：
+20230419：编写了字符串-C、字符串-C&#43;&#43;的输入输出
+20230916：添加了&lt; String &gt;库、&lt; cctype &gt;库、字符串流 &lt; sstream &gt;库
+输入输出 char* 输入 gets(c*)（于C&#43;&#43;11取消） 读取至&#39;\n&#39;或EOF停止，换行符不会复制，返回自动添加\0
+fgets(c*,Num,Stream) 读取num-1、&#39;\n&#39;、EOF停止，\n复制到字符串中，第n个字符不读取，返回自动添加\0
+fgets()和gets()完全不同，fgets()包含任何结束换行符
+默认标准输入流:stdin
+getchar() 返回读取字符，常用于抵消&#39;\n&#39;，与getc(stdin)等价
+输出 puts() puts(c*)输出时在末尾添加&#39;\n&#39;；
+fputs() fputs(c*，stdout)输出直至&#39;\0&#39;，不会写入额外字符；
+string 输入 std::cin cin&gt;&gt;s; 读到任意空白符（&#39;\n&#39;,&#39;\t&#39;,&#39;\0&#39;,&#39; &#39;）停止
+getline() getline(cin,string,delim)定界字符delim默认&#39;\n&#39;；
+定界字符提取但不储存，下次读取跳过。
+输出 cout&laquo; cout&lt;&lt;s; C&#43;&#43; String 特性 &lt; String &gt;库 常用操作包括：拼接、索引、substr()字串、字典序、长度/大小；
+C&#43;&#43;除了面向对象语言外，还提供了一些操作符 &#43;= 、 [] 等（包括STL通有接口size()）
+声明 string s; string ss[10]; 初始化 string s; // 默认初始化，一个空白的字符串 string s1(s); // s1是s的副本 string s2(10, &#39;4&#39;); // s2初始化 string s3 = string(10, &#39;c&#39;); // 对象语言 char cs[] = &#34;12345&#34;; string s4(cs, 3); // 复制字符串cs的前三个字符到s当中 string s5 = &#34;abcde&#34;; string s6(s8, 2); string s7 = &#34;asdsfasdgf&#34;; string s8(s10, 3, 4); // s8是s10标s开始4个字符的拷贝，超出s10.size出现未定义 string类型的读入 string s; cin &gt;&gt; s; //不能读入空格，以空格，制表符，回车符作为结束标志 getline(cin, s); //可以读入空格和制表符，以回车符作为结束的标志 字符串末尾添加字符 可以用&#43;号和append()函数在函数的末尾添加字符。
+" />
+
+
+<meta name="keywords" content="C&#43;&#43;">
+
+
+
+<meta name="generator" content="Hugo 0.143.1">
+
+
+<meta property="og:url" content="http://localhost:1313/posts/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+  <meta property="og:site_name" content="Ar-Gas&#39;blog">
+  <meta property="og:title" content="字符串 in C/C&#43;&#43;">
+  <meta property="og:description" content="文章首次写于：2023-04-19
+更新日志：
+20230419：编写了字符串-C、字符串-C&#43;&#43;的输入输出
+20230916：添加了&lt; String &gt;库、&lt; cctype &gt;库、字符串流 &lt; sstream &gt;库
+输入输出 char* 输入 gets(c*)（于C&#43;&#43;11取消） 读取至&#39;\n&#39;或EOF停止，换行符不会复制，返回自动添加\0
+fgets(c*,Num,Stream) 读取num-1、&#39;\n&#39;、EOF停止，\n复制到字符串中，第n个字符不读取，返回自动添加\0
+fgets()和gets()完全不同，fgets()包含任何结束换行符
+默认标准输入流:stdin
+getchar() 返回读取字符，常用于抵消&#39;\n&#39;，与getc(stdin)等价
+输出 puts() puts(c*)输出时在末尾添加&#39;\n&#39;；
+fputs() fputs(c*，stdout)输出直至&#39;\0&#39;，不会写入额外字符；
+string 输入 std::cin cin&gt;&gt;s; 读到任意空白符（&#39;\n&#39;,&#39;\t&#39;,&#39;\0&#39;,&#39; &#39;）停止
+getline() getline(cin,string,delim)定界字符delim默认&#39;\n&#39;；
+定界字符提取但不储存，下次读取跳过。
+输出 cout« cout&lt;&lt;s; C&#43;&#43; String 特性 &lt; String &gt;库 常用操作包括：拼接、索引、substr()字串、字典序、长度/大小；
+C&#43;&#43;除了面向对象语言外，还提供了一些操作符 &#43;= 、 [] 等（包括STL通有接口size()）
+声明 string s; string ss[10]; 初始化 string s; // 默认初始化，一个空白的字符串 string s1(s); // s1是s的副本 string s2(10, &#39;4&#39;); // s2初始化 string s3 = string(10, &#39;c&#39;); // 对象语言 char cs[] = &#34;12345&#34;; string s4(cs, 3); // 复制字符串cs的前三个字符到s当中 string s5 = &#34;abcde&#34;; string s6(s8, 2); string s7 = &#34;asdsfasdgf&#34;; string s8(s10, 3, 4); // s8是s10标s开始4个字符的拷贝，超出s10.size出现未定义 string类型的读入 string s; cin &gt;&gt; s; //不能读入空格，以空格，制表符，回车符作为结束标志 getline(cin, s); //可以读入空格和制表符，以回车符作为结束的标志 字符串末尾添加字符 可以用&#43;号和append()函数在函数的末尾添加字符。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-04-19T19:56:00+00:00">
+    <meta property="article:modified_time" content="2023-04-19T19:56:00+00:00">
+    <meta property="article:tag" content="C&#43;&#43;">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="字符串 in C/C&#43;&#43;">
+  <meta name="twitter:description" content="文章首次写于：2023-04-19
+更新日志：
+20230419：编写了字符串-C、字符串-C&#43;&#43;的输入输出
+20230916：添加了&lt; String &gt;库、&lt; cctype &gt;库、字符串流 &lt; sstream &gt;库
+输入输出 char* 输入 gets(c*)（于C&#43;&#43;11取消） 读取至&#39;\n&#39;或EOF停止，换行符不会复制，返回自动添加\0
+fgets(c*,Num,Stream) 读取num-1、&#39;\n&#39;、EOF停止，\n复制到字符串中，第n个字符不读取，返回自动添加\0
+fgets()和gets()完全不同，fgets()包含任何结束换行符
+默认标准输入流:stdin
+getchar() 返回读取字符，常用于抵消&#39;\n&#39;，与getc(stdin)等价
+输出 puts() puts(c*)输出时在末尾添加&#39;\n&#39;；
+fputs() fputs(c*，stdout)输出直至&#39;\0&#39;，不会写入额外字符；
+string 输入 std::cin cin&gt;&gt;s; 读到任意空白符（&#39;\n&#39;,&#39;\t&#39;,&#39;\0&#39;,&#39; &#39;）停止
+getline() getline(cin,string,delim)定界字符delim默认&#39;\n&#39;；
+定界字符提取但不储存，下次读取跳过。
+输出 cout« cout&lt;&lt;s; C&#43;&#43; String 特性 &lt; String &gt;库 常用操作包括：拼接、索引、substr()字串、字典序、长度/大小；
+C&#43;&#43;除了面向对象语言外，还提供了一些操作符 &#43;= 、 [] 等（包括STL通有接口size()）
+声明 string s; string ss[10]; 初始化 string s; // 默认初始化，一个空白的字符串 string s1(s); // s1是s的副本 string s2(10, &#39;4&#39;); // s2初始化 string s3 = string(10, &#39;c&#39;); // 对象语言 char cs[] = &#34;12345&#34;; string s4(cs, 3); // 复制字符串cs的前三个字符到s当中 string s5 = &#34;abcde&#34;; string s6(s8, 2); string s7 = &#34;asdsfasdgf&#34;; string s8(s10, 3, 4); // s8是s10标s开始4个字符的拷贝，超出s10.size出现未定义 string类型的读入 string s; cin &gt;&gt; s; //不能读入空格，以空格，制表符，回车符作为结束标志 getline(cin, s); //可以读入空格和制表符，以回车符作为结束的标志 字符串末尾添加字符 可以用&#43;号和append()函数在函数的末尾添加字符。">
+
+
+
+
+<link rel="stylesheet" href="/css/output.css" />
+
+
+
+
+    
+
+
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/img/argas.png" alt="Ar-Gas" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="http://localhost:1313/" class="text-lg font-semibold cursor-pointer">
+          Ar-Gas
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">深入，深刻</div>
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
+    <ion-icon name="logo-rss"></ion-icon>
+    RSS
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0"
+        class="text-sm font-semibold cursor-pointer hover:underline"
+        @click="flip = !flip"
+        title="关于"
+      >关于</div>
+      
+      
+
+      
+      
+        
+      
+
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
+  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
+  <div class="hidden lg:block">
+    
+  </div>
+
+  <div class="lg:col-span-2">
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="字符串 in C/C&#43;&#43;">
+  <meta itemprop="description" content="文章首次写于：2023-04-19
+更新日志：
+20230419：编写了字符串-C、字符串-C&#43;&#43;的输入输出
+20230916：添加了&lt; String &gt;库、&lt; cctype &gt;库、字符串流 &lt; sstream &gt;库
+输入输出 char* 输入 gets(c*)（于C&#43;&#43;11取消） 读取至&#39;\n&#39;或EOF停止，换行符不会复制，返回自动添加\0
+fgets(c*,Num,Stream) 读取num-1、&#39;\n&#39;、EOF停止，\n复制到字符串中，第n个字符不读取，返回自动添加\0
+fgets()和gets()完全不同，fgets()包含任何结束换行符
+默认标准输入流:stdin
+getchar() 返回读取字符，常用于抵消&#39;\n&#39;，与getc(stdin)等价
+输出 puts() puts(c*)输出时在末尾添加&#39;\n&#39;；
+fputs() fputs(c*，stdout)输出直至&#39;\0&#39;，不会写入额外字符；
+string 输入 std::cin cin&gt;&gt;s; 读到任意空白符（&#39;\n&#39;,&#39;\t&#39;,&#39;\0&#39;,&#39; &#39;）停止
+getline() getline(cin,string,delim)定界字符delim默认&#39;\n&#39;；
+定界字符提取但不储存，下次读取跳过。
+输出 cout« cout&lt;&lt;s; C&#43;&#43; String 特性 &lt; String &gt;库 常用操作包括：拼接、索引、substr()字串、字典序、长度/大小；
+C&#43;&#43;除了面向对象语言外，还提供了一些操作符 &#43;= 、 [] 等（包括STL通有接口size()）
+声明 string s; string ss[10]; 初始化 string s; // 默认初始化，一个空白的字符串 string s1(s); // s1是s的副本 string s2(10, &#39;4&#39;); // s2初始化 string s3 = string(10, &#39;c&#39;); // 对象语言 char cs[] = &#34;12345&#34;; string s4(cs, 3); // 复制字符串cs的前三个字符到s当中 string s5 = &#34;abcde&#34;; string s6(s8, 2); string s7 = &#34;asdsfasdgf&#34;; string s8(s10, 3, 4); // s8是s10标s开始4个字符的拷贝，超出s10.size出现未定义 string类型的读入 string s; cin &gt;&gt; s; //不能读入空格，以空格，制表符，回车符作为结束标志 getline(cin, s); //可以读入空格和制表符，以回车符作为结束的标志 字符串末尾添加字符 可以用&#43;号和append()函数在函数的末尾添加字符。">
+  <meta itemprop="datePublished" content="2023-04-19T19:56:00+00:00">
+  <meta itemprop="dateModified" content="2023-04-19T19:56:00+00:00">
+  <meta itemprop="wordCount" content="681">
+  <meta itemprop="keywords" content="C&#43;&#43;">
+
+      <header>
+        <h1 itemprop="headline">字符串 in C/C&#43;&#43;</h1>
+        <p class="text-sm">
+          
+            <span data-format="luxon">2023-04-19T19:56:00Z</span>
+          
+
+          | <span>4分钟阅读</span>
+
+          
+          | <span>更新于
+            
+              <span data-format="luxon">2023-04-19T19:56:00Z</span>
+            </span>
+          
+        </p>
+
+        
+        <div class="flex justify-between">
+          
+            <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+          
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=%e5%ad%97%e7%ac%a6%e4%b8%b2%20in%20C/C&#43;&#43;&amp;url=http://localhost:1313/posts/%E5%AD%97%E7%AC%A6%E4%B8%B2/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/%E5%AD%97%E7%AC%A6%E4%B8%B2/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=%e5%ad%97%e7%ac%a6%e4%b8%b2%20in%20C/C&#43;&#43;%20http://localhost:1313/posts/%E5%AD%97%E7%AC%A6%E4%B8%B2/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      <section id="dream-single-post-content" itemprop="articleBody">
+        
+
+        <p>文章首次写于：<strong>2023-04-19</strong></p>
+<p>更新日志：</p>
+<ul>
+<li>
+<p>20230419：编写了字符串-C、字符串-C++的输入输出</p>
+</li>
+<li>
+<p>20230916：添加了&lt; String &gt;库、&lt; cctype &gt;库、字符串流 &lt; sstream &gt;库</p>
+</li>
+</ul>
+<hr>
+<h1 id="输入输出">输入输出</h1>
+<h2 id="char">char*</h2>
+<h3 id="输入">输入</h3>
+<h4 id="getsc于c11取消">gets(c*)（于C++11取消）</h4>
+<p>读取至<code>'\n'</code>或<code>EOF</code>停止，<code>换行符</code>不会复制，返回自动添加<code>\0</code></p>
+<h4 id="fgetscnumstream">fgets(c*,Num,Stream)</h4>
+<p>读取<code>num-1</code>、<code>'\n'</code>、<code>EOF</code>停止，<strong><code>\n</code>复制到字符串中</strong>，第<code>n</code>个字符不读取，返回自动添加<code>\0</code></p>
+<p><code>fgets()</code>和<code>gets()</code>完全不同，<code>fgets()</code>包含任何结束换行符</p>
+<p>默认标准输入流:<code>stdin</code></p>
+<h4 id="getchar">getchar()</h4>
+<p>返回读取字符，<del>常用于抵消<code>'\n'</code></del>，与<code>getc(stdin)</code>等价</p>
+<h3 id="输出">输出</h3>
+<h4 id="puts">puts()</h4>
+<p><code>puts(c*)</code>输出时在末尾添加<code>'\n'</code>；</p>
+<h4 id="fputs">fputs()</h4>
+<p><code>fputs(c*，stdout)</code>输出直至<code>'\0'</code>，不会写入额外字符；</p>
+<h2 id="string">string</h2>
+<h3 id="输入-1">输入</h3>
+<h4 id="stdcin">std::cin</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>cin<span style="color:#f92672">&gt;&gt;</span>s;
+</span></span></code></pre></div><p>读到任意空白符（<code>'\n'</code>,<code>'\t'</code>,<code>'\0'</code>,<code>' '</code>）停止</p>
+<h4 id="getline">getline()</h4>
+<p><code>getline(cin,string,delim)</code>定界字符<code>delim</code>默认<code>'\n'</code>；</p>
+<p>定界字符提取但不储存，下次读取跳过。</p>
+<h3 id="输出-1">输出</h3>
+<h4 id="cout">cout&laquo;</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>cout<span style="color:#f92672">&lt;&lt;</span>s;
+</span></span></code></pre></div><hr>
+<h1 id="c-string-特性">C++ String 特性</h1>
+<h2 id="-string-库">&lt; String &gt;库</h2>
+<p>常用操作包括：拼接、索引、substr()字串、字典序、长度/大小；</p>
+<p>C++除了面向对象语言外，还提供了一些操作符 += 、 [] 等（包括STL通有接口size()）</p>
+<h3 id="声明">声明</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string s;
+</span></span><span style="display:flex;"><span>string ss[<span style="color:#ae81ff">10</span>];
+</span></span></code></pre></div><h3 id="初始化">初始化</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>    string s;                       <span style="color:#75715e">// 默认初始化，一个空白的字符串
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    string <span style="color:#a6e22e">s1</span>(s);                   <span style="color:#75715e">// s1是s的副本
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    string <span style="color:#a6e22e">s2</span>(<span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;4&#39;</span>);             <span style="color:#75715e">// s2初始化
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    string s3 <span style="color:#f92672">=</span> string(<span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;c&#39;</span>);    <span style="color:#75715e">// 对象语言
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> cs[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;12345&#34;</span>;
+</span></span><span style="display:flex;"><span>    string <span style="color:#a6e22e">s4</span>(cs, <span style="color:#ae81ff">3</span>);       <span style="color:#75715e">// 复制字符串cs的前三个字符到s当中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    string s5 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abcde&#34;</span>;
+</span></span><span style="display:flex;"><span>    string <span style="color:#a6e22e">s6</span>(s8, <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    string s7 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;asdsfasdgf&#34;</span>;
+</span></span><span style="display:flex;"><span>    string <span style="color:#a6e22e">s8</span>(s10, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>);  <span style="color:#75715e">// s8是s10标s开始4个字符的拷贝，超出s10.size出现未定义
+</span></span></span></code></pre></div><h3 id="string类型的读入">string类型的读入</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string s;
+</span></span><span style="display:flex;"><span>cin <span style="color:#f92672">&gt;&gt;</span> s;        <span style="color:#75715e">//不能读入空格，以空格，制表符，回车符作为结束标志
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>getline(cin, s); <span style="color:#75715e">//可以读入空格和制表符，以回车符作为结束的标志
+</span></span></span></code></pre></div><h3 id="字符串末尾添加字符">字符串末尾添加字符</h3>
+<p>可以用+号和append()函数在函数的末尾添加字符。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string s;
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;a&#39;</span>;
+</span></span><span style="display:flex;"><span>s.append(<span style="color:#e6db74">&#34;a&#34;</span>);
+</span></span></code></pre></div><h3 id="sting类型变量的访问">sting类型变量的访问</h3>
+<p>string字符串变量访问可以采用at, operator[]来访问指定index对应的字符。其中at有越界检查,如果index越界，无论Debug还是在Release编译的环境下，程序异常跳出执行；operator[]无越界检查，如果index越界，则会取得不可预知的字符。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string <span style="color:#a6e22e">s</span>(<span style="color:#e6db74">&#34;abcd&#34;</span>);
+</span></span><span style="display:flex;"><span>cout <span style="color:#f92672">&lt;&lt;</span> s[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&lt;&lt;</span> s.at(<span style="color:#ae81ff">2</span>) <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span></code></pre></div><h3 id="string类型的长度">string类型的长度</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello, world!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> s.size();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> s.length();   <span style="color:#75715e">//这两种方式是等价的
+</span></span></span></code></pre></div><h3 id="查找字符串的子字符串">查找字符串的子字符串</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string s <span style="color:#f92672">=</span> abcdefg, subs <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;efg&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> pos <span style="color:#f92672">=</span> s.find(subs); <span style="color:#75715e">// 如果找到子字符串则返回首次匹配的位置，否则返回string::npos
+</span></span></span></code></pre></div><h3 id="指向首字符和末尾字符的迭代器beginend">指向首字符和末尾字符的迭代器（begin,end）</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string <span style="color:#a6e22e">s</span>(<span style="color:#e6db74">&#34;abcdefg&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(string<span style="color:#f92672">::</span>iterator it <span style="color:#f92672">=</span> s.begin(); it <span style="color:#f92672">!=</span> s.end(); it<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">*</span>it;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//逆向迭代器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (string<span style="color:#f92672">::</span>iterator it <span style="color:#f92672">=</span> s.rbegin(); it <span style="color:#f92672">!=</span> s.rend(); it<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>   { cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">*</span>it;  } 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//采用auto实现迭代器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">auto</span> itr : s)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> itr <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="https://pic4.zhimg.com/80/v2-7ff65bc40e209fe291362f8f44470047_720w.webp" alt="img"></p>
+<h3 id="empty-clear">empty(), clear()</h3>
+<p>empty()可以用来检查字符串是否为空，clear()用来清空字符串。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string s1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;012345&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>s1.empty()){
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> s1.length <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    s1.clear();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="insert在指定index处插入字符或字符串">insert()在指定index处插入字符或字符串</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">// insert原型函数，在index插入count个字符ch。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// insert(size_type index, size_type count, char ch)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>string s1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abc&#34;</span>;
+</span></span><span style="display:flex;"><span>s1.insert(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;D&#39;</span>)    <span style="color:#75715e">// &#34;aDDbc&#34;
+</span></span></span></code></pre></div><h3 id="erase删除字符">erase()删除字符</h3>
+<p>erase()函数有三个原型:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string<span style="color:#f92672">&amp;</span> erase(size_t pos <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, size_t n <span style="color:#f92672">=</span> npos);
+</span></span><span style="display:flex;"><span>iterator <span style="color:#a6e22e">erase</span>(iterator position);
+</span></span><span style="display:flex;"><span>iterator <span style="color:#a6e22e">erase</span>(iterator first, iterator last);
+</span></span></code></pre></div><p>因此erase()总共有三种用法:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>erase(pos, n);      <span style="color:#75715e">//删除从pos开始的n个字符,比如erase(0, 1)就是删除第一个字符
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>erase(position);    <span style="color:#75715e">//删除从position处的一个字符(position是个string类型的迭代器)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>erase(first, last); <span style="color:#75715e">//删除从first到last之间的字符(first和last都是迭代器)
+</span></span></span></code></pre></div><p>应用实例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string <span style="color:#a6e22e">str</span> (<span style="color:#e6db74">&#34;This is an example phrase.&#34;</span>);
+</span></span><span style="display:flex;"><span>string<span style="color:#f92672">::</span>iterator it;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 第(1)种用法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>str.erase (<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">8</span>);
+</span></span><span style="display:flex;"><span>cout <span style="color:#f92672">&lt;&lt;</span> str <span style="color:#f92672">&lt;&lt;</span> endl;        <span style="color:#75715e">// &#34;This is an phrase.&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 第(2)种用法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>it<span style="color:#f92672">=</span>str.begin()<span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+</span></span><span style="display:flex;"><span>str.erase (it);
+</span></span><span style="display:flex;"><span>cout <span style="color:#f92672">&lt;&lt;</span> str <span style="color:#f92672">&lt;&lt;</span> endl;        <span style="color:#75715e">// &#34;This is a phrase.&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 第(3)种用法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>str.erase (str.begin()<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>, str.end()<span style="color:#f92672">-</span><span style="color:#ae81ff">7</span>);
+</span></span><span style="display:flex;"><span>cout <span style="color:#f92672">&lt;&lt;</span> str <span style="color:#f92672">&lt;&lt;</span> endl;        <span style="color:#75715e">// &#34;This phrase.&#34;
+</span></span></span></code></pre></div><h3 id="获取子字符串substr">获取子字符串substr()</h3>
+<ul>
+<li>
+<p>函数原型: <code>string substr(size_t pos = 0, size_t len = npos) const;</code></p>
+</li>
+<li>
+<p>功能: 从子字符串中获取想要的子字符串</p>
+</li>
+<li>
+<p>参数：</p>
+</li>
+<li>
+<ul>
+<li>pos: 想要获取的子字符串的第一个字符的位置，如果pos等于字符串长度，则该函数返回一个空字符串，如果等于字符串长度，则该函数返回一个空的字符串，如果该长度大于字符串长度，则抛出一个out_of_range。 注：第一个字符的下标从0开始。</li>
+<li>len： 子字符串中要包含的字符数, string::npos的值表示知道字符串末尾的所有字符。</li>
+</ul>
+</li>
+<li>
+<p>返回值：带有对象子字符串的字符串对象。</p>
+</li>
+</ul>
+<p>应用实例:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string s1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello World&#34;</span>
+</span></span><span style="display:flex;"><span>string s2 <span style="color:#f92672">=</span> s1.substr(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>string s3 <span style="color:#f92672">=</span> s1.substr(<span style="color:#ae81ff">3</span>, str<span style="color:#f92672">::</span>npos); <span style="color:#75715e">//截取从下标3到结束的子字符串
+</span></span></span></code></pre></div><h3 id="比较">比较</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>s1 <span style="color:#f92672">==</span> s2
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">!=</span> <span style="color:#f92672">&lt;</span> <span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;=</span> <span style="color:#f92672">&gt;=</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> ans <span style="color:#f92672">=</span> s1.compare(s2);
+</span></span></code></pre></div><hr>
+<h2 id="-cctype-库">&lt; cctype &gt;库</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isalnum</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//检查字符是否为字母数字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isalpha</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//检查字符是否为字母
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isblank</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//检查字符是否为空
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">iscntrl</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//检查字符是否是控制字符
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isdigit</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//检查字符是否为十进制数字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isgraph</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//检查字符是否具有图形表示
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">islower</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//检查字符是否为小写字母
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isprint</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//检查字符是否可打印
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">ispunct</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//检查字符是否是标点符号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isspace</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//检查字符是否为空格
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isupper</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//检查字符是否为大写字母
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isxdigit</span>(<span style="color:#66d9ef">int</span> c);<span style="color:#75715e">//查字符是否为十六进制数字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">tolower</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//将大写字母转换为小写
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">toupper</span>(<span style="color:#66d9ef">int</span> c); <span style="color:#75715e">//将小写字母转换为大写（
+</span></span></span></code></pre></div><hr>
+<h2 id="字符串流--sstream-">字符串流 &lt; sstream &gt;</h2>
+
+
+
+  <blockquote>
+    <p>引用声明：以下关于stringstream的部分来自文章<a href="https://cloud.tencent.com/developer/article/2033509" target="_blank">C++字符串流stringstream与string知识介绍与用法小结</a>
+</p>
+  </blockquote>
+
+<p><strong>stringstream</strong>是 C++ 提供的一个字符串流(stream)，和之前学过的iostream、fstream有类似的操作方式，要使用stringstream，必须包含其头文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sstream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>stringstream ss;
+</span></span></code></pre></div><p>&lt; sstream &gt; 库定义了三种类：istringstream、ostringstream和stringstream，分别用来进行流的输入、输出和输入输出操作。另外，每个类都有一个对应的宽字符集版本。一般情况下使用stringstream就足够，因为字符串要频繁的涉及到输入输出。</p>
+<p>&lt; sstream &gt; 使用string对象来代替字符数组，这样可以避免缓冲区溢出的危险。而且，传入参数和目标对象的类型被自动推导出来，即便使用了不正确的格式化符也没有危险。</p>
+<p>与文件流fstream类似，通过插入器(&laquo;)和析取器(&raquo;)这两个运算符可以直接对stringstream上的数据输入输出，而将stringstream中的全部数据输出则是使用成员函数str()，其有两种形式： 1、void <strong>str()</strong> //无参形式，用于将stringstream流中的数据以string字符串的形式输出 2、void <strong>str (const string&amp; s)</strong>//以字符串为参数，用以覆盖stringstream流中的数据 特别需要注意的是：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">// 字符串流清零，将流中的数据全部清除
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ss.str(<span style="color:#e6db74">&#34;&#34;</span>); 
+</span></span></code></pre></div><p>示例代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sstream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{ 
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>stringstream ss;
+</span></span><span style="display:flex;"><span>ss <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;hello &#34;</span>;
+</span></span><span style="display:flex;"><span>ss <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;world!&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> ss.str() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 对stringstream而言，operator&lt;&lt; 是一直往字符串流中写字符
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 而不是覆盖之前输入的字符，这一点不同于str()成员函数方法,str()函数创建的是一个临时的string对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//这个string对象在函数str()语句结束就会被销毁，因而一般使用时应先声明一个string对象s，将str()赋值给s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//const string s=ss.str();//这样会有一个string拷贝的过程
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">/*又或者是const string&amp; s=ss.str();这样就是用s直接引用了ss.str()这个临时变量，就“延长了临时变量ss.str()的 生命周期”，使得ss.str()生命结束时刻和s一样*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<p><strong>ss.clear()成员函数</strong></p>
+<p>同文件流fstream中的clear()函数类似，通过clear()成员函数可以清除流的错误状态，主要用在stringstream重复使用时或者多个stringstream对象构造时清空，不然之前的缓冲就停留在输入输出流中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>ss.setstate(std<span style="color:#f92672">::</span>ios<span style="color:#f92672">::</span>eofbit);<span style="color:#75715e">//设置流的状态标志位
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> ss.rdstate() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;<span style="color:#75715e">//获取当前流的状态标志位
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 结果为1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ss.clear();
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> ss.rdstate() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 结果为0
+</span></span></span></code></pre></div><p>在对同一个stringstream对象重复赋值，就需要先对流使用clear()函数清空流的状态，此时流占用的内存没有改变，会一直增加(<strong>stringstream不主动释放内存</strong>)，若想改变内存(<strong>一般是清除内存，减少内存消耗</strong>)，需要再配合使用str(“”)清空stringstream的缓存。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>stringstream stream;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a,b;
+</span></span><span style="display:flex;"><span>    ss<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;80&#34;</span>;<span style="color:#75715e">//向流输出数据(写入)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    ss<span style="color:#f92672">&gt;&gt;</span>a;<span style="color:#75715e">//从流输入数据到a
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;Size of ss = &#34;</span><span style="color:#f92672">&lt;&lt;</span>ss.str().length()<span style="color:#f92672">&lt;&lt;</span>endl;<span style="color:#75715e">//ss.str()返回一个string对象，再调用其成员函数length()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    ss.clear();<span style="color:#75715e">//清空流
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    ss.str(<span style="color:#e6db74">&#34;&#34;</span>);<span style="color:#75715e">//清空流缓存
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;Size of ss = &#34;</span><span style="color:#f92672">&lt;&lt;</span>ss.str().length()<span style="color:#f92672">&lt;&lt;</span>endl;
+</span></span><span style="display:flex;"><span>    ss<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;90&#34;</span>;<span style="color:#75715e">//重新赋值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    ss<span style="color:#f92672">&gt;&gt;</span>b;
+</span></span><span style="display:flex;"><span>    cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;Size of ss = &#34;</span><span style="color:#f92672">&lt;&lt;</span>ss.str().length()<span style="color:#f92672">&lt;&lt;</span>endl;  
+</span></span></code></pre></div><p>运行结果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>Size of ss <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>Size of ss <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Size of ss <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">90</span>
+</span></span></code></pre></div><hr>
+<p><strong>stringstream与fstream</strong></p>
+<p>通过重载的&laquo;和&raquo;运算符可以将文件流中的数据输出到C++字符串中，它们之间的媒介是缓冲区streambuf，可由流的成员函数rdbuf()读取。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sstream&gt;</span><span style="color:#75715e">//stringstream流的头文件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;fstream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{ 
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>        string str;
+</span></span><span style="display:flex;"><span>        ifstream in;
+</span></span><span style="display:flex;"><span>        in.open(<span style="color:#e6db74">&#34;Hello.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//读取文件的缓冲内容到数据流中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        stringstream ss;
+</span></span><span style="display:flex;"><span>        ss <span style="color:#f92672">&lt;&lt;</span> in.rdbuf();
+</span></span><span style="display:flex;"><span>        in.close();<span style="color:#75715e">//关闭文件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        str <span style="color:#f92672">=</span> ss.str();<span style="color:#75715e">//将stringstream流中的数据赋值给string类型字符串
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> p <span style="color:#f92672">=</span> str.c_str();<span style="color:#75715e">//将字符串内容转化为C_string类型
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<p><strong>stringstream通常是用来做数据转换的</strong>，用于字符串与其他变量类型的转换，相比c库的转换，它更加安全，自动和直接。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sstream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{ 
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>    string str1(<span style="color:#e6db74">&#34;How are you? 123 1 4.368&#34;</span>);
+</span></span><span style="display:flex;"><span>    stringstream ss(str1);<span style="color:#75715e">//构造函数初始化
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;&lt;</span>ss.str()<span style="color:#f92672">&lt;&lt;</span>endl;
+</span></span><span style="display:flex;"><span>    string str2;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">3</span>;i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    { 
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    	ss<span style="color:#f92672">&gt;&gt;</span>str2;
+</span></span><span style="display:flex;"><span>    	cout<span style="color:#f92672">&lt;&lt;</span>str2<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	cout<span style="color:#f92672">&lt;&lt;</span>endl; <span style="color:#75715e">//先换行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> a;
+</span></span><span style="display:flex;"><span>	ss<span style="color:#f92672">&gt;&gt;</span>a;
+</span></span><span style="display:flex;"><span>	cout<span style="color:#f92672">&lt;&lt;</span>a<span style="color:#f92672">&lt;&lt;</span>endl;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">bool</span> b;
+</span></span><span style="display:flex;"><span>	ss<span style="color:#f92672">&gt;&gt;</span>b;
+</span></span><span style="display:flex;"><span>	cout<span style="color:#f92672">&lt;&lt;</span>b<span style="color:#f92672">&lt;&lt;</span>endl;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">float</span> c;
+</span></span><span style="display:flex;"><span>	ss<span style="color:#f92672">&gt;&gt;</span>c;
+</span></span><span style="display:flex;"><span>	cout<span style="color:#f92672">&lt;&lt;</span>c<span style="color:#f92672">&lt;&lt;</span>endl;	
+</span></span><span style="display:flex;"><span>	ss.clear();
+</span></span><span style="display:flex;"><span>	ss.str(<span style="color:#e6db74">&#34;I am fine!&#34;</span>);<span style="color:#75715e">//重新赋值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">while</span>(ss<span style="color:#f92672">&gt;&gt;</span>str2)<span style="color:#75715e">//不断读取
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	{ 
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>		cout<span style="color:#f92672">&lt;&lt;</span>str2<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>	}		
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>运行结果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>How are you<span style="color:#f92672">?</span> <span style="color:#ae81ff">123</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">4.368</span>
+</span></span><span style="display:flex;"><span>How are you<span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.368</span>
+</span></span><span style="display:flex;"><span>I am fine<span style="color:#f92672">!</span> 
+</span></span></code></pre></div><p><strong>由上面的代码可知，从stringstream流中的数据输入字符串到一个变量里，是以遇到空格跳到下一个字符串的这样的形式连续读取的。</strong></p>
+
+
+        
+      </section>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <a class="group btn btn-outline" href="/posts/%E6%95%B0%E8%AE%BA%E7%AE%97%E6%B3%95/" title="数论算法">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">上一页</span>
+            <span class="max-w-48 truncate">数论算法</span>
+          </div>
+        </a>
+        
+
+        
+        <a class="group btn btn-outline" href="/posts/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" title="基础算法">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">下一页</span>
+            <span class="max-w-48 truncate">基础算法</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+
+      
+    </article>
+  </div>
+
+  <div class="hidden lg:flex lg:flex-col lg:items-end">
+    
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#char">char*</a>
+      <ul>
+        <li><a href="#输入">输入</a></li>
+        <li><a href="#输出">输出</a></li>
+      </ul>
+    </li>
+    <li><a href="#string">string</a>
+      <ul>
+        <li><a href="#输入-1">输入</a></li>
+        <li><a href="#输出-1">输出</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#-string-库">&lt; String &gt;库</a>
+      <ul>
+        <li><a href="#声明">声明</a></li>
+        <li><a href="#初始化">初始化</a></li>
+        <li><a href="#string类型的读入">string类型的读入</a></li>
+        <li><a href="#字符串末尾添加字符">字符串末尾添加字符</a></li>
+        <li><a href="#sting类型变量的访问">sting类型变量的访问</a></li>
+        <li><a href="#string类型的长度">string类型的长度</a></li>
+        <li><a href="#查找字符串的子字符串">查找字符串的子字符串</a></li>
+        <li><a href="#指向首字符和末尾字符的迭代器beginend">指向首字符和末尾字符的迭代器（begin,end）</a></li>
+        <li><a href="#empty-clear">empty(), clear()</a></li>
+        <li><a href="#insert在指定index处插入字符或字符串">insert()在指定index处插入字符或字符串</a></li>
+        <li><a href="#erase删除字符">erase()删除字符</a></li>
+        <li><a href="#获取子字符串substr">获取子字符串substr()</a></li>
+        <li><a href="#比较">比较</a></li>
+      </ul>
+    </li>
+    <li><a href="#-cctype-库">&lt; cctype &gt;库</a></li>
+    <li><a href="#字符串流--sstream-">字符串流 &lt; sstream &gt;</a></li>
+  </ul>
+</nav>
+    
+  </div>
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">作者简介</div>
+
+        <div class="prose dark:prose-invert">
+          <h3 id="hi-there-">Hi there 👋</h3>
+<ul>
+<li>🌱 I’m a junior software engineering student (2022-2026) in Taiyuan University of Technology.</li>
+<li>👯 I’m working on computer programming compertation and server development and kernel development, interested in C++、 Rust.</li>
+<li>🤔 I am also looking for help from like-minded friends.</li>
+<li>📫 How to reach me: email me :2934060590@qq.com</li>
+<li>⚡ I won a bronze medal 🥉 in the ICPC (ACM) Invitational tournament.</li>
+</ul>
+<h3 id="-实习经历-work-experience">🏢 实习经历 Work experience</h3>
+<ul>
+<li><a href="https://www.aispeech.com/" target="_blank">思必驰/aispeech</a>
+ 📌2024.07-2024.09
+<ul>
+<li>工作岗位：研发实习生</li>
+<li>工作部门：智能汽车事业部</li>
+<li>工作方向：摸鱼打杂小透明/doge</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+  <script src="/js/grid.js"></script>
+
+
+
+
+<script src="/js/main.js"></script>
+
+    
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+
+
+
+  
+    <script type="module">
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
+    </script>
+  
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

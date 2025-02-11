@@ -1,0 +1,75 @@
+baseurl = "https://example.com"
+defaultContentLanguage = "zh"
+languageCode = "zh"
+title = "Ar-Gas'blog"
+theme = "dream"
+
+# [services]
+# [services.disqus]
+# shortname = "ar-gas"
+# [services.googleAnalytics]
+# ID = "G-332EQF099E"
+
+[params]
+# zenMode = true
+
+lightTheme = "emerald"
+darkTheme = "forest"
+
+# backgroundImage = "me/background.jpg"
+# backgroundImageDark = ""
+
+author = "Ar-Gas"
+description = "Ar-Gas的思考"
+avatar = "img/argas.png"
+headerTitle = "Ar-Gas"
+motto = "深入，深刻"
+
+# footerBottomText = ""
+
+rss = true
+
+# utterancesRepo = ""
+
+# valine = true
+# LEANCLOUD_APP_ID = ""
+# LEANCLOUD_APP_KEY = ""
+
+# waline = true
+# walineServer = ""
+
+email = "2934060590@qq,com"
+
+siteStartYear = 2022
+
+favicon = "favicon.ico"
+
+# Syntax highlighting
+# customSyntaxHighlighting = true
+
+# options
+stickyNav = true
+reorderNavItems = ["search", "about", "rss", "posts", "categories", "tags"]
+# collapseNavItems = ["posts", "categories", "tags", "about"]
+# noDefaultSummaryCover = true
+showTableOfContents = true
+showSummaryCoverInPost = true
+imageZoomableInPost = true
+showPrevNextPost = true
+# reorderShares = ["x", "facebook", "whatsapp"]
+
+[params.navItems]
+
+# [params.twikoo]
+# enabled = true
+# envID = ""
+# region = ""
+# lang = ""
+
+# [params.advanced]
+# customCSS = ["css/custom.css"]
+# customJS = []
+
+[params.experimental]
+jsDate = true
+jsDateFormat = "yyyy年MM月dd日"

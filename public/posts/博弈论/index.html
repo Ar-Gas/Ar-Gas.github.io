@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="zh"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博弈论 Game Theory | Ar-Gas&#39;blog</title>
+
+    
+  
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+  
+
+
+<link rel="canonical" href="http://localhost:1313/posts/%E5%8D%9A%E5%BC%88%E8%AE%BA/" />
+
+
+
+<meta name="author" content="Ar-Gas" />
+<meta name="description" content="经典ICG博弈算法(Impartial Combinatorial Games 公平组合游戏)
+" />
+
+
+<meta name="keywords" content="Algrithm/算法">
+
+
+
+<meta name="generator" content="Hugo 0.143.1">
+
+
+<meta property="og:url" content="http://localhost:1313/posts/%E5%8D%9A%E5%BC%88%E8%AE%BA/">
+  <meta property="og:site_name" content="Ar-Gas&#39;blog">
+  <meta property="og:title" content="博弈论 Game Theory">
+  <meta property="og:description" content="经典ICG博弈算法(Impartial Combinatorial Games 公平组合游戏)">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-04-11T16:23:00+00:00">
+    <meta property="article:modified_time" content="2023-04-11T16:23:00+00:00">
+    <meta property="article:tag" content="Algrithm/算法">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="博弈论 Game Theory">
+  <meta name="twitter:description" content="经典ICG博弈算法(Impartial Combinatorial Games 公平组合游戏)">
+
+
+
+
+<link rel="stylesheet" href="/css/output.css" />
+
+
+
+
+    
+
+
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/img/argas.png" alt="Ar-Gas" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="http://localhost:1313/" class="text-lg font-semibold cursor-pointer">
+          Ar-Gas
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">深入，深刻</div>
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
+    <ion-icon name="logo-rss"></ion-icon>
+    RSS
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0"
+        class="text-sm font-semibold cursor-pointer hover:underline"
+        @click="flip = !flip"
+        title="关于"
+      >关于</div>
+      
+      
+
+      
+      
+        
+      
+
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
+  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
+  <div class="hidden lg:block">
+    
+  </div>
+
+  <div class="lg:col-span-2">
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="博弈论 Game Theory">
+  <meta itemprop="description" content="经典ICG博弈算法(Impartial Combinatorial Games 公平组合游戏)">
+  <meta itemprop="datePublished" content="2023-04-11T16:23:00+00:00">
+  <meta itemprop="dateModified" content="2023-04-11T16:23:00+00:00">
+  <meta itemprop="wordCount" content="213">
+  <meta itemprop="keywords" content="Algrithm/算法">
+
+      <header>
+        <h1 itemprop="headline">博弈论 Game Theory</h1>
+        <p class="text-sm">
+          
+            <span data-format="luxon">2023-04-11T16:23:00Z</span>
+          
+
+          | <span>1分钟阅读</span>
+
+          
+          | <span>更新于
+            
+              <span data-format="luxon">2023-04-11T16:23:00Z</span>
+            </span>
+          
+        </p>
+
+        
+        <div class="flex justify-between">
+          
+            <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+          
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=%e5%8d%9a%e5%bc%88%e8%ae%ba%20Game%20Theory&amp;url=http://localhost:1313/posts/%E5%8D%9A%E5%BC%88%E8%AE%BA/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/%E5%8D%9A%E5%BC%88%E8%AE%BA/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=%e5%8d%9a%e5%bc%88%e8%ae%ba%20Game%20Theory%20http://localhost:1313/posts/%E5%8D%9A%E5%BC%88%E8%AE%BA/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      <section id="dream-single-post-content" itemprop="articleBody">
+        
+
+        <p>经典ICG博弈算法(Impartial Combinatorial Games 公平组合游戏)</p>
+<ol>
+<li>有两名选手;</li>
+<li>两名选手交替操作，每次一步，每步都是在有限的合法集合中选取一种进行;</li>
+<li>在任何情况下，合法操作只取决于情况本身，与选手无关;</li>
+<li>游戏的败北条件为:当某位选手需要进行操作时，当前没有任何可以执行的合法操作，则该选手败北。</li>
+</ol>
+<h1 id="巴什博弈-bash-game">巴什博弈 Bash Game</h1>
+
+
+
+  <blockquote>
+    <p><strong>题目</strong>：一堆n个物品，两个人轮流从中取出1~m个，最后取光者胜（不能继续取的人输）。</p>
+  </blockquote>
+
+<p><strong>同余定理</strong>：n=k∗(m+1)+r，先者拿走r个，那么后者无论拿走1 m个先者只要的数目使和为m+1，那么先手必赢。反之若n=k∗(m+1)，那么先手无论怎样都会输。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ( n <span style="color:#f92672">%</span> (m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) ) <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> true;
+</span></span></code></pre></div><h1 id="斐波那契博弈-fibonacci-nim-game">斐波那契博弈 Fibonacci Nim Game</h1>
+
+
+
+  <blockquote>
+    <p><strong>题目</strong>：一堆石子有n个，两人轮流取，先取者第一次可以去任意多个，但是不能取完，以后每次取的石子数不能超过上次取子数的2倍。取完者胜。</p>
+  </blockquote>
+
+<p>先手胜当且仅当n不是斐波那契数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>f[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> f[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; f[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    f[i] <span style="color:#f92672">=</span> f[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> f[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (f[i] <span style="color:#f92672">==</span> n)  <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> false;
+</span></span></code></pre></div><h1 id="威佐夫博弈-wythoff-game">威佐夫博弈 Wythoff Game</h1>
+
+
+
+  <blockquote>
+    <p><strong>题目</strong>：有两堆各若干物品，两个人轮流从任意一堆中至少取出一个或者从两堆中取出同样多的物品，规定每次至少取一个，至多不限，最后取光者胜。</p>
+  </blockquote>
+
+<p>首先算出差值，<code>插值</code>*<code>黄金分割比</code>==<code>最小值</code>的话后手赢，否则先手赢。（可能涉及高精度问题）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> r <span style="color:#f92672">=</span> (sqrt(<span style="color:#ae81ff">5</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> d <span style="color:#f92672">=</span> abs(a <span style="color:#f92672">-</span> b) <span style="color:#f92672">*</span> r;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (d <span style="color:#f92672">!=</span> min(a, b)) <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> false;
+</span></span></code></pre></div><h1 id="尼姆博弈-nimm-game">尼姆博弈 Nimm Game</h1>
+
+
+
+  <blockquote>
+    <p><strong>题目</strong>：有n堆物品，两人轮流取，每次取某堆中不少于1个，最后取完者胜。</p>
+  </blockquote>
+
+<p>将n堆物品的数量全部<code>异或</code>后为<code>0</code>则结果必败，否则必胜。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> res <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    res <span style="color:#f92672">^=</span> arr[i];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (res)  <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>  <span style="color:#66d9ef">return</span> false;
+</span></span></code></pre></div><h1 id="sg函数-spraguegrundy-function">SG函数 Sprague–Grundy function</h1>
+<ul>
+<li>
+<p>Suppose current game state is X.</p>
+</li>
+<li>
+<p>If X is a terminal state, SG(X) = 0.</p>
+</li>
+<li>
+<p>令每个局面为一个状态，SG值为X</p>
+</li>
+<li>
+<p>结束状态SG值为0</p>
+</li>
+</ul>
+<p>SG函数是将一般的ICG问题抽象为有向图模型。</p>
+<h2 id="mex-minimum-excluded">MEX (Minimum EXcluded)</h2>
+<p>MEX  of a set of non-negative integers is the <strong>smallest non-negative integer <em>not</em> in the set</strong>.</p>
+<p>MEX 是对集合的运算，找出集合中不包含的最小非负整数值。</p>
+<p>Example:</p>
+<ul>
+<li>mex{0,2,4}=1;</li>
+<li>mex{0,1,2,,4}=3;</li>
+<li>mex{}=0.</li>
+</ul>
+<h2 id="sg-function">SG function</h2>
+<p>Let y are positions which X can reach</p>
+<p>$$
+SG(X) = mex(SG(y))
+$$</p>
+<p>$$
+SG(X) = mex(SG(y)|y 是 x 的后继)
+$$</p>
+<h2 id="build">Build</h2>
+<ol>
+<li>找出必败态</li>
+<li>找出前驱点</li>
+<li>计算SG值</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/111374823/231119482-df974c30-7539-494e-b446-837d30ecbfd1.png" alt=""></p>
+<h2 id="sg-theory">SG Theory</h2>
+<p>设G1,G2,&hellip;Gn为n个“有向图”游戏的和(Sum)，游戏G的移动规则是：任选一个子游戏Gi并移动上面的棋子</p>
+<p>$$
+sg(G)=sg(G_1)\oplus sg(G_2)\oplus &hellip;\oplus  sg(G_n)
+$$</p>
+<h1 id="参考资料">参考资料</h1>
+<p>[1].<a href="https://juejin.cn/post/7175087280640491581" target="_blank">浅谈博弈论-掘金</a>
+</p>
+<p>[2].<a href="https://www.bilibili.com/video/BV15b411W73J/?spm_id_from=333.337.search-card.all.click&amp;vd_source=a326e65c6d0fa8e7b1904a3c161ec105" target="_blank">博弈论基础-sjj</a>
+</p>
+<p>[3].<a href="https://assets.hkoi.org/training2021/game-theory.pdf" target="_blank">game-theory</a>
+</p>
+
+        
+      </section>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <a class="group btn btn-outline" href="/posts/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" title="最小生成树">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">上一页</span>
+            <span class="max-w-48 truncate">最小生成树</span>
+          </div>
+        </a>
+        
+
+        
+        <a class="group btn btn-outline" href="/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">下一页</span>
+            <span class="max-w-48 truncate">动态规划</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+
+      
+    </article>
+  </div>
+
+  <div class="hidden lg:flex lg:flex-col lg:items-end">
+    
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mex-minimum-excluded">MEX (Minimum EXcluded)</a></li>
+    <li><a href="#sg-function">SG function</a></li>
+    <li><a href="#build">Build</a></li>
+    <li><a href="#sg-theory">SG Theory</a></li>
+  </ul>
+</nav>
+    
+  </div>
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">作者简介</div>
+
+        <div class="prose dark:prose-invert">
+          <h3 id="hi-there-">Hi there 👋</h3>
+<ul>
+<li>🌱 I’m a junior software engineering student (2022-2026) in Taiyuan University of Technology.</li>
+<li>👯 I’m working on computer programming compertation and server development and kernel development, interested in C++、 Rust.</li>
+<li>🤔 I am also looking for help from like-minded friends.</li>
+<li>📫 How to reach me: email me :2934060590@qq.com</li>
+<li>⚡ I won a bronze medal 🥉 in the ICPC (ACM) Invitational tournament.</li>
+</ul>
+<h3 id="-实习经历-work-experience">🏢 实习经历 Work experience</h3>
+<ul>
+<li><a href="https://www.aispeech.com/" target="_blank">思必驰/aispeech</a>
+ 📌2024.07-2024.09
+<ul>
+<li>工作岗位：研发实习生</li>
+<li>工作部门：智能汽车事业部</li>
+<li>工作方向：摸鱼打杂小透明/doge</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+  <script src="/js/grid.js"></script>
+
+
+
+
+<script src="/js/main.js"></script>
+
+    
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+
+
+
+  
+    <script type="module">
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
+    </script>
+  
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

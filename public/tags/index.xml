@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Ar-Gas&#39;blog</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Ar-Gas&#39;blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 12 Feb 2025 00:14:32 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>管理</title>
+      <link>http://localhost:1313/tags/%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Wed, 12 Feb 2025 00:14:32 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>人性</title>
+      <link>http://localhost:1313/tags/%E4%BA%BA%E6%80%A7/</link>
+      <pubDate>Wed, 12 Feb 2025 00:14:32 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E4%BA%BA%E6%80%A7/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

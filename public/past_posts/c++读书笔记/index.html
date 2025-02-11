@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C&#43;&#43;读书笔记 | Ar-Gas&#39;blog</title>
+
+    
+  
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+  
+
+
+<link rel="canonical" href="http://localhost:1313/past_posts/c&#43;&#43;%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
+
+
+
+<meta name="author" content="Ar-Gas" />
+<meta name="description" content="Ar-Gas的思考" />
+
+
+
+<meta name="generator" content="Hugo 0.143.1">
+
+
+<meta property="og:url" content="http://localhost:1313/past_posts/c&#43;&#43;%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+  <meta property="og:site_name" content="Ar-Gas&#39;blog">
+  <meta property="og:title" content="C&#43;&#43;读书笔记">
+  <meta property="og:description" content="Include 《A Tool of C&#43;&#43;》、《C&#43;&#43; programming language》">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="past_posts">
+    <meta property="article:published_time" content="2023-02-09T07:04:00+00:00">
+    <meta property="article:modified_time" content="2023-02-09T07:04:00+00:00">
+    <meta property="article:tag" content="Read-Notes/读书笔记">
+    <meta property="article:tag" content="C&#43;&#43;">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="C&#43;&#43;读书笔记">
+  <meta name="twitter:description" content="Include 《A Tool of C&#43;&#43;》、《C&#43;&#43; programming language》">
+
+
+
+
+<link rel="stylesheet" href="/css/output.css" />
+
+
+
+
+    
+
+
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/img/argas.png" alt="Ar-Gas" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="http://localhost:1313/" class="text-lg font-semibold cursor-pointer">
+          Ar-Gas
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">深入，深刻</div>
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
+    <ion-icon name="logo-rss"></ion-icon>
+    RSS
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0"
+        class="text-sm font-semibold cursor-pointer hover:underline"
+        @click="flip = !flip"
+        title="关于"
+      >关于</div>
+      
+      
+
+      
+      
+        
+      
+
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
+  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
+  <div class="hidden lg:block">
+    
+  </div>
+
+  <div class="lg:col-span-2">
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="C&#43;&#43;读书笔记">
+  <meta itemprop="description" content="Include 《A Tool of C&#43;&#43;》、《C&#43;&#43; programming language》">
+  <meta itemprop="datePublished" content="2023-02-09T07:04:00+00:00">
+  <meta itemprop="dateModified" content="2023-02-09T07:04:00+00:00">
+  <meta itemprop="wordCount" content="261">
+  <meta itemprop="keywords" content="Read-Notes/读书笔记,C&#43;&#43;">
+
+      <header>
+        <h1 itemprop="headline">C&#43;&#43;读书笔记</h1>
+        <p class="text-sm">
+          
+            <span data-format="luxon">2023-02-09T07:04:00Z</span>
+          
+
+          | <span>2分钟阅读</span>
+
+          
+          | <span>更新于
+            
+              <span data-format="luxon">2023-02-09T07:04:00Z</span>
+            </span>
+          
+        </p>
+
+        
+        <div class="flex justify-between">
+          
+            <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+          
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=C&#43;&#43;%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0&amp;url=http://localhost:1313/past_posts/c&#43;&#43;%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=http://localhost:1313/past_posts/c&#43;&#43;%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=C&#43;&#43;%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0%20http://localhost:1313/past_posts/c&#43;&#43;%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      <section id="dream-single-post-content" itemprop="articleBody">
+        
+
+        <blockquote>
+    <p>Include 《A Tool of C++》、《C++ programming language》</p>
+  </blockquote>
+
+<h4 id="new">new</h4>
+<p>new（动态存储分配），C++的一种创建对象的方式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">7</span>};<span style="color:#75715e">//一个int变量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> b<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">10</span>]<span style="color:#75715e">//一个数量为10的int数组
+</span></span></span></code></pre></div><h4 id="引用">引用</h4>
+<p>引用与指针类似，但语法规则有很多不同</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a1<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a2<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">&amp;</span> r1<span style="color:#f92672">=</span>a1; <span style="color:#75715e">//T&amp;: T的引用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#f92672">&amp;</span> r2<span style="color:#f92672">=</span>a2;
+</span></span><span style="display:flex;"><span>r1<span style="color:#f92672">=</span>r2;
+</span></span></code></pre></div><p>在赋值语句<code>r1=r2</code>中，引用会提取r2引用的值，改变r1引用的值，而指针只会改变指针的地址，不会改变元素。</p>
+<h4 id="用赋值">用{}赋值</h4>
+<p>使用赋值=有时会出现类型转换导致信息丢失，例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">7.2</span> <span style="color:#75715e">//a为7
+</span></span></span></code></pre></div><p>而使用{}能发现这一错误</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0c4349711484e068ed399a04ec8172e~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p>函数的返回值也可以是一类对象{}：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Entry</span>{
+</span></span><span style="display:flex;"><span>	string name;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> value;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Entry <span style="color:#a6e22e">read_entry</span>(istream<span style="color:#f92672">&amp;</span> is){
+</span></span><span style="display:flex;"><span>	string s;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span>	is<span style="color:#f92672">&gt;&gt;</span>s<span style="color:#f92672">&gt;&gt;</span>i;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> {s,i};
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> e <span style="color:#f92672">=</span> read_entry(cin);<span style="color:#75715e">//auto:自动判断返回值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;{&#34;</span><span style="color:#f92672">&lt;&lt;</span>e.name<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">&lt;&lt;</span>e.value<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span></code></pre></div><p>在这个例子中，auto自动判断返回值为{s,i};</p>
+<h4 id="结构化绑定">结构化绑定</h4>
+<p>续上条的代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> [n,v] <span style="color:#f92672">=</span> read_entry(is);
+</span></span><span style="display:flex;"><span>cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;{&#34;</span><span style="color:#f92672">&lt;&lt;</span>n<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">&lt;&lt;</span>v<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span></code></pre></div><p><code>n,v</code> 的类型是从函数<code>read_entry</code>中推出的，这种给类设定局部名字的方式称为结构化绑定，例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>map<span style="color:#f92672">&lt;</span>string,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>m;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//...input m....
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span> [key,value]<span style="color:#f92672">:</span>m)
+</span></span><span style="display:flex;"><span>	cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;{&#34;</span><span style="color:#f92672">&lt;&lt;</span>key<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">&lt;&lt;</span>value<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span></code></pre></div><h3 id="类">类</h3>
+<p>class建议先阅读private的变量名，在阅读public的构造函数（构造函数用{}赋值）</p>
+<h4 id="具体类型">具体类型</h4>
+<h5 id="简易复数类的实现">简易复数类的实现</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">complex</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">double</span> re im;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>	complex(<span style="color:#66d9ef">double</span> r,<span style="color:#66d9ef">double</span> i)<span style="color:#f92672">:</span>re{r},im{i}{}
+</span></span><span style="display:flex;"><span>	complex(<span style="color:#66d9ef">double</span> r)<span style="color:#f92672">:</span>re{r},im{<span style="color:#ae81ff">0</span>}{}
+</span></span><span style="display:flex;"><span>	conplex()<span style="color:#f92672">:</span>re{<span style="color:#ae81ff">0</span>},im{<span style="color:#ae81ff">0</span>}{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">double</span> <span style="color:#a6e22e">real</span>()<span style="color:#66d9ef">const</span>{<span style="color:#66d9ef">return</span> re;}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">real</span>(<span style="color:#66d9ef">double</span> d){re<span style="color:#f92672">=</span>d;}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">double</span> <span style="color:#a6e22e">imag</span>()<span style="color:#66d9ef">const</span>{<span style="color:#66d9ef">return</span> im;}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">imag</span>(<span style="color:#66d9ef">double</span> d){im<span style="color:#f92672">=</span>d;}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	complex <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">+=</span>(complex z){
+</span></span><span style="display:flex;"><span>		re<span style="color:#f92672">+=</span>z.re;
+</span></span><span style="display:flex;"><span>		im<span style="color:#f92672">+=</span>z.im;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">this</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	complex <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">-=</span>(complex z){
+</span></span><span style="display:flex;"><span>		re<span style="color:#f92672">-=</span>z.re;
+</span></span><span style="display:flex;"><span>		im<span style="color:#f92672">-=</span>z.im;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">this</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	complex <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">*=</span>(complex);<span style="color:#75715e">//类外定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	complex <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">/=</span>(complex);<span style="color:#75715e">//别处定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	complex <span style="color:#66d9ef">operator</span><span style="color:#f92672">+</span>(complex a,complex b){<span style="color:#66d9ef">return</span> a<span style="color:#f92672">+=</span>b;}
+</span></span><span style="display:flex;"><span>	complex <span style="color:#66d9ef">operator</span><span style="color:#f92672">-</span>(complex a,complex b){<span style="color:#66d9ef">return</span> a<span style="color:#f92672">-=</span>b;}
+</span></span><span style="display:flex;"><span>	complex <span style="color:#66d9ef">operator</span><span style="color:#f92672">-</span>(complex a){<span style="color:#66d9ef">return</span> {<span style="color:#f92672">-</span>a.real(),<span style="color:#f92672">-</span>a.imag()};}
+</span></span><span style="display:flex;"><span>	complex <span style="color:#66d9ef">operator</span><span style="color:#f92672">*</span>(complex a,complex b){<span style="color:#66d9ef">return</span> a<span style="color:#f92672">*=</span>b;}
+</span></span><span style="display:flex;"><span>	complex <span style="color:#66d9ef">operator</span><span style="color:#f92672">/</span>(complex a,complex b){<span style="color:#66d9ef">return</span> a<span style="color:#f92672">/=</span>b;}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">==</span>(complex a,complex b){
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> a.real()<span style="color:#f92672">==</span>b.real()<span style="color:#f92672">&amp;&amp;</span>a.imag()<span style="color:#f92672">==</span>b.imag();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">!=</span>(complex a,complex b){
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#f92672">!</span>(a<span style="color:#f92672">==</span>b);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	complex <span style="color:#a6e22e">sqrt</span>(complex);<span style="color:#75715e">//别处定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>拷贝相当废内存和时间，所以经常用返回值和<code>operator</code>来替代拷贝</p>
+<h5 id="构造析构-函数">构造+析构 函数</h5>
+<p>以vector为例子：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">vector</span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>	vector(<span style="color:#66d9ef">int</span> s)<span style="color:#f92672">:</span>elem{<span style="color:#66d9ef">new</span> <span style="color:#66d9ef">double</span>[s]},sz{s}{<span style="color:#75715e">//构造函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">!=</span>s;<span style="color:#f92672">++</span>i)    <span style="color:#75715e">//初始化
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  			elem[i]<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	vector(){<span style="color:#66d9ef">delete</span>[] elem;}<span style="color:#75715e">//析构函数，释放资源
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">double</span><span style="color:#f92672">&amp;</span><span style="color:#66d9ef">operator</span>[](<span style="color:#66d9ef">int</span> i);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">size</span>()<span style="color:#66d9ef">const</span>;<span style="color:#75715e">//类外定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">double</span><span style="color:#f92672">*</span> elem;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sz;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>构造函数+析构函数可以让使用者无需设计释放函数，避免内存泄漏</p>
+<h5 id="初始化方法">初始化方法</h5>
+<p>C++主要是两种：初始值列表构造函数、push_back()；</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Vector</span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>	Vector(std<span style="color:#f92672">::</span>initializer_list<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span>);<span style="color:#75715e">//初始值列表狗制造函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">//...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">push_back</span>(couble);<span style="color:#75715e">//添加一个元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">//...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//push_back可用于添加任意元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	Vector <span style="color:#a6e22e">read</span>(istream<span style="color:#f92672">&amp;</span> is){
+</span></span><span style="display:flex;"><span>		Vector v;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">double</span> d ;is<span style="color:#f92672">&gt;&gt;</span>d;)<span style="color:#75715e">//适用for而不是while，使得d的作用域限制在了循环体内
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			v.push_back(d);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> v;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	Vector v<span style="color:#f92672">=</span>read(cin);<span style="color:#75715e">//使用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	Vector<span style="color:#f92672">::</span>Vector(std<span style="color:#f92672">::</span>initializer_list<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span>lst)<span style="color:#f92672">:</span>elem{<span style="color:#66d9ef">new</span> <span style="color:#66d9ef">double</span>[lst.size()]},sz{<span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(lst.size())}
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		copy(lst.begin(),lst.end(),elem);
+</span></span><span style="display:flex;"><span>	}
+</span></span></code></pre></div><h4 id="抽象类继承多态">抽象类（继承、多态）</h4>
+<p>C++的<strong>继承</strong>通过包含纯虚函数的<code>抽象类</code>（基类/base）与所派生的<code>子类/subcalss</code>（或超类/superclass）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Container</span>{<span style="color:#75715e">//只作为接口的抽象类
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">virtual</span> <span style="color:#66d9ef">double</span><span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span>[](<span style="color:#66d9ef">int</span>)<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;	<span style="color:#75715e">//纯虚函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">virtual</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">size</span>() <span style="color:#66d9ef">const</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;			<span style="color:#75715e">//常量成员函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>Container(){}				<span style="color:#75715e">//析构函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//抽象类不能定义对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Container c;<span style="color:#75715e">//错误
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Container<span style="color:#f92672">*</span> p<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Vector_container(<span style="color:#ae81ff">10</span>)<span style="color:#75715e">//正确，Container是个接口
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> use(Container<span style="color:#f92672">&amp;</span> c){<span style="color:#75715e">//忽略具体类型
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> sz<span style="color:#f92672">=</span>c.size();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+
+        
+      </section>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <a class="group btn btn-outline" href="/past_posts/%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/" title="这是一个怎样的博客？点击进入博客指南">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">上一页</span>
+            <span class="max-w-48 truncate">这是一个怎样的博客？点击进入博客指南</span>
+          </div>
+        </a>
+        
+
+        
+        <a class="group btn btn-outline" href="/past_posts/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="常微分方程笔记">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">下一页</span>
+            <span class="max-w-48 truncate">常微分方程笔记</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+
+      
+    </article>
+  </div>
+
+  <div class="hidden lg:flex lg:flex-col lg:items-end">
+    
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+        <li><a href="#类">类</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    
+  </div>
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">作者简介</div>
+
+        <div class="prose dark:prose-invert">
+          <h3 id="hi-there-">Hi there 👋</h3>
+<ul>
+<li>🌱 I’m a junior software engineering student (2022-2026) in Taiyuan University of Technology.</li>
+<li>👯 I’m working on computer programming compertation and server development and kernel development, interested in C++、 Rust.</li>
+<li>🤔 I am also looking for help from like-minded friends.</li>
+<li>📫 How to reach me: email me :2934060590@qq.com</li>
+<li>⚡ I won a bronze medal 🥉 in the ICPC (ACM) Invitational tournament.</li>
+</ul>
+<h3 id="-实习经历-work-experience">🏢 实习经历 Work experience</h3>
+<ul>
+<li><a href="https://www.aispeech.com/" target="_blank">思必驰/aispeech</a>
+ 📌2024.07-2024.09
+<ul>
+<li>工作岗位：研发实习生</li>
+<li>工作部门：智能汽车事业部</li>
+<li>工作方向：摸鱼打杂小透明/doge</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+  <script src="/js/grid.js"></script>
+
+
+
+
+<script src="/js/main.js"></script>
+
+    
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+
+
+
+  
+    <script type="module">
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
+    </script>
+  
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

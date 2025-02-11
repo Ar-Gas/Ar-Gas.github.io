@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Ar-Gas&#39;blog</title>
+    <link>http://localhost:1313/categories/linux/</link>
+    <description>Recent content in Linux on Ar-Gas&#39;blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 16 Sep 2023 09:41:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux &#43; Ubuntu安装简明</title>
+      <link>http://localhost:1313/past_posts/linux%E5%AE%89%E8%A3%85%E7%AE%80%E6%98%8E/</link>
+      <pubDate>Sat, 16 Sep 2023 09:41:00 +0000</pubDate>
+      <guid>http://localhost:1313/past_posts/linux%E5%AE%89%E8%A3%85%E7%AE%80%E6%98%8E/</guid>
+      <description>&lt;p&gt;因一段时间未用虚拟机，打开后发现崩了QAQ，故重新配置了一下，写个文档节约下次时间。&lt;/p&gt;&#xA;&lt;h1 id=&#34;安装vmware17&#34;&gt;安装VMware17&lt;/h1&gt;&#xA;&lt;p&gt;bilibili找的盗版（雾&lt;/p&gt;&#xA;&lt;h1 id=&#34;安装ubuntu的iso&#34;&gt;安装Ubuntu的ISO&lt;/h1&gt;&#xA;&lt;p&gt;在阿里云或者其他大学镜像安装对应，我下载的版本是：ubuntu-20.04.6-live-server-amd64&lt;/p&gt;&#xA;&lt;h1 id=&#34;安装linux-配置&#34;&gt;安装linux 配置&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1ig4y1s7eL/?vd_source=a326e65c6d0fa8e7b1904a3c161ec105&#34; target=&#34;_blank&#34;&gt;参考链接&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

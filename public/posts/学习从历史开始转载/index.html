@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习从历史开始（转载） | Ar-Gas&#39;blog</title>
+
+    
+  
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+  
+
+
+<link rel="canonical" href="http://localhost:1313/posts/%E5%AD%A6%E4%B9%A0%E4%BB%8E%E5%8E%86%E5%8F%B2%E5%BC%80%E5%A7%8B%E8%BD%AC%E8%BD%BD/" />
+
+
+
+<meta name="author" content="Ar-Gas" />
+<meta name="description" content="原文连接我有一个忘记从哪继承来的观点：无论我们想学什么，都应该从学习他的历史开始。极端点说，无论学什么，都是在学他的历史。
+前几天在北京见到了我的小表妹，她刚上初一，人极为聪明。七年前我在北京工作时，她还没有上小学。那个时候我就回答过她许多科普问题。一个五岁的小姑娘的理解能力曾让我感叹不已。
+知道小妹妹居然在写 blog 而且文笔不错，觉得挺高兴的。但听说她最近一次考试数学成绩不是特别好，有些令人担忧。我一直认为中学所谓文理分科就是件巨傻的事（似乎现在慢慢的不再分了）。但如果一味的去追求所谓文科上的造诣，怕是会耽误理性思维的发展。在迈入科学的殿堂的门槛上，一步错就能耽误十年啊。
+小孩子一开始在学校学习或许更多的是为了比同龄人强，为了完成长辈的期望，为了达到别人设定的目标。但终有一天，长大了的后会发现，学习其实就是因为自己想知道。
+所以吃饭的时候，我多说了几句。无论学什么，都要先培养出兴趣。理科的东西老师教起来很枯燥，那么就可以从读他们的历史开始。一段段故事，一个个鲜活的人，就会变得生动。深一层的道理需要慢慢的去体会：无论学什么，都是在学他的历史。以前的人如何考虑这些问题，为何研究这些问题。他们怎样去归纳、总结。他们的思考怎样延伸出去，为什么又有了局限性。后人怎样做出了突破。人性是共通的，人的智力水平也相差无多。按着前人的路，没有太难理解的道理。而课堂上现在的教法，把历史上长长的思考过程压缩，裁减掉所有的错误和累赘，压缩成一条条公式与冷冰冰的推导。背了那些，除了考出完美的答卷，就没太多意义了。
+我带她去书店逛了一下午，买了不少书。逛书店这个点子一提出来，小姑娘心中的高兴完全写在了脸上。我想找一本有趣点的数学史的书，没有物色到。最后挑了一本科普的《从一到无穷大》；转到科普的柜台，她居然知道《时间简史》。我想了想还是买了本，但是告诫说，这个年纪读可能还太小，留到高中再看吧。再后来又买了些小说……
+写了这么一大段，其实我还是想绕回来写写软件开发2.0大会上的故事，以及接下来几天的活动。
+2005 年 C&#43;&#43; 大会上领教过陈榕“忽悠”人的工夫，所以这次无论如何他的 session 都要参加的。可惜陈榕没当标题党，导致那个 session 居然没把会议室坐满。不禁感叹大家还是没有参加此类活动的经验。其实技术的 conference 上选课关键是要看是谁讲，至于讲什么根本不重要。这就跟读书一样，作者远比书名重要。
+和上次一样，陈榕调侃了许多大公司，尤其是微软。但他更语重心长的讲了一个浅显的道理：微软的人并不比大家苯，当然也不比大家聪明。我们都能看到的问题，比如系统臃肿，软件结构不合理，等等，不可能微软自己人就意识不到。种种问题，绝对不能只用当局者迷，旁观者清来解释。
+我们只有从历史看过来，方能理解历史的局限性。做出那些错误决定的无奈放在大背景上大多会得到一个合理的解释。也只有这样，我们才可以领悟到未来正确的路。
+周末，博文视点组织了一些作者搞了个座谈会的活动。我有一本书《我的编程感悟》是他们出的，应邀参加。经历了北京惨烈的交通状况后，从城西晃到城东，没想到最后摸到了微软的地头。那天在那里认识了微软的林毅。晚餐的时候林毅从我那本书引出去开始想当年，我们聊了下 Z80 和 6502 的汇编。这让我突然想起，当初没有把那部分过时的内容从书稿里删除，其中一个原因就是，我需要有一个地方记录我所了解的历史。即使是游戏编程这个计算机领域小小的分支，同样有它的历史。了解了历史方能展望未来。我自己写的不好，但是我写就是想表明，了解历史是有价值的。
+长期以来，自己总结我在编程方面取得的成绩的缘因，最重要的一条就是无功利心的学习。
+并不是因为我需要用到什么领域的知识而去学习，而只是单纯的我想知道，我想弄明白。搞明白之后，到底有什么价值，可以创造多少财富，这是我从来不关心的。反而这样，知识给予的回馈是最大的。
+别看计算机科学的历史只有短短几十年，可今天很多问题，人们早在几十年前就开始思考了。现在我还经常翻《计算机程序设计艺术》；我的同事 soloist办公桌上常备一本《C Interfaces and Implementations》；那天晚上周爱民强烈建议博文再版《结构程序设计》。这些书成书都很早。看来大家转了一圈后，今天又都返回去在故纸堆里寻找答案。
+" />
+
+
+<meta name="keywords" content="Transshipment/转载">
+
+
+
+<meta name="generator" content="Hugo 0.143.1">
+
+
+<meta property="og:url" content="http://localhost:1313/posts/%E5%AD%A6%E4%B9%A0%E4%BB%8E%E5%8E%86%E5%8F%B2%E5%BC%80%E5%A7%8B%E8%BD%AC%E8%BD%BD/">
+  <meta property="og:site_name" content="Ar-Gas&#39;blog">
+  <meta property="og:title" content="学习从历史开始（转载）">
+  <meta property="og:description" content="原文连接我有一个忘记从哪继承来的观点：无论我们想学什么，都应该从学习他的历史开始。极端点说，无论学什么，都是在学他的历史。
+前几天在北京见到了我的小表妹，她刚上初一，人极为聪明。七年前我在北京工作时，她还没有上小学。那个时候我就回答过她许多科普问题。一个五岁的小姑娘的理解能力曾让我感叹不已。
+知道小妹妹居然在写 blog 而且文笔不错，觉得挺高兴的。但听说她最近一次考试数学成绩不是特别好，有些令人担忧。我一直认为中学所谓文理分科就是件巨傻的事（似乎现在慢慢的不再分了）。但如果一味的去追求所谓文科上的造诣，怕是会耽误理性思维的发展。在迈入科学的殿堂的门槛上，一步错就能耽误十年啊。
+小孩子一开始在学校学习或许更多的是为了比同龄人强，为了完成长辈的期望，为了达到别人设定的目标。但终有一天，长大了的后会发现，学习其实就是因为自己想知道。
+所以吃饭的时候，我多说了几句。无论学什么，都要先培养出兴趣。理科的东西老师教起来很枯燥，那么就可以从读他们的历史开始。一段段故事，一个个鲜活的人，就会变得生动。深一层的道理需要慢慢的去体会：无论学什么，都是在学他的历史。以前的人如何考虑这些问题，为何研究这些问题。他们怎样去归纳、总结。他们的思考怎样延伸出去，为什么又有了局限性。后人怎样做出了突破。人性是共通的，人的智力水平也相差无多。按着前人的路，没有太难理解的道理。而课堂上现在的教法，把历史上长长的思考过程压缩，裁减掉所有的错误和累赘，压缩成一条条公式与冷冰冰的推导。背了那些，除了考出完美的答卷，就没太多意义了。
+我带她去书店逛了一下午，买了不少书。逛书店这个点子一提出来，小姑娘心中的高兴完全写在了脸上。我想找一本有趣点的数学史的书，没有物色到。最后挑了一本科普的《从一到无穷大》；转到科普的柜台，她居然知道《时间简史》。我想了想还是买了本，但是告诫说，这个年纪读可能还太小，留到高中再看吧。再后来又买了些小说……
+写了这么一大段，其实我还是想绕回来写写软件开发2.0大会上的故事，以及接下来几天的活动。
+2005 年 C&#43;&#43; 大会上领教过陈榕“忽悠”人的工夫，所以这次无论如何他的 session 都要参加的。可惜陈榕没当标题党，导致那个 session 居然没把会议室坐满。不禁感叹大家还是没有参加此类活动的经验。其实技术的 conference 上选课关键是要看是谁讲，至于讲什么根本不重要。这就跟读书一样，作者远比书名重要。
+和上次一样，陈榕调侃了许多大公司，尤其是微软。但他更语重心长的讲了一个浅显的道理：微软的人并不比大家苯，当然也不比大家聪明。我们都能看到的问题，比如系统臃肿，软件结构不合理，等等，不可能微软自己人就意识不到。种种问题，绝对不能只用当局者迷，旁观者清来解释。
+我们只有从历史看过来，方能理解历史的局限性。做出那些错误决定的无奈放在大背景上大多会得到一个合理的解释。也只有这样，我们才可以领悟到未来正确的路。
+周末，博文视点组织了一些作者搞了个座谈会的活动。我有一本书《我的编程感悟》是他们出的，应邀参加。经历了北京惨烈的交通状况后，从城西晃到城东，没想到最后摸到了微软的地头。那天在那里认识了微软的林毅。晚餐的时候林毅从我那本书引出去开始想当年，我们聊了下 Z80 和 6502 的汇编。这让我突然想起，当初没有把那部分过时的内容从书稿里删除，其中一个原因就是，我需要有一个地方记录我所了解的历史。即使是游戏编程这个计算机领域小小的分支，同样有它的历史。了解了历史方能展望未来。我自己写的不好，但是我写就是想表明，了解历史是有价值的。
+长期以来，自己总结我在编程方面取得的成绩的缘因，最重要的一条就是无功利心的学习。
+并不是因为我需要用到什么领域的知识而去学习，而只是单纯的我想知道，我想弄明白。搞明白之后，到底有什么价值，可以创造多少财富，这是我从来不关心的。反而这样，知识给予的回馈是最大的。
+别看计算机科学的历史只有短短几十年，可今天很多问题，人们早在几十年前就开始思考了。现在我还经常翻《计算机程序设计艺术》；我的同事 soloist办公桌上常备一本《C Interfaces and Implementations》；那天晚上周爱民强烈建议博文再版《结构程序设计》。这些书成书都很早。看来大家转了一圈后，今天又都返回去在故纸堆里寻找答案。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-02-24T21:00:00+00:00">
+    <meta property="article:modified_time" content="2023-02-24T21:00:00+00:00">
+    <meta property="article:tag" content="Transshipment/转载">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="学习从历史开始（转载）">
+  <meta name="twitter:description" content="原文连接我有一个忘记从哪继承来的观点：无论我们想学什么，都应该从学习他的历史开始。极端点说，无论学什么，都是在学他的历史。
+前几天在北京见到了我的小表妹，她刚上初一，人极为聪明。七年前我在北京工作时，她还没有上小学。那个时候我就回答过她许多科普问题。一个五岁的小姑娘的理解能力曾让我感叹不已。
+知道小妹妹居然在写 blog 而且文笔不错，觉得挺高兴的。但听说她最近一次考试数学成绩不是特别好，有些令人担忧。我一直认为中学所谓文理分科就是件巨傻的事（似乎现在慢慢的不再分了）。但如果一味的去追求所谓文科上的造诣，怕是会耽误理性思维的发展。在迈入科学的殿堂的门槛上，一步错就能耽误十年啊。
+小孩子一开始在学校学习或许更多的是为了比同龄人强，为了完成长辈的期望，为了达到别人设定的目标。但终有一天，长大了的后会发现，学习其实就是因为自己想知道。
+所以吃饭的时候，我多说了几句。无论学什么，都要先培养出兴趣。理科的东西老师教起来很枯燥，那么就可以从读他们的历史开始。一段段故事，一个个鲜活的人，就会变得生动。深一层的道理需要慢慢的去体会：无论学什么，都是在学他的历史。以前的人如何考虑这些问题，为何研究这些问题。他们怎样去归纳、总结。他们的思考怎样延伸出去，为什么又有了局限性。后人怎样做出了突破。人性是共通的，人的智力水平也相差无多。按着前人的路，没有太难理解的道理。而课堂上现在的教法，把历史上长长的思考过程压缩，裁减掉所有的错误和累赘，压缩成一条条公式与冷冰冰的推导。背了那些，除了考出完美的答卷，就没太多意义了。
+我带她去书店逛了一下午，买了不少书。逛书店这个点子一提出来，小姑娘心中的高兴完全写在了脸上。我想找一本有趣点的数学史的书，没有物色到。最后挑了一本科普的《从一到无穷大》；转到科普的柜台，她居然知道《时间简史》。我想了想还是买了本，但是告诫说，这个年纪读可能还太小，留到高中再看吧。再后来又买了些小说……
+写了这么一大段，其实我还是想绕回来写写软件开发2.0大会上的故事，以及接下来几天的活动。
+2005 年 C&#43;&#43; 大会上领教过陈榕“忽悠”人的工夫，所以这次无论如何他的 session 都要参加的。可惜陈榕没当标题党，导致那个 session 居然没把会议室坐满。不禁感叹大家还是没有参加此类活动的经验。其实技术的 conference 上选课关键是要看是谁讲，至于讲什么根本不重要。这就跟读书一样，作者远比书名重要。
+和上次一样，陈榕调侃了许多大公司，尤其是微软。但他更语重心长的讲了一个浅显的道理：微软的人并不比大家苯，当然也不比大家聪明。我们都能看到的问题，比如系统臃肿，软件结构不合理，等等，不可能微软自己人就意识不到。种种问题，绝对不能只用当局者迷，旁观者清来解释。
+我们只有从历史看过来，方能理解历史的局限性。做出那些错误决定的无奈放在大背景上大多会得到一个合理的解释。也只有这样，我们才可以领悟到未来正确的路。
+周末，博文视点组织了一些作者搞了个座谈会的活动。我有一本书《我的编程感悟》是他们出的，应邀参加。经历了北京惨烈的交通状况后，从城西晃到城东，没想到最后摸到了微软的地头。那天在那里认识了微软的林毅。晚餐的时候林毅从我那本书引出去开始想当年，我们聊了下 Z80 和 6502 的汇编。这让我突然想起，当初没有把那部分过时的内容从书稿里删除，其中一个原因就是，我需要有一个地方记录我所了解的历史。即使是游戏编程这个计算机领域小小的分支，同样有它的历史。了解了历史方能展望未来。我自己写的不好，但是我写就是想表明，了解历史是有价值的。
+长期以来，自己总结我在编程方面取得的成绩的缘因，最重要的一条就是无功利心的学习。
+并不是因为我需要用到什么领域的知识而去学习，而只是单纯的我想知道，我想弄明白。搞明白之后，到底有什么价值，可以创造多少财富，这是我从来不关心的。反而这样，知识给予的回馈是最大的。
+别看计算机科学的历史只有短短几十年，可今天很多问题，人们早在几十年前就开始思考了。现在我还经常翻《计算机程序设计艺术》；我的同事 soloist办公桌上常备一本《C Interfaces and Implementations》；那天晚上周爱民强烈建议博文再版《结构程序设计》。这些书成书都很早。看来大家转了一圈后，今天又都返回去在故纸堆里寻找答案。">
+
+
+
+
+<link rel="stylesheet" href="/css/output.css" />
+
+
+
+
+    
+
+
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/img/argas.png" alt="Ar-Gas" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="http://localhost:1313/" class="text-lg font-semibold cursor-pointer">
+          Ar-Gas
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">深入，深刻</div>
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
+    <ion-icon name="logo-rss"></ion-icon>
+    RSS
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0"
+        class="text-sm font-semibold cursor-pointer hover:underline"
+        @click="flip = !flip"
+        title="关于"
+      >关于</div>
+      
+      
+
+      
+      
+        
+      
+
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
+  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
+  <div class="hidden lg:block">
+    
+  </div>
+
+  <div class="lg:col-span-2">
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="学习从历史开始（转载）">
+  <meta itemprop="description" content="原文连接我有一个忘记从哪继承来的观点：无论我们想学什么，都应该从学习他的历史开始。极端点说，无论学什么，都是在学他的历史。
+前几天在北京见到了我的小表妹，她刚上初一，人极为聪明。七年前我在北京工作时，她还没有上小学。那个时候我就回答过她许多科普问题。一个五岁的小姑娘的理解能力曾让我感叹不已。
+知道小妹妹居然在写 blog 而且文笔不错，觉得挺高兴的。但听说她最近一次考试数学成绩不是特别好，有些令人担忧。我一直认为中学所谓文理分科就是件巨傻的事（似乎现在慢慢的不再分了）。但如果一味的去追求所谓文科上的造诣，怕是会耽误理性思维的发展。在迈入科学的殿堂的门槛上，一步错就能耽误十年啊。
+小孩子一开始在学校学习或许更多的是为了比同龄人强，为了完成长辈的期望，为了达到别人设定的目标。但终有一天，长大了的后会发现，学习其实就是因为自己想知道。
+所以吃饭的时候，我多说了几句。无论学什么，都要先培养出兴趣。理科的东西老师教起来很枯燥，那么就可以从读他们的历史开始。一段段故事，一个个鲜活的人，就会变得生动。深一层的道理需要慢慢的去体会：无论学什么，都是在学他的历史。以前的人如何考虑这些问题，为何研究这些问题。他们怎样去归纳、总结。他们的思考怎样延伸出去，为什么又有了局限性。后人怎样做出了突破。人性是共通的，人的智力水平也相差无多。按着前人的路，没有太难理解的道理。而课堂上现在的教法，把历史上长长的思考过程压缩，裁减掉所有的错误和累赘，压缩成一条条公式与冷冰冰的推导。背了那些，除了考出完美的答卷，就没太多意义了。
+我带她去书店逛了一下午，买了不少书。逛书店这个点子一提出来，小姑娘心中的高兴完全写在了脸上。我想找一本有趣点的数学史的书，没有物色到。最后挑了一本科普的《从一到无穷大》；转到科普的柜台，她居然知道《时间简史》。我想了想还是买了本，但是告诫说，这个年纪读可能还太小，留到高中再看吧。再后来又买了些小说……
+写了这么一大段，其实我还是想绕回来写写软件开发2.0大会上的故事，以及接下来几天的活动。
+2005 年 C&#43;&#43; 大会上领教过陈榕“忽悠”人的工夫，所以这次无论如何他的 session 都要参加的。可惜陈榕没当标题党，导致那个 session 居然没把会议室坐满。不禁感叹大家还是没有参加此类活动的经验。其实技术的 conference 上选课关键是要看是谁讲，至于讲什么根本不重要。这就跟读书一样，作者远比书名重要。
+和上次一样，陈榕调侃了许多大公司，尤其是微软。但他更语重心长的讲了一个浅显的道理：微软的人并不比大家苯，当然也不比大家聪明。我们都能看到的问题，比如系统臃肿，软件结构不合理，等等，不可能微软自己人就意识不到。种种问题，绝对不能只用当局者迷，旁观者清来解释。
+我们只有从历史看过来，方能理解历史的局限性。做出那些错误决定的无奈放在大背景上大多会得到一个合理的解释。也只有这样，我们才可以领悟到未来正确的路。
+周末，博文视点组织了一些作者搞了个座谈会的活动。我有一本书《我的编程感悟》是他们出的，应邀参加。经历了北京惨烈的交通状况后，从城西晃到城东，没想到最后摸到了微软的地头。那天在那里认识了微软的林毅。晚餐的时候林毅从我那本书引出去开始想当年，我们聊了下 Z80 和 6502 的汇编。这让我突然想起，当初没有把那部分过时的内容从书稿里删除，其中一个原因就是，我需要有一个地方记录我所了解的历史。即使是游戏编程这个计算机领域小小的分支，同样有它的历史。了解了历史方能展望未来。我自己写的不好，但是我写就是想表明，了解历史是有价值的。
+长期以来，自己总结我在编程方面取得的成绩的缘因，最重要的一条就是无功利心的学习。
+并不是因为我需要用到什么领域的知识而去学习，而只是单纯的我想知道，我想弄明白。搞明白之后，到底有什么价值，可以创造多少财富，这是我从来不关心的。反而这样，知识给予的回馈是最大的。
+别看计算机科学的历史只有短短几十年，可今天很多问题，人们早在几十年前就开始思考了。现在我还经常翻《计算机程序设计艺术》；我的同事 soloist办公桌上常备一本《C Interfaces and Implementations》；那天晚上周爱民强烈建议博文再版《结构程序设计》。这些书成书都很早。看来大家转了一圈后，今天又都返回去在故纸堆里寻找答案。">
+  <meta itemprop="datePublished" content="2023-02-24T21:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-02-24T21:00:00+00:00">
+  <meta itemprop="wordCount" content="43">
+  <meta itemprop="keywords" content="Transshipment/转载">
+
+      <header>
+        <h1 itemprop="headline">学习从历史开始（转载）</h1>
+        <p class="text-sm">
+          
+            <span data-format="luxon">2023-02-24T21:00:00Z</span>
+          
+
+          | <span>1分钟阅读</span>
+
+          
+          | <span>更新于
+            
+              <span data-format="luxon">2023-02-24T21:00:00Z</span>
+            </span>
+          
+        </p>
+
+        
+        <div class="flex justify-between">
+          
+            <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+          
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=%e5%ad%a6%e4%b9%a0%e4%bb%8e%e5%8e%86%e5%8f%b2%e5%bc%80%e5%a7%8b%ef%bc%88%e8%bd%ac%e8%bd%bd%ef%bc%89&amp;url=http://localhost:1313/posts/%E5%AD%A6%E4%B9%A0%E4%BB%8E%E5%8E%86%E5%8F%B2%E5%BC%80%E5%A7%8B%E8%BD%AC%E8%BD%BD/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/%E5%AD%A6%E4%B9%A0%E4%BB%8E%E5%8E%86%E5%8F%B2%E5%BC%80%E5%A7%8B%E8%BD%AC%E8%BD%BD/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=%e5%ad%a6%e4%b9%a0%e4%bb%8e%e5%8e%86%e5%8f%b2%e5%bc%80%e5%a7%8b%ef%bc%88%e8%bd%ac%e8%bd%bd%ef%bc%89%20http://localhost:1313/posts/%E5%AD%A6%E4%B9%A0%E4%BB%8E%E5%8E%86%E5%8F%B2%E5%BC%80%E5%A7%8B%E8%BD%AC%E8%BD%BD/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      <section id="dream-single-post-content" itemprop="articleBody">
+        
+
+        <p><a href="https://blog.codingnow.com/2007/12/history.html" target="_blank">原文连接</a>
+</p>
+<p>我有一个忘记从哪继承来的观点：无论我们想学什么，都应该从学习他的历史开始。极端点说，无论学什么，都是在学他的历史。</p>
+<p>前几天在北京见到了我的小表妹，她刚上初一，人极为聪明。七年前我在北京工作时，她还没有上小学。那个时候我就回答过她许多科普问题。一个五岁的小姑娘的理解能力曾让我感叹不已。</p>
+<p>知道小妹妹居然在写 blog 而且文笔不错，觉得挺高兴的。但听说她最近一次考试数学成绩不是特别好，有些令人担忧。我一直认为中学所谓文理分科就是件巨傻的事（似乎现在慢慢的不再分了）。但如果一味的去追求所谓文科上的造诣，怕是会耽误理性思维的发展。在迈入科学的殿堂的门槛上，一步错就能耽误十年啊。</p>
+<p>小孩子一开始在学校学习或许更多的是为了比同龄人强，为了完成长辈的期望，为了达到别人设定的目标。但终有一天，长大了的后会发现，学习其实就是因为自己想知道。</p>
+<p>所以吃饭的时候，我多说了几句。无论学什么，都要先培养出兴趣。理科的东西老师教起来很枯燥，那么就可以从读他们的历史开始。一段段故事，一个个鲜活的人，就会变得生动。深一层的道理需要慢慢的去体会：无论学什么，都是在学他的历史。以前的人如何考虑这些问题，为何研究这些问题。他们怎样去归纳、总结。他们的思考怎样延伸出去，为什么又有了局限性。后人怎样做出了突破。人性是共通的，人的智力水平也相差无多。按着前人的路，没有太难理解的道理。而课堂上现在的教法，把历史上长长的思考过程压缩，裁减掉所有的错误和累赘，压缩成一条条公式与冷冰冰的推导。背了那些，除了考出完美的答卷，就没太多意义了。</p>
+<p>我带她去书店逛了一下午，买了不少书。逛书店这个点子一提出来，小姑娘心中的高兴完全写在了脸上。我想找一本有趣点的数学史的书，没有物色到。最后挑了一本科普的《<a href="http://www.douban.com/subject/1102715/" target="_blank">从一到无穷大</a>
+》；转到科普的柜台，她居然知道《时间简史》。我想了想还是买了本，但是告诫说，这个年纪读可能还太小，留到高中再看吧。再后来又买了些小说……</p>
+<p>写了这么一大段，其实我还是想绕回来写写<a href="http://www.sd2china.cn/" target="_blank">软件开发2.0大会</a>
+上的故事，以及接下来几天的活动。</p>
+<p>2005 年 C++ 大会上领教过陈榕“忽悠”人的工夫，所以这次无论如何他的 session 都要参加的。可惜陈榕没当标题党，导致那个 session 居然没把会议室坐满。不禁感叹大家还是没有参加此类活动的经验。其实技术的 conference 上选课关键是要看是谁讲，至于讲什么根本不重要。这就跟读书一样，作者远比书名重要。</p>
+<p>和上次一样，陈榕调侃了许多大公司，尤其是微软。但他更语重心长的讲了一个浅显的道理：微软的人并不比大家苯，当然也不比大家聪明。我们都能看到的问题，比如系统臃肿，软件结构不合理，等等，不可能微软自己人就意识不到。种种问题，绝对不能只用当局者迷，旁观者清来解释。</p>
+<p>我们只有从历史看过来，方能理解历史的局限性。做出那些错误决定的无奈放在大背景上大多会得到一个合理的解释。也只有这样，我们才可以领悟到未来正确的路。</p>
+<p>周末，<a href="http://www.broadview.com.cn/" target="_blank">博文视点</a>
+ 组织了一些作者搞了个座谈会的活动。我有一本书《<a href="http://www.douban.com/subject/1441780/" target="_blank">我的编程感悟</a>
+》是他们出的，应邀参加。经历了北京惨烈的交通状况后，从城西晃到城东，没想到最后摸到了微软的地头。那天在那里认识了微软的林毅。晚餐的时候林毅从我那本书引出去开始想当年，我们聊了下 Z80 和 6502 的汇编。这让我突然想起，当初没有把那部分过时的内容从书稿里删除，其中一个原因就是，我需要有一个地方记录我所了解的历史。即使是游戏编程这个计算机领域小小的分支，同样有它的历史。了解了历史方能展望未来。我自己写的不好，但是我写就是想表明，了解历史是有价值的。</p>
+<p>长期以来，自己总结我在编程方面取得的成绩的缘因，最重要的一条就是无功利心的学习。</p>
+<p>并不是因为我需要用到什么领域的知识而去学习，而只是单纯的我想知道，我想弄明白。搞明白之后，到底有什么价值，可以创造多少财富，这是我从来不关心的。反而这样，知识给予的回馈是最大的。</p>
+<p>别看计算机科学的历史只有短短几十年，可今天很多问题，人们早在几十年前就开始思考了。现在我还经常翻《<a href="http://www.douban.com/subject/1231933/" target="_blank">计算机程序设计艺术</a>
+》；我的同事 <a href="http://blog.csdn.net/soloist/" target="_blank">soloist</a>
+ 办公桌上常备一本《<a href="http://www.cs.princeton.edu/software/cii/" target="_blank">C Interfaces and Implementations</a>
+》；那天晚上<a href="http://blog.csdn.net/aimingoo/" target="_blank">周爱民</a>
+强烈建议博文再版《<a href="http://www.kongfz.com/bookstore/3701/book_14408804.html" target="_blank">结构程序设计</a>
+》。这些书成书都很早。看来大家转了一圈后，今天又都返回去在故纸堆里寻找答案。</p>
+
+
+        
+      </section>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <a class="group btn btn-outline" href="/posts/%E7%94%9F%E6%97%A5%E5%B0%8F%E8%AE%B0/" title="生日小记">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">上一页</span>
+            <span class="max-w-48 truncate">生日小记</span>
+          </div>
+        </a>
+        
+
+        
+        <a class="group btn btn-outline" href="/posts/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E5%9C%B0%E8%AE%B0%E5%BF%86%E4%B8%8E%E5%AD%A6%E4%B9%A0%E8%BD%AC%E8%BD%BD/" title="如何有效地记忆与学习（转载）">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">下一页</span>
+            <span class="max-w-48 truncate">如何有效地记忆与学习（转载）</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+
+      
+    </article>
+  </div>
+
+  <div class="hidden lg:flex lg:flex-col lg:items-end">
+    
+      <nav id="TableOfContents"></nav>
+    
+  </div>
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">作者简介</div>
+
+        <div class="prose dark:prose-invert">
+          <h3 id="hi-there-">Hi there 👋</h3>
+<ul>
+<li>🌱 I’m a junior software engineering student (2022-2026) in Taiyuan University of Technology.</li>
+<li>👯 I’m working on computer programming compertation and server development and kernel development, interested in C++、 Rust.</li>
+<li>🤔 I am also looking for help from like-minded friends.</li>
+<li>📫 How to reach me: email me :2934060590@qq.com</li>
+<li>⚡ I won a bronze medal 🥉 in the ICPC (ACM) Invitational tournament.</li>
+</ul>
+<h3 id="-实习经历-work-experience">🏢 实习经历 Work experience</h3>
+<ul>
+<li><a href="https://www.aispeech.com/" target="_blank">思必驰/aispeech</a>
+ 📌2024.07-2024.09
+<ul>
+<li>工作岗位：研发实习生</li>
+<li>工作部门：智能汽车事业部</li>
+<li>工作方向：摸鱼打杂小透明/doge</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+  <script src="/js/grid.js"></script>
+
+
+
+
+<script src="/js/main.js"></script>
+
+    
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+
+
+
+  
+    <script type="module">
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
+    </script>
+  
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单调栈、单调队列 | Ar-Gas&#39;blog</title>
+
+    
+  
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+  
+
+
+<link rel="canonical" href="http://localhost:1313/past_posts/%E5%8D%95%E8%B0%83%E6%A0%88%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" />
+
+
+
+<meta name="author" content="Ar-Gas" />
+<meta name="description" content="Ar-Gas的思考" />
+
+
+
+<meta name="generator" content="Hugo 0.143.1">
+
+
+<meta property="og:url" content="http://localhost:1313/past_posts/%E5%8D%95%E8%B0%83%E6%A0%88%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">
+  <meta property="og:site_name" content="Ar-Gas&#39;blog">
+  <meta property="og:title" content="单调栈、单调队列">
+  <meta property="og:description" content="单调栈 AcWing 830#include&lt;bits/stdc&#43;&#43;.h&gt; using namespace std; const int N = 100010; int n; int stk[N], tt; int main(int argc, char const *argv[]) {	//ios::sync_with-stdio(false),cin.tie(0),cout.tie(0);//也可 scanf(&#34;%d&#34;, &amp;n);//输入输出数据较大，使用C库函数 for (int i = 0; i &lt; n; i &#43;&#43;){ int x; scanf(&#34;%d&#34;, &amp;x); /*单调栈，找寻数字左边比它小的最近的数*/ while (tt &amp;&amp; stk[tt] &gt;= x ) tt --; // 维护单调栈 if (tt) printf(&#34;%d &#34;, stk[tt]); else printf(&#34;-1 &#34;); stk[ &#43;&#43; tt] = x; // 补充单调栈 } return 0; } 单调队列 /*单调队列，可求滑动窗口的**最大值、最小值**、二分找值，多重背包*/ #include&lt;bits/stdc&#43;&#43;.h&gt; using namespace std; const int N = 100010; int n, k; int a[N], q[N]; int main(int argc, char const *argv[]) {	scanf(&#34;%d&#34;, &amp;n);//输入输出数据较大，使用C库函数 //ios::sync_with-stdio(false),cin.tie(0),cout.tie(0); for (int i = 0; i &lt; n; i &#43;&#43;) scanf(&#34;%d&#34;, &amp;a[i]); /* 最小值 */ int hh = 0, tt = -1; for (int i = 0; i &lt; n; i &#43;&#43;){ //判断队头是否已经滑出窗口 if (hh &lt;= tt &amp;&amp; i - k &#43; 1 &gt; q[hh]) hh &#43;&#43; ; while(hh &lt;= tt &amp;&amp; a[q[tt]] &gt;= a[i]) tt -- ; q[ &#43;&#43; tt] = i; if(i &gt;= k - 1) printf(&#34;%d &#34;, a[q[hh]]); } puts(&#34;&#34;); /* 最大值 */ int hh = 0, tt = -1; for (int i = 0; i &lt; n; i &#43;&#43;){ //判断队头是否已经滑出窗口 if (hh &lt;= tt &amp;&amp; i - k &#43; 1 &gt; q[hh]) hh &#43;&#43; ; while(hh &lt;= tt &amp;&amp; a[q[tt]] &lt;= a[i]) tt -- ; q[ &#43;&#43; tt] = i; if(i &gt;= k - 1) printf(&#34;%d &#34;, a[q[hh]]); } puts(&#34;&#34;); return 0; } 洛谷P1886题解 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; const int N = 1000006; int a[N]; deque&lt;int&gt;q; int main(){ int n, m; cin &gt;&gt; n &gt;&gt; m; for (int i = 1; i &lt;= n; &#43;&#43;i) { cin &gt;&gt; a[i]; } for (int i = 1; i &lt;= n; &#43;&#43;i) { while(!q.empty() &amp;&amp; a[q.back()] &gt; a[i]) q.pop_back(); q.push_back(i); if (i &gt;= m){ q.push_back(i); while (!q.empty() &amp;&amp; q.front() &lt;= i - m) q.pop_front(); printf(&#34;%d &#34;, a[q.front()]); } } printf(&#34;\n&#34;); while (!q.empty()) q.pop_front(); for (int i = 1; i &lt;= n; &#43;&#43;i) { while(!q.empty() &amp;&amp; a[q.back()] &lt; a[i]) q.pop_back(); q.push_back(i); if (i &gt;= m){ q.push_back(i); while (!q.empty() &amp;&amp; q.front() &lt;= i - m) q.pop_front(); printf(&#34;%d &#34;, a[q.front()]); } } //printf(&#34;\n&#34;); return 0; } HDU 1003 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; const int INF = 0x7fffffff; int main(){ int t; cin &gt;&gt; t; for (int i = 1; i &lt;= t; &#43;&#43;i) { int n; cin &gt;&gt; n; int maxsum = -INF; int start = 1, end = 1, p = 1; int sum = 0; for (int j = 1; j &lt;= n; &#43;&#43;j) { int a; cin &gt;&gt; a; sum &#43;= a; if (sum &gt; maxsum){maxsum = sum; start = p; end = j;} if (sum &lt; 0){ sum = 0; p = j &#43; 1; } } printf(&#34;Case %d:\n&#34;, i);printf(&#34;%d %d %d\n&#34;, maxsum,start,end); if(i != t)cout &lt;&lt; endl; } return 0; }">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="past_posts">
+    <meta property="article:published_time" content="2023-09-07T11:39:00+00:00">
+    <meta property="article:modified_time" content="2023-09-07T11:39:00+00:00">
+    <meta property="article:tag" content="题解">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="单调栈、单调队列">
+  <meta name="twitter:description" content="单调栈 AcWing 830#include&lt;bits/stdc&#43;&#43;.h&gt; using namespace std; const int N = 100010; int n; int stk[N], tt; int main(int argc, char const *argv[]) {	//ios::sync_with-stdio(false),cin.tie(0),cout.tie(0);//也可 scanf(&#34;%d&#34;, &amp;n);//输入输出数据较大，使用C库函数 for (int i = 0; i &lt; n; i &#43;&#43;){ int x; scanf(&#34;%d&#34;, &amp;x); /*单调栈，找寻数字左边比它小的最近的数*/ while (tt &amp;&amp; stk[tt] &gt;= x ) tt --; // 维护单调栈 if (tt) printf(&#34;%d &#34;, stk[tt]); else printf(&#34;-1 &#34;); stk[ &#43;&#43; tt] = x; // 补充单调栈 } return 0; } 单调队列 /*单调队列，可求滑动窗口的**最大值、最小值**、二分找值，多重背包*/ #include&lt;bits/stdc&#43;&#43;.h&gt; using namespace std; const int N = 100010; int n, k; int a[N], q[N]; int main(int argc, char const *argv[]) {	scanf(&#34;%d&#34;, &amp;n);//输入输出数据较大，使用C库函数 //ios::sync_with-stdio(false),cin.tie(0),cout.tie(0); for (int i = 0; i &lt; n; i &#43;&#43;) scanf(&#34;%d&#34;, &amp;a[i]); /* 最小值 */ int hh = 0, tt = -1; for (int i = 0; i &lt; n; i &#43;&#43;){ //判断队头是否已经滑出窗口 if (hh &lt;= tt &amp;&amp; i - k &#43; 1 &gt; q[hh]) hh &#43;&#43; ; while(hh &lt;= tt &amp;&amp; a[q[tt]] &gt;= a[i]) tt -- ; q[ &#43;&#43; tt] = i; if(i &gt;= k - 1) printf(&#34;%d &#34;, a[q[hh]]); } puts(&#34;&#34;); /* 最大值 */ int hh = 0, tt = -1; for (int i = 0; i &lt; n; i &#43;&#43;){ //判断队头是否已经滑出窗口 if (hh &lt;= tt &amp;&amp; i - k &#43; 1 &gt; q[hh]) hh &#43;&#43; ; while(hh &lt;= tt &amp;&amp; a[q[tt]] &lt;= a[i]) tt -- ; q[ &#43;&#43; tt] = i; if(i &gt;= k - 1) printf(&#34;%d &#34;, a[q[hh]]); } puts(&#34;&#34;); return 0; } 洛谷P1886题解 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; const int N = 1000006; int a[N]; deque&lt;int&gt;q; int main(){ int n, m; cin &gt;&gt; n &gt;&gt; m; for (int i = 1; i &lt;= n; &#43;&#43;i) { cin &gt;&gt; a[i]; } for (int i = 1; i &lt;= n; &#43;&#43;i) { while(!q.empty() &amp;&amp; a[q.back()] &gt; a[i]) q.pop_back(); q.push_back(i); if (i &gt;= m){ q.push_back(i); while (!q.empty() &amp;&amp; q.front() &lt;= i - m) q.pop_front(); printf(&#34;%d &#34;, a[q.front()]); } } printf(&#34;\n&#34;); while (!q.empty()) q.pop_front(); for (int i = 1; i &lt;= n; &#43;&#43;i) { while(!q.empty() &amp;&amp; a[q.back()] &lt; a[i]) q.pop_back(); q.push_back(i); if (i &gt;= m){ q.push_back(i); while (!q.empty() &amp;&amp; q.front() &lt;= i - m) q.pop_front(); printf(&#34;%d &#34;, a[q.front()]); } } //printf(&#34;\n&#34;); return 0; } HDU 1003 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; const int INF = 0x7fffffff; int main(){ int t; cin &gt;&gt; t; for (int i = 1; i &lt;= t; &#43;&#43;i) { int n; cin &gt;&gt; n; int maxsum = -INF; int start = 1, end = 1, p = 1; int sum = 0; for (int j = 1; j &lt;= n; &#43;&#43;j) { int a; cin &gt;&gt; a; sum &#43;= a; if (sum &gt; maxsum){maxsum = sum; start = p; end = j;} if (sum &lt; 0){ sum = 0; p = j &#43; 1; } } printf(&#34;Case %d:\n&#34;, i);printf(&#34;%d %d %d\n&#34;, maxsum,start,end); if(i != t)cout &lt;&lt; endl; } return 0; }">
+
+
+
+
+<link rel="stylesheet" href="/css/output.css" />
+
+
+
+
+    
+
+
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/img/argas.png" alt="Ar-Gas" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="http://localhost:1313/" class="text-lg font-semibold cursor-pointer">
+          Ar-Gas
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">深入，深刻</div>
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
+    <ion-icon name="logo-rss"></ion-icon>
+    RSS
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0"
+        class="text-sm font-semibold cursor-pointer hover:underline"
+        @click="flip = !flip"
+        title="关于"
+      >关于</div>
+      
+      
+
+      
+      
+        
+      
+
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
+  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
+  <div class="hidden lg:block">
+    
+  </div>
+
+  <div class="lg:col-span-2">
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="单调栈、单调队列">
+  <meta itemprop="description" content="单调栈 AcWing 830#include&lt;bits/stdc&#43;&#43;.h&gt; using namespace std; const int N = 100010; int n; int stk[N], tt; int main(int argc, char const *argv[]) {	//ios::sync_with-stdio(false),cin.tie(0),cout.tie(0);//也可 scanf(&#34;%d&#34;, &amp;n);//输入输出数据较大，使用C库函数 for (int i = 0; i &lt; n; i &#43;&#43;){ int x; scanf(&#34;%d&#34;, &amp;x); /*单调栈，找寻数字左边比它小的最近的数*/ while (tt &amp;&amp; stk[tt] &gt;= x ) tt --; // 维护单调栈 if (tt) printf(&#34;%d &#34;, stk[tt]); else printf(&#34;-1 &#34;); stk[ &#43;&#43; tt] = x; // 补充单调栈 } return 0; } 单调队列 /*单调队列，可求滑动窗口的**最大值、最小值**、二分找值，多重背包*/ #include&lt;bits/stdc&#43;&#43;.h&gt; using namespace std; const int N = 100010; int n, k; int a[N], q[N]; int main(int argc, char const *argv[]) {	scanf(&#34;%d&#34;, &amp;n);//输入输出数据较大，使用C库函数 //ios::sync_with-stdio(false),cin.tie(0),cout.tie(0); for (int i = 0; i &lt; n; i &#43;&#43;) scanf(&#34;%d&#34;, &amp;a[i]); /* 最小值 */ int hh = 0, tt = -1; for (int i = 0; i &lt; n; i &#43;&#43;){ //判断队头是否已经滑出窗口 if (hh &lt;= tt &amp;&amp; i - k &#43; 1 &gt; q[hh]) hh &#43;&#43; ; while(hh &lt;= tt &amp;&amp; a[q[tt]] &gt;= a[i]) tt -- ; q[ &#43;&#43; tt] = i; if(i &gt;= k - 1) printf(&#34;%d &#34;, a[q[hh]]); } puts(&#34;&#34;); /* 最大值 */ int hh = 0, tt = -1; for (int i = 0; i &lt; n; i &#43;&#43;){ //判断队头是否已经滑出窗口 if (hh &lt;= tt &amp;&amp; i - k &#43; 1 &gt; q[hh]) hh &#43;&#43; ; while(hh &lt;= tt &amp;&amp; a[q[tt]] &lt;= a[i]) tt -- ; q[ &#43;&#43; tt] = i; if(i &gt;= k - 1) printf(&#34;%d &#34;, a[q[hh]]); } puts(&#34;&#34;); return 0; } 洛谷P1886题解 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; const int N = 1000006; int a[N]; deque&lt;int&gt;q; int main(){ int n, m; cin &gt;&gt; n &gt;&gt; m; for (int i = 1; i &lt;= n; &#43;&#43;i) { cin &gt;&gt; a[i]; } for (int i = 1; i &lt;= n; &#43;&#43;i) { while(!q.empty() &amp;&amp; a[q.back()] &gt; a[i]) q.pop_back(); q.push_back(i); if (i &gt;= m){ q.push_back(i); while (!q.empty() &amp;&amp; q.front() &lt;= i - m) q.pop_front(); printf(&#34;%d &#34;, a[q.front()]); } } printf(&#34;\n&#34;); while (!q.empty()) q.pop_front(); for (int i = 1; i &lt;= n; &#43;&#43;i) { while(!q.empty() &amp;&amp; a[q.back()] &lt; a[i]) q.pop_back(); q.push_back(i); if (i &gt;= m){ q.push_back(i); while (!q.empty() &amp;&amp; q.front() &lt;= i - m) q.pop_front(); printf(&#34;%d &#34;, a[q.front()]); } } //printf(&#34;\n&#34;); return 0; } HDU 1003 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; const int INF = 0x7fffffff; int main(){ int t; cin &gt;&gt; t; for (int i = 1; i &lt;= t; &#43;&#43;i) { int n; cin &gt;&gt; n; int maxsum = -INF; int start = 1, end = 1, p = 1; int sum = 0; for (int j = 1; j &lt;= n; &#43;&#43;j) { int a; cin &gt;&gt; a; sum &#43;= a; if (sum &gt; maxsum){maxsum = sum; start = p; end = j;} if (sum &lt; 0){ sum = 0; p = j &#43; 1; } } printf(&#34;Case %d:\n&#34;, i);printf(&#34;%d %d %d\n&#34;, maxsum,start,end); if(i != t)cout &lt;&lt; endl; } return 0; }">
+  <meta itemprop="datePublished" content="2023-09-07T11:39:00+00:00">
+  <meta itemprop="dateModified" content="2023-09-07T11:39:00+00:00">
+  <meta itemprop="wordCount" content="465">
+  <meta itemprop="keywords" content="题解">
+
+      <header>
+        <h1 itemprop="headline">单调栈、单调队列</h1>
+        <p class="text-sm">
+          
+            <span data-format="luxon">2023-09-07T11:39:00Z</span>
+          
+
+          | <span>3分钟阅读</span>
+
+          
+          | <span>更新于
+            
+              <span data-format="luxon">2023-09-07T11:39:00Z</span>
+            </span>
+          
+        </p>
+
+        
+        <div class="flex justify-between">
+          
+            <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+          
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=%e5%8d%95%e8%b0%83%e6%a0%88%e3%80%81%e5%8d%95%e8%b0%83%e9%98%9f%e5%88%97&amp;url=http://localhost:1313/past_posts/%E5%8D%95%E8%B0%83%E6%A0%88%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=http://localhost:1313/past_posts/%E5%8D%95%E8%B0%83%E6%A0%88%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=%e5%8d%95%e8%b0%83%e6%a0%88%e3%80%81%e5%8d%95%e8%b0%83%e9%98%9f%e5%88%97%20http://localhost:1313/past_posts/%E5%8D%95%E8%B0%83%E6%A0%88%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      <section id="dream-single-post-content" itemprop="articleBody">
+        
+
+        <h1 id="单调栈">单调栈</h1>
+<p><a href="https://www.acwing.com/problem/content/description/832/" target="_blank">AcWing 830</a>
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">100010</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> stk[N], tt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#66d9ef">const</span> <span style="color:#f92672">*</span>argv[])
+</span></span><span style="display:flex;"><span>{	
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//ios::sync_with-stdio(false),cin.tie(0),cout.tie(0);//也可
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n);<span style="color:#75715e">//输入输出数据较大，使用C库函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i <span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> x;
+</span></span><span style="display:flex;"><span>		scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/*单调栈，找寻数字左边比它小的最近的数*/</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span> (tt <span style="color:#f92672">&amp;&amp;</span> stk[tt] <span style="color:#f92672">&gt;=</span> x ) tt <span style="color:#f92672">--</span>; <span style="color:#75715e">// 维护单调栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> (tt) printf(<span style="color:#e6db74">&#34;%d &#34;</span>, stk[tt]);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">else</span> printf(<span style="color:#e6db74">&#34;-1 &#34;</span>);
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		stk[ <span style="color:#f92672">++</span> tt] <span style="color:#f92672">=</span> x; <span style="color:#75715e">// 补充单调栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="单调队列">单调队列</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">/*单调队列，可求滑动窗口的**最大值、最小值**、二分找值，多重背包*/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">100010</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n, k;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a[N], q[N];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#66d9ef">const</span> <span style="color:#f92672">*</span>argv[])
+</span></span><span style="display:flex;"><span>{	
+</span></span><span style="display:flex;"><span>	scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>n);<span style="color:#75715e">//输入输出数据较大，使用C库函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">//ios::sync_with-stdio(false),cin.tie(0),cout.tie(0);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i <span style="color:#f92672">++</span>) scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>a[i]);
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* 最小值 */</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> hh <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, tt <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i <span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//判断队头是否已经滑出窗口
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> (hh <span style="color:#f92672">&lt;=</span> tt <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">-</span> k <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&gt;</span> q[hh]) hh <span style="color:#f92672">++</span> ;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span>(hh <span style="color:#f92672">&lt;=</span> tt <span style="color:#f92672">&amp;&amp;</span> a[q[tt]] <span style="color:#f92672">&gt;=</span> a[i]) tt <span style="color:#f92672">--</span> ;
+</span></span><span style="display:flex;"><span>		q[ <span style="color:#f92672">++</span> tt] <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&gt;=</span> k <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) printf(<span style="color:#e6db74">&#34;%d &#34;</span>, a[q[hh]]);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	puts(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* 最大值 */</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> hh <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, tt <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i <span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//判断队头是否已经滑出窗口
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> (hh <span style="color:#f92672">&lt;=</span> tt <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">-</span> k <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&gt;</span> q[hh]) hh <span style="color:#f92672">++</span> ;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span>(hh <span style="color:#f92672">&lt;=</span> tt <span style="color:#f92672">&amp;&amp;</span> a[q[tt]] <span style="color:#f92672">&lt;=</span> a[i]) tt <span style="color:#f92672">--</span> ;
+</span></span><span style="display:flex;"><span>		q[ <span style="color:#f92672">++</span> tt] <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&gt;=</span> k <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) printf(<span style="color:#e6db74">&#34;%d &#34;</span>, a[q[hh]]);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	puts(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="洛谷p1886题解">洛谷P1886题解</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000006</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a[N];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>deque<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>q;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> n, m; 	cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> m;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; <span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        cin <span style="color:#f92672">&gt;&gt;</span> a[i];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; <span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>q.empty() <span style="color:#f92672">&amp;&amp;</span> a[q.back()] <span style="color:#f92672">&gt;</span> a[i]) q.pop_back();
+</span></span><span style="display:flex;"><span>        q.push_back(i);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&gt;=</span> m){
+</span></span><span style="display:flex;"><span>        	q.push_back(i);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>q.empty() <span style="color:#f92672">&amp;&amp;</span> q.front() <span style="color:#f92672">&lt;=</span> i <span style="color:#f92672">-</span> m)    q.pop_front();
+</span></span><span style="display:flex;"><span>            printf(<span style="color:#e6db74">&#34;%d &#34;</span>, a[q.front()]);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>q.empty()) q.pop_front();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; <span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>q.empty() <span style="color:#f92672">&amp;&amp;</span> a[q.back()] <span style="color:#f92672">&lt;</span> a[i]) q.pop_back();
+</span></span><span style="display:flex;"><span>        q.push_back(i);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&gt;=</span> m){
+</span></span><span style="display:flex;"><span>        	q.push_back(i);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>q.empty() <span style="color:#f92672">&amp;&amp;</span> q.front() <span style="color:#f92672">&lt;=</span> i <span style="color:#f92672">-</span> m)    q.pop_front();
+</span></span><span style="display:flex;"><span>            printf(<span style="color:#e6db74">&#34;%d &#34;</span>, a[q.front()]);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//printf(&#34;\n&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="hdu-1003">HDU 1003</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> INF <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x7fffffff</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> t; cin <span style="color:#f92672">&gt;&gt;</span> t;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> t; <span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">int</span> n; cin <span style="color:#f92672">&gt;&gt;</span> n;
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">int</span> maxsum <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>INF;
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">int</span> start <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, end <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, p <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;=</span> n; <span style="color:#f92672">++</span>j)
+</span></span><span style="display:flex;"><span>    	{
+</span></span><span style="display:flex;"><span>    		<span style="color:#66d9ef">int</span> a; cin <span style="color:#f92672">&gt;&gt;</span> a; sum <span style="color:#f92672">+=</span> a;
+</span></span><span style="display:flex;"><span>    		<span style="color:#66d9ef">if</span> (sum <span style="color:#f92672">&gt;</span> maxsum){maxsum <span style="color:#f92672">=</span> sum; start <span style="color:#f92672">=</span> p; end <span style="color:#f92672">=</span> j;}
+</span></span><span style="display:flex;"><span>    		<span style="color:#66d9ef">if</span> (sum <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span>    			sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    			p <span style="color:#f92672">=</span> j <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    		}
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>    	printf(<span style="color:#e6db74">&#34;Case %d:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, i);printf(<span style="color:#e6db74">&#34;%d %d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, maxsum,start,end);
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">if</span>(i <span style="color:#f92672">!=</span> t)cout <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+
+        
+      </section>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <a class="group btn btn-outline" href="/past_posts/kmp%E7%AE%97%E6%B3%95/" title="KMP算法">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">上一页</span>
+            <span class="max-w-48 truncate">KMP算法</span>
+          </div>
+        </a>
+        
+
+        
+        <a class="group btn btn-outline" href="/past_posts/%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F%E6%A0%88%E9%98%9F%E5%88%97/" title="数组模拟栈、队列">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">下一页</span>
+            <span class="max-w-48 truncate">数组模拟栈、队列</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+
+      
+    </article>
+  </div>
+
+  <div class="hidden lg:flex lg:flex-col lg:items-end">
+    
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#洛谷p1886题解">洛谷P1886题解</a></li>
+    <li><a href="#hdu-1003">HDU 1003</a></li>
+  </ul>
+</nav>
+    
+  </div>
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">作者简介</div>
+
+        <div class="prose dark:prose-invert">
+          <h3 id="hi-there-">Hi there 👋</h3>
+<ul>
+<li>🌱 I’m a junior software engineering student (2022-2026) in Taiyuan University of Technology.</li>
+<li>👯 I’m working on computer programming compertation and server development and kernel development, interested in C++、 Rust.</li>
+<li>🤔 I am also looking for help from like-minded friends.</li>
+<li>📫 How to reach me: email me :2934060590@qq.com</li>
+<li>⚡ I won a bronze medal 🥉 in the ICPC (ACM) Invitational tournament.</li>
+</ul>
+<h3 id="-实习经历-work-experience">🏢 实习经历 Work experience</h3>
+<ul>
+<li><a href="https://www.aispeech.com/" target="_blank">思必驰/aispeech</a>
+ 📌2024.07-2024.09
+<ul>
+<li>工作岗位：研发实习生</li>
+<li>工作部门：智能汽车事业部</li>
+<li>工作方向：摸鱼打杂小透明/doge</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+  <script src="/js/grid.js"></script>
+
+
+
+
+<script src="/js/main.js"></script>
+
+    
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+
+
+
+  
+    <script type="module">
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
+    </script>
+  
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

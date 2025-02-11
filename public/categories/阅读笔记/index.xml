@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>阅读笔记 on Ar-Gas&#39;blog</title>
+    <link>http://localhost:1313/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 阅读笔记 on Ar-Gas&#39;blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 28 Feb 2023 07:04:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>《算法引论》笔记</title>
+      <link>http://localhost:1313/past_posts/%E7%AE%97%E6%B3%95%E5%BC%95%E8%AE%BA%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Tue, 28 Feb 2023 07:04:00 +0000</pubDate>
+      <guid>http://localhost:1313/past_posts/%E7%AE%97%E6%B3%95%E5%BC%95%E8%AE%BA%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;学习阶段&lt;/p&gt;&#xA;&lt;h1 id=&#34;数学归纳法的等价定义&#34;&gt;数学归纳法的等价定义&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;基本条件&lt;/strong&gt;：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;当 $n=1$ 时，$T$ 成立；&lt;/li&gt;&#xA;&lt;li&gt;对任意 $n&amp;gt;1$，如果 $n-1$ 时 $T$ 成立，那么 $n$ 时 $T$ 也成立&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：如果对于带有参数 $n$ 的命题 $P$ ，当 $n=1$ 时 $Р$ 成立；并且如果对每一个 $n (n&amp;gt;1)$,若 $n-1$ 时 $P$ 成立能推出 $n$ 时 $Р$ 也成立；那么对任意自然数，$Р$ 都成立。&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;等价一&lt;/code&gt;：如果对于带有参数n的命题P，当n= 1时Р成立;并且如果对每一个n (n ≥ 1 ),若n时Р成立能推出n+1时Р也成立;那么对任意自然数，Р都成立。&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;等价二&lt;/code&gt;：如果对于带有参数n的命题P，当n=1时Р成立;并且如果对每一个n (n&amp;gt; 1 ),若对任意小于n的自然数Р成立能推出对n命题Р也成立;那么对任意自然数,Р都成立。&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;等价三&lt;/code&gt;：如果对于带有参数n的命题P，当n=1和n=2时Р都成立;并且如果对每一个n (n &amp;gt;2)，若n-2时Р成立能推出n时Р也成立;那么对任意自然数，Р都成立。&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;等价四&lt;/code&gt;：如果对于带有参数n的命题P，当n=1和n=2时Р都成立;并且如果对每一个n (n &amp;gt;2)，若n-2时Р成立能推出n时Р也成立;那么对任意自然数，Р都成立。&lt;/p&gt;&#xA;&lt;h1 id=&#34;一些公式&#34;&gt;一些公式&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;$x^n-1$ 能被 $x-1$ 除尽;&lt;/li&gt;&#xA;&lt;li&gt;前n个自然数和为 n(n+1)/2;&lt;/li&gt;&#xA;&lt;li&gt;级数 $8+13+18+23+···+(3+5n)$ 之和是 $2.5n^2+5.5n$&lt;/li&gt;&#xA;&lt;li&gt;$(1+x)^n&amp;gt;=1+nx$&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;证明的思路&#34;&gt;证明的思路&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;证明增长率&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>C&#43;&#43;读书笔记</title>
+      <link>http://localhost:1313/past_posts/c&#43;&#43;%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 09 Feb 2023 07:04:00 +0000</pubDate>
+      <guid>http://localhost:1313/past_posts/c&#43;&#43;%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;blockquote&gt;&#xD;&#xA;    &lt;p&gt;Include 《A Tool of C++》、《C++ programming language》&lt;/p&gt;&#xD;&#xA;  &lt;/blockquote&gt;</description>
+    </item>
+  </channel>
+</rss>

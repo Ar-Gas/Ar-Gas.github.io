@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="zh"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+
+所有标签 | Ar-Gas&#39;blog</title>
+
+    
+  
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+  
+
+
+<link rel="canonical" href="http://localhost:1313/tags/" />
+
+
+
+<meta name="author" content="Ar-Gas" />
+<meta name="description" content="Ar-Gas的思考" />
+
+
+
+<meta name="generator" content="Hugo 0.143.1">
+
+
+<meta property="og:url" content="http://localhost:1313/tags/">
+  <meta property="og:site_name" content="Ar-Gas&#39;blog">
+  <meta property="og:title" content="Tags">
+  <meta property="og:description" content="Ar-Gas的思考">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="website">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tags">
+  <meta name="twitter:description" content="Ar-Gas的思考">
+
+
+
+
+<link rel="stylesheet" href="/css/output.css" />
+
+
+
+
+     
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/img/argas.png" alt="Ar-Gas" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="http://localhost:1313/" class="text-lg font-semibold cursor-pointer">
+          Ar-Gas
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">深入，深刻</div>
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
+    <ion-icon name="logo-rss"></ion-icon>
+    RSS
+  </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0"
+        class="text-sm font-semibold cursor-pointer hover:underline"
+        @click="flip = !flip"
+        title="关于"
+      >关于</div>
+      
+      
+
+      
+      
+        
+      
+
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
+  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+
+
+<div class="flex flex-col md:flex-row mt-4">
+
+  <div class="md:basis-[200px] lg:basis-[300px] p-4 prose dark:prose-invert">
+    <h1 class="text-2xl">所有标签</h1>
+    <p class="text-sm">21标签</p>
+    <div class="flex flex-wrap gap-4 mt-6">
+      
+      <a href="/tags/algrithm/%E7%AE%97%E6%B3%95/" class="badge h-6 no-underline hover:badge-primary">
+        Algrithm/算法
+      </a>
+      
+      <a href="/tags/c&#43;&#43;/" class="badge h-6 no-underline hover:badge-primary">
+        C&#43;&#43;
+      </a>
+      
+      <a href="/tags/codeforces/" class="badge h-6 no-underline hover:badge-primary">
+        Codeforces
+      </a>
+      
+      <a href="/tags/essay/%E6%80%9D%E8%80%83/" class="badge h-6 no-underline hover:badge-primary">
+        Essay/思考
+      </a>
+      
+      <a href="/tags/essay/%E9%9A%8F%E7%AC%94/" class="badge h-6 no-underline hover:badge-primary">
+        Essay/随笔
+      </a>
+      
+      <a href="/tags/hexo/" class="badge h-6 no-underline hover:badge-primary">
+        Hexo
+      </a>
+      
+      <a href="/tags/linux/" class="badge h-6 no-underline hover:badge-primary">
+        Linux
+      </a>
+      
+      <a href="/tags/math/%E6%95%B0%E5%AD%A6/" class="badge h-6 no-underline hover:badge-primary">
+        Math/数学
+      </a>
+      
+      <a href="/tags/muduo/" class="badge h-6 no-underline hover:badge-primary">
+        Muduo
+      </a>
+      
+      <a href="/tags/read-notes/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="badge h-6 no-underline hover:badge-primary">
+        Read-Notes/读书笔记
+      </a>
+      
+      <a href="/tags/transshipment/%E8%BD%AC%E8%BD%BD/" class="badge h-6 no-underline hover:badge-primary">
+        Transshipment/转载
+      </a>
+      
+      <a href="/tags/web/" class="badge h-6 no-underline hover:badge-primary">
+        Web
+      </a>
+      
+      <a href="/tags/%E7%AC%94%E8%AE%B0/" class="badge h-6 no-underline hover:badge-primary">
+        笔记
+      </a>
+      
+      <a href="/tags/%E7%AE%A1%E7%90%86/" class="badge h-6 no-underline hover:badge-primary">
+        管理
+      </a>
+      
+      <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="badge h-6 no-underline hover:badge-primary">
+        课程笔记
+      </a>
+      
+      <a href="/tags/%E9%9D%A2%E7%BB%8F/" class="badge h-6 no-underline hover:badge-primary">
+        面经
+      </a>
+      
+      <a href="/tags/%E4%BA%BA%E6%80%A7/" class="badge h-6 no-underline hover:badge-primary">
+        人性
+      </a>
+      
+      <a href="/tags/%E7%AE%97%E6%B3%95/" class="badge h-6 no-underline hover:badge-primary">
+        算法
+      </a>
+      
+      <a href="/tags/%E9%9A%8F%E7%AC%94/" class="badge h-6 no-underline hover:badge-primary">
+        随笔
+      </a>
+      
+      <a href="/tags/%E9%A2%98%E8%A7%A3/" class="badge h-6 no-underline hover:badge-primary">
+        题解
+      </a>
+      
+      <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="badge h-6 no-underline hover:badge-primary">
+        学习笔记
+      </a>
+      
+    </div>
+  </div>
+  
+  <div class="divider divider-vertical md:divider-horizontal px-4 md:px-0"></div>
+  
+  <div class="flex-1">
+    
+
+    
+    <div class="dream-grid">
+    
+      <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+        <a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/past_posts/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default1_hu_33478ca164b4fce4.webp" type="image/webp" />
+      <img src="/images/default1.jpg" alt="/images/default1.jpg" />
+    </picture>
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">字符串 in C/C&#43;&#43;</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2023-04-19T19:56:00Z</span>
+    
+    </p>
+
+    <p>文章首次写于：<strong>2023-04-19</strong></p>
+<p>更新日志：</p>
+<ul>
+<li>
+<p>20230419：编写了字符串-C、字符串-C++的输入输出</p>
+</li>
+<li>
+<p>20230916：添加了&lt; String &gt;库、&lt; cctype &gt;库、字符串流 &lt; sstream &gt;库</p>
+</li>
+</ul>
+<hr>
+<h1 id="输入输出">输入输出</h1>
+<h2 id="char">char*</h2>
+<h3 id="输入">输入</h3>
+<h4 id="getsc于c11取消">gets(c*)（于C++11取消）</h4>
+<p>读取至<code>'\n'</code>或<code>EOF</code>停止，<code>换行符</code>不会复制，返回自动添加<code>\0</code></p>
+<h4 id="fgetscnumstream">fgets(c*,Num,Stream)</h4>
+<p>读取<code>num-1</code>、<code>'\n'</code>、<code>EOF</code>停止，<strong><code>\n</code>复制到字符串中</strong>，第<code>n</code>个字符不读取，返回自动添加<code>\0</code></p>
+<p><code>fgets()</code>和<code>gets()</code>完全不同，<code>fgets()</code>包含任何结束换行符</p>
+<p>默认标准输入流:<code>stdin</code></p>
+<h4 id="getchar">getchar()</h4>
+<p>返回读取字符，<del>常用于抵消<code>'\n'</code></del>，与<code>getc(stdin)</code>等价</p>
+<h3 id="输出">输出</h3>
+<h4 id="puts">puts()</h4>
+<p><code>puts(c*)</code>输出时在末尾添加<code>'\n'</code>；</p>
+<h4 id="fputs">fputs()</h4>
+<p><code>fputs(c*，stdout)</code>输出直至<code>'\0'</code>，不会写入额外字符；</p>
+<h2 id="string">string</h2>
+<h3 id="输入-1">输入</h3>
+<h4 id="stdcin">std::cin</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>cin<span style="color:#f92672">&gt;&gt;</span>s;
+</span></span></code></pre></div><p>读到任意空白符（<code>'\n'</code>,<code>'\t'</code>,<code>'\0'</code>,<code>' '</code>）停止</p>
+<h4 id="getline">getline()</h4>
+<p><code>getline(cin,string,delim)</code>定界字符<code>delim</code>默认<code>'\n'</code>；</p>
+<p>定界字符提取但不储存，下次读取跳过。</p>
+<h3 id="输出-1">输出</h3>
+<h4 id="cout">cout&laquo;</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>cout<span style="color:#f92672">&lt;&lt;</span>s;
+</span></span></code></pre></div><hr>
+<h1 id="c-string-特性">C++ String 特性</h1>
+<h2 id="-string-库">&lt; String &gt;库</h2>
+<p>常用操作包括：拼接、索引、substr()字串、字典序、长度/大小；</p>
+<p>C++除了面向对象语言外，还提供了一些操作符 += 、 [] 等（包括STL通有接口size()）</p>
+<h3 id="声明">声明</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string s;
+</span></span><span style="display:flex;"><span>string ss[<span style="color:#ae81ff">10</span>];
+</span></span></code></pre></div><h3 id="初始化">初始化</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>    string s;                       <span style="color:#75715e">// 默认初始化，一个空白的字符串
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    string <span style="color:#a6e22e">s1</span>(s);                   <span style="color:#75715e">// s1是s的副本
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    string <span style="color:#a6e22e">s2</span>(<span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;4&#39;</span>);             <span style="color:#75715e">// s2初始化
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    string s3 <span style="color:#f92672">=</span> string(<span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;c&#39;</span>);    <span style="color:#75715e">// 对象语言
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> cs[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;12345&#34;</span>;
+</span></span><span style="display:flex;"><span>    string <span style="color:#a6e22e">s4</span>(cs, <span style="color:#ae81ff">3</span>);       <span style="color:#75715e">// 复制字符串cs的前三个字符到s当中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    string s5 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abcde&#34;</span>;
+</span></span><span style="display:flex;"><span>    string <span style="color:#a6e22e">s6</span>(s8, <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    string s7 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;asdsfasdgf&#34;</span>;
+</span></span><span style="display:flex;"><span>    string <span style="color:#a6e22e">s8</span>(s10, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>);  <span style="color:#75715e">// s8是s10标s开始4个字符的拷贝，超出s10.size出现未定义
+</span></span></span></code></pre></div><h3 id="string类型的读入">string类型的读入</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string s;
+</span></span><span style="display:flex;"><span>cin <span style="color:#f92672">&gt;&gt;</span> s;        <span style="color:#75715e">//不能读入空格，以空格，制表符，回车符作为结束标志
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>getline(cin, s); <span style="color:#75715e">//可以读入空格和制表符，以回车符作为结束的标志
+</span></span></span></code></pre></div><h3 id="字符串末尾添加字符">字符串末尾添加字符</h3>
+<p>可以用+号和append()函数在函数的末尾添加字符。</p>
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>4分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+      </div>
+    
+      <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+        <a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/past_posts/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/">
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default1_hu_33478ca164b4fce4.webp" type="image/webp" />
+      <img src="/images/default1.jpg" alt="/images/default1.jpg" />
+    </picture>
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">基础算法</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2023-04-14T20:57:00Z</span>
+    
+    </p>
+
+    <p>包括二分、前缀和、差分、双指针</p>
+<h1 id="二分">二分</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">/*整数*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">check</span>(<span style="color:#66d9ef">int</span> x) {<span style="color:#75715e">/* ... */</span>} <span style="color:#75715e">// 检查x是否满足某种性质
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">bsearch_1</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (l <span style="color:#f92672">&lt;</span> r)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> l <span style="color:#f92672">+</span> r <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (check(mid)) r <span style="color:#f92672">=</span> mid;    <span style="color:#75715e">// check()判断mid是否满足性质
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">else</span> l <span style="color:#f92672">=</span> mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> l;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*区间[l, r]被划分成[l, mid - 1]和[mid, r]时使用：*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">bsearch_2</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (l <span style="color:#f92672">&lt;</span> r)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> l <span style="color:#f92672">+</span> r <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (check(mid)) l <span style="color:#f92672">=</span> mid;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> r <span style="color:#f92672">=</span> mid <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> l;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*浮点数*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">check</span>(<span style="color:#66d9ef">double</span> x) {<span style="color:#75715e">/* ... */</span>} <span style="color:#75715e">// 检查x是否满足某种性质
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> <span style="color:#a6e22e">bsearch_3</span>(<span style="color:#66d9ef">double</span> l, <span style="color:#66d9ef">double</span> r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">double</span> eps <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e-6</span>;   <span style="color:#75715e">// eps 表示精度，取决于题目对精度的要求
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (r <span style="color:#f92672">-</span> l <span style="color:#f92672">&gt;</span> eps)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">double</span> mid <span style="color:#f92672">=</span> (l <span style="color:#f92672">+</span> r) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (check(mid)) r <span style="color:#f92672">=</span> mid;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> l <span style="color:#f92672">=</span> mid;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> l;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="前缀和">前缀和</h1>
+
+
+
+  <blockquote>
+    <p>例题：给定 $n$ 个正整数组成的数列 $a_1, a_2, \cdots, a_n$ 和 $m$ 个区间 $[l_i,r_i]$，分别求这 $m$ 个区间的区间和。</p>
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>3分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+      </div>
+    
+      <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+        <a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/past_posts/c&#43;&#43;%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/">
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default1_hu_33478ca164b4fce4.webp" type="image/webp" />
+      <img src="/images/default1.jpg" alt="/images/default1.jpg" />
+    </picture>
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">C&#43;&#43; 常用特性</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2023-04-14T09:45:00Z</span>
+    
+    </p>
+
+    <p>目前还在学习阶段，此贴无参考价值（2023 06 03）</p>
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>1分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+      </div>
+    
+      <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+        <a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/past_posts/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default3_hu_599e07ea93afc07d.webp" type="image/webp" />
+      <img src="/images/default3.jpg" alt="/images/default3.jpg" />
+    </picture>
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">最小生成树</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2023-04-11T19:32:00Z</span>
+    
+    </p>
+
+    <h1 id="参考资料">参考资料</h1>
+<p>[1].<a href="https://www.bilibili.com/video/BV1Eb41177d1/?spm_id_from=333.337.search-card.all.click&amp;vd_source=a326e65c6d0fa8e7b1904a3c161ec105" target="_blank">最小生成树Kruskal和Prim算法动画演示</a>
+</p>
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>1分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+      </div>
+    
+      <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+        <a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/past_posts/%E5%8D%9A%E5%BC%88%E8%AE%BA/">
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default3_hu_599e07ea93afc07d.webp" type="image/webp" />
+      <img src="/images/default3.jpg" alt="/images/default3.jpg" />
+    </picture>
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">博弈论 Game Theory</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2023-04-11T16:23:00Z</span>
+    
+    </p>
+
+    <p>经典ICG博弈算法(Impartial Combinatorial Games 公平组合游戏)</p>
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>1分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+      </div>
+    
+      <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+        <a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/past_posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default4_hu_ae815e0f1649c253.webp" type="image/webp" />
+      <img src="/images/default4.jpg" alt="/images/default4.jpg" />
+    </picture>
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">动态规划</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2023-04-07T09:42:00Z</span>
+    
+    </p>
+
+    <h1 id="两个性质">两个性质</h1>
+<ol>
+<li><strong>最优子结构</strong>：问题的最优解由其子问题的最优解<strong>组合而成</strong>；且子问题可独立求解；</li>
+<li><strong>重叠子问题</strong>：子问题的算法相同。</li>
+</ol>
+<h1 id="步骤">步骤</h1>
+<ol>
+<li>
+<p>问题结构分析（数学语言描述）；</p>
+</li>
+<li>
+<p>递推关系建立；</p>
+</li>
+<li>
+<p>自底向上计算，确立计算顺序；</p>
+</li>
+<li>
+<p>最优方案追踪（记录数组回溯）</p>
+</li>
+</ol>
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>1分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+      </div>
+    
+      <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+        <a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/past_posts/poj2251/">
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default4_hu_ae815e0f1649c253.webp" type="image/webp" />
+      <img src="/images/default4.jpg" alt="/images/default4.jpg" />
+    </picture>
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">Dungeon Master POJ2251</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2023-04-06T20:51:00Z</span>
+    
+    </p>
+
+    <p>BFS+三维，一直WA找不到问题，后来发现是没有初始化（<del>菜</del></p>
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>1分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+      </div>
+    
+      <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+        <a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/past_posts/nqueen-problem/">
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default2_hu_c96b8a8cc3f55f81.webp" type="image/webp" />
+      <img src="/images/default2.jpg" alt="/images/default2.jpg" />
+    </picture>
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">NQueen problem</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2023-04-03T08:51:00Z</span>
+    
+    </p>
+
+    <p>N皇后（八皇后）问题、棋盘问题</p>
+<p>递归DFS解法</p>
+<h1 id="nqueen">NQueen</h1>
+<p>回溯法主要是两个部分，检查位置和DFS</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isright</span>(<span style="color:#66d9ef">int</span> r,<span style="color:#66d9ef">int</span> c){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;x<span style="color:#f92672">&lt;</span>r;x<span style="color:#f92672">++</span>){<span style="color:#75715e">//check with previous line 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>       <span style="color:#66d9ef">if</span>(c<span style="color:#f92672">==</span>col[x])<span style="color:#66d9ef">return</span> false;<span style="color:#75715e">//if col is not repeated
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>       <span style="color:#66d9ef">if</span>(abs(col[x]<span style="color:#f92672">-</span>c)<span style="color:#f92672">==</span>abs(x<span style="color:#f92672">-</span>r))<span style="color:#66d9ef">return</span> false;<span style="color:#75715e">//if diagonal is coincided
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> row){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(row<span style="color:#f92672">==</span>n){ans<span style="color:#f92672">++</span>;print();<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;}<span style="color:#75715e">//stop circulation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>){<span style="color:#75715e">//try every col
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(isright(row,i)){
+</span></span><span style="display:flex;"><span>            col[row]<span style="color:#f92672">=</span>i;<span style="color:#75715e">//settle
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            dfs(row<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);<span style="color:#75715e">//recurse
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            col[row]<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#75715e">//back 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>一维数组，下标表示行，值表示列：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>col(<span style="color:#ae81ff">8</span>);<span style="color:#75715e">//val is queen_col,rank is queen_row
+</span></span></span></code></pre></div><p>完整代码为：（输入：$n$,输出：遍历方案、方案总数）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> ans,n;<span style="color:#75715e">//answer,number_row(n*n)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>col(<span style="color:#ae81ff">8</span>);<span style="color:#75715e">//val is queen_col,rank is queen_row
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isright</span>(<span style="color:#66d9ef">int</span> r,<span style="color:#66d9ef">int</span> c){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;x<span style="color:#f92672">&lt;</span>r;x<span style="color:#f92672">++</span>){<span style="color:#75715e">//check with previous line 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>       <span style="color:#66d9ef">if</span>(c<span style="color:#f92672">==</span>col[x])<span style="color:#66d9ef">return</span> false;<span style="color:#75715e">//if col is not repeated
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>       <span style="color:#66d9ef">if</span>(abs(col[x]<span style="color:#f92672">-</span>c)<span style="color:#f92672">==</span>abs(x<span style="color:#f92672">-</span>r))<span style="color:#66d9ef">return</span> false;<span style="color:#75715e">//if diagonal is coincided
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;a<span style="color:#f92672">&lt;</span>n;a<span style="color:#f92672">++</span>)cout<span style="color:#f92672">&lt;&lt;</span>col[a]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#39;\n&#39;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> row){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(row<span style="color:#f92672">==</span>n){ans<span style="color:#f92672">++</span>;print();<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;}<span style="color:#75715e">//stop circulation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>){<span style="color:#75715e">//try every col
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(isright(row,i)){
+</span></span><span style="display:flex;"><span>            col[row]<span style="color:#f92672">=</span>i;<span style="color:#75715e">//settle
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            dfs(row<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>            col[row]<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#75715e">//back 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>    ans<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    cin<span style="color:#f92672">&gt;&gt;</span>n;
+</span></span><span style="display:flex;"><span>    dfs(<span style="color:#ae81ff">0</span>);<span style="color:#75715e">//start from first row;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;&lt;</span>ans;  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="棋盘问题-poj-1321">棋盘问题 POJ-1321</h1>
+<p><a href="https://vjudge.csgrandeur.cn/problem/POJ-1321" target="_blank">问题链接</a>
+，AC代码：</p>
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>1分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+      </div>
+    
+      <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+        <a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/past_posts/bfs%E4%B8%8Edfs/">
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default4_hu_ae815e0f1649c253.webp" type="image/webp" />
+      <img src="/images/default4.jpg" alt="/images/default4.jpg" />
+    </picture>
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">BFS与DFS</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2023-04-02T09:42:00Z</span>
+    
+    </p>
+
+    <p>两种图，从外文摘抄的，后续有时间了反应一下</p>
+<h1 id="representations-of-graphs">Representations of graphs</h1>
+<p>Graph consists of two components:<strong>node(vertice)</strong> &amp; <strong>edge</strong></p>
+<p>Differing from the definition of edfe,<em>Graph</em> can be divided into <em>directed graph</em>,<em>Undirected graph</em>.And different connection also heve other different property.</p>
+<p>Here are two standard ways to represent a graph $G=(V,E)$：</p>
+<h2 id="adjacency-list">Adjacency-list</h2>
+<p><img src="https://user-images.githubusercontent.com/111374823/230520438-5515ddf5-fb70-4781-82d6-82178b5298d7.png" alt="adjacency list"></p>
+<p>Using list to express edge between the vertex element and followed elements,the <a href="https://www.geeksforgeeks.org/graph-and-its-representations/?ref=lbp" target="_blank">C++ codes</a>
+ as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">// A simple representation of graph using STL
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// A utility function to add an edge in an
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// undirected graph.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addEdge</span>(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> adj[], <span style="color:#66d9ef">int</span> u, <span style="color:#66d9ef">int</span> v)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    adj[u].push_back(v);
+</span></span><span style="display:flex;"><span>    adj[v].push_back(u);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// A utility function to print the adjacency list
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// representation of graph
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printGraph</span>(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> adj[], <span style="color:#66d9ef">int</span> V)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> v <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; v <span style="color:#f92672">&lt;</span> V; <span style="color:#f92672">++</span>v) {
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> Adjacency list of vertex &#34;</span> <span style="color:#f92672">&lt;&lt;</span> v
+</span></span><span style="display:flex;"><span>             <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> head &#34;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> x : adj[v])
+</span></span><span style="display:flex;"><span>            cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;-&gt; &#34;</span> <span style="color:#f92672">&lt;&lt;</span> x;
+</span></span><span style="display:flex;"><span>               cout<span style="color:#f92672">&lt;&lt;</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Driver code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> V <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> adj[V];
+</span></span><span style="display:flex;"><span>    addEdge(adj, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    addEdge(adj, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>);
+</span></span><span style="display:flex;"><span>    addEdge(adj, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>    addEdge(adj, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>    addEdge(adj, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>);
+</span></span><span style="display:flex;"><span>    addEdge(adj, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>    addEdge(adj, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>);
+</span></span><span style="display:flex;"><span>    printGraph(adj, V);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This way is used to represent a <strong>directed graphs</strong>,and is also a compact way to represent <strong>spare</strong> graphs.</p>
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>2分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+      </div>
+    
+      <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+        <a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/past_posts/%E6%90%9C%E7%B4%A2/">
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default3_hu_599e07ea93afc07d.webp" type="image/webp" />
+      <img src="/images/default3.jpg" alt="/images/default3.jpg" />
+    </picture>
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">搜索</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2023-04-02T09:42:00Z</span>
+    
+    </p>
+
+    <p>搜索基础</p>
+<ul>
+<li>
+<p><strong>DFS</strong>：</p>
+<ul>
+<li>数据结构：Stack (本质为递归)</li>
+<li>空间：树高</li>
+<li>不具最短性</li>
+</ul>
+</li>
+<li>
+<p><strong>BFS</strong>：</p>
+<ul>
+<li>数据结构：queue</li>
+<li>空间：$$2^{树高}$$</li>
+<li>最短路</li>
+</ul>
+</li>
+</ul>
+<h1 id="depth-first-search-深度优先搜索">Depth-first Search 深度优先搜索</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> u)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    st[u] <span style="color:#f92672">=</span> true; <span style="color:#75715e">// st[u] 表示点u已经被遍历过
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> h[u]; i <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">=</span> ne[i])
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> e[i];
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>st[j]) dfs(j);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="breadth-first-search-广度优先搜索">Breadth-first Search 广度优先搜索</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">// 20231003回顾
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 这题虽然忘了是哪道题但是确实是BFS（
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 参考吧，AcWing模板在上面
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 定义节点结构体
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> x, y;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> step;
+</span></span><span style="display:flex;"><span>    Node(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> step) <span style="color:#f92672">:</span> x(x), y(y), step(step) {}<span style="color:#75715e">//initializer list
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">1010</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n, m;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> g[N][N];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> st[N][N]; <span style="color:#75715e">// 用于记录每个节点是否被访问过
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> dx[<span style="color:#ae81ff">4</span>] <span style="color:#f92672">=</span> {<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}; <span style="color:#75715e">// 四个方向
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> dy[<span style="color:#ae81ff">4</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">bfs</span>(<span style="color:#66d9ef">int</span> sx, <span style="color:#66d9ef">int</span> sy, <span style="color:#66d9ef">int</span> ex, <span style="color:#66d9ef">int</span> ey)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    queue<span style="color:#f92672">&lt;</span>Node<span style="color:#f92672">&gt;</span> q;
+</span></span><span style="display:flex;"><span>    q.push({sx, sy, <span style="color:#ae81ff">0</span>});
+</span></span><span style="display:flex;"><span>    st[sx][sy] <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>q.empty())
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">auto</span> t <span style="color:#f92672">=</span> q.front();
+</span></span><span style="display:flex;"><span>        q.pop();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (t.x <span style="color:#f92672">==</span> ex <span style="color:#f92672">&amp;&amp;</span> t.y <span style="color:#f92672">==</span> ey) <span style="color:#75715e">// 找到终点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">return</span> t.step;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; i<span style="color:#f92672">++</span>) <span style="color:#75715e">// 四个方向
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> t.x <span style="color:#f92672">+</span> dx[i];
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> t.y <span style="color:#f92672">+</span> dy[i];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> x <span style="color:#f92672">&gt;=</span> n <span style="color:#f92672">||</span> y <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> y <span style="color:#f92672">&gt;=</span> m) <span style="color:#75715e">// 判断越界
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (g[x][y] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;#&#39;</span> <span style="color:#f92672">||</span> st[x][y]) <span style="color:#75715e">// 判断是否是障碍或已经访问过
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            q.push({x, y, t.step <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>});
+</span></span><span style="display:flex;"><span>            st[x][y] <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 没有找到路径
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> m;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> sx, sy, ex, ey; <span style="color:#75715e">// 起点和终点坐标
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> m; j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            cin <span style="color:#f92672">&gt;&gt;</span> g[i][j];
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (g[i][j] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;S&#39;</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                sx <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>                sy <span style="color:#f92672">=</span> j;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (g[i][j] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;E&#39;</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                ex <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>                ey <span style="color:#f92672">=</span> j;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> res <span style="color:#f92672">=</span> bfs(sx, sy, ex, ey);
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> res <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="剪枝优化">剪枝优化</h1>
+<p>常见的剪枝方法有三种：</p>
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>2分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+      </div>
+    
+    </div>
+    
+
+    
+    <div class="flex justify-center pt-8">
+      <div class="join grid grid-cols-2">
+  
+  <a href="/tags/page/4/" title=上一页 class="join-item btn btn-outline btn-sm">
+    上一页
+  </a>
+  
+  
+  <a href="/tags/page/6/" title="下一页" class="join-item btn btn-outline btn-sm">
+    下一页
+  </a>
+  
+</div>
+
+    </div>
+    
+  </div>
+</div>
+
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">作者简介</div>
+
+        <div class="prose dark:prose-invert">
+          <h3 id="hi-there-">Hi there 👋</h3>
+<ul>
+<li>🌱 I’m a junior software engineering student (2022-2026) in Taiyuan University of Technology.</li>
+<li>👯 I’m working on computer programming compertation and server development and kernel development, interested in C++、 Rust.</li>
+<li>🤔 I am also looking for help from like-minded friends.</li>
+<li>📫 How to reach me: email me :2934060590@qq.com</li>
+<li>⚡ I won a bronze medal 🥉 in the ICPC (ACM) Invitational tournament.</li>
+</ul>
+<h3 id="-实习经历-work-experience">🏢 实习经历 Work experience</h3>
+<ul>
+<li><a href="https://www.aispeech.com/" target="_blank">思必驰/aispeech</a>
+ 📌2024.07-2024.09
+<ul>
+<li>工作岗位：研发实习生</li>
+<li>工作部门：智能汽车事业部</li>
+<li>工作方向：摸鱼打杂小透明/doge</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+  <script src="/js/grid.js"></script>
+
+
+
+
+<script src="/js/main.js"></script>
+
+    
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

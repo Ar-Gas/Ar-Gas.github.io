@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>随笔 on Ar-Gas&#39;blog</title>
+    <link>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</link>
+    <description>Recent content in 随笔 on Ar-Gas&#39;blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 07 Jan 2024 21:41:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>资源导航</title>
+      <link>http://localhost:1313/past_posts/%E8%B5%84%E6%BA%90%E5%AF%BC%E8%88%AA/</link>
+      <pubDate>Sun, 07 Jan 2024 21:41:00 +0000</pubDate>
+      <guid>http://localhost:1313/past_posts/%E8%B5%84%E6%BA%90%E5%AF%BC%E8%88%AA/</guid>
+      <description>&lt;h1 id=&#34;lab导航&#34;&gt;lab导航&lt;/h1&gt;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &lt;blockquote&gt;&#xD;&#xA;    &lt;p&gt;以下两个网站主要登记了国外计算机专业的课程和一些学习经验，方便找lab和工具学习文章&lt;/p&gt;&#xD;&#xA;  &lt;/blockquote&gt;&#xD;&#xA;&#xD;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://csdiy.wiki/&#34; target=&#34;_blank&#34;&gt;CS自学指南&lt;/a&gt;&#xD;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://hackway.org/&#34; target=&#34;_blank&#34;&gt;HackWay技术学习路线&lt;/a&gt;&#xD;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/kangyupl&#34; target=&#34;_blank&#34;&gt;CS基础课不完全自学指南-康宇PL&amp;rsquo;s Blog&lt;/a&gt;&#xD;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;工具学习&#34;&gt;工具学习&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://seisman.github.io/how-to-write-makefile/&#34; target=&#34;_blank&#34;&gt;Makefile&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://101.lug.ustc.edu.cn/&#34; target=&#34;_blank&#34;&gt;Linux101（入门）&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>我们生活在一个有限的世界里</title>
+      <link>http://localhost:1313/past_posts/%E6%88%91%E4%BB%AC%E7%94%9F%E6%B4%BB%E5%9C%A8%E4%B8%80%E4%B8%AA%E6%9C%89%E9%99%90%E7%9A%84%E4%B8%96%E7%95%8C%E9%87%8C/</link>
+      <pubDate>Tue, 06 Jun 2023 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/past_posts/%E6%88%91%E4%BB%AC%E7%94%9F%E6%B4%BB%E5%9C%A8%E4%B8%80%E4%B8%AA%E6%9C%89%E9%99%90%E7%9A%84%E4%B8%96%E7%95%8C%E9%87%8C/</guid>
+      <description>&lt;p&gt;当我们做一件事的时候，我们会发现，几乎只要时间足够充裕，几乎所有的事情都能够做的很好。然而，现实并不会给我们那么多的机会。&lt;/p&gt;&#xA;&lt;p&gt;我们所做的一切都是有限的，我们的时间是有限的，我们的人力是有限的，我们的精力是有限的、所调动的资源、所能汲取到的智慧等等都是有限的，那些近乎无限的条件往往是不存在的，所以我们必须认识到这一点，我们生活在一个有限度的世界里，而衡量我们有没有成就的标准，就是我们能否在有限的时间里，完成一项工作。&lt;/p&gt;&#xA;&lt;p&gt;就拿高中生举个例子，学生与老师在学习上最大的不同在于，老师可以用二三十年的时间，不断深入研究学习高中的知识体系和教育，单纯以教学质量来考量，这是一个近乎理想的模型，而学生却不一样，学生只能在2-3（4）年的时间内完成整个规则的学习和应用，衡量学生是否成功的，就是他们是否在最后的教育成果上有个结果。&lt;/p&gt;&#xA;&lt;p&gt;所以我们每天所考虑的事情，不是说我们如何用超过正常标准的时间去读一本书、完成一个项目，而是如何&lt;strong&gt;更快更好&lt;/strong&gt;地去完成一件事情（在合理的限度内），当然有些事情本身就是需要很长时间的思考的，这里强调的是一般情况下的日常学习和工作，比如期末功课的学习，日常的项目进度等等。&lt;/p&gt;&#xA;&lt;p&gt;如果我们过多得消耗了有限空间内的资源，那么其结果必然是会引起个体乃至系统的低效甚至崩溃，除非我们能及时得获取更多的资源。如果项目大大超过了预期开支，那么总有一方需要承受压力。&lt;/p&gt;&#xA;&lt;p&gt;也许我们应该把更多的经历，放在如何思考我们的方向上、决策上，而不是苦干上。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>顺境和逆境</title>
+      <link>http://localhost:1313/past_posts/%E9%A1%BA%E5%A2%83%E5%92%8C%E9%80%86%E5%A2%83/</link>
+      <pubDate>Sun, 05 Mar 2023 20:15:00 +0000</pubDate>
+      <guid>http://localhost:1313/past_posts/%E9%A1%BA%E5%A2%83%E5%92%8C%E9%80%86%E5%A2%83/</guid>
+      <description>&lt;p&gt;&lt;em&gt;摘要&lt;/em&gt;：顺境和逆境是在人的历程中不可能避开的两种不同的境遇，人不可能一直逆下去，也不可能一直顺下去，如何解决顺和逆的问题，取决于我们如何去看待它；实现理想需要我们正确认识理想与现实的关系。————思修随笔&lt;/p&gt;&#xA;&lt;p&gt;本文的顺和逆的主体来自于大学思修课本，这本书主要是介绍前辈的一些经验，虽然时代久远，有我们这代人比较难理解的东西，但是我对其中的一部分还是比较感兴趣的。&lt;/p&gt;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &lt;blockquote&gt;&#xD;&#xA;    &lt;p&gt;&lt;em&gt;&lt;strong&gt;顺境&lt;/strong&gt;&lt;/em&gt; 是对人的发展有利的时期，天时地利人和，很多外部因素都会促使我们成功；与此同时，顺境也是娇娇之气的温床，会导致人自满自足，意志衰退。&lt;/p&gt;&#xD;&#xA;  &lt;/blockquote&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &lt;blockquote&gt;&#xD;&#xA;    &lt;p&gt;&lt;em&gt;&lt;strong&gt;逆境&lt;/strong&gt;&lt;/em&gt; 是人的奋斗比较艰难的时期，需要付出&lt;strong&gt;更多&lt;/strong&gt;的努力和艰辛才有可能成功；但也会有在顺境中难以得到的获得感和成就感，也能更好地磨练挑战者的意志。&lt;/p&gt;&#xD;&#xA;  &lt;/blockquote&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &lt;blockquote&gt;&#xD;&#xA;    &lt;p&gt;&lt;strong&gt;顺势而快上，乘风而勇进&lt;/strong&gt;，这是身处顺境的学问，是善于抓住时机不断丰富与完善自己的途径&lt;/p&gt;&#xD;&#xA;  &lt;/blockquote&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &lt;blockquote&gt;&#xD;&#xA;    &lt;p&gt;&lt;strong&gt;处低谷而力争，受磨难而奋进&lt;/strong&gt;，这是身处逆境的学问，要以顽强的意志去战胜艰难险阻。&lt;/p&gt;&#xD;&#xA;  &lt;/blockquote&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &lt;blockquote&gt;&#xD;&#xA;    &lt;p&gt;如何利用顺境和逆境，摆脱两种境遇的“陷阱”，关键在于如何面对它。&lt;/p&gt;&#xD;&#xA;  &lt;/blockquote&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;当初在读到这里的时候很有感触，成长到大学这一步，想必很多人都已经经历过这两种境遇了吧。前辈的推测在很多时候确确实实发生了，顺境的骄傲，逆境的艰难，很多时候是不可避免的，这一点和书中关于实现理想的内容很相似：&lt;/p&gt;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &lt;blockquote&gt;&#xD;&#xA;    &lt;p&gt;理想与现实是对立统一的。很多人在处理理想和现实的关系的时候，往往只看到对立的一面，一种是用理想否定现实，发现现实不符合合理预期的时候，就对现实大失所望，&lt;em&gt;甚至全盘否定现实&lt;/em&gt;；另一种使是用现实否定理想，在追求的过程中一遇到困难就产生畏难情绪，觉得理想遥不可及，逐渐放弃追求理想的信心和勇气，&lt;em&gt;最终放弃理想&lt;/em&gt;。&lt;/p&gt;&#xD;&#xA;  &lt;/blockquote&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &lt;blockquote&gt;&#xD;&#xA;    &lt;p&gt;想解决上面的两个问题，就必须正确认识理想和现实。一方面，理想是基于现实而存在的，理想从现实中孕育出来，受到客观现实的制约；另一方面，理想中包含着现实发展的因素和转化为理想的条件，这一转化的过程是艰难的，曲折的，经常是长期的。&lt;/p&gt;&#xD;&#xA;  &lt;/blockquote&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &lt;blockquote&gt;&#xD;&#xA;    &lt;p&gt;&lt;strong&gt;艰苦奋斗&lt;/strong&gt;是实现理想的重要条件。&lt;/p&gt;&#xD;&#xA;  &lt;/blockquote&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;逆境是很多原因造成的，不只有外部原因，有时候也可能是个人目标设定得不科学，很多情况下是没有“既要又要”的，但无论如何，在外力上不能改变的时候，想要摆脱逆境，只能以实干解决。&lt;/p&gt;&#xA;&lt;p&gt;记录这些不是为了什么，我的想法是，既然我们不能改变时代、改变处境，那么我们可以让自己变得冷静一些。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ChatGPT交流会的随笔</title>
+      <link>http://localhost:1313/past_posts/chatgpt-%E4%B8%80%E4%B8%AA%E4%BA%A4%E6%B5%81%E4%BC%9A%E7%9A%84%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 04 Mar 2023 20:25:00 +0000</pubDate>
+      <guid>http://localhost:1313/past_posts/chatgpt-%E4%B8%80%E4%B8%AA%E4%BA%A4%E6%B5%81%E4%BC%9A%E7%9A%84%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.xuetangx.com/live/live20211209IT002/live20230216IT001/15673576/31072546?channel=i.area.home_live_ad&#34; target=&#34;_blank&#34;&gt;ChatGPT会引领AI新范式吗？&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/AITIME_HY/article/details/128463104?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167793189416800186576083%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&amp;amp;request_id=167793189416800186576083&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-4-128463104-null-null.blog_rank_default&amp;amp;utm_term=GPT%20&amp;amp;spm=1018.2226.3001.4450&#34; target=&#34;_blank&#34;&gt;官方整理&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;几个比较关心的问题&lt;/p&gt;&#xA;&lt;p&gt;1.chatGPT短期内不会取代搜索引擎：chatGPT是基于大型数据的生成式大模型，在边界问题上的乱编导致其不能取代搜索引擎的独特性，也就是说chatGPT没有为信息来源负责。&lt;/p&gt;&#xA;&lt;p&gt;2.GPT的优势在于创造性，缺点在于边界问题的真实性。&lt;/p&gt;&#xA;&lt;p&gt;3.GPT在&lt;strong&gt;创意类&lt;/strong&gt;的工作上可以为工作者提供更多的创意帮助，其次应用领域可以在&lt;strong&gt;客服&lt;/strong&gt;、广告等方面。&lt;/p&gt;&#xA;&lt;p&gt;4.GPT的关键在于数据和模型，算法还是比较简单。中国在大模型上不太可能追赶上OpenAI的两年多的数据积累，而且随着GPT通过API与用户进行互动，他们在数据上的优势会更明显。&lt;/p&gt;&#xA;&lt;p&gt;5.目前chatGPT在中文语料上的积累是不充分的，中国可以在一些在中文下的独特领域开发中国版GPT。&lt;/p&gt;&#xA;&lt;p&gt;6.中国目前的科创缺乏两点，一是缺乏大量的风险资金，chatGPT的早期训练需要巨量的资金支持，这一点国内是做不到的，国内更愿意投资一些国外证实的领域；二是缺乏专注的团队，缺乏能持续几年只踏实得做一件事的团队。&lt;/p&gt;&#xA;&lt;p&gt;7.“AI+”的概念：未来会进入一个模型的时代，未来随着技术的发展，还会有其他像ChatGPT一样令人眼前一亮的成果出来。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>生日小记</title>
+      <link>http://localhost:1313/past_posts/%E7%94%9F%E6%97%A5%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Sat, 25 Feb 2023 10:35:00 +0000</pubDate>
+      <guid>http://localhost:1313/past_posts/%E7%94%9F%E6%97%A5%E5%B0%8F%E8%AE%B0/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://pica.zhimg.com/80/v2-a46ea7bebf639e97b979d512d4673b7d_720w.jpeg&#34; alt=&#34;Birthday&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;过生日这个事情吧，其实从小过过几次就没啥感觉了，小时候最喜欢的事情莫过于能吃上蛋糕，甜不嗞嗞得很好吃，慢慢得吃多了也就吃腻了，有时候过生日我会想吃点披萨面包啥的，就去蛋糕店花上十几块钱简单尝尝，差不多意思意思就可以了。&lt;/p&gt;&#xA;&lt;p&gt;生日对我来讲，无非是一年365天的平凡中，突然被抽出来某一天，被某些因素赋予了某种特别的含义，但很遗憾的是我感受不到。&lt;/p&gt;&#xA;&lt;p&gt;我倒觉得，这一天，是一能好好总结的日子，当然不是每次我都这么想，只是这次的生日太特殊了，刚好发生在我的生活大变样的一年。&lt;/p&gt;&#xA;&lt;p&gt;经常听到些前辈的演讲中说的人生发生巨大转折的日子，考上大学就算是一个，现在看了也的确是了，我出生于一个小县城，虽然接触计算机还算比较早，2010年的时候就开始打游戏啥的，但是开始接触编程这种基础的东西可能还得是高中，当时计算机的老师向我们推荐了这个软件&lt;a href=&#34;https://scratch.mit.edu/&#34; target=&#34;_blank&#34;&gt;Scratch&lt;/a&gt;&#xD;&#xA;，这是一个简化过的面向幼儿的编程软件，当时我们并没有太多重视，只是去成品库里挑了些好玩的游戏玩了玩。大学是我真正开始学习计算机的时候，我开始发现计算机作为一门全新的学科，非常得新颖，而且过去几十年内的的更新迭代速度远超其他的学科，这也许就是我上了个大学最大的感触之一吧，在与学长学姐的交流中，我发现一二线的初高中就有一些学校开始重视了，甚至有些学姐大学进门前就能做项目了，再看其他大佬的文章确实差的很多。&lt;/p&gt;&#xA;&lt;p&gt;其他方面，倒是稀疏平常，从一个懵懵懂懂的高中生，长成了一个懵懵懂懂的大学生。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

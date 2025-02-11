@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kuangbin带你飞 专题五 并查集 | Ar-Gas&#39;blog</title>
+
+    
+  
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+  
+
+
+<link rel="canonical" href="http://localhost:1313/past_posts/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E-%E4%B8%93%E9%A2%98%E4%BA%94-%E5%B9%B6%E6%9F%A5%E9%9B%86/" />
+
+
+
+<meta name="author" content="Ar-Gas" />
+<meta name="description" content="Ar-Gas的思考" />
+
+
+
+<meta name="generator" content="Hugo 0.143.1">
+
+
+<meta property="og:url" content="http://localhost:1313/past_posts/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E-%E4%B8%93%E9%A2%98%E4%BA%94-%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+  <meta property="og:site_name" content="Ar-Gas&#39;blog">
+  <meta property="og:title" content="kuangbin带你飞 专题五 并查集">
+  <meta property="og:description" content="题单 [kuangbin带你飞]专题五 并查集POJ 2236 Wireless Network POJ 1611 The Suspects HDU 1213 How Many Tables HDU 3038 How Many Answers Are Wrong POJ 1182 食物链 POJ 1417 True Liars POJ 1456 Supermarket POJ 1733 Parity game POJ 1984 Navigation Nightmare POJ 2492 A Bug’s Life POJ 2912 Rochambeau ZOJ 3261 Connections in Galaxy War HDU 1272 小希的迷宫 POJ 1308 Is It A Tree? 并查集">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="past_posts">
+    <meta property="article:published_time" content="2023-09-12T15:42:00+00:00">
+    <meta property="article:modified_time" content="2023-09-12T15:42:00+00:00">
+    <meta property="article:tag" content="题解">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="kuangbin带你飞 专题五 并查集">
+  <meta name="twitter:description" content="题单 [kuangbin带你飞]专题五 并查集POJ 2236 Wireless Network POJ 1611 The Suspects HDU 1213 How Many Tables HDU 3038 How Many Answers Are Wrong POJ 1182 食物链 POJ 1417 True Liars POJ 1456 Supermarket POJ 1733 Parity game POJ 1984 Navigation Nightmare POJ 2492 A Bug’s Life POJ 2912 Rochambeau ZOJ 3261 Connections in Galaxy War HDU 1272 小希的迷宫 POJ 1308 Is It A Tree? 并查集">
+
+
+
+
+<link rel="stylesheet" href="/css/output.css" />
+
+
+
+
+    
+
+
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/img/argas.png" alt="Ar-Gas" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="http://localhost:1313/" class="text-lg font-semibold cursor-pointer">
+          Ar-Gas
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">深入，深刻</div>
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
+    <ion-icon name="logo-rss"></ion-icon>
+    RSS
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0"
+        class="text-sm font-semibold cursor-pointer hover:underline"
+        @click="flip = !flip"
+        title="关于"
+      >关于</div>
+      
+      
+
+      
+      
+        
+      
+
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
+  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
+  <div class="hidden lg:block">
+    
+  </div>
+
+  <div class="lg:col-span-2">
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="kuangbin带你飞 专题五 并查集">
+  <meta itemprop="description" content="题单 [kuangbin带你飞]专题五 并查集POJ 2236 Wireless Network POJ 1611 The Suspects HDU 1213 How Many Tables HDU 3038 How Many Answers Are Wrong POJ 1182 食物链 POJ 1417 True Liars POJ 1456 Supermarket POJ 1733 Parity game POJ 1984 Navigation Nightmare POJ 2492 A Bug’s Life POJ 2912 Rochambeau ZOJ 3261 Connections in Galaxy War HDU 1272 小希的迷宫 POJ 1308 Is It A Tree? 并查集">
+  <meta itemprop="datePublished" content="2023-09-12T15:42:00+00:00">
+  <meta itemprop="dateModified" content="2023-09-12T15:42:00+00:00">
+  <meta itemprop="wordCount" content="510">
+  <meta itemprop="keywords" content="题解">
+
+      <header>
+        <h1 itemprop="headline">kuangbin带你飞 专题五 并查集</h1>
+        <p class="text-sm">
+          
+            <span data-format="luxon">2023-09-12T15:42:00Z</span>
+          
+
+          | <span>3分钟阅读</span>
+
+          
+          | <span>更新于
+            
+              <span data-format="luxon">2023-09-12T15:42:00Z</span>
+            </span>
+          
+        </p>
+
+        
+        <div class="flex justify-between">
+          
+            <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    <span itemprop="name">Ar-Gas</span>
+  
+  </span>
+</div>
+
+          
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=kuangbin%e5%b8%a6%e4%bd%a0%e9%a3%9e%20%e4%b8%93%e9%a2%98%e4%ba%94%20%e5%b9%b6%e6%9f%a5%e9%9b%86&amp;url=http://localhost:1313/past_posts/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E-%E4%B8%93%E9%A2%98%E4%BA%94-%E5%B9%B6%E6%9F%A5%E9%9B%86/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=http://localhost:1313/past_posts/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E-%E4%B8%93%E9%A2%98%E4%BA%94-%E5%B9%B6%E6%9F%A5%E9%9B%86/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=kuangbin%e5%b8%a6%e4%bd%a0%e9%a3%9e%20%e4%b8%93%e9%a2%98%e4%ba%94%20%e5%b9%b6%e6%9f%a5%e9%9b%86%20http://localhost:1313/past_posts/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E-%E4%B8%93%E9%A2%98%E4%BA%94-%E5%B9%B6%E6%9F%A5%E9%9B%86/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      <section id="dream-single-post-content" itemprop="articleBody">
+        
+
+        <h1 id="题单">题单</h1>
+<p><a href="https://vjudge.csgrandeur.cn/contest/276210" target="_blank">[kuangbin带你飞]专题五 并查集</a>
+</p>
+<ol>
+<li>POJ 2236 Wireless Network</li>
+<li>POJ 1611 The Suspects</li>
+<li>HDU 1213 How Many Tables</li>
+<li>HDU 3038 How Many Answers Are Wrong</li>
+<li>POJ 1182 食物链</li>
+<li>POJ 1417 True Liars</li>
+<li>POJ 1456 Supermarket</li>
+<li>POJ 1733 Parity game</li>
+<li>POJ 1984 Navigation Nightmare</li>
+<li>POJ 2492 A Bug’s Life</li>
+<li>POJ 2912 Rochambeau</li>
+<li>ZOJ 3261 Connections in Galaxy War</li>
+<li>HDU 1272 小希的迷宫</li>
+<li>POJ 1308 Is It A Tree?</li>
+</ol>
+<hr>
+<h1 id="并查集">并查集</h1>
+<p>并查集主要用于解决一些<strong>元素分组</strong>的问题。它管理一系列<strong>不相交的</strong>集合，并支持两种操作：</p>
+<ul>
+<li><strong>合并</strong>（Union）：把两个不相交的集合合并为一个集合；</li>
+<li><strong>查询</strong>（Find）：查询两个元素是否在同一个集合中。</li>
+</ul>
+<h3 id="初始化">初始化</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> fa[MAXN];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span>(<span style="color:#66d9ef">int</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; <span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>        fa[i] <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>一开始，先将节点的父节点设为自己。</p>
+<h3 id="查询">查询</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">find</span>(<span style="color:#66d9ef">int</span> x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(fa[x] <span style="color:#f92672">==</span> x)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> x;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> find(fa[x]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>利用<strong>递归</strong>的写法实现对代表元素的查询；</p>
+<p>要判断两个元素是否属于同一个集合，只需要看它们的根节点是否相同即可。</p>
+<h3 id="合并">合并</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">merge</span>(<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    fa[find(i)] <span style="color:#f92672">=</span> find(j);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="合并路径压缩">合并（路径压缩）</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">find</span>(<span style="color:#66d9ef">int</span> x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(x <span style="color:#f92672">==</span> fa[x])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> x;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>        fa[x] <span style="color:#f92672">=</span> find(fa[x]);  <span style="color:#75715e">//父节点设为根节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> fa[x];         <span style="color:#75715e">//返回父节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>简写：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">find</span>(<span style="color:#66d9ef">int</span> x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">==</span> fa[x] <span style="color:#f92672">?</span> x : (fa[x] <span style="color:#f92672">=</span> find(fa[x]));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="按秩合并">按秩合并</h1>
+<h3 id="初始化按秩合并">初始化（按秩合并）</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span>(<span style="color:#66d9ef">int</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; <span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        fa[i] <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>        rank[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="合并按秩合并">合并（按秩合并）</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">merge</span>(<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> find(i), y <span style="color:#f92672">=</span> find(j);    <span style="color:#75715e">//先找到两个根节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (rank[x] <span style="color:#f92672">&lt;=</span> rank[y])
+</span></span><span style="display:flex;"><span>        fa[x] <span style="color:#f92672">=</span> y;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        fa[y] <span style="color:#f92672">=</span> x;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (rank[x] <span style="color:#f92672">==</span> rank[y] <span style="color:#f92672">&amp;&amp;</span> x <span style="color:#f92672">!=</span> y)
+</span></span><span style="display:flex;"><span>        rank[y]<span style="color:#f92672">++</span>;                   <span style="color:#75715e">//如果深度相同且根节点不同，则新的根节点的深度+1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h1 id="加权并查集">加权并查集</h1>
+<h2 id="查找加权">查找（加权）</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">//并查集 （带权）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">find</span>(<span style="color:#66d9ef">int</span> x){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(x <span style="color:#f92672">!=</span> parent[x]){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> tmp <span style="color:#f92672">=</span> parent[x];
+</span></span><span style="display:flex;"><span>        parent[x] <span style="color:#f92672">=</span> find(parent[x]);
+</span></span><span style="display:flex;"><span>        value[x] <span style="color:#f92672">+=</span> value[tmp];
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> parent[x];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="合并加权">合并（加权）</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">//并查集 （带权）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Union</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> s){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> parent_x <span style="color:#f92672">=</span> find(x);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> parent_y <span style="color:#f92672">=</span> find(y);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(parent_x <span style="color:#f92672">!=</span> parent_y){
+</span></span><span style="display:flex;"><span>        parent[parent_x] <span style="color:#f92672">=</span> parent_y;
+</span></span><span style="display:flex;"><span>        value[parent_x] <span style="color:#f92672">=</span> value[parent_y] <span style="color:#f92672">-</span> value[parent_x] <span style="color:#f92672">+</span> s;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h1 id="题解">题解</h1>
+<h2 id="a---wireless-networkhttpsvjudgecsgrandeurcnproblempoj-2236"><a href="https://vjudge.csgrandeur.cn/problem/POJ-2236" target="_blank">A - Wireless Network</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include&lt;iostream&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include&lt;algorithm&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include&lt;cstring&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span>    N   <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e3</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">50</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> x, y;
+</span></span><span style="display:flex;"><span>}node[N];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// n, d
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> d;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 父节点，记录数组
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> pre[N], vis[N];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 初始化
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span> (){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; i <span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>		pre[i] <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>	}	
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 查找
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">find</span>(<span style="color:#66d9ef">int</span> x){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (x <span style="color:#f92672">==</span> pre[x]){<span style="color:#75715e">// 找到父节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> x;
+</span></span><span style="display:flex;"><span>	}<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> pre[x] <span style="color:#f92672">=</span> find(pre[x]); <span style="color:#75715e">//递归继续找寻+路径压缩
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 合并
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">merge</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b){
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// pow()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">double</span> D <span style="color:#f92672">=</span> (node[a].x <span style="color:#f92672">-</span> node[b].x) <span style="color:#f92672">*</span> (node[a].x <span style="color:#f92672">-</span> node[b].x) <span style="color:#f92672">+</span> (node[a].y <span style="color:#f92672">-</span> node[b].y) <span style="color:#f92672">*</span> (node[a].y <span style="color:#f92672">-</span> node[b].y); 
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 判断距离
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> dx <span style="color:#f92672">=</span> find(a);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> dy <span style="color:#f92672">=</span> find(b);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (dx <span style="color:#f92672">!=</span> dy <span style="color:#f92672">&amp;&amp;</span> d<span style="color:#f92672">*</span>d <span style="color:#f92672">&gt;=</span> D)
+</span></span><span style="display:flex;"><span>		pre[dx] <span style="color:#f92672">=</span> dy; <span style="color:#75715e">// 合并
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> d;
+</span></span><span style="display:flex;"><span>	init();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; <span style="color:#f92672">++</span> i)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		cin <span style="color:#f92672">&gt;&gt;</span> node[i].x <span style="color:#f92672">&gt;&gt;</span> node[i].y;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> op[<span style="color:#ae81ff">2</span>];
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> (<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74">&#34;%s&#34;</span>, op)){
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (op[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;O&#39;</span>){
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">int</span> a;
+</span></span><span style="display:flex;"><span>			cin <span style="color:#f92672">&gt;&gt;</span> a;
+</span></span><span style="display:flex;"><span>			vis[a] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; i <span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> (vis[i]){
+</span></span><span style="display:flex;"><span>					merge(a, i);
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (op[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;S&#39;</span>){
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">int</span> a, b;
+</span></span><span style="display:flex;"><span>			cin <span style="color:#f92672">&gt;&gt;</span> a <span style="color:#f92672">&gt;&gt;</span> b;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (find(a) <span style="color:#f92672">==</span> find(b)){
+</span></span><span style="display:flex;"><span>				cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;SUCCESS&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>			}<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>				cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;FAIL&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="heading"></h1>
+<h1 id="参考资料">参考资料</h1>
+<p><a href="https://zhuanlan.zhihu.com/p/93647900" target="_blank">算法学习笔记(1) : 并查集 - 知乎用户Pecco（本文是此文的简化）</a>
+</p>
+<p><a href="https://oi-wiki.org//ds/dsu/#%E5%85%B6%E4%BB%96%E5%BA%94%E7%94%A8" target="_blank">并查集 - oi.wiki</a>
+</p>
+<p><a href="https://zhuanlan.zhihu.com/p/477583203" target="_blank">并查集续 - 带权并查集 - 知乎why666</a>
+</p>
+
+        
+      </section>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <a class="group btn btn-outline" href="/past_posts/acwing-841/" title="AcWing 841">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">上一页</span>
+            <span class="max-w-48 truncate">AcWing 841</span>
+          </div>
+        </a>
+        
+
+        
+        <a class="group btn btn-outline" href="/past_posts/kmp%E7%AE%97%E6%B3%95/" title="KMP算法">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">下一页</span>
+            <span class="max-w-48 truncate">KMP算法</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+
+      
+    </article>
+  </div>
+
+  <div class="hidden lg:flex lg:flex-col lg:items-end">
+    
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#初始化">初始化</a></li>
+        <li><a href="#查询">查询</a></li>
+        <li><a href="#合并">合并</a></li>
+        <li><a href="#合并路径压缩">合并（路径压缩）</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#初始化按秩合并">初始化（按秩合并）</a></li>
+        <li><a href="#合并按秩合并">合并（按秩合并）</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#查找加权">查找（加权）</a></li>
+    <li><a href="#合并加权">合并（加权）</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#a---wireless-networkhttpsvjudgecsgrandeurcnproblempoj-2236"><a href="https://vjudge.csgrandeur.cn/problem/POJ-2236">A - Wireless Network</a></a></li>
+  </ul>
+</nav>
+    
+  </div>
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">作者简介</div>
+
+        <div class="prose dark:prose-invert">
+          <h3 id="hi-there-">Hi there 👋</h3>
+<ul>
+<li>🌱 I’m a junior software engineering student (2022-2026) in Taiyuan University of Technology.</li>
+<li>👯 I’m working on computer programming compertation and server development and kernel development, interested in C++、 Rust.</li>
+<li>🤔 I am also looking for help from like-minded friends.</li>
+<li>📫 How to reach me: email me :2934060590@qq.com</li>
+<li>⚡ I won a bronze medal 🥉 in the ICPC (ACM) Invitational tournament.</li>
+</ul>
+<h3 id="-实习经历-work-experience">🏢 实习经历 Work experience</h3>
+<ul>
+<li><a href="https://www.aispeech.com/" target="_blank">思必驰/aispeech</a>
+ 📌2024.07-2024.09
+<ul>
+<li>工作岗位：研发实习生</li>
+<li>工作部门：智能汽车事业部</li>
+<li>工作方向：摸鱼打杂小透明/doge</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2022 - 2025 Ar-Gas&#39;blog
+  </p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+  <script src="/js/grid.js"></script>
+
+
+
+
+<script src="/js/main.js"></script>
+
+    
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+
+
+
+  
+    <script type="module">
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
+    </script>
+  
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机网络 on Ar-Gas&#39;blog</title>
+    <link>http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 计算机网络 on Ar-Gas&#39;blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 30 Mar 2024 20:20:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CS144-计算机网络笔记（lab 0 - 4 )</title>
+      <link>http://localhost:1313/past_posts/cs144%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 30 Mar 2024 20:20:00 +0000</pubDate>
+      <guid>http://localhost:1313/past_posts/cs144%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;最近闲来无事（&lt;del&gt;犯懒&lt;/del&gt;），把CS144的lab记一下（目前lab4待调试，但是时间被占用了，后面看情况填坑吧QAQ）&lt;/p&gt;&#xA;&lt;p&gt;前置知识建议学下MIT6.081，good to have&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
