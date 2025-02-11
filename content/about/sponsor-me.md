@@ -7,6 +7,6 @@ date: 2025-02-12T01:32:23+08:00
 
 If you like my works or find them helpful, please consider buying me a cup of coffee ☕️. It inspires me to create and maintain more projects in the future. 🦾
 
-👉 ![请我喝一杯咖啡](zhifu.jpg)
+👉 ![请我喝一杯咖啡](/about/zhifu.jpg)
 
 
