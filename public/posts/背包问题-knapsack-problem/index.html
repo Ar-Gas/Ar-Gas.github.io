@@ -1,747 +1,0 @@
-<!DOCTYPE html>
-<html lang="zh"
-  x-data
-  :class="$store.darkMode.class()"
-  :data-theme="$store.darkMode.theme()">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>背包问题 knapsack problem | Ar-Gas&#39;blog</title>
-
-    
-  
-    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
-  
-
-
-<link rel="canonical" href="http://localhost:1313/posts/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-knapsack-problem/" />
-
-
-
-<meta name="author" content="Ar-Gas" />
-<meta name="description" content="0-1背包问题
-最长公共字符串（LCS）
-完全背包问题（UKP）
-背包九讲 《背包九讲》原文地址0-1背包问题 / 0-1 knapsack problem 伪代码 边界：$P[0,i] = 0, P[i,0] = 0$
-递推式：$P[i,c] = max(P[i-1,c-v[i]]&#43;P[i],P[i-1,c])$
-输入:商品数量n,各商品的价值p,各商品的体积v,背包容量C输出:商品价格的最大值,最优解方案/*初始化*/创建二维数组P[0.n,0..C]和Rec[0..n,0..C]for i &lt;- 0 to C doP[0,i] &lt;- 0for i &lt;- 0 to n doP[i,0] &lt;- o/*求解表格*/for i &lt;- 1 to n dofor c &lt;- 1 to C doif (v[i] ≤ c) and (p[i]&#43;P[i- 1,c -v[i]] &gt; P[i- 1, c]) thenP[i,c] &lt;- p[i]＋P[i- 1,c一v[i]]Rec[i,c] &lt;- 1elseP[i,c] &lt;- P[i -1,c]Rec[i,c] &lt;- 0/*输出最优解方案*/for i &lt;- n to 1 doif Rec[i, K] = 1 thenprint 选择商品iK &lt;- K - v[i]elseprint 不选商品ireturn P[n,C] C&#43;&#43;代码 Time：$\omicron(nW)$
-" />
-
-
-<meta name="keywords" content="题解">
-
-
-
-<meta name="generator" content="Hugo 0.143.1">
-
-
-<meta property="og:url" content="http://localhost:1313/posts/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-knapsack-problem/">
-  <meta property="og:site_name" content="Ar-Gas&#39;blog">
-  <meta property="og:title" content="背包问题 knapsack problem">
-  <meta property="og:description" content="0-1背包问题
-最长公共字符串（LCS）
-完全背包问题（UKP）
-背包九讲 《背包九讲》原文地址0-1背包问题 / 0-1 knapsack problem 伪代码 边界：$P[0,i] = 0, P[i,0] = 0$
-递推式：$P[i,c] = max(P[i-1,c-v[i]]&#43;P[i],P[i-1,c])$
-输入:商品数量n,各商品的价值p,各商品的体积v,背包容量C输出:商品价格的最大值,最优解方案/*初始化*/创建二维数组P[0.n,0..C]和Rec[0..n,0..C]for i &lt;- 0 to C doP[0,i] &lt;- 0for i &lt;- 0 to n doP[i,0] &lt;- o/*求解表格*/for i &lt;- 1 to n dofor c &lt;- 1 to C doif (v[i] ≤ c) and (p[i]&#43;P[i- 1,c -v[i]] &gt; P[i- 1, c]) thenP[i,c] &lt;- p[i]＋P[i- 1,c一v[i]]Rec[i,c] &lt;- 1elseP[i,c] &lt;- P[i -1,c]Rec[i,c] &lt;- 0/*输出最优解方案*/for i &lt;- n to 1 doif Rec[i, K] = 1 thenprint 选择商品iK &lt;- K - v[i]elseprint 不选商品ireturn P[n,C] C&#43;&#43;代码 Time：$\omicron(nW)$">
-  <meta property="og:locale" content="zh">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2023-03-08T11:45:00+00:00">
-    <meta property="article:modified_time" content="2023-03-08T11:45:00+00:00">
-    <meta property="article:tag" content="题解">
-
-
-
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="背包问题 knapsack problem">
-  <meta name="twitter:description" content="0-1背包问题
-最长公共字符串（LCS）
-完全背包问题（UKP）
-背包九讲 《背包九讲》原文地址0-1背包问题 / 0-1 knapsack problem 伪代码 边界：$P[0,i] = 0, P[i,0] = 0$
-递推式：$P[i,c] = max(P[i-1,c-v[i]]&#43;P[i],P[i-1,c])$
-输入:商品数量n,各商品的价值p,各商品的体积v,背包容量C输出:商品价格的最大值,最优解方案/*初始化*/创建二维数组P[0.n,0..C]和Rec[0..n,0..C]for i &lt;- 0 to C doP[0,i] &lt;- 0for i &lt;- 0 to n doP[i,0] &lt;- o/*求解表格*/for i &lt;- 1 to n dofor c &lt;- 1 to C doif (v[i] ≤ c) and (p[i]&#43;P[i- 1,c -v[i]] &gt; P[i- 1, c]) thenP[i,c] &lt;- p[i]＋P[i- 1,c一v[i]]Rec[i,c] &lt;- 1elseP[i,c] &lt;- P[i -1,c]Rec[i,c] &lt;- 0/*输出最优解方案*/for i &lt;- n to 1 doif Rec[i, K] = 1 thenprint 选择商品iK &lt;- K - v[i]elseprint 不选商品ireturn P[n,C] C&#43;&#43;代码 Time：$\omicron(nW)$">
-
-
-
-
-<link rel="stylesheet" href="/css/output.css" />
-
-
-
-
-    
-
-
-<style>
-  pre {
-    padding: 1em;
-    overflow: auto;
-  }
-</style>
-
-
-
-
-
-
-
-
-
-    
-
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  </head>
-
-  <body x-data="{
-    flip: false,
-  }">
-    
-    <div id="dream-global-bg"></div>
-
-    
-<nav x-data="{ isSticky: false }"
-  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
-  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
-  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
-
-  
-  <div class="container flex justify-between px-4">
-  
-    <section class="flex items-center gap-4">
-      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="翻转一下！">
-        <div class="h-10 rounded-full">
-          <img src="/img/argas.png" alt="Ar-Gas" />
-        </div>
-      </div>
-
-      
-      <div>
-        
-        <a href="http://localhost:1313/" class="text-lg font-semibold cursor-pointer">
-          Ar-Gas
-        </a>
-        
-        
-        <div class="text-base-content/60 text-sm">深入，深刻</div>
-        
-      </div>
-      
-    </section>
-
-    <div class="dropdown dropdown-end sm:hidden">
-      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
-        <ion-icon name="menu" class="text-2xl"></ion-icon>
-      </div>
-      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
-        
-
-
-<li>
-  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
-    <ion-icon name="information-circle"></ion-icon>关于</div>
-</li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
-    <ion-icon name="logo-rss"></ion-icon>
-    RSS
-  </a>
-</li>
-
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
-    <ion-icon name="archive"></ion-icon>
-    归档
-  </a>
-</li>
-
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
-    <ion-icon name="grid"></ion-icon>
-    所有分类
-  </a>
-</li>
-
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
-    <ion-icon name="pricetags"></ion-icon>
-    所有标签
-  </a>
-</li>
-
-
-
-
-
-
-      </ul>
-    </div>
-    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
-      
-      
-      
-      <div role="link" tabindex="0"
-        class="text-sm font-semibold cursor-pointer hover:underline"
-        @click="flip = !flip"
-        title="关于"
-      >关于</div>
-      
-      
-
-      
-      
-        
-      
-
-      
-
-      
-      
-
-
-
-
-
-      
-      
-
-
-
-
-
-      
-      
-<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
-  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
-</a>
-
-
-      
-      
-<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
-  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
-</a>
-
-
-      
-      
-<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
-  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
-</a>
-
-
-      
-      
-<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
-  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
-</a>
-
-
-      
-
-      
-
-      
-    </section>
-  </div>
-</nav>
-
-
-    <div class="flip-container" :class="{ 'flip-it': flip }">
-      <div class="flipper">
-        <div class="front">
-          <div class="container">
-            
-<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
-  <div class="hidden lg:block">
-    
-  </div>
-
-  <div class="lg:col-span-2">
-    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
-      
-  <meta itemprop="name" content="背包问题 knapsack problem">
-  <meta itemprop="description" content="0-1背包问题
-最长公共字符串（LCS）
-完全背包问题（UKP）
-背包九讲 《背包九讲》原文地址0-1背包问题 / 0-1 knapsack problem 伪代码 边界：$P[0,i] = 0, P[i,0] = 0$
-递推式：$P[i,c] = max(P[i-1,c-v[i]]&#43;P[i],P[i-1,c])$
-输入:商品数量n,各商品的价值p,各商品的体积v,背包容量C输出:商品价格的最大值,最优解方案/*初始化*/创建二维数组P[0.n,0..C]和Rec[0..n,0..C]for i &lt;- 0 to C doP[0,i] &lt;- 0for i &lt;- 0 to n doP[i,0] &lt;- o/*求解表格*/for i &lt;- 1 to n dofor c &lt;- 1 to C doif (v[i] ≤ c) and (p[i]&#43;P[i- 1,c -v[i]] &gt; P[i- 1, c]) thenP[i,c] &lt;- p[i]＋P[i- 1,c一v[i]]Rec[i,c] &lt;- 1elseP[i,c] &lt;- P[i -1,c]Rec[i,c] &lt;- 0/*输出最优解方案*/for i &lt;- n to 1 doif Rec[i, K] = 1 thenprint 选择商品iK &lt;- K - v[i]elseprint 不选商品ireturn P[n,C] C&#43;&#43;代码 Time：$\omicron(nW)$">
-  <meta itemprop="datePublished" content="2023-03-08T11:45:00+00:00">
-  <meta itemprop="dateModified" content="2023-03-08T11:45:00+00:00">
-  <meta itemprop="wordCount" content="207">
-  <meta itemprop="keywords" content="题解">
-
-      <header>
-        <h1 itemprop="headline">背包问题 knapsack problem</h1>
-        <p class="text-sm">
-          
-            <span data-format="luxon">2023-03-08T11:45:00Z</span>
-          
-
-          | <span>1分钟阅读</span>
-
-          
-          | <span>更新于
-            
-              <span data-format="luxon">2023-03-08T11:45:00Z</span>
-            </span>
-          
-        </p>
-
-        
-        <div class="flex justify-between">
-          
-            <div class="flex items-center">
-  
-  <span>@</span>
-  
-
-  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-  
-    <span itemprop="name">Ar-Gas</span>
-  
-  </span>
-</div>
-
-          
-
-          <div class="flex items-center gap-2">
-  
-  
-
-  
-  
-  
-  
-  
-    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://x.com/intent/post?text=%e8%83%8c%e5%8c%85%e9%97%ae%e9%a2%98%20knapsack%20problem&amp;url=http://localhost:1313/posts/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-knapsack-problem/" target="_blank" rel="noopener noreferrer"
-      title="Share on X">
-      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
-    </a>
-  
-    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-knapsack-problem/" target="_blank" rel="noopener noreferrer"
-      title="Share on Facebook">
-      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
-    </a>
-  
-    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://wa.me/?text=%e8%83%8c%e5%8c%85%e9%97%ae%e9%a2%98%20knapsack%20problem%20http://localhost:1313/posts/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-knapsack-problem/" target="_blank" rel="noopener noreferrer"
-      title="Share on WhatsApp">
-      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
-    </a>
-  
-
-  
-  
-</div>
-
-        </div>
-      </header>
-
-      <section id="dream-single-post-content" itemprop="articleBody">
-        
-
-        <p>0-1背包问题</p>
-<p>最长公共字符串（LCS）</p>
-<p>完全背包问题（UKP）</p>
-<h1 id="背包九讲">背包九讲</h1>
-<p><a href="https://github.com/tianyicui/pack" target="_blank">《背包九讲》原文地址</a>
-</p>
-<h1 id="0-1背包问题--0-1-knapsack-problem">0-1背包问题 / 0-1 knapsack problem</h1>
-<h2 id="伪代码">伪代码</h2>
-<p>边界：$P[0,i] = 0, P[i,0] = 0$</p>
-<p>递推式：$P[i,c] = max(P[i-1,c-v[i]]+P[i],P[i-1,c])$</p>
-<pre tabindex="0"><code class="language-伪代码" data-lang="伪代码">输入:商品数量n,各商品的价值p,各商品的体积v,背包容量C输出:商品价格的最大值,最优解方案
-
-/*初始化*/
-创建二维数组P[0.n,0..C]和Rec[0..n,0..C]
-for i &lt;- 0 to C do
-	P[0,i] &lt;- 0
-for i &lt;- 0 to n do
-	P[i,0] &lt;- o
-	
-/*求解表格*/
-for i &lt;- 1 to n do
-    for c &lt;- 1 to C do
-        if (v[i] ≤ c) and (p[i]+P[i- 1,c -v[i]] &gt; P[i- 1, c]) then
-            P[i,c]   &lt;- p[i]＋P[i- 1,c一v[i]]
-            Rec[i,c] &lt;- 1
-        else
-            P[i,c]   &lt;- P[i -1,c]
-            Rec[i,c] &lt;- 0
-
-/*输出最优解方案*/
-for i &lt;- n to 1 do
-    if Rec[i, K] = 1 then
-    	print 选择商品i
-    	K &lt;- K - v[i]
-    else
-  		print 不选商品i
-return P[n,C]
-</code></pre><h2 id="c代码">C++代码</h2>
-<p>Time：$\omicron(nW)$</p>
-<p>Space:$\omicron(nW)$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include&lt;bits/stdc++.h&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#define N 100
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define max(a,b) (a)&gt;(b)?(a):(b)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n,w[N],v[N],W,dp[N][N];<span style="color:#75715e">//item_limt,each_weight,each_value,weight_limt,max_value_graph
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> n<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>,w[N]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>},v[N]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>},W<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,dp[N][N]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">0</span>};<span style="color:#75715e">//input
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>( <span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> ; i<span style="color:#f92672">&lt;=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> ; i<span style="color:#f92672">++</span> )
-</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">for</span>( <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ; j<span style="color:#f92672">&lt;=</span>W ; j<span style="color:#f92672">++</span> )
-</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span>(w[i]<span style="color:#f92672">&gt;</span>j)dp[i][j]<span style="color:#f92672">=</span>dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j];
-</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">else</span> dp[i][j
-</span></span><span style="display:flex;"><span>                    ]<span style="color:#f92672">=</span>max(dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span>w[i]]<span style="color:#f92672">+</span>v[i],dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j]);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    cout<span style="color:#f92672">&lt;&lt;</span>dp[n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][W]<span style="color:#f92672">&lt;&lt;</span>endl;<span style="color:#75715e">//output
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><p>动图：</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Knapsack_problem_dynamic_programming.gif/330px-Knapsack_problem_dynamic_programming.gif" alt="0-1 knapsack problem"></p>
-<h1 id="完全背包问题unbounded-knapsack-problem-ukp">完全背包问题/unbounded knapsack problem (UKP)</h1>
-<p>最初的思路是每格多加k个，求最值</p>
-<p>优化后只需要和少加一个的格子比较</p>
-<p>Time：$\omicron(nW)$</p>
-<p>Space:$\omicron(nW)$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include&lt;bits/stdc++.h&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#define N 100
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define max(a,b) (a)&gt;(b)?(a):(b)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> dp[N][N]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">0</span>},W,n;<span style="color:#75715e">//dp value max_weight limit_number
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>   n<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>;W<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>;
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">int</span> w[N]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>},v[N]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>};<span style="color:#75715e">//input:each_weight each_value
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>)
-</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;=</span>W;j<span style="color:#f92672">++</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(w[i]<span style="color:#f92672">&gt;</span>j){
-</span></span><span style="display:flex;"><span>               dp[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][j]<span style="color:#f92672">=</span>dp[i][j];
-</span></span><span style="display:flex;"><span>            }<span style="color:#66d9ef">else</span>{
-</span></span><span style="display:flex;"><span>               dp[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][j]<span style="color:#f92672">=</span>max(dp[i][j],dp[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span>w[i]]<span style="color:#f92672">+</span>v[i]);<span style="color:#75715e">//rule
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>   cout<span style="color:#f92672">&lt;&lt;</span>dp[n][W];<span style="color:#75715e">//output
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><h1 id="参考链接">参考链接</h1>
-<p><a href="https://juejin.cn/post/6966628401914314789#heading-7" target="_blank">【DP】0-1 背包问题</a>
-</p>
-<p><a href="https://oi-wiki.org//dp/knapsack/" target="_blank">oi-wiki-背包DP</a>
-</p>
-<p><a href="https://www.youtube.com/watch?v=ocZMDMZwhCY" target="_blank">MIT video about DP and knapsack</a>
-</p>
-<p><a href="https://github.com/tianyicui/pack" target="_blank">《背包九讲》</a>
-</p>
-
-
-        
-      </section>
-
-      
-      <div class="divider"></div>
-      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
-        
-        <a class="group btn btn-outline" href="/posts/%E6%8E%92%E5%BA%8F/" title="排序/Sort">
-          <ion-icon name="chevron-back"></ion-icon>
-          <div class="inline-flex flex-col items-start">
-            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">上一页</span>
-            <span class="max-w-48 truncate">排序/Sort</span>
-          </div>
-        </a>
-        
-
-        
-        <a class="group btn btn-outline" href="/posts/%E9%A1%BA%E5%A2%83%E5%92%8C%E9%80%86%E5%A2%83/" title="顺境和逆境">
-          <div class="inline-flex flex-col items-end">
-            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">下一页</span>
-            <span class="max-w-48 truncate">顺境和逆境</span>
-          </div>
-          <ion-icon name="chevron-forward"></ion-icon>
-        </a>
-        
-      </div>
-      
-
-      
-    </article>
-  </div>
-
-  <div class="hidden lg:flex lg:flex-col lg:items-end">
-    
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#伪代码">伪代码</a></li>
-    <li><a href="#c代码">C++代码</a></li>
-  </ul>
-</nav>
-    
-  </div>
-</div>
-
-
-            
-<footer class="flex justify-between items-center gap-2 px-4 py-12">
-
-  <div>
-  
-  <p>
-    © 2022 - 2025 Ar-Gas&#39;blog
-  </p>
-  
-
-  
-  <p class="text-sm">
-    🌱
-    <span class="text-base-content/60">
-      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
-      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
-    >
-  </p>
-  
-</div>
-
-  <div
-  x-data="{ icons: [
-    { name: 'moon', status: 'y' },
-    { name: 'sunny', status: 'n' },
-    { name: 'desktop', status: 'auto' }
-  ] }"
-  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
->
-  <template x-for="icon in icons">
-    <div
-      role="button"
-      tabindex="0"
-      :aria-label="'Select ' + icon.name + ' mode'"
-      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
-      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
-      @click="$store.darkMode.toggle(icon.status)"
-    >
-      <ion-icon
-        :name="`${icon.name}-outline`"
-        class="group-hover:text-primary-content"
-        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
-      >
-      </ion-icon>
-    </div>
-  </template>
-</div>
-
-</footer>
-
-          </div>
-        </div>
-        <div class="back">
-          <div class="container">
-            
-            <div class="dream-grid dream-grid-about">
-  
-  
-  
-  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-    <article
-      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
-    >
-      <div class="card-body">
-        <div class="card-title">作者简介</div>
-
-        <div class="prose dark:prose-invert">
-          <h3 id="hi-there-">Hi there 👋</h3>
-<ul>
-<li>🌱 I’m a junior software engineering student (2022-2026) in Taiyuan University of Technology.</li>
-<li>👯 I’m working on computer programming compertation and server development and kernel development, interested in C++、 Rust.</li>
-<li>🤔 I am also looking for help from like-minded friends.</li>
-<li>📫 How to reach me: email me :2934060590@qq.com</li>
-<li>⚡ I won a bronze medal 🥉 in the ICPC (ACM) Invitational tournament.</li>
-</ul>
-<h3 id="-实习经历-work-experience">🏢 实习经历 Work experience</h3>
-<ul>
-<li><a href="https://www.aispeech.com/" target="_blank">思必驰/aispeech</a>
- 📌2024.07-2024.09
-<ul>
-<li>工作岗位：研发实习生</li>
-<li>工作部门：智能汽车事业部</li>
-<li>工作方向：摸鱼打杂小透明/doge</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-      </div>
-    </article>
-  </div>
-  
-  
-
-  
-
-  
-</div>
-
-            
-
-            
-<footer class="flex justify-between items-center gap-2 px-4 py-12">
-
-  <div>
-  
-  <p>
-    © 2022 - 2025 Ar-Gas&#39;blog
-  </p>
-  
-
-  
-  <p class="text-sm">
-    🌱
-    <span class="text-base-content/60">
-      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
-      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
-    >
-  </p>
-  
-</div>
-
-  <div
-  x-data="{ icons: [
-    { name: 'moon', status: 'y' },
-    { name: 'sunny', status: 'n' },
-    { name: 'desktop', status: 'auto' }
-  ] }"
-  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
->
-  <template x-for="icon in icons">
-    <div
-      role="button"
-      tabindex="0"
-      :aria-label="'Select ' + icon.name + ' mode'"
-      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
-      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
-      @click="$store.darkMode.toggle(icon.status)"
-    >
-      <ion-icon
-        :name="`${icon.name}-outline`"
-        class="group-hover:text-primary-content"
-        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
-      >
-      </ion-icon>
-    </div>
-  </template>
-</div>
-
-</footer>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-  window.lightTheme = "emerald"
-  window.darkTheme = "forest"
-</script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
-
-  
-  
-  <script src="/js/grid.js"></script>
-
-
-
-
-<script src="/js/main.js"></script>
-
-    
-
-
-<script
-  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
-  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
-  crossorigin="anonymous"
-></script>
-<script>
-  format()
-
-  function format() {
-    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
-      const date = el.textContent
-
-      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
-    })
-  }
-</script>
-
-
-
-
-
-
-  
-    <script type="module">
-      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
-      mediumZoom('#dream-single-post-content img', {
-        background: 'oklch(var(--b1))',
-        margin: 24,
-      })
-    </script>
-  
-
-
-
-
-    
-
-    
-
-    
-
-    
-
-    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
-  </body>
-</html>

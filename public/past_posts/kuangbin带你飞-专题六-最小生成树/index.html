@@ -1,763 +1,0 @@
-<!DOCTYPE html>
-<html lang="zh"
-  x-data
-  :class="$store.darkMode.class()"
-  :data-theme="$store.darkMode.theme()">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kuangbin带你飞 专题六 最小生成树 | Ar-Gas&#39;blog</title>
-
-    
-  
-    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
-  
-
-
-<link rel="canonical" href="http://localhost:1313/past_posts/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E-%E4%B8%93%E9%A2%98%E5%85%AD-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" />
-
-
-
-<meta name="author" content="Ar-Gas" />
-<meta name="description" content="Ar-Gas的思考" />
-
-
-
-<meta name="generator" content="Hugo 0.143.1">
-
-
-<meta property="og:url" content="http://localhost:1313/past_posts/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E-%E4%B8%93%E9%A2%98%E5%85%AD-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
-  <meta property="og:site_name" content="Ar-Gas&#39;blog">
-  <meta property="og:title" content="kuangbin带你飞 专题六 最小生成树">
-  <meta property="og:description" content="题单 [kuangbin带你飞]专题六 最小生成树 A POJ 1251 POJ 1251Jungle Roads 丛林道路B POJ 1287 POJ 1287Networking 联网C POJ 2031 POJ 2031Building a Space Station 建造空间站D POJ 2421 POJ 2421Constructing Roads 修建道路E ZOJ 1586 佐吉1586QS Network QS 网络F POJ 1789 邮政编码 1789Truck History 卡车历史G POJ 2349 邮政编码 2349Arctic Network 北极网络H POJ 1751 邮政编码 1751Highways 高速公路I POJ 1258 POJ 1258Agri-Net 农业网J POJ 3026 POJ 3026Borg Maze 博格迷宫K POJ 1679 邮政编码 1679The Unique MST 独特的MSTL HDU 1233 HDU 1233还是畅通工程M HDU 1301 HDU 1301Jungle Roads 丛林道路N HDU 1875 HDU 1875畅通工程再续最小生成树 简介 普里姆算法（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点（英语：Vertex (graph theory)），且其所有边的权值之和亦为最小。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克（英语：Vojtěch Jarník）发现；并在1957年由美国计算机科学家罗伯特·普里姆（英语：Robert C. Prim）独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。">
-  <meta property="og:locale" content="zh">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="past_posts">
-    <meta property="article:published_time" content="2023-09-22T20:42:00+00:00">
-    <meta property="article:modified_time" content="2023-09-22T20:42:00+00:00">
-    <meta property="article:tag" content="题解">
-
-
-
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="kuangbin带你飞 专题六 最小生成树">
-  <meta name="twitter:description" content="题单 [kuangbin带你飞]专题六 最小生成树 A POJ 1251 POJ 1251Jungle Roads 丛林道路B POJ 1287 POJ 1287Networking 联网C POJ 2031 POJ 2031Building a Space Station 建造空间站D POJ 2421 POJ 2421Constructing Roads 修建道路E ZOJ 1586 佐吉1586QS Network QS 网络F POJ 1789 邮政编码 1789Truck History 卡车历史G POJ 2349 邮政编码 2349Arctic Network 北极网络H POJ 1751 邮政编码 1751Highways 高速公路I POJ 1258 POJ 1258Agri-Net 农业网J POJ 3026 POJ 3026Borg Maze 博格迷宫K POJ 1679 邮政编码 1679The Unique MST 独特的MSTL HDU 1233 HDU 1233还是畅通工程M HDU 1301 HDU 1301Jungle Roads 丛林道路N HDU 1875 HDU 1875畅通工程再续最小生成树 简介 普里姆算法（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点（英语：Vertex (graph theory)），且其所有边的权值之和亦为最小。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克（英语：Vojtěch Jarník）发现；并在1957年由美国计算机科学家罗伯特·普里姆（英语：Robert C. Prim）独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。">
-
-
-
-
-<link rel="stylesheet" href="/css/output.css" />
-
-
-
-
-    
-
-
-<style>
-  pre {
-    padding: 1em;
-    overflow: auto;
-  }
-</style>
-
-
-
-
-
-
-
-
-
-    
-
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  </head>
-
-  <body x-data="{
-    flip: false,
-  }">
-    
-    <div id="dream-global-bg"></div>
-
-    
-<nav x-data="{ isSticky: false }"
-  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
-  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
-  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
-
-  
-  <div class="container flex justify-between px-4">
-  
-    <section class="flex items-center gap-4">
-      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="翻转一下！">
-        <div class="h-10 rounded-full">
-          <img src="/img/argas.png" alt="Ar-Gas" />
-        </div>
-      </div>
-
-      
-      <div>
-        
-        <a href="http://localhost:1313/" class="text-lg font-semibold cursor-pointer">
-          Ar-Gas
-        </a>
-        
-        
-        <div class="text-base-content/60 text-sm">深入，深刻</div>
-        
-      </div>
-      
-    </section>
-
-    <div class="dropdown dropdown-end sm:hidden">
-      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
-        <ion-icon name="menu" class="text-2xl"></ion-icon>
-      </div>
-      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
-        
-
-
-<li>
-  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
-    <ion-icon name="information-circle"></ion-icon>关于</div>
-</li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
-    <ion-icon name="logo-rss"></ion-icon>
-    RSS
-  </a>
-</li>
-
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
-    <ion-icon name="archive"></ion-icon>
-    归档
-  </a>
-</li>
-
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
-    <ion-icon name="grid"></ion-icon>
-    所有分类
-  </a>
-</li>
-
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
-    <ion-icon name="pricetags"></ion-icon>
-    所有标签
-  </a>
-</li>
-
-
-
-
-
-
-      </ul>
-    </div>
-    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
-      
-      
-      
-      <div role="link" tabindex="0"
-        class="text-sm font-semibold cursor-pointer hover:underline"
-        @click="flip = !flip"
-        title="关于"
-      >关于</div>
-      
-      
-
-      
-      
-        
-      
-
-      
-
-      
-      
-
-
-
-
-
-      
-      
-
-
-
-
-
-      
-      
-<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
-  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
-</a>
-
-
-      
-      
-<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
-  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
-</a>
-
-
-      
-      
-<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
-  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
-</a>
-
-
-      
-      
-<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
-  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
-</a>
-
-
-      
-
-      
-
-      
-    </section>
-  </div>
-</nav>
-
-
-    <div class="flip-container" :class="{ 'flip-it': flip }">
-      <div class="flipper">
-        <div class="front">
-          <div class="container">
-            
-<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
-  <div class="hidden lg:block">
-    
-  </div>
-
-  <div class="lg:col-span-2">
-    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
-      
-  <meta itemprop="name" content="kuangbin带你飞 专题六 最小生成树">
-  <meta itemprop="description" content="题单 [kuangbin带你飞]专题六 最小生成树 A POJ 1251 POJ 1251Jungle Roads 丛林道路B POJ 1287 POJ 1287Networking 联网C POJ 2031 POJ 2031Building a Space Station 建造空间站D POJ 2421 POJ 2421Constructing Roads 修建道路E ZOJ 1586 佐吉1586QS Network QS 网络F POJ 1789 邮政编码 1789Truck History 卡车历史G POJ 2349 邮政编码 2349Arctic Network 北极网络H POJ 1751 邮政编码 1751Highways 高速公路I POJ 1258 POJ 1258Agri-Net 农业网J POJ 3026 POJ 3026Borg Maze 博格迷宫K POJ 1679 邮政编码 1679The Unique MST 独特的MSTL HDU 1233 HDU 1233还是畅通工程M HDU 1301 HDU 1301Jungle Roads 丛林道路N HDU 1875 HDU 1875畅通工程再续最小生成树 简介 普里姆算法（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点（英语：Vertex (graph theory)），且其所有边的权值之和亦为最小。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克（英语：Vojtěch Jarník）发现；并在1957年由美国计算机科学家罗伯特·普里姆（英语：Robert C. Prim）独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。">
-  <meta itemprop="datePublished" content="2023-09-22T20:42:00+00:00">
-  <meta itemprop="dateModified" content="2023-09-22T20:42:00+00:00">
-  <meta itemprop="wordCount" content="140">
-  <meta itemprop="keywords" content="题解">
-
-      <header>
-        <h1 itemprop="headline">kuangbin带你飞 专题六 最小生成树</h1>
-        <p class="text-sm">
-          
-            <span data-format="luxon">2023-09-22T20:42:00Z</span>
-          
-
-          | <span>1分钟阅读</span>
-
-          
-          | <span>更新于
-            
-              <span data-format="luxon">2023-09-22T20:42:00Z</span>
-            </span>
-          
-        </p>
-
-        
-        <div class="flex justify-between">
-          
-            <div class="flex items-center">
-  
-  <span>@</span>
-  
-
-  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-  
-    <span itemprop="name">Ar-Gas</span>
-  
-  </span>
-</div>
-
-          
-
-          <div class="flex items-center gap-2">
-  
-  
-
-  
-  
-  
-  
-  
-    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://x.com/intent/post?text=kuangbin%e5%b8%a6%e4%bd%a0%e9%a3%9e%20%e4%b8%93%e9%a2%98%e5%85%ad%20%e6%9c%80%e5%b0%8f%e7%94%9f%e6%88%90%e6%a0%91&amp;url=http://localhost:1313/past_posts/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E-%E4%B8%93%E9%A2%98%E5%85%AD-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" target="_blank" rel="noopener noreferrer"
-      title="Share on X">
-      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
-    </a>
-  
-    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://facebook.com/sharer/sharer.php?u=http://localhost:1313/past_posts/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E-%E4%B8%93%E9%A2%98%E5%85%AD-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" target="_blank" rel="noopener noreferrer"
-      title="Share on Facebook">
-      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
-    </a>
-  
-    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://wa.me/?text=kuangbin%e5%b8%a6%e4%bd%a0%e9%a3%9e%20%e4%b8%93%e9%a2%98%e5%85%ad%20%e6%9c%80%e5%b0%8f%e7%94%9f%e6%88%90%e6%a0%91%20http://localhost:1313/past_posts/kuangbin%E5%B8%A6%E4%BD%A0%E9%A3%9E-%E4%B8%93%E9%A2%98%E5%85%AD-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" target="_blank" rel="noopener noreferrer"
-      title="Share on WhatsApp">
-      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
-    </a>
-  
-
-  
-  
-</div>
-
-        </div>
-      </header>
-
-      <section id="dream-single-post-content" itemprop="articleBody">
-        
-
-        <h1 id="题单">题单</h1>
-<p><a href="https://vjudge.csgrandeur.cn/contest/276211" target="_blank">[kuangbin带你飞]专题六 最小生成树 </a>
-</p>
-<table>
-  <thead>
-      <tr>
-          <th>A</th>
-          <th><a href="https://vjudge.csgrandeur.cn/problem/POJ-1251/origin" target="_blank">POJ 1251 POJ 1251</a>
-</th>
-          <th><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/A" target="_blank">Jungle Roads  丛林道路</a>
-</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>B</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/POJ-1287/origin" target="_blank">POJ 1287  POJ 1287</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/B" target="_blank">Networking  联网</a>
-</td>
-      </tr>
-      <tr>
-          <td>C</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/POJ-2031/origin" target="_blank">POJ 2031  POJ 2031</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/C" target="_blank">Building a Space Station 建造空间站</a>
-</td>
-      </tr>
-      <tr>
-          <td>D</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/POJ-2421/origin" target="_blank">POJ 2421  POJ 2421</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/D" target="_blank">Constructing Roads  修建道路</a>
-</td>
-      </tr>
-      <tr>
-          <td>E</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/ZOJ-1586/origin" target="_blank">ZOJ 1586  佐吉1586</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/E" target="_blank">QS Network  QS 网络</a>
-</td>
-      </tr>
-      <tr>
-          <td>F</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/POJ-1789/origin" target="_blank">POJ 1789  邮政编码 1789</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/F" target="_blank">Truck History  卡车历史</a>
-</td>
-      </tr>
-      <tr>
-          <td>G</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/POJ-2349/origin" target="_blank">POJ 2349  邮政编码 2349</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/G" target="_blank">Arctic Network  北极网络</a>
-</td>
-      </tr>
-      <tr>
-          <td>H</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/POJ-1751/origin" target="_blank">POJ 1751  邮政编码 1751</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/H" target="_blank">Highways  高速公路</a>
-</td>
-      </tr>
-      <tr>
-          <td>I</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/POJ-1258/origin" target="_blank">POJ 1258  POJ 1258</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/I" target="_blank">Agri-Net  农业网</a>
-</td>
-      </tr>
-      <tr>
-          <td>J</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/POJ-3026/origin" target="_blank">POJ 3026  POJ 3026</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/J" target="_blank">Borg Maze  博格迷宫</a>
-</td>
-      </tr>
-      <tr>
-          <td>K</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/POJ-1679/origin" target="_blank">POJ 1679  邮政编码 1679</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/K" target="_blank">The Unique MST 独特的MST</a>
-</td>
-      </tr>
-      <tr>
-          <td>L</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/HDU-1233/origin" target="_blank">HDU 1233  HDU 1233</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/L" target="_blank">还是畅通工程</a>
-</td>
-      </tr>
-      <tr>
-          <td>M</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/HDU-1301/origin" target="_blank">HDU 1301  HDU 1301</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/M" target="_blank">Jungle Roads  丛林道路</a>
-</td>
-      </tr>
-      <tr>
-          <td>N</td>
-          <td><a href="https://vjudge.csgrandeur.cn/problem/HDU-1875/origin" target="_blank">HDU 1875  HDU 1875</a>
-</td>
-          <td><a href="https://vjudge.csgrandeur.cn/contest/276211#problem/N" target="_blank">畅通工程再续</a>
-</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h1 id="最小生成树">最小生成树</h1>
-<h2 id="简介">简介</h2>
-<p><strong>普里姆算法</strong>（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由<strong>此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点（英语：Vertex (graph theory)），且其所有边的权值之和亦为最小</strong>。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克（英语：Vojtěch Jarník）发现；并在1957年由美国计算机科学家罗伯特·普里姆（英语：Robert C. Prim）独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。</p>
-<h2 id="prime">prime</h2>
-<ol>
-<li>
-<p>输入：一个加权连通图，其中顶点集合为V，边集合为E；</p>
-</li>
-<li>
-<p>初始化：Vnew = {x}，其中x为集合V中的任一节点（起始点），Enew = {},为空；</p>
-</li>
-<li>
-<p>递归下列操作，直到Vnew = V：</p>
-<ol>
-<li>在集合E中选取权值最小的边&lt;u, v&gt;，其中u为集合Vnew中的元素，而v不在Vnew集合当中，并且v∈V（如果存在有多条满足前述条件即具有相同权值的边，则可任意选取其中之一）；</li>
-<li>将v加入集合Vnew中，将&lt;u, v&gt;边加入集合Enew中；</li>
-</ol>
-</li>
-<li>
-<p>输出：使用集合Vnew和Enew来描述所得到的最小生成树。</p>
-</li>
-</ol>
-<h2 id="代码">代码</h2>
-<hr>
-<h1 id="题解">题解</h1>
-<h1 id="参考资料">参考资料</h1>
-<p><a href="https://www.cnblogs.com/biyeymyhjob/archive/2012/07/30/2615542.html" target="_blank">最小生成树-Prim算法和Kruskal算法 - 博客园-华山大师兄</a>
-</p>
-
-
-        
-      </section>
-
-      
-      <div class="divider"></div>
-      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
-        
-        <a class="group btn btn-outline" href="/past_posts/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" title="反转链表">
-          <ion-icon name="chevron-back"></ion-icon>
-          <div class="inline-flex flex-col items-start">
-            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">上一页</span>
-            <span class="max-w-48 truncate">反转链表</span>
-          </div>
-        </a>
-        
-
-        
-        <a class="group btn btn-outline" href="/past_posts/2023-icpc-%E7%BD%91%E7%BB%9C%E9%A2%84%E9%80%89%E8%B5%9B9.17%E7%AC%AC%E4%B8%80%E5%9C%BA-%E9%A2%98%E8%A7%A3/" title="2023 ICPC（亚）预选赛9.17第一场 题解">
-          <div class="inline-flex flex-col items-end">
-            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">下一页</span>
-            <span class="max-w-48 truncate">2023 ICPC（亚）预选赛9.17第一场 题解</span>
-          </div>
-          <ion-icon name="chevron-forward"></ion-icon>
-        </a>
-        
-      </div>
-      
-
-      
-    </article>
-  </div>
-
-  <div class="hidden lg:flex lg:flex-col lg:items-end">
-    
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#简介">简介</a></li>
-    <li><a href="#prime">prime</a></li>
-    <li><a href="#代码">代码</a></li>
-  </ul>
-</nav>
-    
-  </div>
-</div>
-
-
-            
-<footer class="flex justify-between items-center gap-2 px-4 py-12">
-
-  <div>
-  
-  <p>
-    © 2022 - 2025 Ar-Gas&#39;blog
-  </p>
-  
-
-  
-  <p class="text-sm">
-    🌱
-    <span class="text-base-content/60">
-      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
-      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
-    >
-  </p>
-  
-</div>
-
-  <div
-  x-data="{ icons: [
-    { name: 'moon', status: 'y' },
-    { name: 'sunny', status: 'n' },
-    { name: 'desktop', status: 'auto' }
-  ] }"
-  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
->
-  <template x-for="icon in icons">
-    <div
-      role="button"
-      tabindex="0"
-      :aria-label="'Select ' + icon.name + ' mode'"
-      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
-      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
-      @click="$store.darkMode.toggle(icon.status)"
-    >
-      <ion-icon
-        :name="`${icon.name}-outline`"
-        class="group-hover:text-primary-content"
-        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
-      >
-      </ion-icon>
-    </div>
-  </template>
-</div>
-
-</footer>
-
-          </div>
-        </div>
-        <div class="back">
-          <div class="container">
-            
-            <div class="dream-grid dream-grid-about">
-  
-  
-  
-  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-    <article
-      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
-    >
-      <div class="card-body">
-        <div class="card-title">作者简介</div>
-
-        <div class="prose dark:prose-invert">
-          <h3 id="hi-there-">Hi there 👋</h3>
-<ul>
-<li>🌱 I’m a junior software engineering student (2022-2026) in Taiyuan University of Technology.</li>
-<li>👯 I’m working on computer programming compertation and server development and kernel development, interested in C++、 Rust.</li>
-<li>🤔 I am also looking for help from like-minded friends.</li>
-<li>📫 How to reach me: email me :2934060590@qq.com</li>
-<li>⚡ I won a bronze medal 🥉 in the ICPC (ACM) Invitational tournament.</li>
-</ul>
-<h3 id="-实习经历-work-experience">🏢 实习经历 Work experience</h3>
-<ul>
-<li><a href="https://www.aispeech.com/" target="_blank">思必驰/aispeech</a>
- 📌2024.07-2024.09
-<ul>
-<li>工作岗位：研发实习生</li>
-<li>工作部门：智能汽车事业部</li>
-<li>工作方向：摸鱼打杂小透明/doge</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-      </div>
-    </article>
-  </div>
-  
-  
-
-  
-
-  
-</div>
-
-            
-
-            
-<footer class="flex justify-between items-center gap-2 px-4 py-12">
-
-  <div>
-  
-  <p>
-    © 2022 - 2025 Ar-Gas&#39;blog
-  </p>
-  
-
-  
-  <p class="text-sm">
-    🌱
-    <span class="text-base-content/60">
-      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
-      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
-    >
-  </p>
-  
-</div>
-
-  <div
-  x-data="{ icons: [
-    { name: 'moon', status: 'y' },
-    { name: 'sunny', status: 'n' },
-    { name: 'desktop', status: 'auto' }
-  ] }"
-  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
->
-  <template x-for="icon in icons">
-    <div
-      role="button"
-      tabindex="0"
-      :aria-label="'Select ' + icon.name + ' mode'"
-      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
-      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
-      @click="$store.darkMode.toggle(icon.status)"
-    >
-      <ion-icon
-        :name="`${icon.name}-outline`"
-        class="group-hover:text-primary-content"
-        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
-      >
-      </ion-icon>
-    </div>
-  </template>
-</div>
-
-</footer>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-  window.lightTheme = "emerald"
-  window.darkTheme = "forest"
-</script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
-
-  
-  
-  <script src="/js/grid.js"></script>
-
-
-
-
-<script src="/js/main.js"></script>
-
-    
-
-
-<script
-  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
-  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
-  crossorigin="anonymous"
-></script>
-<script>
-  format()
-
-  function format() {
-    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
-      const date = el.textContent
-
-      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
-    })
-  }
-</script>
-
-
-
-
-
-
-  
-    <script type="module">
-      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
-      mediumZoom('#dream-single-post-content img', {
-        background: 'oklch(var(--b1))',
-        margin: 24,
-      })
-    </script>
-  
-
-
-
-
-    
-
-    
-
-    
-
-    
-
-    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
-  </body>
-</html>

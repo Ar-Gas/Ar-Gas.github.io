@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Ar-Gas&#39;blog</title>
+    <title>文章汇总 on Ar-Gas&#39;blog</title>
     <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Ar-Gas&#39;blog</description>
+    <description>Recent content in 文章汇总 on Ar-Gas&#39;blog</description>
     <generator>Hugo</generator>
     <language>zh</language>
     <lastBuildDate>Wed, 12 Feb 2025 00:14:32 +0800</lastBuildDate>
