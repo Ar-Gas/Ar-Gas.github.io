@@ -2,7 +2,7 @@
 title: 量化系统工程师需要学什么？（转）
 date: 2023-09-25T14:32:00+08:00
 lastmod: 2023-09-25T14:32:00+08:00
-image: 1.jpg
+image: cover.jpg
 categories:
   - 转载
 tags:
