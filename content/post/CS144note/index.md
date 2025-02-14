@@ -3,7 +3,7 @@ title: CS144-计算机网络笔记（lab 0 - 4 )
 date: 2024-03-30T20:20:00+08:00
 lastmod: 2024-03-30T20:20:00+08:00
 math: true
-image:cover.jpg
+image: cover.jpg
 categories:
   - 计算机实验
 tags:
