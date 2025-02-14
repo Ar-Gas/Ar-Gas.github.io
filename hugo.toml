@@ -2,7 +2,7 @@ baseurl = "https://ar-gas.github.io/"
 defaultContentLanguage = "zh"
 languageCode = "zh"
 title = "Ar-Gas'blog"
-theme = "dream"
+theme = "hugo-theme-stack"
 
 [services]
 [services.disqus]
