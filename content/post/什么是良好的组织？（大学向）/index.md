@@ -3,8 +3,7 @@ title: 什么是良好的组织？（大学向）
 date: 2025-02-12T00:14:32+08:00
 lastmod: 2025-02-12T00:14:32+08:00
 cover: /img/良好组织配图.jpg
-images:
-  - 1.jpg
+image: 1.jpg
 categories:
   - 思考
 tags:
