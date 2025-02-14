@@ -10,68 +10,23 @@ shortname = "ar-gas"
 [services.googleAnalytics]
 ID = "G-332EQF099E"
 
-[params]
-# zenMode = true
+[sidebar]
+emoji = "🌱"
+subtitle = "深入，深刻"
 
-lightTheme = "emerald"
-darkTheme = "forest"
-
-# backgroundImage = "me/background.jpg"
-# backgroundImageDark = ""
-
-description = "Ar-Gas的思考"
-avatar = "img/argas.png"
-headerTitle = "Ar-Gas"
-motto = "深入，深刻"
-
-# footerBottomText = ""
-
-rss = true
-
-utterancesRepo = "Ar-Gas/Ar-Gas.github.io"
-
-# valine = true
-# LEANCLOUD_APP_ID = ""
-# LEANCLOUD_APP_KEY = ""
-
-# waline = true
-# walineServer = ""
-
-siteStartYear = 2022
-
-favicon =  '<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🌱</text></svg>"></link>'
-
-# Syntax highlighting
-# customSyntaxHighlighting = true
-
-# options
-stickyNav = true
-reorderNavItems = ["search", "about", "posts", "categories"]
-collapseNavItems = ["tags", "rss", "github"]
-# noDefaultSummaryCover = true
-showTableOfContents = true
-showSummaryCoverInPost = true
-imageZoomableInPost = true
-showPrevNextPost = true
-# reorderShares = ["x", "facebook", "whatsapp"]
-
-[params.navItems]
-github = { href = "https://github.com/Ar-Gas", target = "_blank", icon = "logo-github", title = "GitHub" }
-
-# [params.twikoo]
-# enabled = true
-# envID = ""
-# region = ""
-# lang = ""
-
-# [params.advanced]
-# customCSS = ["css/custom.css"]
-# customJS = []
-
-[params.experimental]
-jsDate = true
-jsDateFormat = "yyyy年MM月dd日"
+[sidebar.avatar]
+enabled = true
+local = true
+src = "static/img/avatar.png"
 
 [params.author]
 name = "Ar-Gas"
 email = "2934060590@qq.com"
+
+[[social]]
+identifier = "github"
+name = "GitHub"
+url = "https://github.com/Ar-Gas"
+
+[social.params]
+icon = "brand-github"
