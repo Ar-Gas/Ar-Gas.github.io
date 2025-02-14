@@ -24,6 +24,7 @@ description = "Ar-Gas的思考"
 avatar = "img/argas.png"
 headerTitle = "Ar-Gas"
 motto = "深入，深刻"
+email = "2934060590@qq.com"
 
 # footerBottomText = ""
 
@@ -37,8 +38,6 @@ utterancesRepo = "Ar-Gas/Ar-Gas.github.io"
 
 # waline = true
 # walineServer = ""
-
-email = "2934060590@qq,com"
 
 siteStartYear = 2022
 
