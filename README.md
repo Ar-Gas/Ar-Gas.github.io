@@ -1,6 +1,6 @@
+past：![Static Badge](https://img.shields.io/badge/Hexo-NexT-blue)
 
-![Static Badge](https://img.shields.io/badge/Hexo-NexT-blue)
-
+now:![Static Badge](https://img.shields.io/badge/Hugo-Stack-blue)
 
 # Ar-Gas.github.io
 欢迎来到[我的博客](https://ar-gas.github.io/)！
