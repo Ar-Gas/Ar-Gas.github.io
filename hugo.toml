@@ -19,12 +19,10 @@ darkTheme = "forest"
 # backgroundImage = "me/background.jpg"
 # backgroundImageDark = ""
 
-author = "Ar-Gas"
 description = "Ar-Gas的思考"
 avatar = "img/argas.png"
 headerTitle = "Ar-Gas"
 motto = "深入，深刻"
-email = "2934060590@qq.com"
 
 # footerBottomText = ""
 
@@ -73,3 +71,7 @@ github = { href = "https://github.com/Ar-Gas", target = "_blank", icon = "logo-g
 [params.experimental]
 jsDate = true
 jsDateFormat = "yyyy年MM月dd日"
+
+[params.author]
+name = "Ar-Gas"
+email = "2934060590@qq.com"
