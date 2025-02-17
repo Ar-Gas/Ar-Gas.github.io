@@ -1,5 +1,5 @@
 ---
-title: Links
+title: Links|友链
 links:
   - title: GitHub
     description: GitHub is the world's largest software development platform.
@@ -13,6 +13,8 @@ menu:
 
 comments: false
 ---
+
+此页面暂时未施工
 
 To use this feature, add `links` section to frontmatter.
 
